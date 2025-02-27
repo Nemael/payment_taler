@@ -2,7 +2,7 @@
 
 TOPS is a currently in-development odoo add-on.
 
-This Odoo module allows users to pay with Taler, akin to 18 other existing payment integrations in Odoo.
+This Odoo add-on allows users to pay with Taler, akin to 18 other existing payment integrations in Odoo.
 It is developed using the Odoo Framework, in Javascript and Python. The module integrates into and increase functionality of other existing Odoo modules (ticket sale, online shopping, invoices, etc.).
 
 Installing the module allows merchants to offer their customers to use their Taler wallet to pay, allowing users to choose a payment system that respects their privacy.
