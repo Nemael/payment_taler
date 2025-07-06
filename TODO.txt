@@ -1,0 +1,4 @@
+make a shared folder and put my code in it and create a link
+    So I can code from windows
+
+Create a shared folder, and put my code in it
