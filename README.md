@@ -9,4 +9,4 @@ Installing the module allows merchants to offer their customers to use their Tal
 
 Once finished, this add-on will be made available on the Odoo Apps store https://apps.odoo.com/apps
 
-This work is opublished under license LGPL-3.0-or-later
+This work is published under license LGPL-3.0-or-later

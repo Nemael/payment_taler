@@ -1,4 +1,7 @@
-make a shared folder and put my code in it and create a link
-    So I can code from windows
+odoo differences community edition and enterprise edition
+how to install odoo enterprise edition on my own server
 
-Create a shared folder, and put my code in it
+
+First do a first draft of the logic used to make a payment to Taler
+	Reach out to the guy who is making the Python implementation for Frog logo ERP
+Then buy a subscription to Odoo Enterprise edition to implement this logic into existing modules that use payments, accounting is the priority
