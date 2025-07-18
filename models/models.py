@@ -27,6 +27,8 @@ class Student(models.Model):
 
     last_order_uri = fields.Char(string="Last Order URI", default="")
 
+    merchant_refund_window = fields.Char(string="Merchant Refund Window", default="14")
+
     def changeRecord(self):
         self.name4 = self.name4 + '+'
         print('Starting transaction')
