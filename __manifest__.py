@@ -1,5 +1,5 @@
 {
-    'name': 'Taler-Odoo',
+    'name': 'Taler-Odoo Payment System',
     'version': '1.0',
     'author': 'Nemael',
     'category': 'Custom',
@@ -7,7 +7,8 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
-        'views/student_view.xml'
+        'views/student_view.xml',
+        'views/res_config_settings.xml'
         ],
     'installable': True,
 }

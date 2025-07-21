@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.tops</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+<!--        <xpath expr="//div[hasclass('Settings')]" position="inside">-->
+                <div class="app_settings_block"
+                     string="Taler-Odoo Payment System"
+                     data-string="Taler-Odoo Payment System"
+                     data-key="tops">
+                     <h2>Taler-Odoo Payment System Settings</h2>
+                    <div class="row mt16 o_settings_container" name="catalog_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="merchant_url">
+                            <div class="o_setting_left_pane">
+                                This is example text
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="tops_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="res_config_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'tops', 'bin_size': False}</field>
+    </record>
+
+        <menuitem id="menu_tops_config"
+                  name="Configuration"
+                  parent="wb_student_root_menu"
+                  sequence="50"/>
+        <menuitem id="menu_tops_general_settings"
+                  name="Settings"
+                  parent="menu_tops_config"
+                  action="tops_config_settings_action"/>
+
+        <menuitem id="wb3_student_sub_root_menu"
+              name="Weblearns3"
+              parent="wb_student_root_menu"
+        />
+        <menuitem id="wb3_student_menu"
+              action="wb_student_action"
+              name="Student List"
+              parent="wb3_student_sub_root_menu"/>
+
+</odoo>
