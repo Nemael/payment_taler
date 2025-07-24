@@ -22,7 +22,6 @@
                         <field name="name2"/>
                         <field name="name3"/>
                         <field name="name4"/>
-                        <field name="taler_url"/>
                         <field name="secret_token"/>
                         <field name="test_order_id"/>
                         <button name="changeRecord" type="object" string="Change record"/>
@@ -39,7 +38,7 @@
                         <field name="order_last_order_url"/>
                         <button name="getOrderTalerUri" type="object" string="Get Order Taler Uri"/>
                         <field name="last_order_uri"/>
-                        <button name="requestGetConfig" type="object" string="?"/>
+                        <button name="getSettingAndPrintIt" type="object" string="GetSettingAndPrintIt"/>
                         <button name="requestGetConfig" type="object" string="?"/>
                         <button name="requestGetConfig" type="object" string="?"/>
                         <button name="requestGetConfig" type="object" string="?"/>

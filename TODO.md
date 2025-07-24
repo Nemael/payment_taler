@@ -22,8 +22,14 @@ Taler ideas:
 Check this warning in Odoo console logs
     - WARNING odoo18_tops_0.1.1.1 odoo.modules.module: Missing `license` key in manifest for 'tops', defaulting to LGPL-3
 
-Make the settings company-specific, so you can switch company and use a different Taler endpoint
+Make the settings company-specific, so you can switch company and use a different Taler endpoint and password and such
     See https://www.youtube.com/watch?v=1me-Lto2EPY
 
 
 I can access the settings from the top bar in the add-on, but I cannot see the settings on the left bar when I am opening the settings pages. Make it so that the settings appear on the left bar as well.
+
+
+Make a longer line for the setting of the Merchant URL, in the settings page, so that the whole URL can be displayed at once instead of having to scroll it.
+
+
+Check if "Taler Merchant URL" is the proper name for the URL my add-on will connect to make a payment with Taler
