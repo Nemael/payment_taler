@@ -33,3 +33,8 @@ Make a longer line for the setting of the Merchant URL, in the settings page, so
 
 
 Check if "Taler Merchant URL" is the proper name for the URL my add-on will connect to make a payment with Taler
+
+Find a better way to store the password+secret token, and make ui to ask user for password
+Add popups when an error from a request occurs
+Add the "app" tag to the module at the end of the project, to make it findable in the app install menu.
+Add the icon from Taler in the settings page (and plenty of other spots)

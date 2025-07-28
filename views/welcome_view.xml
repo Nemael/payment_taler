@@ -1,0 +1,73 @@
+<odoo>
+    <record id="view_form_tops_welcome" model="ir.ui.view">
+        <field name="name">tops.welcome.form</field>
+        <field name="model">tops.welcome</field>
+        <field name="arch" type="xml">
+            <form string="Taler-Odoo Welcome Settings" create="false" delete="false">
+                <sheet>
+                    <group>
+                        <field name="test_summary"/>
+                        <field name="test_fulfilment_message"/>
+                        <field name="test_currency"/>
+<!--                        <field name="test_amount"/>-->
+<!--                        <field name="test_latest_order_id"/>-->
+<!--                        <field name="test_order_url"/>-->
+<!--                        <field name="test_order_uri"/>-->
+<!--                        <field name="test_merchant_refund_window"/>-->
+<!--                        <button name="postPlaceOrder" type="object" string="Place Order"/>-->
+<!--                        <button name="getOrderTalerUri" type="object" string="Get Order Taler Uri"/>-->
+<!--                        <button name="getSettingAndPrintIt" type="object" string="GetSettingAndPrintIt"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="?"/>-->
+                        <!--                        <button name="change record" type="action" string="Change state" states="confirm"/>-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--    <menuitem id="tops_root_menu"-->
+<!--              name="Taler-Odoo Payment System"-->
+<!--              action="tops_welcome_action"-->
+<!--    />-->
+
+<!--    <record id="tops_welcome_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Open Taler-Odoo Welcome</field>-->
+<!--        <field name="model_id" ref="tops.model_tops_welcome"/>-->
+<!--        <field name="binding_model_id" ref="tops.model_tops_welcome"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">action = model.action_open_singleton()</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--    </record>-->
+
+    <record id="tops_welcome_action" model="ir.actions.act_window">
+        <field name="name">Open Taler-Odoo Welcome</field>
+        <field name="res_model">tops.welcome</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_form_tops_welcome"/>
+        <field name="res_id" ref="tops.tops_welcome_singleton"/>
+<!--        <field name="id" eval="1"/>  &lt;!&ndash; assumes the singleton record has ID=tops_welcome_singleton from the tops_welcome_data.xml file &ndash;&gt;-->
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="tops_root_menu"
+              name="Taler-Odoo Payment System"
+    />
+
+<!--    <menuitem id="menu_tops_root"-->
+<!--              name="Taler Payment System"/>-->
+
+    <menuitem id="menu_tops_welcome"
+              name="Welcome"
+              parent="tops_root_menu"
+              action="tops_welcome_action"
+              sequence="10"/>
+</odoo>

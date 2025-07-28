@@ -9,7 +9,7 @@
             <xpath expr="//form" position="inside">
             <!--<xpath expr="//div[hasclass('settings')]" position="inside">-->
             <!--<xpath expr="//div[contains(@class, 'settings')]" position="inside">-->
-                <app data-string="Taler-Odoo Payment System Settings" string="Taler-Odoo Payment System Settings" name="tops">
+                <app data-string="Taler-Odoo Payment System Settings" string="Taler-Odoo Payment System" name="tops">
                    <block title="Taler-Odoo Payment System Settings" name="employee_management">
                        <setting string="Taler Merchant URL"
                                 help="Choose the merchant URL you would like to connect to"
@@ -39,22 +39,13 @@
         <field name="context">{'module' : 'tops', 'bin_size': False}</field>
     </record>
 
-        <menuitem id="menu_tops_config"
-                  name="Configuration"
-                  parent="wb_student_root_menu"
-                  sequence="50"/>
-        <menuitem id="menu_tops_general_settings"
-                  name="Settings"
-                  parent="menu_tops_config"
-                  action="tops_config_settings_action"/>
+    <menuitem id="menu_tops_config"
+              name="Configuration"
+              parent="tops_root_menu"
+              sequence="50"/>
 
-        <menuitem id="wb3_student_sub_root_menu"
-              name="Weblearns3"
-              parent="wb_student_root_menu"
-        />
-        <menuitem id="wb3_student_menu"
-              action="wb_student_action"
-              name="Student List"
-              parent="wb3_student_sub_root_menu"/>
-
+    <menuitem id="menu_tops_general_settings"
+              name="Settings"
+              parent="menu_tops_config"
+              action="tops_config_settings_action"/>
 </odoo>

@@ -1,0 +1,76 @@
+<odoo>
+    <record id="tops_order_list_view" model="ir.ui.view">
+        <field name="name">tops.order.list.view</field>
+        <field name="model">tops.order</field>
+        <field name="arch" type="xml">
+            <list string="Orders" create="false">
+                <field name="id"/>
+                <field name="summary"/>
+                <field name="amount"/>
+                <field name="currency"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="tops_order_form_view" model="ir.ui.view">
+        <field name="name">tops.order.form.view</field>
+        <field name="model">tops.order</field>
+        <field name="arch" type="xml">
+            <form string="Order">
+                <group>
+                    <group>
+<!--                        <field name="secret_token"/>-->
+<!--                        <field name="test_order_id"/>-->
+<!--                        <button name="changeRecord" type="object" string="Change record"/>-->
+<!--                        <button name="requestGetToken" type="object" string="Request token"/>-->
+<!--                        <button name="requestGetOrderFromId" type="object" string="?"/>-->
+<!--                        <button name="requestGetOrderFromId" type="object" string="Get Order From Id"/>-->
+<!--                        <button name="requestGetConfig" type="object" string="Get Config"/>-->
+                        <field name="id"/>
+                        <field name="summary"/>
+                        <field name="amount"/>
+                        <field name="currency"/>
+                        <field name="current_status"/>
+                        <field name="fulfilment_message"/>
+                        <field name="creation_time"/>
+                        <field name="payment_time"/>
+                        <field name="merchant_server"/>
+                        <field name="url"/>
+                        <field name="uri"/>
+                        <field name="merchant_refund_window"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="tops_orders_action" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">tops.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+<!--    <menuitem id="tops_orders_root_menu"-->
+<!--              name="Taler-Odoo Payment System"-->
+<!--    />-->
+
+<!--    <menuitem id="tops_orders_sub_root_menu"-->
+<!--              name="Orders for tops"-->
+<!--              parent="tops_root_menu"-->
+<!--    />-->
+<!--    <menuitem id="tops_orders_menu"-->
+<!--              action="tops_orders_action"-->
+<!--              name="List of orders"-->
+<!--              parent="tops_orders_sub_root_menu"-->
+<!--    />-->
+
+<!--    <menuitem id="tops2_orders_sub_root_menu"-->
+<!--              name="Orders for tops 2"-->
+<!--              parent="tops_root_menu"-->
+<!--    />-->
+<!--    <menuitem id="tops2_orders_menu"-->
+<!--              action="tops_orders_action"-->
+<!--              name="List of orders 2"-->
+<!--              parent="tops2_orders_sub_root_menu"-->
+<!--    />-->
+</odoo>
