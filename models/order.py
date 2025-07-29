@@ -6,8 +6,9 @@ from ..utils.utils import *
 class Order(models.Model):
     _name = 'tops.order'
     _description = 'This is an order made with the Taler payment system, using the Taler-Odoo Payment System add-on.'
+    _order = 'creation_time desc'
 
-    id = fields.Char(string="Order Id", required=True)
+    taler_id = fields.Char(string="Order Id on Taler side", required=True)
     current_status = fields.Char(string="Current Order Status")
     summary = fields.Char(string="Order Summary", required=True)
     fulfilment_message = fields.Char(string="Order Fulfillment Message")
@@ -17,11 +18,8 @@ class Order(models.Model):
     payment_time = fields.Char(string="Order Payment Time")
     merchant_server = fields.Char(string="Merchant Server the order was created on")
     url = fields.Char(string="Last Order URL", required=True)
-    uri = fields.Char(string="Last Order URI", required=True)
+    uri = fields.Char(string="Last Order URI")
     merchant_refund_window = fields.Char(string="Merchant Refund Window", required=True)
-
-
-
 
 
     # secret_token = fields.Char(string="Current Secret Token")

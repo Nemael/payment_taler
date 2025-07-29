@@ -36,3 +36,6 @@ What to do when doing a transaction:
 
 More explanations on the settings and how to build them (see at 11min30)
 https://www.youtube.com/watch?v=1me-Lto2EPY
+
+Sandbox URL is:
+- https://backend.demo.taler.net/instances/sandbox

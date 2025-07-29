@@ -10,7 +10,7 @@
             <!--<xpath expr="//div[hasclass('settings')]" position="inside">-->
             <!--<xpath expr="//div[contains(@class, 'settings')]" position="inside">-->
                 <app data-string="Taler-Odoo Payment System Settings" string="Taler-Odoo Payment System" name="tops">
-                   <block title="Taler-Odoo Payment System Settings" name="employee_management">
+                   <block title="Taler-Odoo Payment System Settings" name="tops_settings">
                        <setting string="Taler Merchant URL"
                                 help="Choose the merchant URL you would like to connect to"
                                 id="merchant_url">
@@ -22,6 +22,12 @@
                                    this setting and save before using the Taler-Odoo Payment System.
                                </div>
                            </div>
+                       </setting>
+                       <setting string="Taler Password">
+                           <field name="password"/>
+                       </setting>
+                       <setting string="Taler secret token">
+                           <field name="secret_token"/>
                        </setting>
                    </block>
                </app>

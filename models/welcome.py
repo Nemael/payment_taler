@@ -9,7 +9,7 @@ class Welcome(models.Model):
     _description = 'This is the Taler-Odoo Payment System Welcome model.'
 
     test_summary = fields.Char(string="Test Order Summary", default="Test order")
-    test_fulfilment_message = fields.Char(string="Test Order Fulfillment Message", default="Thank youze for your purchase!")
+    test_fulfilment_message = fields.Char(string="Test Order Fulfilment Message", default="Thank youze for your purchase!")
     test_currency = fields.Char(string="Test Order Currency", default="KUDOS")
     test_amount = fields.Char(string="Test Order Amount", default="1")
     test_latest_order_id = fields.Char(string="Test Latest Order Id", default="1")
@@ -38,6 +38,7 @@ class Welcome(models.Model):
     def requestGetToken(self):
         talog("Getting token")
         merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
+        talog(merchant_url)
         url = merchant_url + "/private/token"
         payload = {"scope": "write"}
         headers = {
@@ -56,16 +57,18 @@ class Welcome(models.Model):
         if "token" not in response.json():
             talog("Error getting new token: ", response.text)
             return
-        self.env['ir.config_parameter'].sudo().set_param('tops.secret-token')
+        talog(self.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
+        self.env['ir.config_parameter'].sudo().set_param('tops.secret_token', response.json()["token"])
+        talog(self.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
 
 
     def requestGetOrderFromId(self):
         merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
-        url = merchant_url + "/private/orders/" + self.test_order_id
+        url = merchant_url + "/private/orders/" + self.test_latest_order_id
         payload = ""
         headers = {
             "User-Agent": "TalerOdoo",
-            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret-token')
+            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
         }
         talog("Headers: ", headers)
         talog("Payload: ", payload)
@@ -97,16 +100,17 @@ class Welcome(models.Model):
         url = merchant_url + "/private/orders"
         payload = {
             "order": {
-                "amount": self.test_order_currency + ":" + self.test_order_amount,
-                "summary": self.test_order_summary,
-                "fulfilment_message": self.test_order_fullfilment_message
+                "amount": self.test_currency + ":" + self.test_amount,
+                "summary": self.test_summary,
+                "fulfilment_message": self.test_fulfilment_message
             },
             "create_token": False
         }
+        talog(self.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
         headers = {
             "Content-Type": "application/json",
             "User-Agent": "TalerOdoo/insomnia/11.3.0",
-            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret-token')
+            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
         }
         talog("Headers: ", headers)
         talog("Payload: ", payload)
@@ -121,8 +125,8 @@ class Welcome(models.Model):
             return
         order_id = response.json()["order_id"]
         order_url = merchant_url + "/orders/" + order_id
-        new_order_record = createOrder(order_id, order_url)
-        order_uri = getOrderTalerUri(order_id)
+        new_order_record = self.createOrder(order_id, order_url)
+        order_uri = self.getOrderTalerUri(order_id)
         new_order_record.uri = order_uri
 
         self.test_latest_order_id = order_id
@@ -138,7 +142,7 @@ class Welcome(models.Model):
         payload = ""
         headers = {
             "User-Agent": "TalerOdoo/insomnia/11.3.0",
-            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret-token')
+            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
         }
         talog("Headers: ", headers)
         talog("Payload: ", payload)
@@ -152,21 +156,24 @@ class Welcome(models.Model):
             return ''
         return response.json()["taler_pay_uri"]
 
+    def getOrderTalerUriTest(self):
+        #This is simply a testing method, it should be removed after some time, just to call getOrderTalerUri and provide a default value
+        self.getOrderTalerUri(self.test_latest_order_id)
+
     def getSettingAndPrintIt(self):
         setting_string = "merchant_url"
         talog(self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default=''))
         talog(self.env['ir.config_parameter'])
 
-    def createOrder(self, id, url, uri):
-        new_order = self.env['tops.order'].create({
-            'id': id,
+    def createOrder(self, taler_id, url):
+        return(self.env['tops.order'].create({
+            'taler_id': taler_id,
             'summary': self.test_summary,
             'fulfilment_message': self.test_fulfilment_message,
             'amount': self.test_amount,
             'currency': self.test_currency,
             'creation_time': fields.Datetime.now().isoformat(),
-            'order_url': url,
-            'order_uri': uri,
+            'url': url,
             'merchant_refund_window': self.test_merchant_refund_window,
             'merchant_server': self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default=''),
-        })
+        }))

@@ -17,8 +17,8 @@ class Color:
 
 def talog(*args):
     log = ""
-    log = Color.BOLD + '2025-07-15 02:26:35,959 3068 TALER:' + color.END
-    log = Color.BOLD + color.BLUE + '0000-00-00 00:00:00,000 0000 TALER: ' + color.END
+    log = Color.BOLD + '2025-07-15 02:26:35,959 3068 TALER:' + Color.END
+    log = Color.BOLD + Color.BLUE + '0000-00-00 00:00:00,000 0000 TALER: ' + Color.END
     for arg in args:
         log += str(arg)
     print(log)
