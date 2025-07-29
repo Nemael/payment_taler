@@ -6,9 +6,12 @@
     'summary': 'Taler payment system for Odoo',
     'depends': ['base'],
     'data': [
+        'data/tops_welcome_data.xml',
         'security/ir.model.access.csv',
-        'views/student_view.xml',
+        'views/welcome_view.xml',
+        'views/order_view.xml',
         'views/res_config_settings.xml'
         ],
     'installable': True,
+    'application': True,
 }

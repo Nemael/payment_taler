@@ -22,8 +22,41 @@ Taler ideas:
 Check this warning in Odoo console logs
     - WARNING odoo18_tops_0.1.1.1 odoo.modules.module: Missing `license` key in manifest for 'tops', defaulting to LGPL-3
 
-Make the settings company-specific, so you can switch company and use a different Taler endpoint
+Make the settings company-specific, so you can switch company and use a different Taler endpoint and password and such
     See https://www.youtube.com/watch?v=1me-Lto2EPY
 
 
 I can access the settings from the top bar in the add-on, but I cannot see the settings on the left bar when I am opening the settings pages. Make it so that the settings appear on the left bar as well.
+
+
+Make a longer line for the setting of the Merchant URL, in the settings page, so that the whole URL can be displayed at once instead of having to scroll it.
+
+
+Check if "Taler Merchant URL" is the proper name for the URL my add-on will connect to make a payment with Taler
+
+Find a better way to store the password+secret token, and make ui to ask user for password
+Add popups when an error from a request occurs
+Add the "app" tag to the module at the end of the project, to make it findable in the app install menu.
+Add the icon from Taler in the settings page (and plenty of other spots)
+
+Make a dedicated email address for this add-on, to put on the addon shops' webpage, to receive emails for support and such
+
+
+Sanitize the user input for the Taler Merchant URL
+- Remove any extra / at the end
+- Check that it is a valid URL
+- Add a button "check that my merchant URL is valid"
+
+If the setting for the merchant is empty, display a tooltip in the welcome page displaying a first-time suer piece, and saying that you have to fill the merchant URL to make the add-on work.
+
+Make the creation_time look better in the order list view
+
+Add the order_by, filter_by options in the order tree view
+- I can check this video for info https://www.youtube.com/watch?v=cxdIKFrUBBA
+
+
+Debug information ideas to add:
+- a
+
+Logging information ideas to add:
+- 
