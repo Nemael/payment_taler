@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+
+SPDX-License-Identifier: LGPL-3.0-or-later
+-->
+
 <odoo>
     <record id="res_config_settings_view_form_tops" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.tops</field>
