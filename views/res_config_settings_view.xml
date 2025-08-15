@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form_tops" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.tops</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Taler-Odoo Payment System Settings" string="Taler-Odoo Payment System" name="tops">
+                   <block title="Taler-Odoo Payment System Settings" name="tops_settings">
+                       <setting string="Taler Merchant URL"
+                                help="Choose the merchant URL you would like to connect to"
+                                id="merchant_url">
+                           <field name="merchant_url"/>
+                           <div class="content-group"
+                                id="group_merchant_url_setting">
+                               <div class="text-warning mt16">
+                                   <strong>Set up</strong>
+                                   this setting and save before using the Taler-Odoo Payment System.
+                               </div>
+                           </div>
+                       </setting>
+                       <setting string="Taler Password">
+                           <field name="password"/>
+                       </setting>
+                       <setting string="Taler secret token">
+                           <field name="secret_token"/>
+                       </setting>
+                   </block>
+               </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="tops_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="res_config_settings_view_form_tops"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'tops', 'bin_size': False}</field>
+    </record>
+
+    <menuitem id="menu_tops_config"
+              name="Configuration"
+              parent="tops_root_menu"
+              sequence="50"/>
+
+    <menuitem id="menu_tops_general_settings"
+              name="Settings"
+              parent="menu_tops_config"
+              action="tops_config_settings_action"/>
+</odoo>

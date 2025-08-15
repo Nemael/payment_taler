@@ -1,0 +1,34 @@
+import datetime
+import os
+import logging
+
+_logger = logging.getLogger("TOPS")
+
+# class Color:
+#     PURPLE = '\033[95m'
+#     CYAN = '\033[96m'
+#     DARKCYAN = '\033[36m'
+#     BLUE = '\033[94m'
+#     GREEN = '\033[92m'
+#     YELLOW = '\033[93m'
+#     RED = '\033[91m'
+#     BOLD = '\033[1m'
+#     UNDERLINE = '\033[4m'
+#     END = '\033[0m'
+#
+#     def __init__(self):
+#        pass
+
+def talog(*args):
+    log = ""
+    for arg in args:
+        log += str(arg)
+    _logger.info(log)
+    #logs can be info, debug, error, critical and warning
+
+def tadebug(*args):
+    log = ""
+    for arg in args:
+        log += str(arg)
+    _logger.debug(log)
+    #logs can be info, debug, error, critical and warning

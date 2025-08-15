@@ -1,0 +1,8 @@
+<odoo>
+    <record id="tops_welcome_singleton" model="tops.welcome">
+        <field name="test_summary">Test order</field>  <!-- explicitly set ID to 1 -->
+        <!-- set any required fields here -->
+<!--        <field name="test_summary">Welcome to Taler-Odoo</field>-->
+        <!-- ... other fields as needed -->
+    </record>
+</odoo>
