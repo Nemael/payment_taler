@@ -10,7 +10,7 @@
         'security/ir.model.access.csv',
         'views/welcome_view.xml',
         'views/order_view.xml',
-        'views/res_config_settings.xml'
+        'views/res_config_settings_view.xml'
         ],
     'installable': True,
     'application': True,
