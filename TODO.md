@@ -99,3 +99,5 @@ This is functionally identical to putting the file into the public domain.
 Put a license on the text files I made (devlog?). Maybe I want these text files to go into the public domain with CC0, maybe I want LGPL-3.0-or-later on these?  Unsure yet
 
 Add a gitignore file to ignore the pycache folder
+
+Put license cc0 to the devlog files
