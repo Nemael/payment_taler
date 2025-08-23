@@ -17,7 +17,6 @@
                         <button name="requestGetToken" type="object" string="Request token"/>
                         <button name="requestGetConfig" type="object" string="Get Config"/>
                         <button name="postPlaceOrder" type="object" string="Place Order"/>
-                        <button name="getOrderTalerUriTest" type="object" string="Get Order Taler Uri"/>
                         <button name="getSettingAndPrintIt" type="object" string="GetSettingAndPrintIt"/>
 <!--                        <button name="requestGetConfig" type="object" string="?"/>-->
 <!--                        <button name="requestGetConfig" type="object" string="?"/>-->

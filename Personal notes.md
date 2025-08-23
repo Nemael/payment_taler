@@ -39,3 +39,16 @@ https://www.youtube.com/watch?v=1me-Lto2EPY
 
 Sandbox URL is:
 - https://backend.demo.taler.net/instances/sandbox
+
+
+
+--dev <feature,feature,...,feature>
+    comma-separated list of features. For development purposes only. Do not use it in production. Possible features are:
+        all: all the features below are activated
+        xml: read QWeb template from xml file directly instead of database. Once a template has been modified in database, it will be not be read from the xml file until the next update/init. Particularly, templates are not translated on using this option.
+        reload: restart server when python file are updated (may not be detected depending on the text editor used)
+        qweb: break in the evaluation of QWeb template when a node contains t-debug='debugger'
+        (i)p(u)db: start the chosen python debugger in the code when an unexpected error is raised before logging and returning the error.
+        werkzeug: display the full traceback on the frontend page in case of exception
+
+Run tests with `/odoo-bin --test-file=/media/sf_VMSharedFolders/custom_addons/tops/tests/welcome_tests.py`

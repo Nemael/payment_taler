@@ -57,7 +57,6 @@ class Welcome(models.Model):
         if "token" not in response.json():
             talog("Error getting new token: ", response.text)
             return
-        talog(self.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
         self.env['ir.config_parameter'].sudo().set_param('tops.secret_token', response.json()["token"])
         talog(self.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
 
@@ -156,12 +155,7 @@ class Welcome(models.Model):
             return ''
         return response.json()["taler_pay_uri"]
 
-    def getOrderTalerUriTest(self):
-        #This is simply a testing method, it should be removed after some time, just to call getOrderTalerUri and provide a default value
-        self.getOrderTalerUri(self.test_latest_order_id)
-
     def getSettingAndPrintIt(self):
-        setting_string = "merchant_url"
         talog(self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default=''))
         talog(self.env['ir.config_parameter'])
 
@@ -177,3 +171,12 @@ class Welcome(models.Model):
             'merchant_refund_window': self.test_merchant_refund_window,
             'merchant_server': self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default=''),
         }))
+
+    def setSetting(self, setting, value):
+        # To be integrated in the rest of the code
+        self.env['ir.config_parameter'].sudo().set_param('tops.' + setting, value)
+        talog(self.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
+
+    def getSetting(self, setting,):
+        # To be integrated in the rest of the code
+        return self.env['ir.config_parameter'].sudo().get_param('tops.' + setting, default=''),
