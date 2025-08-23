@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+
+SPDX-License-Identifier: LGPL-3.0-or-later
+-->
+
 # TOPS: Taler-Odoo Payment System
 
 TOPS is a currently in-development Odoo.
