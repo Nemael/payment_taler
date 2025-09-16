@@ -47,7 +47,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 - Run these commands to edit the setting you want to set. You can use `get_params` to print the current value, and `set_params` to set a new value.
   - `env['ir.config_parameter'].set_param('tops.merchant_url', 'https://backend.demo.taler.net/instances/sandbox/')`
   - `env['ir.config_parameter'].set_param('tops.password', 'https://backend.demo.taler.net/instances/sandbox/')`
-- IMPORTANT: Commit the changes to the database before closing the shell instance and restarting Odoo
+- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`IMPORTANT: Commit the changes to the database before closing the shell instance and restarting Odoo
   - `env.cr.commit()`
   - `exit()`
 
