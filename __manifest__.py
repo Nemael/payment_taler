@@ -8,14 +8,16 @@
     'author': 'Nemael',
     'category': 'Custom',
     'summary': 'Taler payment system for Odoo',
-    'depends': ['base'],
+    'depends': ['base', 'payment', 'website', 'website_sale', 'account'], #website, website_sale and account might not be required, I have added them from another example, check later if they are required.
     'data': [
         'data/tops_welcome_data.xml',
+        'data/taler_payment_provider_data.xml',
         'security/ir.model.access.csv',
         'views/welcome_view.xml',
         'views/order_view.xml',
-        'views/res_config_settings_view.xml'
-        ],
+        'views/res_config_settings_view.xml',
+        'views/taler_payment_view.xml'
+    ],
     'installable': True,
     'application': True,
 }
