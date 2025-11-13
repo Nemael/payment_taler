@@ -1,0 +1,27 @@
+<!--
+SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+
+SPDX-License-Identifier: LGPL-3.0-or-later
+-->
+<odoo noupdate="1">
+
+    <record id="payment_provider_taler" model="payment.provider">
+        <field name="name">Taler</field>
+        <field name="code">taler</field>
+<!--        <field name="redirect_form_view_id" ref="redirect_form"/>-->
+    </record>
+
+</odoo>
+
+
+
+<!--<odoo>-->
+<!--    <record id="taler_payment_provider_singleton" model="payment.provider">-->
+<!--        <field name="test_summary">Test order</field>  &lt;!&ndash; explicitly set ID to 1 &ndash;&gt;-->
+<!--        &lt;!&ndash; set any required fields here &ndash;&gt;-->
+<!--&lt;!&ndash;        <field name="test_summary">Welcome to Taler-Odoo</field>&ndash;&gt;-->
+<!--        &lt;!&ndash; ... other fields as needed &ndash;&gt;-->
+<!--    </record>-->
+<!--</odoo>-->
+
+

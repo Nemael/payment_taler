@@ -52,3 +52,18 @@ Sandbox URL is:
         werkzeug: display the full traceback on the frontend page in case of exception
 
 Run tests with `/odoo-bin --test-file=/media/sf_VMSharedFolders/custom_addons/tops/tests/welcome_tests.py`
+
+
+
+
+Useful methods from the Odoo classes
+- _compute_feature_support_fields()
+-  _get_compatible_providers(company_id, partner_id, amount, currency_id=None, force_tokenization=False, is_express_checkout=False, is_validation=False, report=None, **kwargs)
+- _get_redirect_form_view(is_validation=False)
+- _get_validation_amount()
+- _get_validation_currency()
+- _is_tokenization_required(**kwargs) THIS ONE IS MAYBE SUPER USEFUL
+- _should_build_inline_form(is_validation=False)
+- _get_removal_values()
+
+Don't forget to make a "OnDelete" feature for my add-on, to wipe data after its deletion

@@ -101,3 +101,7 @@ Put a license on the text files I made (devlog?). Maybe I want these text files 
 Add a gitignore file to ignore the pycache folder
 
 Put license cc0 to the devlog files
+
+When I initiate a payment using Taler on the website, I maybe should check for the validity of the password - by requesting a new token maybe?
+
+In the readme, tell which version of Odoo the addon is working for, and it was tested for
