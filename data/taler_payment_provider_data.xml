@@ -3,14 +3,16 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
-<odoo noupdate="1">
-
+<!--<odoo noupdate="1">-->
+<odoo>
     <record id="payment_provider_taler" model="payment.provider">
-        <field name="name">Taler</field>
+        <field name="name">Taler2</field>
         <field name="code">taler</field>
 <!--        <field name="redirect_form_view_id" ref="redirect_form"/>-->
+        <field name="payment_method_ids" eval="[Command.set([
+                ref('tops.payment_method_taler'),
+            ])]" />
     </record>
-
 </odoo>
 
 

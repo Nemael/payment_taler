@@ -27,6 +27,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - Such as: `./odoo-bin --addons-path=./addons,./custom_addons -u tops -d odoo18_tops_0.1.1.1`
 - In Odoo, go to the `Apps` section in the app switcher (top-left button)
 - Click `Update Apps List` on the top bar
+  - I may need to activate developer mode to see this button, need to find another option for non-developper user, double-check if it is actually an issue
 - Search for the add-on Taler-Odoo Payment System`
 - Install it from there
 - Once installed, you just have to set the vendor url and the password

@@ -6,3 +6,4 @@ from . import welcome
 from . import order
 from . import taler_payment
 from . import res_config_settings
+

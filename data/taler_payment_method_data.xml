@@ -1,0 +1,26 @@
+<odoo>
+    <record id="payment_method_taler" model="payment.method">
+        <field name="name">Taler</field>
+        <field name="code">taler</field>
+        <field name="sequence">1</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="tops/static/description/icon.png"/>
+        <field name="support_tokenization">True</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">partial</field>
+        <field name="supported_country_ids" eval="[Command.set([
+                             ref('base.qa'),
+                             ref('base.us'),
+                         ])]" />
+        <field name="supported_currency_ids" eval="[Command.set([
+                         ref('base.QAR'),
+                         ref('base.USD'),
+                     ])]" />
+    </record>
+
+    <record id="account_payment_method_taler_in" model="account.payment.method">
+        <field name="name">Taler</field>
+        <field name="code">taler</field>
+        <field name="payment_type">inbound</field>
+    </record>
+</odoo>

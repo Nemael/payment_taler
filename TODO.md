@@ -105,3 +105,18 @@ Put license cc0 to the devlog files
 When I initiate a payment using Taler on the website, I maybe should check for the validity of the password - by requesting a new token maybe?
 
 In the readme, tell which version of Odoo the addon is working for, and it was tested for
+
+- For the payment "Test Mode", there is a radio button right in Odoo's interface to activate "Test Mode" for the payment method
+- Credentials are integrated as well
+
+- Do a "Neutralize.sql" file, as can be found in odoo git, in odoo/addons/payment_flutterwave/data/neutralize.sql. I need more information on this file, but I probably need it
+
+
+- Add to the readme that users are advised to create a "Taler" payment journal to record  taler payments
+  - If I can, ask the users on install if they want to have a new taler journal created + set this journal by default for the addon
+
+- see if my add-on has "iframe support", such as what is shown in the features for this repo https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
+
+
+
+- use this repo's example to make my TODO more robust https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
