@@ -120,3 +120,9 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 
 
 - use this repo's example to make my TODO more robust https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
+
+
+- remove the restriction to the US on the payment method's data file
+  - maybe add a restriction to only accept european countries or something
+
+- See if I can make the addon support express checkout

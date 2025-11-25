@@ -3,7 +3,7 @@
         <field name="name">Taler</field>
         <field name="code">taler</field>
         <field name="sequence">1</field>
-        <field name="active">False</field>
+        <field name="active">True</field>
         <field name="image" type="base64" file="tops/static/description/icon.png"/>
         <field name="support_tokenization">True</field>
         <field name="support_express_checkout">False</field>

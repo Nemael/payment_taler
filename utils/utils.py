@@ -40,5 +40,12 @@ def tadebug(*args):
     _logger.debug(log)
     #logs can be info, debug, error, critical and warning
 
+def tawarn(*args):
+    log = ""
+    for arg in args:
+        log += str(arg)
+    _logger.warning(log)
+    # logs can be info, debug, error, critical and warning
+
 def squareNumber(num): #For testing purposes
     return num ** 2

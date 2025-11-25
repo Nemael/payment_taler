@@ -10,6 +10,7 @@
     'summary': 'Taler payment system for Odoo',
     'depends': ['base', 'payment', 'website', 'website_sale', 'account'], #website, website_sale and account might not be required, I have added them from another example, check later if they are required.
     'data': [
+        'views/taler_payment_template.xml',
         'data/tops_welcome_data.xml',
         'data/taler_payment_provider_data.xml',
         'data/taler_payment_method_data.xml',
