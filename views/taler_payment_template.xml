@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="redirect_form">
-<!--        <form t-att-action="https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html" method="get">-->
-        <form action="https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html" method="get">
+<!--        <form action="https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html" method="get">-->
+<!--            <input  type="visible" name="merchantId" t-att-value="partner"/>-->
+<!--            <input type="hidden" name="_input_charset" t-att-value="_input_charset"/>-->
+<!--            <input t-if="service == 'create_forex_trade'" type="hidden" name="currency" t-att-value="currency"/>-->
+<!--            <input type="visible" name="orderId" t-att-value="out_trade_no"/>-->
+<!--            <input type="hidden" name="merchantRedirect" t-att-value="return_url"/>-->
+<!--            <input type="hidden" name="failureRedirect" t-att-value="return_url"/>-->
+<!--            &lt;!&ndash; <input type="hidden" name="service" t-att-value="service"/> &ndash;&gt;-->
+<!--            <input type="hidden" name="hash" t-att-value="sign"/>-->
+<!--            <input type="hidden" name="mode" t-att-value="mode"/>-->
+<!--            <input type="hidden" name="amount" t-att-value="total_fee"/>-->
+<!--            &lt;!&ndash; <input t-if="payment_type" type="hidden" name="payment_type" t-att-value="payment_type"/> &ndash;&gt;-->
+<!--            <input type="hidden" name="allowedMethods" t-att-value="allowedMethods"/>-->
+
+<!--        </form>-->
+        <form t-att-action="api_url" method="get">
             <input  type="visible" name="merchantId" t-att-value="partner"/>
             <input type="hidden" name="_input_charset" t-att-value="_input_charset"/>
             <input t-if="service == 'create_forex_trade'" type="hidden" name="currency" t-att-value="currency"/>
             <input type="visible" name="orderId" t-att-value="out_trade_no"/>
-            <input type="hidden" name="merchantRedirect" t-att-value="return_url"/>
-            <input type="hidden" name="failureRedirect" t-att-value="return_url"/>
+            <input type="hidden" name="merchantRedirect" value="https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html"/>
+            <input type="hidden" name="failureRedirect" value="https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html"/>
             <!-- <input type="hidden" name="service" t-att-value="service"/> -->
             <input type="hidden" name="hash" t-att-value="sign"/>
             <input type="hidden" name="mode" t-att-value="mode"/>
             <input type="hidden" name="amount" t-att-value="total_fee"/>
             <!-- <input t-if="payment_type" type="hidden" name="payment_type" t-att-value="payment_type"/> -->
             <input type="hidden" name="allowedMethods" t-att-value="allowedMethods"/>
-
         </form>
     </template>
 

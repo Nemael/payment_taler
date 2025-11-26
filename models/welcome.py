@@ -138,26 +138,7 @@ class Welcome(models.Model):
 
 
 
-    def getOrderTalerUri(self, order_id):
-        merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
-        url = merchant_url + "/private/orders/" + order_id
 
-        payload = ""
-        headers = {
-            "User-Agent": "TalerOdoo/insomnia/11.3.0",
-            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
-        }
-        talog("Headers: ", headers)
-        talog("Payload: ", payload)
-        response = requests.request("GET", url, data=payload, headers=headers)
-        talog("Response received")
-        if response.status_code != 200:
-            talog("Error getting order taler payment URI, bad response: ", response.text)
-            return ''
-        if "taler_pay_uri" not in response.json():
-            talog("Error getting taler_pay_uri field: ", response.text)
-            return ''
-        return response.json()["taler_pay_uri"]
 
     def getSettingAndPrintIt(self):
         talog(self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default=''))
