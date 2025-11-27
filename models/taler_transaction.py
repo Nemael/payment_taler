@@ -17,7 +17,7 @@ class PaymentTransaction(models.Model):
     test_fulfillment_message = fields.Char(string="Test Order Fulfilment Message", default="Thank youze for your purchase!")
     #test_fulfillment_url = fields.Char(string="Test Order Fulfilment Url", default="Thank youze for your purchase!")
     test_currency = fields.Char(string="Test Order Currency", default="KUDOS")
-    test_amount = fields.Char(string="Test Order Amount", default="1")
+    test_amount = fields.Char(string="Test Order Amount", default="0.01")
     test_latest_order_id = fields.Char(string="Test Latest Order Id", default="1")
     test_order_url = fields.Char(string="Test Last Order URL", default="")
     test_order_uri = fields.Char(string="Test Last Order URI", default="")
@@ -116,6 +116,12 @@ class PaymentTransaction(models.Model):
         rendering_values.update({
             'api_url': self.test_order_url
         })
+        talog("rendering_values: ", rendering_values['api_url'])
+        print("LATEST ORDER ID 4: ", self.test_latest_order_id)
+        print("!!!!!!!!!!!!!!!!!", self.reference)
+        self.reference = self.test_latest_order_id
+        print("!!!!!!!!!!!!!!!!!", self.reference)
+
         return rendering_values
 
     def _get_specific_secret_keys(self):
@@ -197,12 +203,13 @@ class PaymentTransaction(models.Model):
         merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
         url = merchant_url + "/private/orders"
         odoo_base_url = self.provider_id.get_base_url()
+        print('@@@@@@@@@@@@@@@@@@@@@@@@@' + urls.url_join(odoo_base_url, TalerController._fulfillment_url + "/${ORDER_ID}"))
         payload = {
             "order": {
                 "amount": self.test_currency + ":" + self.test_amount,
                 "summary": self.test_summary,
                 "fulfillment_message": self.test_fulfillment_message,
-                'fulfillment_url': urls.url_join(odoo_base_url, TalerController._fulfillment_url)
+                'fulfillment_url': urls.url_join(odoo_base_url, TalerController._fulfillment_url + "/${ORDER_ID}")
             },
             "create_token": False
         }
@@ -216,7 +223,7 @@ class PaymentTransaction(models.Model):
         talog("Payload: ", payload)
         response = requests.request("POST", url, json=payload, headers=headers)
         talog("Response received")
-        talog(response.text)
+        talog(response.tsext)
         if response.status_code != 200:
             talog("Error placing order, bad response: ", response.text)
             return
@@ -228,10 +235,38 @@ class PaymentTransaction(models.Model):
         new_order_record = self._createOrderInOdoo(order_id, order_url)
         order_uri = self._getOrderTalerUri(order_id)
         new_order_record.uri = order_uri
+        talog("order_id: ", order_id)
 
         self.test_latest_order_id = order_id
         self.test_order_url = order_url
         self.test_order_uri = order_uri
+        print("LATEST ORDER ID 1: ", self.test_latest_order_id)
+
+    def _check_if_order_is_paid(self):
+        print("CHECK IF ORDER IS PAID")
+        print("LATEST ORDER ID 2: ", self.test_latest_order_id)
+        self.requestGetOrderFromId()
+
+
+    def requestGetOrderFromId(self):
+        print(self.test_latest_order_id)
+        merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
+        print(merchant_url)
+        url = merchant_url + "/private/orders/" + self.test_latest_order_id
+        payload = ""
+        headers = {
+            "User-Agent": "TalerOdoo",
+            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
+        }
+        talog("Headers: ", headers)
+        talog("Payload: ", payload)
+        response = requests.request("GET", url, data=payload, headers=headers)
+        talog("Response received")
+        talog(response.text)
+        if response.status_code != 200:
+            talog("Error getting order from id, bad response: ", response.text)
+            return
+
 
 
 
