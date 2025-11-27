@@ -23,9 +23,22 @@ class TalerController(http.Controller):
     def taler_return_from_checkout(self, **data):
         print("RETURNED FROM PAYMENT")
         print(data)
-        print("LATEST ORDER ID 3: ", request.env['payment.transaction'].sudo().test_latest_order_id)
-        print("LATEST ORDER ID 3: ", request.env['payment.transaction'])
-        transaction = request.env['payment.transaction'].sudo().search([('reference', '=', data['recvd_order_id'])])
-        transaction._check_if_order_is_paid()
+        # print("LATEST ORDER ID 3: ", request.env['payment.transaction'].sudo().merchant_order_id)
+        # print("LATEST ORDER ID 3: ", request.env['payment.transaction'])
+        transaction = request.env['payment.transaction'].sudo().search([('reference', '=', data.get('recvd_order_id'))])
+        received_merchant_order_id, merchant_orderStatus = transaction._get_orderid_status()
+        if received_merchant_order_id != transaction.merchant_order_id:
+            print("ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR the merchant order id and the odoo order id are different")
+            return
+        data = {'reference': data.get('recvd_order_id'),
+                'merchantOrderId': transaction.merchant_order_id,
+                # 'transactionId': data.get('transactionId'),
+                'paymentStatus': merchant_orderStatus
+        }
+        transaction._handle_notification_data('taler', data)
+
+        return request.redirect('/payment/status')
+
+
 
 

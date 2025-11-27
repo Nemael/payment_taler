@@ -23,8 +23,12 @@ class PaymentTransaction(models.Model):
     test_order_uri = fields.Char(string="Test Last Order URI", default="")
     test_merchant_refund_window = fields.Char(string="Test Merchant Refund Window", default="14")
 
+    #Real fields
+    merchant_order_id = fields.Char(string="Merchant Order Id", default="")
+
 
     def _process_notification_data(self, notification_data):
+        print("PROCESSING NOTIFICATION DATA")
         super()._process_notification_data(notification_data)
         if self.provider_code != 'taler':
             print("Getting into wrong provider code??")
@@ -117,10 +121,10 @@ class PaymentTransaction(models.Model):
             'api_url': self.test_order_url
         })
         talog("rendering_values: ", rendering_values['api_url'])
-        print("LATEST ORDER ID 4: ", self.test_latest_order_id)
-        print("!!!!!!!!!!!!!!!!!", self.reference)
-        self.reference = self.test_latest_order_id
-        print("!!!!!!!!!!!!!!!!!", self.reference)
+        print("LATEST ORDER ID 4: ", self.merchant_order_id)
+        print("!!!!!!!!!!!!!!!!! Order Reference", self.reference)
+        # self.reference = self.merchant_order_id
+        # print("!!!!!!!!!!!!!!!!!", self.reference)
 
         return rendering_values
 
@@ -209,7 +213,8 @@ class PaymentTransaction(models.Model):
                 "amount": self.test_currency + ":" + self.test_amount,
                 "summary": self.test_summary,
                 "fulfillment_message": self.test_fulfillment_message,
-                'fulfillment_url': urls.url_join(odoo_base_url, TalerController._fulfillment_url + "/${ORDER_ID}")
+                # 'fulfillment_url': urls.url_join(odoo_base_url, TalerController._fulfillment_url + "/${ORDER_ID}")
+                'fulfillment_url': urls.url_join(odoo_base_url, TalerController._fulfillment_url + "/" + self.reference)
             },
             "create_token": False
         }
@@ -223,7 +228,7 @@ class PaymentTransaction(models.Model):
         talog("Payload: ", payload)
         response = requests.request("POST", url, json=payload, headers=headers)
         talog("Response received")
-        talog(response.tsext)
+        talog(response.text)
         if response.status_code != 200:
             talog("Error placing order, bad response: ", response.text)
             return
@@ -237,22 +242,31 @@ class PaymentTransaction(models.Model):
         new_order_record.uri = order_uri
         talog("order_id: ", order_id)
 
-        self.test_latest_order_id = order_id
+        self.merchant_order_id = order_id
         self.test_order_url = order_url
         self.test_order_uri = order_uri
-        print("LATEST ORDER ID 1: ", self.test_latest_order_id)
+        print("LATEST ORDER ID 1: ", self.merchant_order_id)
 
     def _check_if_order_is_paid(self):
         print("CHECK IF ORDER IS PAID")
-        print("LATEST ORDER ID 2: ", self.test_latest_order_id)
-        self.requestGetOrderFromId()
+        print("LATEST ORDER ID 2: ", self.merchant_order_id)
+        response = self.requestGetOrderFromId()
+        print(response.json()["order_status"])
+        return response.json()["order_status"] == "paid"
+
+    def _get_orderid_status(self):
+        print("GET ORDER STATUS")
+        response = self.requestGetOrderFromId()
+        print("RESPONSE: ", response.json())
+        print("Order status:" + response.json()["order_status"])
+        return (response.json()["contract_terms"]["order_id"], response.json()["order_status"])
 
 
     def requestGetOrderFromId(self):
-        print(self.test_latest_order_id)
+        print(self.merchant_order_id)
         merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
         print(merchant_url)
-        url = merchant_url + "/private/orders/" + self.test_latest_order_id
+        url = merchant_url + "/private/orders/" + self.merchant_order_id
         payload = ""
         headers = {
             "User-Agent": "TalerOdoo",
@@ -262,10 +276,11 @@ class PaymentTransaction(models.Model):
         talog("Payload: ", payload)
         response = requests.request("GET", url, data=payload, headers=headers)
         talog("Response received")
-        talog(response.text)
+        # talog(response.text)
         if response.status_code != 200:
             talog("Error getting order from id, bad response: ", response.text)
             return
+        return(response)
 
 
 
