@@ -7,4 +7,5 @@ from . import order
 from . import taler_payment
 from . import taler_transaction
 from . import res_config_settings
+from . import AccountMove
 

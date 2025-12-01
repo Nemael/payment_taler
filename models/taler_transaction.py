@@ -11,6 +11,7 @@ from odoo.addons.tops.controllers.taler_controller import TalerController
 
 
 
+
 class PaymentTransaction(models.Model):
     _inherit = 'payment.transaction'
     test_summary = fields.Char(string="Test Order Summary", default="Test order")
@@ -24,43 +25,52 @@ class PaymentTransaction(models.Model):
     test_merchant_refund_window = fields.Char(string="Test Merchant Refund Window", default="14")
 
     #Real fields
+    #Add "taler_" in front of each really used fields
     merchant_order_id = fields.Char(string="Merchant Order Id", default="")
 
 
-    def _process_notification_data(self, notification_data):
-        print("PROCESSING NOTIFICATION DATA")
-        super()._process_notification_data(notification_data)
+    def _process_notification_data(self, data):
+        print("PROCESSING TALER NOTIFICATION DATA")
+        super()._process_notification_data(data)
         if self.provider_code != 'taler':
             print("Getting into wrong provider code??")
             return
 
-        payment_data = self.provider_id._taler_make_request(
-            f'/payments/{self.provider_reference}', method="GET"
-        )
+        # payment_data = self.provider_id._taler_make_request(
+        #     f'/payments/{self.provider_reference}', method="GET"
+        # )
 
         # Update the payment method.
-        payment_method_type = payment_data.get('method', '')
-        if payment_method_type == 'creditcard':
-            payment_method_type = payment_data.get('details', {}).get('cardLabel', '').lower()
-        payment_method = self.env['payment.method']._get_from_code(
-            payment_method_type, mapping=const.PAYMENT_METHODS_MAPPING
-        )
-        self.payment_method_id = payment_method or self.payment_method_id
+        # payment_method_type = payment_data.get('method', '')
+        # if payment_method_type == 'creditcard':
+        #     payment_method_type = payment_data.get('details', {}).get('cardLabel', '').lower()
+        # payment_method = self.env['payment.method']._get_from_code(
+        #     payment_method_type, mapping=const.PAYMENT_METHODS_MAPPING
+        # )
+        # self.payment_method_id = payment_method or self.payment_method_id
 
         # Update the payment state.
-        payment_status = payment_data.get('status')
-        if payment_status == 'pending':
-            self._set_pending()
-        elif payment_status == 'authorized':
-            self._set_authorized()
-        elif payment_status == 'paid':
+        payment_status = data.get('paymentStatus')
+        print(payment_status)
+        # if payment_status == 'pending':
+        #     self._set_pending()
+        # elif payment_status == 'authorized':
+        #     self._set_authorized()
+        # elif payment_status == 'paid':
+        #     self._set_done()
+        # elif payment_status in ['expired', 'canceled', 'failed']:
+        #     self._set_canceled("Mollie: " + _("Cancelled payment with status: %s", payment_status))
+        if (payment_status == 'paid'):
+            talog("Order paid")
             self._set_done()
-        elif payment_status in ['expired', 'canceled', 'failed']:
-            self._set_canceled("Mollie: " + _("Cancelled payment with status: %s", payment_status))
+        elif (payment_status == 'claimed'):
+            talog("Order is claimed by a wallet")
+        elif (payment_status == 'unpaid'):
+            talog("Order is unpaid")
         else:
-            _logger.info(
-                "received data with invalid payment status (%s) for transaction with reference %s",
-                payment_status, self.reference
+            talog(
+                "Received data with invalid payment status (%s) for transaction with reference %s and taler order id %s",
+                payment_status, self.reference, data.get('merchantOrderId')
             )
             self._set_error(
                 "Taler: " + _("Received data with invalid payment status: %s", payment_status)
@@ -281,8 +291,3 @@ class PaymentTransaction(models.Model):
             talog("Error getting order from id, bad response: ", response.text)
             return
         return(response)
-
-
-
-
-

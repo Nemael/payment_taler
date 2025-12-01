@@ -1,0 +1,40 @@
+<odoo>
+    <template id="taler_invoice_footer_logo"
+              inherit_id="account.report_invoice_document">
+
+        <!-- Add after the totals block -->
+        <!--        <xpath expr="//span[hasclass('oe_subtotal_footer_separator')]" position="inside">-->
+        <xpath expr="//div[@class='clearfix invoice_main']" position="after">
+            <t t-if="o.taler_notice">
+                <p style="margin-top:20px; font-size:12px;">
+                    TALER NOTICE: Here is your taler order ID and QR Code:
+                    <t t-esc="o.taler_notice"/>
+                </p>
+            </t>
+            <t t-if="o.taler_qr_image">
+                <div class="text-center" style="margin-top:15px;">
+                    <img t-att-src="'data:image/png;base64,%s' % o.taler_qr_image"
+                         style="max-height:200px;"/>
+                </div>
+            </t>
+            <t t-if="o.taler_order_uri">
+                <p style="margin-top:20px; font-size:12px;">
+                    TALER URI:
+                    <t t-esc="o.taler_order_uri"/>
+                </p>
+            </t>
+            <t t-if="o.taler_notice">
+                <p style="margin-top:20px; font-size:12px;">
+                    TALER NOTICE: Here is your taler QR Code:
+                    <t t-esc="o.taler_notice"/>
+                </p>
+            </t>
+<!--            <div class="text-center" style="margin-top:20px;">-->
+<!--                <img t-att-src="tops/static/src/description/icon.png"-->
+<!--                     style="max-height:120px;"/>-->
+<!--            </div>-->
+
+        </xpath>
+
+    </template>
+</odoo>

@@ -118,11 +118,20 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 - see if my add-on has "iframe support", such as what is shown in the features for this repo https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
 
 
-
-- use this repo's example to make my TODO more robust https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
+- use this repo's example to make my TODO more robust 
+  - https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
+  - https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on/blob/v16/README.md
 
 
 - remove the restriction to the US on the payment method's data file
   - maybe add a restriction to only accept european countries or something
 
 - See if I can make the addon support express checkout
+
+- Add checks for which currency is used when the website or accounting systems are used
+
+- add maybe a "powered by Taler" on the invoices with Taler qr code
+
+- When an invoice is created with a taler qr code, try to edit the invoice, and see if the taler qr code is still there
+
+- Don't forget to set the maximum payment time in Taler orders, depending on the time set on the invoice, or the expected time for eCommerce

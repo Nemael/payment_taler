@@ -18,7 +18,8 @@
         'views/welcome_view.xml',
         'views/order_view.xml',
         'views/res_config_settings_view.xml',
-        'views/taler_payment_view.xml'
+        'views/taler_payment_view.xml',
+        'views/taler_invoice.xml'
     ],
     'installable': True,
     'application': True,
