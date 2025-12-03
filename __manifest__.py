@@ -14,6 +14,7 @@
         'data/tops_welcome_data.xml',
         'data/taler_payment_provider_data.xml',
         'data/taler_payment_method_data.xml',
+        'data/cron.xml'
         'security/ir.model.access.csv',
         'views/welcome_view.xml',
         'views/order_view.xml',

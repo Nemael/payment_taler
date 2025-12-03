@@ -135,3 +135,8 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 - When an invoice is created with a taler qr code, try to edit the invoice, and see if the taler qr code is still there
 
 - Don't forget to set the maximum payment time in Taler orders, depending on the time set on the invoice, or the expected time for eCommerce
+
+- If I integrate a CRON Job for Odoo to check invoices paid, add a setting somewhere to activate or deactivate that cron job running, and allow the user to customize running time as well
+    - In that setting, I can add a tooltip to show recommended values
+
+- Check if data is reset when I update my module 

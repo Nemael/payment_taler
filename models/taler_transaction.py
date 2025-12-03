@@ -33,7 +33,7 @@ class PaymentTransaction(models.Model):
         print("PROCESSING TALER NOTIFICATION DATA")
         super()._process_notification_data(data)
         if self.provider_code != 'taler':
-            print("Getting into wrong provider code??")
+            print("Wrong provider code for trancaction. Provider_code: ", self.provider_code)
             return
 
         # payment_data = self.provider_id._taler_make_request(
