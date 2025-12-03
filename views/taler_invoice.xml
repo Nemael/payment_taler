@@ -11,9 +11,9 @@
                     <t t-esc="o.taler_notice"/>
                 </p>
             </t>
-            <t t-if="o.taler_qr_image">
+            <t t-if="o.taler_qr">
                 <div class="text-center" style="margin-top:15px;">
-                    <img t-att-src="'data:image/png;base64,%s' % o.taler_qr_image"
+                    <img t-att-src="'data:image/png;base64,%s' % o.taler_qr"
                          style="max-height:200px;"/>
                 </div>
             </t>
