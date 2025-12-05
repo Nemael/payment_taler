@@ -1,6 +1,6 @@
 from odoo import models, fields
 from odoo.addons.tops.utils.utils import generate_qr
-from odoo.addons.tops.models.taler_api_mixin import *
+from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage
 
 class TalerInvoicing(models.Model):
     _inherit = ['account.move']
@@ -34,5 +34,3 @@ class TalerInvoicing(models.Model):
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrder(self, self.taler_currency, self.taler_amount, self.taler_order_id, self.taler_order_url)
         self.taler_notice = self.taler_order_id
         self.taler_qr = generate_qr(self.taler_order_uri)
-
-

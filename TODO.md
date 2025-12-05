@@ -137,3 +137,5 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 - Don't forget to set the maximum payment time in Taler orders, depending on the time set on the invoice, or the expected time for eCommerce
 
 - Make sure to add license lines to every file
+
+- Add a token refresh system that refreshes a token when the current one is expired

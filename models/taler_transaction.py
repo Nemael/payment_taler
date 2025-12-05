@@ -2,12 +2,15 @@ from odoo import _, models
 from odoo.exceptions import ValidationError
 
 from odoo.addons.tops import const
-from werkzeug import urls
 from odoo import models, fields
 import requests
-from odoo.addons.tops.utils.utils import *
+from odoo.addons.tops.utils.utils import talog, tawarn
+
+from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus
 
 from odoo.addons.tops.controllers.taler_controller import TalerController
+
+from werkzeug import urls
 
 
 
@@ -15,25 +18,20 @@ from odoo.addons.tops.controllers.taler_controller import TalerController
 class PaymentTransaction(models.Model):
     _inherit = 'payment.transaction'
     test_summary = fields.Char(string="Test Order Summary", default="Test order")
-    test_fulfillment_message = fields.Char(string="Test Order Fulfilment Message", default="Thank youze for your purchase!")
-    #test_fulfillment_url = fields.Char(string="Test Order Fulfilment Url", default="Thank youze for your purchase!")
-    test_currency = fields.Char(string="Test Order Currency", default="KUDOS")
-    test_amount = fields.Char(string="Test Order Amount", default="0.01")
-    test_latest_order_id = fields.Char(string="Test Latest Order Id", default="1")
-    test_order_url = fields.Char(string="Test Last Order URL", default="")
-    test_order_uri = fields.Char(string="Test Last Order URI", default="")
     test_merchant_refund_window = fields.Char(string="Test Merchant Refund Window", default="14")
 
     #Real fields
     #Add "taler_" in front of each really used fields
-    merchant_order_id = fields.Char(string="Merchant Order Id", default="")
+    taler_order_id = fields.Char(string="Taler Order Id", default="")
+    taler_order_url = fields.Char(string="Taler Order Url", default="")
+    taler_order_uri = fields.Char(string="Taler Order Uri", default="")
 
 
     def _process_notification_data(self, data):
         print("PROCESSING TALER NOTIFICATION DATA")
         super()._process_notification_data(data)
         if self.provider_code != 'taler':
-            print("Getting into wrong provider code??")
+            print("Getting not taler provider code: ", self.provider_code)
             return
 
         # payment_data = self.provider_id._taler_make_request(
@@ -78,10 +76,23 @@ class PaymentTransaction(models.Model):
 
     def _get_specific_rendering_values(self, values):
         tawarn('Processing rendering values')
-        self._requestGetToken()
-        self._postPlaceOrder()
-        tawarn(self.test_order_url)
-        tawarn(self.test_order_uri)
+        print("aaaaa", self.amount)
+        print("aaaaa", self.currency_id)
+        print("aaaaa", self.currency_id.name)
+        print("aaaaa", self.currency_id.symbol)
+        order_summary = "Odoo order for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
+        requestGetToken(self)
+        self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
+                                                                                  self,
+                                                                                  #self.currency_id.name,
+                                                                                  "KUDOS", #testing value, remove for release and uncomment line above
+                                                                                  #self.amount,
+                                                                                  "0.01", #testing amount, remove for release and uncomment line above
+                                                                                  order_summary,
+                                                                                  self.provider_id.fulfillment_message,
+                                                                                  TalerController._fulfillment_url)
+        tawarn(self.taler_order_url)
+        tawarn(self.taler_order_uri)
 
 
         new_values = super()._get_specific_rendering_values(values)
@@ -128,12 +139,12 @@ class PaymentTransaction(models.Model):
         # })
         tawarn(rendering_values)
         rendering_values.update({
-            'api_url': self.test_order_url
+            'api_url': self.taler_order_url
         })
         talog("rendering_values: ", rendering_values['api_url'])
-        print("LATEST ORDER ID 4: ", self.merchant_order_id)
+        print("LATEST ORDER ID 4: ", self.taler_order_id)
         print("!!!!!!!!!!!!!!!!! Order Reference", self.reference)
-        # self.reference = self.merchant_order_id
+        # self.reference = self.taler_order_id
         # print("!!!!!!!!!!!!!!!!!", self.reference)
 
         return rendering_values
@@ -153,141 +164,5 @@ class PaymentTransaction(models.Model):
             return
         return
 
-    def _requestGetToken(self):
-        talog("Getting token")
-        merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
-        talog(merchant_url)
-        url = merchant_url + "/private/token"
-        payload = {"scope": "write"}
-        headers = {
-            "Content-Type": "application/json",
-            "User-Agent": "TalerOdoo",
-            "Authorization": "Bearer secret-token:" + self.env['ir.config_parameter'].sudo().get_param('tops.password', default='')
-        }
-        talog("Headers: ", headers)
-        talog("Payload: ", payload)
-        response = requests.request("POST", url, json=payload, headers=headers)
-        talog("Response received")
-        talog(response.text)
-        if response.status_code != 200:
-            talog("Error getting token, bad response: ", response.text)
-            return
-        if "token" not in response.json():
-            talog("Error getting new token: ", response.text)
-            return
-        self.env['ir.config_parameter'].sudo().set_param('tops.secret_token', response.json()["token"])
-        talog(self.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
-
-    def _createOrderInOdoo(self, taler_id, url):
-        #DELETE THIS ONE
-        return (self.env['tops.order'].create({
-            'taler_id': taler_id,
-            'summary': self.test_summary,
-            'fulfilment_message': self.test_fulfillment_message,
-            'amount': self.test_amount,
-            'currency': self.test_currency,
-            'creation_time': fields.Datetime.now().isoformat(),
-            'url': url,
-            'merchant_refund_window': self.test_merchant_refund_window,
-            'merchant_server': self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default=''),
-        }))
-
-    def _getOrderTalerUri(self, order_id):
-        merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
-        url = merchant_url + "/private/orders/" + order_id
-
-        payload = ""
-        headers = {
-            "User-Agent": "TalerOdoo/insomnia/11.3.0",
-            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
-        }
-        talog("Headers: ", headers)
-        talog("Payload: ", payload)
-        response = requests.request("GET", url, data=payload, headers=headers)
-        talog("Response received")
-        if response.status_code != 200:
-            talog("Error getting order taler payment URI, bad response: ", response.text)
-            return ''
-        if "taler_pay_uri" not in response.json():
-            talog("Error getting taler_pay_uri field: ", response.text)
-            return ''
-        return response.json()["taler_pay_uri"]
-
-    def _postPlaceOrder(self):
-        merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
-        url = merchant_url + "/private/orders"
-        odoo_base_url = self.provider_id.get_base_url()
-        print('@@@@@@@@@@@@@@@@@@@@@@@@@' + urls.url_join(odoo_base_url, TalerController._fulfillment_url + "/${ORDER_ID}"))
-        payload = {
-            "order": {
-                "amount": self.test_currency + ":" + self.test_amount,
-                "summary": self.test_summary,
-                "fulfillment_message": self.test_fulfillment_message,
-                # 'fulfillment_url': urls.url_join(odoo_base_url, TalerController._fulfillment_url + "/${ORDER_ID}")
-                'fulfillment_url': urls.url_join(odoo_base_url, TalerController._fulfillment_url + "/" + self.reference)
-            },
-            "create_token": False
-        }
-        talog(self.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
-        headers = {
-            "Content-Type": "application/json",
-            "User-Agent": "TalerOdoo/insomnia/11.3.0",
-            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
-        }
-        talog("Headers: ", headers)
-        talog("Payload: ", payload)
-        response = requests.request("POST", url, json=payload, headers=headers)
-        talog("Response received")
-        talog(response.text)
-        if response.status_code != 200:
-            talog("Error placing order, bad response: ", response.text)
-            return
-        if "order_id" not in response.json():
-            talog("Error getting new order_id: ", response.text)
-            return
-        order_id = response.json()["order_id"]
-        order_url = merchant_url + "/orders/" + order_id
-        new_order_record = self._createOrderInOdoo(order_id, order_url)
-        order_uri = self._getOrderTalerUri(order_id)
-        new_order_record.uri = order_uri
-        talog("order_id: ", order_id)
-
-        self.merchant_order_id = order_id
-        self.test_order_url = order_url
-        self.test_order_uri = order_uri
-        print("LATEST ORDER ID 1: ", self.merchant_order_id)
-
-    def _check_if_order_is_paid(self):
-        print("CHECK IF ORDER IS PAID")
-        print("LATEST ORDER ID 2: ", self.merchant_order_id)
-        response = self.requestGetOrderFromId()
-        print(response.json()["order_status"])
-        return response.json()["order_status"] == "paid"
-
     def _get_orderid_status(self):
-        print("GET ORDER STATUS")
-        response = self.requestGetOrderFromId()
-        print("RESPONSE: ", response.json())
-        print("Order status:" + response.json()["order_status"])
-        return (response.json()["contract_terms"]["order_id"], response.json()["order_status"])
-
-
-    def requestGetOrderFromId(self):
-        print(self.merchant_order_id)
-        merchant_url = self.env['ir.config_parameter'].sudo().get_param('tops.merchant_url', default='')
-        print(merchant_url)
-        url = merchant_url + "/private/orders/" + self.merchant_order_id
-        payload = ""
-        headers = {
-            "User-Agent": "TalerOdoo",
-            "Authorization": "Bearer " + self.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
-        }
-        talog("Headers: ", headers)
-        talog("Payload: ", payload)
-        response = requests.request("GET", url, data=payload, headers=headers)
-        talog("Response received")
-        # talog(response.text)
-        if response.status_code != 200:
-            talog("Error getting order from id, bad response: ", response.text)
-            return
-        return(response)
+        return getOrderIdStatus(self)

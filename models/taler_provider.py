@@ -19,7 +19,24 @@ class TalerPayment(models.Model):
     print("adding code")
     code = fields.Selection(selection_add=[("taler", "Taler1")], ondelete={"taler": "set default"})
     print("code added")
-    taler_api_key = fields.Char(string="taler_api_key")
+
+    #taler_merchant_url = fields.Char(string="Taler Merchant URL", help="URL to the Taler merchant instance you'd like to use")
+    #Testing value is "https://backend.demo.taler.net/instances/sandbox"
+    taler_merchant_url = fields.Char(string="Taler Merchant URL",
+                                     help="URL to the Taler merchant instance you'd like to use",
+                                     default="https://backend.demo.taler.net/instances/sandbox")
+
+    #taler_merchant_password = fields.Char(string="Taler Merchant Password", help="Password to the Taler merchant instance you'd like to use")
+    #Testing value is "sandbox"
+    taler_merchant_password = fields.Char(string="Taler Merchant Password",
+                                          help="Password to the Taler merchant instance you'd like to use",
+                                          default="sandbox")
+
+    taler_token = fields.Char(string="Taler Merchant Token, you should not be able to see this parameter")
+    fulfillment_message = fields.Char(string="Taler fulfillment message",
+                                      help="Fulfillment message shown to the user after paying for the order",
+                                      default="Thank you for your purchase")
+
 
     def _get_supported_currencies(self):
         """ Override of `payment` to return the supported currencies. """
