@@ -42,7 +42,8 @@ class TalerInvoicing(models.Model):
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,
                                                                                                                # self.currency_id.name,
                                                                                                                "KUDOS", # testing value, remove for release and uncomment line above
-                                                                                                               self.amount_total,
+                                                                                                               # self.amount_total,
+                                                                                                               "0.02", # testing value, remove for release and uncomment line above
                                                                                                                order_summary,
                                                                                                                self.provider_id.fulfillment_message)
         self.taler_notice = self.taler_order_id
