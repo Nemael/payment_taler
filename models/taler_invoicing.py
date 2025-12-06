@@ -15,6 +15,11 @@ class TalerInvoicing(models.Model):
     taler_order_url = fields.Char(string="Taler Order URL", default="")
     taler_order_uri = fields.Char(string="Taler Order URI", default="")
     taler_qr = fields.Char(string="Taler QR")
+    provider_id = fields.Many2one(
+        "payment.provider",
+        string="Taler Provider",
+        default=lambda self: self.env["payment.provider"].search([("code", "=", "taler")], limit=1).id,
+    )
 
     def action_post(self):
         res = super().action_post()
@@ -29,8 +34,16 @@ class TalerInvoicing(models.Model):
 
     def _taler_invoice_create(self):
         print("My custom invoice creation")
+        # self.provider_id = self.env['payment.provider'].search([('code', '=', 'taler')], limit=1)
+        #Delete this one
         self.taler_notice = "My custom post creation"
+        order_summary = "Odoo reference " + self.name + " for " + str(self.amount_total) + str(self.currency_id.symbol) + " " + self.currency_id.name
         requestGetToken(self)
-        self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrder(self, self.taler_currency, self.taler_amount, self.taler_order_id, self.taler_order_url)
+        self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,
+                                                                                                               # self.currency_id.name,
+                                                                                                               "KUDOS", # testing value, remove for release and uncomment line above
+                                                                                                               self.amount_total,
+                                                                                                               order_summary,
+                                                                                                               self.provider_id.fulfillment_message)
         self.taler_notice = self.taler_order_id
         self.taler_qr = generate_qr(self.taler_order_uri)

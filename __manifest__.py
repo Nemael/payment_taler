@@ -11,15 +11,11 @@
     'depends': ['base', 'payment', 'website', 'website_sale', 'account'], #website, website_sale and account might not be required, I have added them from another example, check later if they are required.
     'data': [
         'views/taler_payment_template.xml',
-        'data/tops_welcome_data.xml',
-        'data/taler_payment_provider_data.xml',
+        'views/taler_provider_view.xml',
+        'views/taler_invoice_view.xml',
         'data/taler_payment_method_data.xml',
-        'security/ir.model.access.csv',
-        'views/welcome_view.xml',
-        'views/order_view.xml',
-        'views/res_config_settings_view.xml',
-        'views/taler_payment_view.xml',
-        'views/taler_invoice.xml'
+        'data/taler_payment_provider_data.xml',
+        'security/ir.model.access.csv'
     ],
     'installable': True,
     'application': True,

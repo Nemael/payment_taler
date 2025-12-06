@@ -12,6 +12,8 @@ from odoo.addons.tops.controllers.taler_controller import TalerController
 
 from werkzeug import urls
 
+from odoo.http import request
+
 
 
 
@@ -34,30 +36,9 @@ class PaymentTransaction(models.Model):
             print("Getting not taler provider code: ", self.provider_code)
             return
 
-        # payment_data = self.provider_id._taler_make_request(
-        #     f'/payments/{self.provider_reference}', method="GET"
-        # )
-
-        # Update the payment method.
-        # payment_method_type = payment_data.get('method', '')
-        # if payment_method_type == 'creditcard':
-        #     payment_method_type = payment_data.get('details', {}).get('cardLabel', '').lower()
-        # payment_method = self.env['payment.method']._get_from_code(
-        #     payment_method_type, mapping=const.PAYMENT_METHODS_MAPPING
-        # )
-        # self.payment_method_id = payment_method or self.payment_method_id
-
         # Update the payment state.
         payment_status = data.get('paymentStatus')
         print(payment_status)
-        # if payment_status == 'pending':
-        #     self._set_pending()
-        # elif payment_status == 'authorized':
-        #     self._set_authorized()
-        # elif payment_status == 'paid':
-        #     self._set_done()
-        # elif payment_status in ['expired', 'canceled', 'failed']:
-        #     self._set_canceled("Mollie: " + _("Cancelled payment with status: %s", payment_status))
         if (payment_status == 'paid'):
             talog("Order paid")
             self._set_done()
@@ -74,14 +55,21 @@ class PaymentTransaction(models.Model):
                 "Taler: " + _("Received data with invalid payment status: %s", payment_status)
             )
 
+
     def _get_specific_rendering_values(self, values):
         tawarn('Processing rendering values')
+        new_values = super()._get_specific_rendering_values(values)
         print("aaaaa", self.amount)
         print("aaaaa", self.currency_id)
         print("aaaaa", self.currency_id.name)
         print("aaaaa", self.currency_id.symbol)
-        order_summary = "Odoo order for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
+        order_summary = "Odoo reference " + self.reference + " for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
+        print("?????", self.provider_id.taler_token)
         requestGetToken(self)
+        print("?????", self.provider_id.taler_token)
+        print(">>>>>>>>>>>>>", self.reference)
+        print(">>>>>>>>>>>>>", TalerController._fulfillment_url)
+
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
                                                                                   #self.currency_id.name,
@@ -94,8 +82,6 @@ class PaymentTransaction(models.Model):
         tawarn(self.taler_order_url)
         tawarn(self.taler_order_uri)
 
-
-        new_values = super()._get_specific_rendering_values(values)
         if self.provider_code != 'taler':
             return new_values
 
