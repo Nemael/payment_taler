@@ -3,8 +3,7 @@ from odoo.addons.tops.utils.utils import generate_qr
 from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage
 
 class TalerInvoicing(models.Model):
-    _inherit = ['account.move']
-    # _inherit = 'account.move'
+    _inherit = ['account.move', 'taler.api.mixin']
 
     taler_notice = fields.Char(string="Taler notice", default="") #can remove from here and xml file
     taler_fulfillment_message = fields.Char(string="Fulfillment message", default="")
@@ -15,6 +14,8 @@ class TalerInvoicing(models.Model):
     taler_order_url = fields.Char(string="Taler Order URL", default="")
     taler_order_uri = fields.Char(string="Taler Order URI", default="")
     taler_qr = fields.Char(string="Taler QR")
+
+    #I maybe can remove this provider_id field, it was for invoices. To test
     provider_id = fields.Many2one(
         "payment.provider",
         string="Taler Provider",
@@ -33,6 +34,7 @@ class TalerInvoicing(models.Model):
         return res
 
     def _taler_invoice_create(self):
+        self.printA()
         print("My custom invoice creation")
         # self.provider_id = self.env['payment.provider'].search([('code', '=', 'taler')], limit=1)
         #Delete this one
@@ -42,7 +44,8 @@ class TalerInvoicing(models.Model):
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,
                                                                                                                # self.currency_id.name,
                                                                                                                "KUDOS", # testing value, remove for release and uncomment line above
-                                                                                                               self.amount_total,
+                                                                                                               # self.amount_total,
+                                                                                                               "0.02", # testing value, remove for release and uncomment line above
                                                                                                                order_summary,
                                                                                                                self.provider_id.fulfillment_message)
         self.taler_notice = self.taler_order_id

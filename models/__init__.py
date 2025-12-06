@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: LGPL-3.0-or-later
 
 from . import taler_api_methods
+from . import taler_api_mixin
 from . import taler_provider
 from . import taler_transaction
 from . import taler_invoicing
