@@ -3,7 +3,7 @@ from odoo.addons.tops.utils.utils import generate_qr
 from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage
 
 class TalerInvoicing(models.Model):
-    _inherit = ['account.move']
+    _inherit = 'account.move'
     # _inherit = 'account.move'
 
     taler_notice = fields.Char(string="Taler notice", default="") #can remove from here and xml file
@@ -15,6 +15,9 @@ class TalerInvoicing(models.Model):
     taler_order_url = fields.Char(string="Taler Order URL", default="")
     taler_order_uri = fields.Char(string="Taler Order URI", default="")
     taler_qr = fields.Char(string="Taler QR")
+
+
+    #I maybe can remove this provider_id field, it was for invoices. To test
     provider_id = fields.Many2one(
         "payment.provider",
         string="Taler Provider",
@@ -27,8 +30,8 @@ class TalerInvoicing(models.Model):
         for move in self:
             print("CHECKING MOVE")
             print(move.preferred_payment_method_line_id.name)
-            if move.move_type in ('out_invoice', 'in_invoice') and move.preferred_payment_method_line_id.name == "Taler2":  # only invoices/bills
-                #I should probably make this if only for either out or in invoices
+            if move.move_type in ('out_invoice', 'in_invoice') and move.preferred_payment_method_line_id.code == "taler":  # only invoices/bills
+                #I should probably make this "if" only for either out or in invoices
                 move._taler_invoice_create()
         return res
 
