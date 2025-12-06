@@ -35,7 +35,7 @@ class TalerPayment(models.Model):
     taler_token = fields.Char(string="Taler Merchant Token, you should not be able to see this parameter")
     fulfillment_message = fields.Char(string="Taler fulfillment message",
                                       help="Fulfillment message shown to the user after paying for the order",
-                                      default="Thank you for your purchase")
+                                      default="Thank you for your payment with Taler")
 
 
     def _get_supported_currencies(self):

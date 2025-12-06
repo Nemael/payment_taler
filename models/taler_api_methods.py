@@ -2,7 +2,7 @@ from odoo.addons.tops.utils.utils import talog, tawarn
 import requests
 from werkzeug import urls
 
-#This is a temporary solution, I cannot do proper inheritance due to Odoo mixins, and this solution allows for some genericity that's enough for now+
+#This whole file is a temporary solution, I cannot do proper inheritance due to Odoo mixins, and this solution allows for some genericity that's enough for now+
 def requestGetToken(model):
     talog("Getting token")
     print(model)
@@ -16,7 +16,7 @@ def requestGetToken(model):
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "TalerOdoo",
-        "Authorization": "Bearer secret-token:" + model.env['ir.config_parameter'].sudo().get_param('tops.password', default='')
+        "Authorization": "Bearer secret-token:" + getTalerPassword(model)
     }
     talog("Headers: ", headers)
     talog("Payload: ", payload)
@@ -32,6 +32,26 @@ def requestGetToken(model):
     model.provider_id.taler_token = response.json()["token"]
     talog(model.provider_id.taler_token)
 
+#TODELETE
+# def requestGetTransientToken(model):
+#     #Request a new token and send it as return value, for the purpose of using the token only for a short amount of time
+#     taler_url = getTalerUrl(model)
+#     url = taler_url + "/private/token"
+#     payload = {"scope": "write"}
+#     headers = {
+#         "Content-Type": "application/json",
+#         "User-Agent": "TalerOdoo",
+#         "Authorization": "Bearer secret-token:" + getTalerPassword(model)
+#     }
+#     response = requests.request("POST", url, json=payload, headers=headers)
+#     if response.status_code != 200:
+#         talog("Error getting token, bad response: ", response.text)
+#         return
+#     if "token" not in response.json():
+#         talog("Error getting new token: ", response.text)
+#         return
+#     return(response.json()["token"])
+
 def getOrderTalerUri(model, order_id):
     taler_url = getTalerUrl(model)
     url = taler_url + "/private/orders/" + order_id
@@ -39,7 +59,7 @@ def getOrderTalerUri(model, order_id):
     payload = ""
     headers = {
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
-        "Authorization": "Bearer " + model.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
+        "Authorization": "Bearer " + getTalerToken(model)
     }
     talog("Headers: ", headers)
     talog("Payload: ", payload)
@@ -64,11 +84,11 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
         },
         "create_token": False
     }
-    talog(model.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
+    talog(getTalerToken(model))
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
-        "Authorization": "Bearer " + model.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
+        "Authorization": "Bearer " + getTalerToken(model)
     }
     talog("Headers: ", headers)
     talog("Payload: ", payload)
@@ -102,11 +122,11 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
         },
         "create_token": False
     }
-    talog(model.env['ir.config_parameter'].sudo().get_param('tops.secret_token'))
+    talog(getTalerToken(model))
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
-        "Authorization": "Bearer " + model.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
+        "Authorization": "Bearer " + getTalerToken(model)
     }
     talog("Headers: ", headers)
     talog("Payload: ", payload)
@@ -136,7 +156,7 @@ def requestGetOrderFromId(model):
     payload = ""
     headers = {
         "User-Agent": "TalerOdoo",
-        "Authorization": "Bearer " + model.env['ir.config_parameter'].sudo().get_param('tops.secret_token')
+        "Authorization": "Bearer " + getTalerToken(model)
     }
     talog("requestGetOrderFromId logs")
     talog("URL: ", url)
@@ -167,5 +187,17 @@ def getOrderIdStatus(model):
 def getTalerUrl(model):
     taler_url = model.provider_id.taler_merchant_url
     if not taler_url or taler_url == "":
-        raise Exception("Taler URL is empty. Did you set it correctly in the provider view?")
-    return model.provider_id.taler_merchant_url
+        raise Exception("Taler URL is empty or incorrect. Did you set it correctly in the provider view?")
+    return taler_url
+
+def getTalerPassword(model):
+    taler_password = model.provider_id.taler_merchant_password
+    if not taler_password or taler_password == "":
+        raise Exception("Taler Password is empty or incorrect. Did you set it correctly in the provider view?")
+    return taler_password
+
+def getTalerToken(model):
+    taler_token = model.provider_id.taler_token
+    if not taler_token or taler_token == "":
+        raise Exception("Taler Token is empty")
+    return taler_token
