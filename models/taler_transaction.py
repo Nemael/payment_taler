@@ -58,25 +58,17 @@ class PaymentTransaction(models.Model):
 
     def _get_specific_rendering_values(self, values):
         tawarn('Processing rendering values')
+        new_values = super()._get_specific_rendering_values(values)
         print("aaaaa", self.amount)
         print("aaaaa", self.currency_id)
         print("aaaaa", self.currency_id.name)
         print("aaaaa", self.currency_id.symbol)
-        order_summary = "Odoo order for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
+        order_summary = "Odoo reference " + self.reference + " for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
         print("?????", self.provider_id.taler_token)
         requestGetToken(self)
         print("?????", self.provider_id.taler_token)
         print(">>>>>>>>>>>>>", self.reference)
         print(">>>>>>>>>>>>>", TalerController._fulfillment_url)
-
-        # #This means the payment is for an invoice
-        # if self.reference[0:4] == "INV/" and request.env['account.move'].sudo().search([('name', '=', values["reference"])]).preferred_payment_method_line_id.name == "Taler2":
-        #     #Invoice exists and is Taler
-        #     invoice = request.env['account.move'].sudo().search([('name', '=', values["reference"])])
-        #     if invoice.preferred_payment_method_line_id.name == "Taler2":
-        #         self.taler_order_id = invoice.taler_order_id
-        #         self.taler_order_url = invoice.taler_order_url
-        #         self.taler_order_uri = invoice.taler_order_uri
 
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
@@ -90,7 +82,6 @@ class PaymentTransaction(models.Model):
         tawarn(self.taler_order_url)
         tawarn(self.taler_order_uri)
 
-        new_values = super()._get_specific_rendering_values(values)
         if self.provider_code != 'taler':
             return new_values
 

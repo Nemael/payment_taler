@@ -35,7 +35,6 @@ class TalerController(http.Controller):
             return
         data = {'reference': data.get('recvd_order_id'),
                 'merchantOrderId': transaction.taler_order_id,
-                # 'transactionId': data.get('transactionId'),
                 'paymentStatus': taler_orderStatus
         }
         transaction._handle_notification_data('taler', data)
@@ -52,66 +51,18 @@ class TalerController(http.Controller):
         #We need to do invoice reconciliation when a payment leads to this page
         print("TALER RETURNED FROM INVOICE PAYMENT")
         reference = data.get('prefix') + "/" + str(data.get('year')) + "/" + data.get('number')
-        print(reference)
-        invoice = request.env['account.move'].sudo().search([('name', '=', reference)])
-        if not invoice:
-            return "Invoice not found"
-        transaction = request.env['payment.transaction'].sudo().search([('reference', '=', reference)], limit=1)
+
+        transaction = request.env['payment.transaction'].sudo().search([('reference', '=', reference)])
         if not transaction:
-            return "Transaction not found"
-
-        print("Invoice and transaction found")
-        print(invoice)
-        print(transaction)
-
-        if transaction.currency_id != invoice.currency_id:
-            return "Currency mismatch"
-
-
-        print("Invoice amount residual: ", invoice.amount_residual)
-        if transaction.amount != invoice.amount_residual:
-            return "Amount mismatch"
-
-
-        print("Curency and amount match")
-
+            print("No transaction found for reference: ", data.get('recvd_order_id'))
+            return
         received_taler_order_id, taler_orderStatus = transaction._get_orderid_status()
-
-        data = {'reference': data.get('recvd_order_id'),
+        if received_taler_order_id != transaction.taler_order_id:
+            return
+        data = {'reference': reference,
                 'merchantOrderId': transaction.taler_order_id,
-                # 'transactionId': data.get('transactionId'),
                 'paymentStatus': taler_orderStatus
         }
-
         transaction._handle_notification_data('taler', data)
 
-
-        print("transactions has been handled")
-        print(transaction.state)
-        print(transaction.payment_id.journal_id.default_account_id.name)
-        print(transaction.payment_id.journal_id.default_account_id.code)
-        print("!")
-        if transaction.state == 'done':
-            print("Transaction has been paid")
-            invoice.js_assign_outstanding_line(transaction.id)
-        print("ready to return")
-        #return request.redirect('/payment/status')
-
-
-
-
-
-        # print(invoice)
-        # print("----------------------------------------------------")
-        # print(invoice.taler_order_id)
-        # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-        # for payment in invoice.matched_payment_ids:
-        #     print(payment.payment_transaction_id)
-        #     print(payment.payment_transaction_id.taler_order_id)
-        # print("??????????????????????")
-        # print(invoice.origin_payment_id)
-        # print(invoice.origin_payment_id.taler_order_id)
-        # print(",,,,,,,,,,,,,,,,,,,,,,,,,")
-        # print(invoice.matched_payment_ids)
-        # for payment in invoice.matched_payment_ids:
-        #     print(payment.taler_order_id)
+        return request.redirect('/payment/status')
