@@ -7,7 +7,10 @@
         <field name="arch" type="xml">
             <group name="provider_credentials" position="inside">
                 <group invisible="code != 'taler'">
-                    <field name="taler_api_key" string="My custom API Key" required="code == 'taler' and state != 'disabled'" password="True"/>
+                    <field name="taler_merchant_url" required="code == 'taler' and state != 'disabled'"/>
+                    <field name="taler_merchant_password" required="code == 'taler' and state != 'disabled'" password="True"/>
+                    <field name="fulfillment_message" required="code == 'taler' and state != 'disabled'"/>
+
                 </group>
             </group>
         </field>

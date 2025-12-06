@@ -8,6 +8,9 @@ class Color:
 import datetime
 import os
 import logging
+import qrcode
+import base64
+from io import BytesIO
 
 _logger = logging.getLogger("TOPS")
 
@@ -49,3 +52,18 @@ def tawarn(*args):
 
 def squareNumber(num): #For testing purposes
     return num ** 2
+
+
+def generate_qr(url):
+    print("????? Generating QR code")
+    qr = qrcode.QRCode(box_size=10, border=2)
+    qr.add_data(url)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="black", back_color="white")
+
+    buf = BytesIO()
+    img.save(buf, format='PNG')
+    qr_bytes = buf.getvalue()
+    print("{{{{{{{{{{{{{{", base64.b64encode(qr_bytes).decode("utf-8"))
+
+    return base64.b64encode(qr_bytes).decode("utf-8")
