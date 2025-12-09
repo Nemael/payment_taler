@@ -17,7 +17,7 @@ class TalerPayment(models.Model):
     # available_country_ids = fields.Many2many("tops.country", string="TOPS Available Countries")
 
     print("adding code")
-    code = fields.Selection(selection_add=[("taler", "Taler1")], ondelete={"taler": "set default"})
+    code = fields.Selection(selection_add=[("taler", "Taler")], ondelete={"taler": "set default"})
     print("code added")
 
     #taler_merchant_url = fields.Char(string="Taler Merchant URL", help="URL to the Taler merchant instance you'd like to use")
