@@ -4,9 +4,8 @@ from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlace
 
 class TalerInvoicing(models.Model):
     _inherit = 'account.move'
-    # _inherit = 'account.move'
 
-    taler_notice = fields.Char(string="Taler notice", default="") #can remove from here and xml file
+    is_taler_invoice = fields.Boolean(default=False)
     taler_fulfillment_message = fields.Char(string="Fulfillment message", default="")
     taler_currency = fields.Char(string="Test Order Currency", default="KUDOS")
     taler_summary = fields.Char(string="Test Order Summary", default="Test order")
@@ -31,7 +30,8 @@ class TalerInvoicing(models.Model):
             print("CHECKING MOVE")
             print(move.preferred_payment_method_line_id.name)
             if move.move_type in ('out_invoice', 'in_invoice') and move.preferred_payment_method_line_id.code == "taler":  # only invoices/bills
-                #I should probably make this "if" only for either out or in invoices
+                #I should probably make this "if" only for either 'out' or 'in' invoices
+                self.is_taler_invoice = True
                 move._taler_invoice_create()
         return res
 
@@ -39,7 +39,6 @@ class TalerInvoicing(models.Model):
         print("My custom invoice creation")
         # self.provider_id = self.env['payment.provider'].search([('code', '=', 'taler')], limit=1)
         #Delete this one
-        self.taler_notice = "My custom post creation"
         order_summary = "Odoo reference " + self.name + " for " + str(self.amount_total) + str(self.currency_id.symbol) + " " + self.currency_id.name
         requestGetToken(self)
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,
@@ -49,5 +48,4 @@ class TalerInvoicing(models.Model):
                                                                                                                "0.02", # testing value, remove for release and uncomment line above
                                                                                                                order_summary,
                                                                                                                self.provider_id.fulfillment_message)
-        self.taler_notice = self.taler_order_id
         self.taler_qr = generate_qr(self.taler_order_uri)
