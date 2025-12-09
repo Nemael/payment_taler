@@ -1,40 +1,32 @@
 <odoo>
     <template id="taler_invoice_footer_logo"
               inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@class='clearfix invoice_main']" position="inside">
+            <t t-if="o.is_taler_invoice">
+                <t t-if="o.taler_qr">
+                    <div class="text-center">
+                        Please scan this QR Code with your Taler Wallet to complete the payment.
+                    </div>
+                    <div class="text-center">
+                        <img t-att-src="'data:image/png;base64,%s' % o.taler_qr"
+                             style="max-height:200px;"/>
+                    </div>
+                </t>
 
-        <!-- Add after the totals block -->
-        <!--        <xpath expr="//span[hasclass('oe_subtotal_footer_separator')]" position="inside">-->
-        <xpath expr="//div[@class='clearfix invoice_main']" position="after">
-            <t t-if="o.taler_notice">
                 <p style="margin-top:20px; font-size:12px;">
-                    TALER NOTICE: Here is your taler order ID and QR Code:
-                    <t t-esc="o.taler_notice"/>
+                    <t t-if="o.taler_order_id">
+                        Taler payment information:
+                        <br/>
+                        Order ID: <t t-esc="o.taler_order_id"/>
+                        <br/>
+                    </t>
+                    <t t-if="o.taler_order_uri">
+                        Taler order URI: <t t-esc="o.taler_order_uri"/>
+                        <br/>
+                        Please use this URI if you have an issue with the above Taler QR Code.
+                    </t>
                 </p>
             </t>
-            <t t-if="o.taler_qr">
-                <div class="text-center" style="margin-top:15px;">
-                    <img t-att-src="'data:image/png;base64,%s' % o.taler_qr"
-                         style="max-height:200px;"/>
-                </div>
-            </t>
-            <t t-if="o.taler_order_uri">
-                <p style="margin-top:20px; font-size:12px;">
-                    TALER URI:
-                    <t t-esc="o.taler_order_uri"/>
-                </p>
-            </t>
-            <t t-if="o.taler_notice">
-                <p style="margin-top:20px; font-size:12px;">
-                    TALER NOTICE: Here is your taler QR Code:
-                    <t t-esc="o.taler_notice"/>
-                </p>
-            </t>
-<!--            <div class="text-center" style="margin-top:20px;">-->
-<!--                <img t-att-src="tops/static/src/description/icon.png"-->
-<!--                     style="max-height:120px;"/>-->
-<!--            </div>-->
-
         </xpath>
-
     </template>
 </odoo>
