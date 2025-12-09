@@ -1,6 +1,6 @@
 from odoo import models, fields
 from odoo.addons.tops.utils.utils import generate_qr
-from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage
+from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage, generateUUID
 
 class TalerInvoicing(models.Model):
     _inherit = 'account.move'
@@ -14,6 +14,7 @@ class TalerInvoicing(models.Model):
     taler_order_url = fields.Char(string="Taler Order URL", default="")
     taler_order_uri = fields.Char(string="Taler Order URI", default="")
     taler_qr = fields.Char(string="Taler QR")
+    taler_uuid = fields.Char(string="Taler UUID", default="")
 
 
     #I maybe can remove this provider_id field, it was for invoices. To test
@@ -39,6 +40,7 @@ class TalerInvoicing(models.Model):
         print("My custom invoice creation")
         # self.provider_id = self.env['payment.provider'].search([('code', '=', 'taler')], limit=1)
         #Delete this one
+        self.taler_uuid = generateUUID()
         order_summary = "Odoo reference " + self.name + " for " + str(self.amount_total) + str(self.currency_id.symbol) + " " + self.currency_id.name
         requestGetToken(self)
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,
@@ -47,5 +49,5 @@ class TalerInvoicing(models.Model):
                                                                                                                # self.amount_total,
                                                                                                                "0.02", # testing value, remove for release and uncomment line above
                                                                                                                order_summary,
-                                                                                                               self.provider_id.fulfillment_message)
+                                                                                                               self.provider_id.fulfillment_message + " Ref: " + self.taler_uuid)
         self.taler_qr = generate_qr(self.taler_order_uri)

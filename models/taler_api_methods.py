@@ -1,6 +1,7 @@
 from odoo.addons.tops.utils.utils import talog, tawarn
 import requests
 from werkzeug import urls
+import uuid
 
 #This whole file is a temporary solution, I cannot do proper inheritance due to Odoo mixins, and this solution allows for some genericity that's enough for now+
 def requestGetToken(model):
@@ -201,3 +202,6 @@ def getTalerToken(model):
     if not taler_token or taler_token == "":
         raise Exception("Taler Token is empty")
     return taler_token
+
+def generateUUID():
+    return(uuid.uuid4())

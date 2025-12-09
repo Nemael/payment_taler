@@ -20,19 +20,26 @@ class TalerController(http.Controller):
     #Can delete this one
     _webhook_url = '/payment/taler/webhook'
 
-    @http.route(_fulfillment_url + "/<string:recvd_order_id>/", type='http', auth='public', methods=['GET'])
+
+    #The prints in this file should be talor or taerror or tawarn instead
+    @http.route(_fulfillment_url + "/<string:taler_uuid>/<string:recvd_order_id>", type='http', auth='public', methods=['GET'])
     def taler_return_from_checkout(self, **data):
         print("RETURNED FROM PAYMENT")
         print(data)
         # print("LATEST ORDER ID 3: ", request.env['payment.transaction'].sudo().merchant_order_id)
         # print("LATEST ORDER ID 3: ", request.env['payment.transaction'])
-        transaction = request.env['payment.transaction'].sudo().search([('reference', '=', data.get('recvd_order_id'))])
+        reference = data.get('recvd_order_id')
+        transaction = request.env['payment.transaction'].sudo().search([('reference', '=', reference)])
         if not transaction:
             print("No transaction found for reference: ", data.get('recvd_order_id'))
             return
         received_taler_order_id, taler_orderStatus = transaction._get_orderid_status()
         if received_taler_order_id != transaction.taler_order_id:
+            print("OrderID do not match for reference: ", reference)
             return
+        if data.get('taler_uuid') != transaction.taler_uuid:
+            print("UUID do not match for reference: ", reference)
+            returnes
         data = {'reference': data.get('recvd_order_id'),
                 'merchantOrderId': transaction.taler_order_id,
                 'paymentStatus': taler_orderStatus
@@ -45,11 +52,10 @@ class TalerController(http.Controller):
 
     # @http.route(_fulfillment_url + "/<string:invoice_check>/<string:invoice_year>/<string:invoice_number>", type='http', auth='public', methods=['GET'])
     # @http.route(_fulfillment_url + "/<path:reference>", type='http', auth='public')
-    @http.route(_fulfillment_url + "/<string:prefix>/<int:year>/<string:number>", type='http', auth='public')
+    @http.route(_fulfillment_url + "/<string:taler_uuid>/<string:prefix>/<int:year>/<string:number>/", type='http', auth='public')
     def taler_return_from_invoice(self, **data):
-        # pass
-        #We need to do invoice reconciliation when a payment leads to this page
         print("TALER RETURNED FROM INVOICE PAYMENT")
+        print(data)
         reference = data.get('prefix') + "/" + str(data.get('year')) + "/" + data.get('number')
 
         transaction = request.env['payment.transaction'].sudo().search([('reference', '=', reference)])
@@ -58,6 +64,10 @@ class TalerController(http.Controller):
             return
         received_taler_order_id, taler_orderStatus = transaction._get_orderid_status()
         if received_taler_order_id != transaction.taler_order_id:
+            print("OrderID do not match for reference: ", reference)
+            return
+        if data.get('taler_uuid') != transaction.taler_uuid:
+            print("UUID do not match for reference: ", reference)
             return
         data = {'reference': reference,
                 'merchantOrderId': transaction.taler_order_id,
