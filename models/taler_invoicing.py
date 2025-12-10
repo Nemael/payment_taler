@@ -14,7 +14,9 @@ class TalerInvoicing(models.Model):
     taler_order_url = fields.Char(string="Taler Order URL", default="")
     taler_order_uri = fields.Char(string="Taler Order URI", default="")
     taler_qr = fields.Char(string="Taler QR")
-    taler_uuid = fields.Char(string="Taler UUID", default="")
+
+    #For an explanation on this field, see the equivalent field in model TalerTransaction
+    taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generateUUID())
 
 
     #I maybe can remove this provider_id field, it was for invoices. To test
@@ -40,7 +42,6 @@ class TalerInvoicing(models.Model):
         print("My custom invoice creation")
         # self.provider_id = self.env['payment.provider'].search([('code', '=', 'taler')], limit=1)
         #Delete this one
-        self.taler_uuid = generateUUID()
         order_summary = "Odoo reference " + self.name + " for " + str(self.amount_total) + str(self.currency_id.symbol) + " " + self.currency_id.name
         requestGetToken(self)
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,

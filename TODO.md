@@ -139,3 +139,9 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 - Make sure to add license lines to every file
 
 - Add a token refresh system that refreshes a token when the current one is expired
+
+
+- Write in the documentation that, to sell tickets, you have to install the "event" module, and then go to the settings for events, and check the "online ticketing", and maybe the pos side as well
+  - Note, to have the proper ticketing system, you might need to install the python module pycairo:
+    - 1. sudo apt install libcairo2-dev
+    - 2. pip install rlPyCairo

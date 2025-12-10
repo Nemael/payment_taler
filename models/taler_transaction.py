@@ -17,6 +17,7 @@ from odoo.http import request
 
 
 
+#try to rename PaymentTransaction to TalerTransaction
 class PaymentTransaction(models.Model):
     _inherit = 'payment.transaction'
     test_summary = fields.Char(string="Test Order Summary", default="Test order")
@@ -27,7 +28,10 @@ class PaymentTransaction(models.Model):
     taler_order_id = fields.Char(string="Taler Order Id", default="")
     taler_order_url = fields.Char(string="Taler Order Url", default="")
     taler_order_uri = fields.Char(string="Taler Order Uri", default="")
-    taler_uuid = fields.Char(string="Taler UUID", default="")
+
+    # This UUID is only used for the fulfillment url. Without the UUID in the url, the Taler merchant could mix up two orders with the same Odoo ID, on two different Odoo instances
+    # This is not a perfect solution, as two duplicate UUID + OrderID could be generated on two different Odoo instances, on the same Taler Merchant, but this is highly unlikely.
+    taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generateUUID())
 
 
     def _process_notification_data(self, data):
@@ -70,10 +74,8 @@ class PaymentTransaction(models.Model):
         print("?????", self.provider_id.taler_token)
         print(">>>>>>>>>>>>>", self.reference)
         print(">>>>>>>>>>>>>", TalerController._fulfillment_url)
+        print(">>>>>>>>>>>>>", self.taler_uuid)
 
-        #This UUID is only used for the fulfillment url. Without the UUID in the url, the Taler merchant could mix up two orders with the same Odoo ID, on two different Odoo instances
-        #This is not a perfect solution, as two duplicate UUID + OrderID could be generated on two different Odoo instances, on the same Taler Merchant, but this is highly unlikely.
-        self.taler_uuid = generateUUID()
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
                                                                                   #self.currency_id.name,
