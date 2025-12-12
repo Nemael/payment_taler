@@ -8,7 +8,7 @@
     'author': 'Nemael',
     'category': 'Custom',
     'summary': 'Taler payment system for Odoo',
-    'depends': ['base', 'payment', 'website', 'website_sale', 'account'], #website, website_sale and account might not be required, I have added them from another example, check later if they are required.
+    'depends': ['base', 'payment', 'website', 'website_sale', 'account', 'point_of_sale'], #website, website_sale and account might not be required, I have added them from another example, check later if they are required.
     'data': [
         'views/taler_payment_template.xml',
         'views/taler_provider_view.xml',

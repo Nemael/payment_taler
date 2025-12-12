@@ -67,3 +67,9 @@ Useful methods from the Odoo classes
 - _get_removal_values()
 
 Don't forget to make a "OnDelete" feature for my add-on, to wipe data after its deletion
+
+
+For now: steps to add Taler to point of sale
+- Create TalerOnline as a new payment method in pos
+- Go in pos settings and add TalerOnline in the "payment method" section for one of the shops
+- 
