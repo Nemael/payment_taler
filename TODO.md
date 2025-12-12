@@ -145,3 +145,8 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
   - Note, to have the proper ticketing system, you might need to install the python module pycairo:
     - 1. sudo apt install libcairo2-dev
     - 2. pip install rlPyCairo
+
+- Add a button "test connection" next to the field merchant url field that allows you to test if the url you used is a valid merchant url
+
+- Manage connection errors when doing calls from Odoo to Taler merchant
+  - For example, if we don't get a response from Taler merchant, make sure that I go back to Odoo payment page with an error message?
