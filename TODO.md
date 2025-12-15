@@ -150,3 +150,8 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 
 - Manage connection errors when doing calls from Odoo to Taler merchant
   - For example, if we don't get a response from Taler merchant, make sure that I go back to Odoo payment page with an error message?
+
+- Add in the thanks section in the README
+  - OCA with all their repositories
+  - GNU Taler
+  - Petites Singularite for the support on the ICH forum, where I could share my progress and discussions when making this software
