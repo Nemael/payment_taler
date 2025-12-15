@@ -4,6 +4,8 @@ from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlace
 
 class TalerInvoicing(models.Model):
     _inherit = 'account.move'
+    #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
+    #It will inherit the ir security settings from the account.move model
 
     is_taler_invoice = fields.Boolean(default=False)
     taler_fulfillment_message = fields.Char(string="Fulfillment message", default="")

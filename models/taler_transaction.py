@@ -20,6 +20,9 @@ from odoo.http import request
 #try to rename PaymentTransaction to TalerTransaction
 class PaymentTransaction(models.Model):
     _inherit = 'payment.transaction'
+    #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
+    #It will inherit the ir security settings from the account.move model
+
     test_summary = fields.Char(string="Test Order Summary", default="Test order")
     test_merchant_refund_window = fields.Char(string="Test Merchant Refund Window", default="14")
 

@@ -4,6 +4,8 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 <!--<odoo noupdate="1">-->
+
+<!--CAN DELETE THIS ONE-->
 <odoo>
     <record id="pos_payment_method_taler" model="pos.payment.method">
         <field name="name">MyTalerOnline</field>

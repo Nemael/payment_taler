@@ -13,6 +13,9 @@ import logging
 
 class TalerPayment(models.Model):
     _inherit = "payment.provider"
+    #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
+    #It will inherit the ir security settings from the account.move model
+
     # _name = 'tops.provider'
     # available_country_ids = fields.Many2many("tops.country", string="TOPS Available Countries")
 
@@ -24,15 +27,18 @@ class TalerPayment(models.Model):
     #Testing value is "https://backend.demo.taler.net/instances/sandbox"
     taler_merchant_url = fields.Char(string="Taler Merchant URL",
                                      help="URL to the Taler merchant instance you'd like to use",
-                                     default="https://backend.demo.taler.net/instances/sandbox")
+                                     default="https://backend.demo.taler.net/instances/sandbox",
+                                     groups='base.group_system')
 
     #taler_merchant_password = fields.Char(string="Taler Merchant Password", help="Password to the Taler merchant instance you'd like to use")
     #Testing value is "sandbox"
     taler_merchant_password = fields.Char(string="Taler Merchant Password",
                                           help="Password to the Taler merchant instance you'd like to use",
-                                          default="sandbox")
+                                          default="sandbox",
+                                          groups='base.group_system')
 
-    taler_token = fields.Char(string="Taler Merchant Token, you should not be able to see this parameter")
+    taler_token = fields.Char(string="Taler Merchant Token, you should not be able to see this parameter",
+                              groups='base.group_system')
     fulfillment_message = fields.Char(string="Taler fulfillment message",
                                       help="Fulfillment message shown to the user after paying for the order",
                                       default="Thank you for your payment with Taler")
