@@ -72,4 +72,8 @@ Don't forget to make a "OnDelete" feature for my add-on, to wipe data after its 
 For now: steps to add Taler to point of sale
 - Create TalerOnline as a new payment method in pos
 - Go in pos settings and add TalerOnline in the "payment method" section for one of the shops
-- 
+- Setting "Allowed Providers" should be set to "Taler" only
+
+
+
+- DB ./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i tops -u tops --init tops -d odoo18_tops_0.3.1.5 is the reliable one

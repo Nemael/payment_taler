@@ -1,0 +1,32 @@
+<!--
+SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+
+SPDX-License-Identifier: LGPL-3.0-or-later
+-->
+<!--<odoo noupdate="1">-->
+<odoo>
+    <record id="pos_payment_method_taler" model="pos.payment.method">
+        <field name="name">MyTalerOnline</field>
+
+        <field name="use_payment_terminal">True</field>
+
+        <field name="payment_provider_id"
+               ref="tops.payment_method_taler"/>
+
+        <field name="is_cash_count">False</field>
+<!--        <field name="company_id" ref="base.main_company"/ MAYBE SET THIS ONE FOR MULTI COMPANY>-->
+    </record>
+</odoo>
+
+
+
+<!--<odoo>-->
+<!--    <record id="taler_payment_provider_singleton" model="payment.provider">-->
+<!--        <field name="test_summary">Test order</field>  &lt;!&ndash; explicitly set ID to 1 &ndash;&gt;-->
+<!--        &lt;!&ndash; set any required fields here &ndash;&gt;-->
+<!--&lt;!&ndash;        <field name="test_summary">Welcome to Taler-Odoo</field>&ndash;&gt;-->
+<!--        &lt;!&ndash; ... other fields as needed &ndash;&gt;-->
+<!--    </record>-->
+<!--</odoo>-->
+
+

@@ -6,5 +6,4 @@ from . import taler_api_methods
 from . import taler_provider
 from . import taler_transaction
 from . import taler_invoicing
-from . import taler_pos_provider
 

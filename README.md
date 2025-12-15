@@ -54,7 +54,47 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 ---
 
+## Tutorials
+
+### How to setup payment provider
+
+### How to setup POS payment provider
+- Preliminary steps
+  - Only do this step if you have setup Taler as a payment provider
+  - Install the "Point of sale" Odoo addon
+- Create the Point of Sale payment method
+  - On the top bar, press Configuration -> Payment Methods
+  - Create a new Payment Method
+  - Call it "Taler" (You can call it anything but Taler is easier to remember)
+  - Check "Online Payment"
+  - Select "Taler" in the "Allowed Providers" field.
+- Adding Taler to the point of sale (Make sure that the point of sale register is closed for this step)
+  - On the top bar, press Configuration -> Point of Sale list
+  - Select the point of sale you'd like to add Taler payment to (for test data, Clothes Shop is a good candidate)
+  - Click on "More settings: Configurations > Settings", which will lead you to the point of sale's settings page
+    - You can also access this page by going to Settings through the app switcher on the top right, then going to "Point of Sale" section, and selecting the point of sale that you would like to modify
+  - In Payment -> Payment Methods, add the payment method you just created. It can be named "Taler", or any other custom name you chose
+- You are now good to go, and can select your new payment provider when customer pay for an order.
+
+---
+
+## Examples of the add-on running:
+
+### Paying an ecommerce bill
+TODO
+
+### Paying an invoice
+TODO
+
+### Paying on a Point of Sale
+TODO
+
+### Going through the refund process
+Not implemented yet
+
 ## Folder structure
+
+This list is outdated and I will update it soon
 
 This add-on uses a quite standard folder structure
 - `data` contains the setup data that is processed when someone installs the add-on.
