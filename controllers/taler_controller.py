@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-
 import hmac
 import logging
 import pprint
 import hashlib
 import hmac
 import requests
+
+#might be able to remove this unused import
 from werkzeug.exceptions import Forbidden
 
 from odoo import http
@@ -39,7 +39,7 @@ class TalerController(http.Controller):
             return
         if data.get('taler_uuid') != transaction.taler_uuid:
             print("UUID do not match for reference: ", reference)
-            returnes
+            return
         data = {'reference': data.get('recvd_order_id'),
                 'merchantOrderId': transaction.taler_order_id,
                 'paymentStatus': taler_orderStatus

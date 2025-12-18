@@ -77,3 +77,6 @@ For now: steps to add Taler to point of sale
 
 
 - DB ./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i tops -u tops --init tops -d odoo18_tops_0.3.1.5 is the reliable one
+
+
+- The list of countries is stored in odoo/addons/base/data/res_country_data.xml

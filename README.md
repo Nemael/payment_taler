@@ -116,6 +116,12 @@ This add-on uses a quite standard folder structure
 
 ---
 
+## Running unit tests
+- To run unit tests on a new db, use this command
+  - ./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons --test-enable -d test_db_2 -i tops --stop-after-init --test-tags taler
+  - The db name after -d is arbitrary and can be replaced by any other names
+---
+
 ## Funding
 
 This project is funded through [NGI TALER Fund](https://nlnet.nl/taler), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program. Learn more at the [NLnet project page](https://nlnet.nl/project/TALER-Odoo-module).

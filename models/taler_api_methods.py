@@ -65,7 +65,8 @@ def getOrderTalerUri(model, order_id):
     talog("Headers: ", headers)
     talog("Payload: ", payload)
     response = requests.request("GET", url, data=payload, headers=headers)
-    talog("Response received")
+    talog("Response received Order URI")
+    talog(response.text)
     if response.status_code != 200:
         talog("Error getting order taler payment URI, bad response: ", response.text)
         return ''
@@ -123,6 +124,7 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
         },
         "create_token": False
     }
+    #I don't thin
     talog(getTalerToken(model))
     headers = {
         "Content-Type": "application/json",

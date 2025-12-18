@@ -3,29 +3,34 @@
               inherit_id="account.report_invoice_document">
         <xpath expr="//div[@class='clearfix invoice_main']" position="inside">
             <t t-if="o.is_taler_invoice">
-                <t t-if="o.taler_qr">
-                    <div class="text-center">
-                        Please scan this QR Code with your Taler Wallet to complete the payment.
-                    </div>
-                    <div class="text-center">
-                        <img t-att-src="'data:image/png;base64,%s' % o.taler_qr"
-                             style="max-height:200px;"/>
-                    </div>
-                </t>
+                <!--Encase the whole taler-relevant information, including QR code, in a fixed-height div-->
+                <!--Otherwise, at the first load, WKHtmlToPdf ignores the loading of the QR code, and cuts the bottom of the invoice-->
+                <div style="min-height: 320px; max-height:320px">
+                    <t t-if="o.taler_qr">
+                        <div class="text-center">
+                            Please scan this QR Code with your Taler Wallet to complete the payment.
+                        </div>
+                        <div class="text-center">
+                            <img t-att-src="'data:image/png;base64,%s' % o.taler_qr"
+                                 style="max-height:200px;"/>
+                        </div>
+                    </t>
 
-                <p style="margin-top:20px; font-size:12px;">
-                    <t t-if="o.taler_order_id">
-                        Taler payment information:
-                        <br/>
-                        Order ID: <t t-esc="o.taler_order_id"/>
-                        <br/>
-                    </t>
-                    <t t-if="o.taler_order_uri">
-                        Taler order URI: <t t-esc="o.taler_order_uri"/>
-                        <br/>
-                        Please use this URI if you have an issue with the above Taler QR Code.
-                    </t>
-                </p>
+                    <p style="margin-top:20px; font-size:12px;">
+                        <t t-if="o.taler_order_id">
+                            Taler payment information:
+                            <br/>
+                            Order ID: <t t-esc="o.taler_order_id"/>
+                            <br/>
+                        </t>
+                        <t t-if="o.taler_order_uri">
+                            Taler order URI: <t t-esc="o.taler_order_uri"/>
+                            <br/>
+                            Please use above URI if you have an issue with the above Taler QR Code.
+                        </t>
+                    </p>
+                </div>
+
             </t>
         </xpath>
     </template>

@@ -41,10 +41,11 @@ class PaymentTransaction(models.Model):
         print("PROCESSING TALER NOTIFICATION DATA")
         super()._process_notification_data(data)
         if self.provider_code != 'taler':
-            print("Getting not taler provider code: ", self.provider_code)
+            print("Getting different provider code that taler: ", self.provider_code)
             return
+        self.provider_reference = data.get('merchantOrderId')
 
-        # Update the payment state.
+        # Update the payment state based on payment status on the merchant's side
         payment_status = data.get('paymentStatus')
         print(payment_status)
         if (payment_status == 'paid'):
@@ -163,3 +164,30 @@ class PaymentTransaction(models.Model):
 
     def _get_orderid_status(self):
         return getOrderIdStatus(self)
+
+    def _get_tx_from_notification_data(self, provider_code, notification_data):
+        """ Override of payment to find the transaction based on kashier data.
+
+        :param str provider_code: The code of the provider that handled the transaction
+        :param dict notification_data: The notification data sent by the provider
+        :return: The transaction if found
+        :rtype: recordset of `payment.transaction`
+        :raise: ValidationError if inconsistent data were received
+        :raise: ValidationError if the data match no transaction
+        """
+        tx = super()._get_tx_from_notification_data(provider_code, notification_data)
+        if provider_code != 'taler' or len(tx) == 1:
+            return tx
+
+        reference = notification_data.get('reference')
+        if not reference:
+            raise ValidationError("Taler: " + _("Received data with missing reference."))
+        tx = self.search([('reference', '=', reference), ('provider_code', '=', 'taler')])
+        # _logger.info("api tx_sudo is :\n%s", reference)
+
+        if not tx:
+            raise ValidationError(
+                "Taler: " + _("No transaction found matching reference %s.", reference)
+            )
+
+        return tx

@@ -2,4 +2,5 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 
+from . import tests
 from . import models

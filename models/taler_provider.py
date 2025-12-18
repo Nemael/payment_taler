@@ -53,7 +53,6 @@ class TalerPayment(models.Model):
             )
         return supported_currencies
 
-
     def _taler_make_request(self, endpoint, data=None, method='POST'):
         print("Client making a request transaction")
 

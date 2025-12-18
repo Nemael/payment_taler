@@ -8,11 +8,11 @@ SUPPORTED_CURRENCIES = [
     #'BGN',
     #'BRL',
     #'CAD',
-    #'CHF',
-    'CZK',
-    'DKK',
+    'CHF',
+    # 'CZK',
+    # 'DKK',
     'EUR',
-    'GBP',
+    # 'GBP',
     #'HKD',
     #'HRK',
     #'HUF',
@@ -31,11 +31,12 @@ SUPPORTED_CURRENCIES = [
     #'SGD',
     #'THB',
     #'TWD',
+    #For testing purposes, USD is used, but it should not be used in production
     'USD',
     #'ZAR'
 ]
 
-# The codes of the payment methods to activate when Mollie is activated.
+# Can probably remove these
 DEFAULT_PAYMENT_METHOD_CODES = {
     # Primary payment methods.
     'demo',

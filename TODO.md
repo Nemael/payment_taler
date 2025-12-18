@@ -155,3 +155,10 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
   - OCA with all their repositories
   - GNU Taler
   - Petites Singularite for the support on the ICH forum, where I could share my progress and discussions when making this software
+  - The Kashier and Sadad as examples on github (add a link to their)
+
+
+- take care of the warning:
+  - "2025-12-17 05:33:23,720 188137 WARNING test_db_2 odoo.modules.module: Missing `license` key in manifest for 'tops', defaulting to LGPL-3"
+
+- When I do translation, don't forget to do .xml translations
