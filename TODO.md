@@ -52,8 +52,9 @@ Sanitize the user input for the Taler Merchant URL
 - Remove any extra / at the end
 - Check that it is a valid URL
 - Add a button "check that my merchant URL is valid"
+  - To do this, I can maybe add the button in the xml for the payment provider? And connect it to a function that raise a validation error if the url doesn't work, and display a window with a green checkmark if the url works?
 
-If the setting for the merchant is empty, display a tooltip in the welcome page displaying a first-time suer piece, and saying that you have to fill the merchant URL to make the add-on work.
+If the setting for the merchant is empty, display a tooltip in the welcome page displaying a first-time user piece, and saying that you have to fill the merchant URL to make the add-on work.
 
 Make the creation_time look better in the order list view
 
@@ -77,8 +78,6 @@ Have a discussion with the people that do auto licenses
 Make a post on ICH asking about the Taler logos
 - Maybe ask if they have a Taler logo like this one https://www.taler.net/images/logo-2021.svg, but which would have the words removed a replaced by the full circles?
 - Post in the message all the references that Michiel gave me about the logos, and also specify that it is Michiel who gave me these references
-
-Add the acknowledgement of NLNet and the NGU Taler fund, check Michiel's email for an example of it
 
 Have a discussion with the person that can help on the security aspect
 - Commons Caretakers BV, Eric Herman
@@ -109,7 +108,7 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 - For the payment "Test Mode", there is a radio button right in Odoo's interface to activate "Test Mode" for the payment method
 - Credentials are integrated as well
 
-- Do a "Neutralize.sql" file, as can be found in odoo git, in odoo/addons/payment_flutterwave/data/neutralize.sql. I need more information on this file, but I probably need it
+- Do a "Neutralize.sql" file, as can be found in odoo git, in odoo/addons/payment_flutterwave/data/neutralize.sql. I need more information on what this file is, but I probably need it
 
 
 - Add to the readme that users are advised to create a "Taler" payment journal to record  taler payments
@@ -125,8 +124,6 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 
 - remove the restriction to the US on the payment method's data file
   - maybe add a restriction to only accept european countries or something
-
-- See if I can make the addon support express checkout
 
 - Add checks for which currency is used when the website or accounting systems are used
 
@@ -161,13 +158,15 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 - take care of the warning:
   - "2025-12-17 05:33:23,720 188137 WARNING test_db_2 odoo.modules.module: Missing `license` key in manifest for 'tops', defaulting to LGPL-3"
 
-- When I do translation, don't forget to do .xml translations
+- When I do translation, don't forget to do translation of the .xml files
 
 - Remove the warnings that appear when running tests
 
 - Remove the logs in tests
 
 - Put the license on top of every file
+
+- Check if every kind of Taler payment is recorded correctly in the journal (ecommerce, invoice online payment, invoice qr payment with manual payment reconciliation, pos, event ticket sale)
 
 - Make sure that the taler payment qr code on the invoice, expires at the same time as the invoice validity itself
 
@@ -177,6 +176,10 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 - When adding the merchant url, I should run a quick check that the inserted merchant URL accepts the currencies that I want to use.
   - I can send empty request to [merchant_url]/config to know that, see video https://tutorials.taler.net/dev/merchant-api/versioning at 54 seconds
 
+- Add to the README file that, if there is an issue, they can open an issue on the git repository [repository_url]
+
+
+
 - After all the code cleanup is finished, and the only todos left are the ones to do at later steps of the project, then I should make picture tutorials in the readme for
   - Activation of taler payment provider after installation
     - Including explanation on what to put in the fields such as merchant_url, password, etc
@@ -184,5 +187,6 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
   - invoice creation focused on the qr code on invoice
     - plus maybe invoice reconciliation after payment through qr code? In that case I'll have to read the qr code using the addon
   - invoice creation + payment on the online portal
+  - ticket sale process, with the info from the readme or TODO on how to install the ticket addon
   - pos setup for the online payment provider
   - pos payment process with qr code for the user
