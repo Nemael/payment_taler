@@ -1,12 +1,14 @@
+from datetime import timedelta
+
 from odoo import _, models
 from odoo.exceptions import ValidationError
 
 from odoo.addons.tops import const
 from odoo import models, fields
 import requests
-from odoo.addons.tops.utils.utils import talog, tawarn
+from odoo.addons.tops.utils.utils import talog, tawarn, generate_UUID, get_datetime_now_to_epoch
 
-from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, generateUUID
+from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid
 
 from odoo.addons.tops.controllers.taler_controller import TalerController
 
@@ -34,17 +36,25 @@ class PaymentTransaction(models.Model):
 
     # This UUID is only used for the fulfillment url. Without the UUID in the url, the Taler merchant could mix up two orders with the same Odoo ID, on two different Odoo instances
     # This is not a perfect solution, as two duplicate UUID + OrderID could be generated on two different Odoo instances, on the same Taler Merchant, but this is highly unlikely.
-    taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generateUUID())
+    taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generate_UUID())
 
+
+
+    def getToken(self):
+        requestGetToken(self)
+
+    def isPaid(self):
+        return checkOrderIsPaid(self)
 
     def _process_notification_data(self, data):
         print("PROCESSING TALER NOTIFICATION DATA")
         super()._process_notification_data(data)
         if self.provider_code != 'taler':
-            print("Getting not taler provider code: ", self.provider_code)
+            print("Getting different provider code that taler: ", self.provider_code)
             return
+        self.provider_reference = data.get('merchantOrderId')
 
-        # Update the payment state.
+        # Update the payment state based on payment status on the merchant's side
         payment_status = data.get('paymentStatus')
         print(payment_status)
         if (payment_status == 'paid'):
@@ -73,12 +83,14 @@ class PaymentTransaction(models.Model):
         print("aaaaa", self.currency_id.symbol)
         order_summary = "Odoo reference " + self.reference + " for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
         print("?????", self.provider_id.taler_token)
-        requestGetToken(self)
+        self.getToken()
         print("?????", self.provider_id.taler_token)
         print(">>>>>>>>>>>>>", self.reference)
         print(">>>>>>>>>>>>>", TalerController._fulfillment_url)
         print(">>>>>>>>>>>>>", self.taler_uuid)
 
+        expiration_time_in_epoch = get_datetime_now_to_epoch(15)
+        print(">>>>>>>>>>>>>", expiration_time_in_epoch)
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
                                                                                   #self.currency_id.name,
@@ -87,7 +99,8 @@ class PaymentTransaction(models.Model):
                                                                                   "0.01", #testing amount, remove for release and uncomment line above
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
-                                                                                  TalerController._fulfillment_url + "/" + self.taler_uuid)
+                                                                                  TalerController._fulfillment_url + "/" + self.taler_uuid,
+                                                                                  expiration_time_in_epoch)  # Orders expire 15 minutes after creation
         tawarn(self.taler_order_url)
         tawarn(self.taler_order_uri)
 
@@ -163,3 +176,30 @@ class PaymentTransaction(models.Model):
 
     def _get_orderid_status(self):
         return getOrderIdStatus(self)
+
+    def _get_tx_from_notification_data(self, provider_code, notification_data):
+        """ Override of payment to find the transaction based on kashier data.
+
+        :param str provider_code: The code of the provider that handled the transaction
+        :param dict notification_data: The notification data sent by the provider
+        :return: The transaction if found
+        :rtype: recordset of `payment.transaction`
+        :raise: ValidationError if inconsistent data were received
+        :raise: ValidationError if the data match no transaction
+        """
+        tx = super()._get_tx_from_notification_data(provider_code, notification_data)
+        if provider_code != 'taler' or len(tx) == 1:
+            return tx
+
+        reference = notification_data.get('reference')
+        if not reference:
+            raise ValidationError("Taler: " + _("Received data with missing reference."))
+        tx = self.search([('reference', '=', reference), ('provider_code', '=', 'taler')])
+        # _logger.info("api tx_sudo is :\n%s", reference)
+
+        if not tx:
+            raise ValidationError(
+                "Taler: " + _("No transaction found matching reference %s.", reference)
+            )
+
+        return tx

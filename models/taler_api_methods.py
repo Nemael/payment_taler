@@ -1,9 +1,10 @@
 from odoo.addons.tops.utils.utils import talog, tawarn
 import requests
 from werkzeug import urls
-import uuid
+from odoo.exceptions import ValidationError
 
 #This whole file is a temporary solution, I cannot do proper inheritance due to Odoo mixins, and this solution allows for some genericity that's enough for now+
+#Method names are in uppercase because they are meant to be class members
 def requestGetToken(model):
     talog("Getting token")
     print(model)
@@ -60,12 +61,13 @@ def getOrderTalerUri(model, order_id):
     payload = ""
     headers = {
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
-        "Authorization": "Bearer " + getTalerToken(model)
+        "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
     talog("Headers: ", headers)
     talog("Payload: ", payload)
     response = requests.request("GET", url, data=payload, headers=headers)
-    talog("Response received")
+    talog("Response received Order URI")
+    talog(response.text)
     if response.status_code != 200:
         talog("Error getting order taler payment URI, bad response: ", response.text)
         return ''
@@ -74,7 +76,7 @@ def getOrderTalerUri(model, order_id):
         return ''
     return response.json()["taler_pay_uri"]
 
-def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfillment_message):
+def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfillment_message, pay_deadline=None):
     taler_url = getTalerUrl(model)
     url = taler_url + "/private/orders"
     payload = {
@@ -85,11 +87,13 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
         },
         "create_token": False
     }
-    talog(getTalerToken(model))
+    if pay_deadline:
+        payload["order"]["pay_deadline"] = {"t_s": pay_deadline}
+    talog(getCurrentTalerToken(model))
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
-        "Authorization": "Bearer " + getTalerToken(model)
+        "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
     talog("Headers: ", headers)
     talog("Payload: ", payload)
@@ -98,10 +102,13 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
     talog(response.text)
     if response.status_code != 200:
         talog("Error placing order, bad response: ", response.text)
-        return
+        if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
+            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created.")
+        raise ValidationError("Wrong response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         talog("Error getting new order_id: ", response.text)
-        return
+        raise ValidationError("Received no OrderId. The Taler order cannot be created.")
+
     order_id = response.json()["order_id"]
     order_url = taler_url + "/orders/" + order_id
     order_uri = getOrderTalerUri(model, order_id)
@@ -110,7 +117,7 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
 
     return order_id, order_url, order_uri
 
-def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillment_message, fulfillment_url):
+def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillment_message, fulfillment_url, pay_deadline=None):
     taler_url = getTalerUrl(model)
     odoo_base_url = model.provider_id.get_base_url()
     url = taler_url + "/private/orders"
@@ -123,11 +130,13 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
         },
         "create_token": False
     }
-    talog(getTalerToken(model))
+    if pay_deadline:
+        payload["order"]["pay_deadline"] = {"t_s": pay_deadline}
+    talog(getCurrentTalerToken(model))
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
-        "Authorization": "Bearer " + getTalerToken(model)
+        "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
     talog("Headers: ", headers)
     talog("Payload: ", payload)
@@ -136,10 +145,12 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
     talog(response.text)
     if response.status_code != 200:
         talog("Error placing order, bad response: ", response.text)
-        return None, None, None
+        if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
+            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created.")
+        raise ValidationError("Wrong response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         talog("Error getting new order_id: ", response.text)
-        return None, None, None
+        raise ValidationError("Received no OrderId. The Taler order cannot be created.")
     order_id = response.json()["order_id"]
     order_url = taler_url + "/orders/" + order_id
     order_uri = getOrderTalerUri(model, order_id)
@@ -157,7 +168,7 @@ def requestGetOrderFromId(model):
     payload = ""
     headers = {
         "User-Agent": "TalerOdoo",
-        "Authorization": "Bearer " + getTalerToken(model)
+        "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
     talog("requestGetOrderFromId logs")
     talog("URL: ", url)
@@ -175,8 +186,8 @@ def checkOrderIsPaid(model):
     print("CHECK IF ORDER IS PAID")
     print("LATEST ORDER ID 2: ", model.taler_order_id)
     response = requestGetOrderFromId(model)
-    print(response.json()["order_status"])
-    return response.json()["order_status"] == "paid"
+    print(response["order_status"])
+    return response["order_status"] == "paid"
 
 def getOrderIdStatus(model):
     print("GET ORDER STATUS")
@@ -197,11 +208,8 @@ def getTalerPassword(model):
         raise Exception("Taler Password is empty or incorrect. Did you set it correctly in the provider view?")
     return taler_password
 
-def getTalerToken(model):
+def getCurrentTalerToken(model):
     taler_token = model.provider_id.taler_token
     if not taler_token or taler_token == "":
         raise Exception("Taler Token is empty")
     return taler_token
-
-def generateUUID():
-    return(uuid.uuid4())

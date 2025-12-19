@@ -1,11 +1,12 @@
 # SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
+import uuid
 
 class Color:
     PURPLE = '\033[95m'
 
-import datetime
+from datetime import datetime, time, timedelta
 import os
 import logging
 import qrcode
@@ -50,10 +51,6 @@ def tawarn(*args):
     _logger.warning(log)
     # logs can be info, debug, error, critical and warning
 
-def squareNumber(num): #For testing purposes
-    return num ** 2
-
-
 def generate_qr(url):
     print("????? Generating QR code")
     qr = qrcode.QRCode(box_size=10, border=2)
@@ -67,3 +64,13 @@ def generate_qr(url):
     print("{{{{{{{{{{{{{{", base64.b64encode(qr_bytes).decode("utf-8"))
 
     return base64.b64encode(qr_bytes).decode("utf-8")
+
+def generate_UUID():
+    return(uuid.uuid4())
+
+def get_datetime_date_to_epoch(my_date):
+    #time.min represents the minimum time in the day, and sets the epoch time to the beginning of the specified day
+    return int(datetime.combine(my_date, time.min).timestamp())
+
+def get_datetime_now_to_epoch(add_minutes):
+    return int((datetime.now() + timedelta(minutes=add_minutes)).timestamp())
