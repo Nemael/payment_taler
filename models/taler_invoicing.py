@@ -1,6 +1,6 @@
 from odoo import models, fields
-from odoo.addons.tops.utils.utils import generate_qr
-from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage, generateUUID
+from odoo.addons.tops.utils.utils import generate_qr, generate_UUID, get_datetime_date_to_epoch
+from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage
 
 class TalerInvoicing(models.Model):
     _inherit = 'account.move'
@@ -18,7 +18,7 @@ class TalerInvoicing(models.Model):
     taler_qr = fields.Char(string="Taler QR")
 
     #For an explanation on this field, see the equivalent field in model TalerTransaction
-    taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generateUUID())
+    taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generate_UUID())
 
 
     #I maybe can remove this provider_id field, it was for invoices. To test
@@ -27,6 +27,9 @@ class TalerInvoicing(models.Model):
         string="Taler Provider",
         default=lambda self: self.env["payment.provider"].search([("code", "=", "taler")], limit=1).id,
     )
+
+    def getToken(self):
+        requestGetToken(self)
 
     def action_post(self):
         res = super().action_post()
@@ -45,12 +48,16 @@ class TalerInvoicing(models.Model):
         # self.provider_id = self.env['payment.provider'].search([('code', '=', 'taler')], limit=1)
         #Delete this one
         order_summary = "Odoo reference " + self.name + " for " + str(self.amount_total) + str(self.currency_id.symbol) + " " + self.currency_id.name
-        requestGetToken(self)
+        self.getToken()
+        print(self.invoice_date_due)
+        invoice_due_date_in_epoch = get_datetime_date_to_epoch(self.invoice_date_due)
+        print(invoice_due_date_in_epoch)
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,
                                                                                                                # self.currency_id.name,
                                                                                                                "KUDOS", # testing value, remove for release and uncomment line above
                                                                                                                # self.amount_total,
                                                                                                                "0.02", # testing value, remove for release and uncomment line above
                                                                                                                order_summary,
-                                                                                                               self.provider_id.fulfillment_message + " Ref: " + self.taler_uuid)
+                                                                                                               self.provider_id.fulfillment_message + " Ref: " + self.taler_uuid,
+                                                                                                               invoice_due_date_in_epoch) #Uses the invoice due date as expiration date of the payment
         self.taler_qr = generate_qr(self.taler_order_uri)

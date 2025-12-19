@@ -1,12 +1,14 @@
+from datetime import timedelta
+
 from odoo import _, models
 from odoo.exceptions import ValidationError
 
 from odoo.addons.tops import const
 from odoo import models, fields
 import requests
-from odoo.addons.tops.utils.utils import talog, tawarn
+from odoo.addons.tops.utils.utils import talog, tawarn, generate_UUID, get_datetime_now_to_epoch
 
-from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, generateUUID
+from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid
 
 from odoo.addons.tops.controllers.taler_controller import TalerController
 
@@ -34,8 +36,15 @@ class PaymentTransaction(models.Model):
 
     # This UUID is only used for the fulfillment url. Without the UUID in the url, the Taler merchant could mix up two orders with the same Odoo ID, on two different Odoo instances
     # This is not a perfect solution, as two duplicate UUID + OrderID could be generated on two different Odoo instances, on the same Taler Merchant, but this is highly unlikely.
-    taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generateUUID())
+    taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generate_UUID())
 
+
+
+    def getToken(self):
+        requestGetToken(self)
+
+    def isPaid(self):
+        return checkOrderIsPaid(self)
 
     def _process_notification_data(self, data):
         print("PROCESSING TALER NOTIFICATION DATA")
@@ -74,12 +83,14 @@ class PaymentTransaction(models.Model):
         print("aaaaa", self.currency_id.symbol)
         order_summary = "Odoo reference " + self.reference + " for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
         print("?????", self.provider_id.taler_token)
-        requestGetToken(self)
+        self.getToken()
         print("?????", self.provider_id.taler_token)
         print(">>>>>>>>>>>>>", self.reference)
         print(">>>>>>>>>>>>>", TalerController._fulfillment_url)
         print(">>>>>>>>>>>>>", self.taler_uuid)
 
+        expiration_time_in_epoch = get_datetime_now_to_epoch(15)
+        print(">>>>>>>>>>>>>", expiration_time_in_epoch)
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
                                                                                   #self.currency_id.name,
@@ -88,7 +99,8 @@ class PaymentTransaction(models.Model):
                                                                                   "0.01", #testing amount, remove for release and uncomment line above
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
-                                                                                  TalerController._fulfillment_url + "/" + self.taler_uuid)
+                                                                                  TalerController._fulfillment_url + "/" + self.taler_uuid,
+                                                                                  expiration_time_in_epoch)  # Orders expire 15 minutes after creation
         tawarn(self.taler_order_url)
         tawarn(self.taler_order_uri)
 

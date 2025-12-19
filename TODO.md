@@ -162,3 +162,27 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
   - "2025-12-17 05:33:23,720 188137 WARNING test_db_2 odoo.modules.module: Missing `license` key in manifest for 'tops', defaulting to LGPL-3"
 
 - When I do translation, don't forget to do .xml translations
+
+- Remove the warnings that appear when running tests
+
+- Remove the logs in tests
+
+- Put the license on top of every file
+
+- Make sure that the taler payment qr code on the invoice, expires at the same time as the invoice validity itself
+
+- For the refund system, use the field "refund_delay?: RelativeTime;" in the order creation payload
+  - See https://docs.taler.net/core/api-merchant.html#creating-orders
+
+- When adding the merchant url, I should run a quick check that the inserted merchant URL accepts the currencies that I want to use.
+  - I can send empty request to [merchant_url]/config to know that, see video https://tutorials.taler.net/dev/merchant-api/versioning at 54 seconds
+
+- After all the code cleanup is finished, and the only todos left are the ones to do at later steps of the project, then I should make picture tutorials in the readme for
+  - Activation of taler payment provider after installation
+    - Including explanation on what to put in the fields such as merchant_url, password, etc
+  - online ecommerce transaction completion
+  - invoice creation focused on the qr code on invoice
+    - plus maybe invoice reconciliation after payment through qr code? In that case I'll have to read the qr code using the addon
+  - invoice creation + payment on the online portal
+  - pos setup for the online payment provider
+  - pos payment process with qr code for the user
