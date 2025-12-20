@@ -51,6 +51,13 @@ def tawarn(*args):
     _logger.warning(log)
     # logs can be info, debug, error, critical and warning
 
+def taerror(*args):
+    log = ""
+    for arg in args:
+        log += str(arg)
+    _logger.error(log)
+    # logs can be info, debug, error, critical and warning
+
 def generate_qr(url):
     print("????? Generating QR code")
     qr = qrcode.QRCode(box_size=10, border=2)

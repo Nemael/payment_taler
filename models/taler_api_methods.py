@@ -194,6 +194,9 @@ def getOrderIdStatus(model):
     response = requestGetOrderFromId(model)
     print("RESPONSE: ", response)
     print("Order status:" + response["order_status"])
+    if response == "":
+        talog("getOrderIdStatus encountered couldn't find the order on the merchant's server.")
+        return
     return response["contract_terms"]["order_id"], response["order_status"]
 
 def getTalerUrl(model):
