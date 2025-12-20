@@ -1,10 +1,10 @@
 <odoo>
     <template id="taler_invoice_footer_logo"
               inherit_id="account.report_invoice_document">
-        <xpath expr="//div[@class='clearfix invoice_main']" position="inside">
+        <xpath expr="//div[hasclass('invoice_main')]" position="inside">
             <t t-if="o.is_taler_invoice">
-                <!--Encase the whole taler-relevant information, including QR code, in a fixed-height div-->
-                <!--Otherwise, at the first load, WKHtmlToPdf ignores the loading of the QR code, and cuts the bottom of the invoice-->
+                <!--Encase the whole taler-relevant information, including the QR code, in a fixed-height div-->
+                <!--Otherwise, during the first load, WKHtmlToPdf ignores the loading of the QR code, and cuts the bottom of the invoice-->
                 <div style="min-height: 320px; max-height:320px">
                     <t t-if="o.taler_qr">
                         <div class="text-center">
