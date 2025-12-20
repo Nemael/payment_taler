@@ -178,6 +178,8 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 
 - Add to the README file that, if there is an issue, they can open an issue on the git repository [repository_url]
 
+- Remove the too many logs, and make them warning, errors, info as required
+
 
 
 - After all the code cleanup is finished, and the only todos left are the ones to do at later steps of the project, then I should make picture tutorials in the readme for

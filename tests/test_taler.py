@@ -271,9 +271,9 @@ class TestTaler(TestTalerCommon, PaymentHttpCommon):
 
     def test_get_datetime_now_to_epoch(self):
         print("Unit test test_get_datetime_now_to_epoch")
-        epoch_in_1_minute = get_datetime_now_to_epoch(1)
-        #epoch_in_1_minute is bigger that epoch now
-        self.assertGreater(epoch_in_1_minute, int(datetime.now().timestamp()))
-        #epoch_in_1_minute is smaller that epoch in 2 minutes
-        self.assertLess(epoch_in_1_minute, int((datetime.now() + timedelta(minutes=2)).timestamp()))
+        epoch_in_15_minute = get_datetime_now_to_epoch(15)
+        #epoch_in_15_minute is bigger that epoch in 14 minutes
+        self.assertGreater(epoch_in_15_minute, int((datetime.now() + timedelta(minutes=14)).timestamp()))
+        #epoch_in_15_minute is smaller that epoch in 6 minutes
+        self.assertLess(epoch_in_15_minute, int((datetime.now() + timedelta(minutes=16)).timestamp()))
 
