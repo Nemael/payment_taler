@@ -36,26 +36,6 @@ SUPPORTED_CURRENCIES = [
     #'ZAR'
 ]
 
-# Can probably remove these
 DEFAULT_PAYMENT_METHOD_CODES = {
-    # Primary payment methods.
-    'demo',
-    'card',
-    #'ideal',
-    # Brand payment methods.
-    'visa',
-    'mastercard',
-    #'amex',
-    #'discover',
     'taler'
-}
-
-PAYMENT_METHODS_MAPPING = {
-    'taler': 'taler',
-    #'apple_pay': 'applepay',
-    'card': 'creditcard'
-    #'bank_transfer': 'banktransfer',
-    #'kbc_cbc': 'kbc',
-    #'p24': 'przelewy24',
-    #'sepa_direct_debit': 'directdebit',
 }

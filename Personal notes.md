@@ -80,3 +80,13 @@ For now: steps to add Taler to point of sale
 
 
 - The list of countries is stored in odoo/addons/base/data/res_country_data.xml
+
+
+- How to run odoo with debug logs:
+  - Add "--log-level=debug" at the end of the command
+  - ./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i tops -u tops --init tops -d odoo18_tops_0.3.1.19 --log-level=debug
+
+- Delete a database (to free up space)
+  - sudo -u postgres psql
+  - \l to display list of db
+  - DROP DATABASE database_name; to drop what I want

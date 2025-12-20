@@ -13,7 +13,8 @@ import qrcode
 import base64
 from io import BytesIO
 
-_logger = logging.getLogger("TOPS")
+# _logger = logging.getLogger("TOPS")
+_logger = logging.getLogger(__name__)
 
 # class Color:
 #     PURPLE = '\033[95m'
@@ -35,28 +36,24 @@ def talog(*args):
     for arg in args:
         log += str(arg)
     _logger.info(log)
-    #logs can be info, debug, error, critical and warning
 
 def tadebug(*args):
     log = ""
     for arg in args:
         log += str(arg)
     _logger.debug(log)
-    #logs can be info, debug, error, critical and warning
 
 def tawarn(*args):
     log = ""
     for arg in args:
         log += str(arg)
     _logger.warning(log)
-    # logs can be info, debug, error, critical and warning
 
 def taerror(*args):
     log = ""
     for arg in args:
         log += str(arg)
     _logger.error(log)
-    # logs can be info, debug, error, critical and warning
 
 def generate_qr(url):
     print("????? Generating QR code")
