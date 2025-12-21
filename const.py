@@ -1,5 +1,5 @@
 SUPPORTED_LOCALES = [
-    'en_US', 'fr-FR', 'fr-BE'
+    'en_US', 'fr-FR'
 ]
 
 SUPPORTED_CURRENCIES = [
