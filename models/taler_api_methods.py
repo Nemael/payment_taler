@@ -26,6 +26,8 @@ def getMerchantConfiguration(url):
 
 def requestGetToken(model):
     tadebug("Running requestGetToken")
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     taler_url = getTalerUrl(model)
     url = taler_url + "/private/token"
 
@@ -52,6 +54,8 @@ def requestGetToken(model):
 
 def getOrderTalerUri(model, order_id):
     tadebug("Running getOrderTalerUri")
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     taler_url = getTalerUrl(model)
     url = taler_url + "/private/orders/" + order_id
 
@@ -76,6 +80,8 @@ def getOrderTalerUri(model, order_id):
 
 def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfillment_message, pay_deadline=None):
     tadebug("Running postPlaceOrderWithFulfillmentMessage")
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     taler_url = getTalerUrl(model)
     url = taler_url + "/private/orders"
 
@@ -118,6 +124,8 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
 
 def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillment_message, fulfillment_url, pay_deadline=None):
     tadebug("Running postPlaceOrderWithFulfillmentUrl")
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     taler_url = getTalerUrl(model)
     odoo_base_url = model.provider_id.get_base_url()
     url = taler_url + "/private/orders"
@@ -162,6 +170,8 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
 
 def requestGetOrderFromId(model):
     tadebug("Running postPlaceOrderWithFulfillmentUrl")
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     taler_url = getTalerUrl(model)
     url = taler_url + "/private/orders/" + model.taler_order_id
 
@@ -184,12 +194,16 @@ def requestGetOrderFromId(model):
 
 def checkOrderIsPaid(model):
     tadebug("Running checkOrderIsPaid")
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     response = requestGetOrderFromId(model)
     tadebug(response["order_status"])
     return response["order_status"] == "paid"
 
 def getOrderIdStatus(model):
     tadebug("Running getOrderIdStatus")
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     response = requestGetOrderFromId(model)
     tadebug("Order status:" + response["order_status"])
     if response == "":
@@ -201,22 +215,34 @@ def getOrderIdStatus(model):
     return response["contract_terms"]["order_id"], response["order_status"]
 
 def getTalerUrl(model):
+    tadebug("Running getTalerUrl")
     # Get Taler merchant url from the payment provider object
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     taler_url = model.provider_id.taler_merchant_url
     if not taler_url or taler_url == "":
         raise Exception("Taler URL is empty or incorrect. Did you set it correctly in the provider view?")
     return taler_url
 
 def getTalerPassword(model):
+    tadebug("Running getTalerPassword")
     # Get Taler merchant password from the payment provider object
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     taler_password = model.provider_id.taler_merchant_password
     if not taler_password or taler_password == "":
         raise Exception("Taler Password is empty or incorrect. Did you set it correctly in the provider view?")
     return taler_password
 
 def getCurrentTalerToken(model):
+    tadebug("Running getCurrentTalerToken")
     # Get the current Taler merchant token from the payment provider object
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
     taler_token = model.provider_id.taler_token
     if not taler_token or taler_token == "":
         raise Exception("Taler Token is empty")
     return taler_token
+
+def validateModel(model):
+    return model._name == "payment.transaction" or model._name == "account.move"
