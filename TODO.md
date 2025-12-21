@@ -188,6 +188,8 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
   - Show, for pos, how to remove the record manually added
   - Show, for pos, if needed, how to remove the added payment option from the setting of a pos store
 
+- Remove unused imports everywhere
+
 - After all the code cleanup is finished, and the only todos left are the ones to do at later steps of the project, then I should make picture tutorials in the readme for
   - Activation of taler payment provider after installation
     - Including explanation on what to put in the fields such as merchant_url, password, etc

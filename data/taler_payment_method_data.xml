@@ -7,7 +7,7 @@
         <field name="image" type="base64" file="tops/static/description/icon.png"/>
         <field name="support_tokenization">False</field>
         <field name="support_express_checkout">False</field>
-        <!--Edit this field to accurately reflect current refund functionality. Possible values: none, partial, full_only-->
+        <!--Edit this support_refund field to accurately reflect current refund functionality. Possible values: none, partial, full_only-->
         <field name="support_refund">none</field>
     </record>
 

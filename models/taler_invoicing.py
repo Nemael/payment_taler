@@ -4,8 +4,8 @@ from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlace
 
 class TalerInvoicing(models.Model):
     _inherit = 'account.move'
-    #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
-    #It will inherit the ir security settings from the account.move model
+    # Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
+    # It will inherit the ir security settings from the account.move model
 
     is_taler_invoice = fields.Boolean(default=False) # This value is used in the xml file for invoices. If true, the invoice will contain the Taler QR Code
 
@@ -14,7 +14,7 @@ class TalerInvoicing(models.Model):
     taler_order_uri = fields.Char(string="Taler Order URI", default="")
     taler_qr = fields.Char(string="Taler QR")
 
-    #For an explanation on this field, see the equivalent field in model TalerTransaction
+    # For an explanation on this field, see the equivalent field in model TalerTransaction
     taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generate_UUID())
 
 

@@ -7,10 +7,6 @@ import string
 import json
 import logging
 
-#Payment Provider code: https://github.com/odoo/odoo/blob/18.0/addons/payment/models/payment_provider.py#L14
-
-
-
 class TalerPayment(models.Model):
     _inherit = "payment.provider"
     # Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv

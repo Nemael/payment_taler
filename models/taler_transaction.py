@@ -35,7 +35,6 @@ class PaymentTransaction(models.Model):
 
         # Update the payment state based on payment status on the merchant's side
         payment_status = data.get('paymentStatus')
-        print(payment_status)
         if (payment_status == 'paid'):
             talog("Order paid")
             self._set_done()

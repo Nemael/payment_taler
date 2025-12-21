@@ -47,7 +47,7 @@ class TalerController(http.Controller):
     def taler_return_from_invoice(self, **data):
         reference = data.get('prefix') + "/" + str(data.get('year')) + "/" + data.get('number')
         talog("Returning after invoice payment completion. taler_uuid: " + data['taler_uuid'] + ", reference: " + reference)
-        #Searches in all transactions, one that has the reference received
+        # Searches in all transactions, one that has the reference received
         transaction = request.env['payment.transaction'].sudo().search([('reference', '=', reference)])
         if not transaction:
             taerror("No transaction found for reference: ", data.get('recvd_order_id'))
