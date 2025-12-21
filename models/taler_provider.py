@@ -61,7 +61,20 @@ class TalerProvider(models.Model):
         if not response["name"] or not response["name"] == "taler-merchant" or not response["version"] or not response["currencies"]:
             raise ValidationError("The Taler Merchant URL is invalid")
 
-        confirmation_string_for_user = "The Taler Merchant URL is valid."
+        merchant_currencies = []
+        for currency in response["currencies"].keys():
+            merchant_currencies.append(currency)
+
+        odoo_currencies_missing_in_merchant = []
+        for odoo_currency in const.SUPPORTED_CURRENCIES:
+            if odoo_currency not in merchant_currencies:
+                odoo_currencies_missing_in_merchant.append(odoo_currency)
+        if len(odoo_currencies_missing_in_merchant) > 0:
+            raise ValidationError("The Taler Merchant URL is invalid.\nCurrencies supported on Odoo side: " + str(odoo_currencies_missing_in_merchant) + ".\nCurrencies supported on Taler merchant side: " + str(merchant_currencies) + ".\nDiscrepancy: " + str(odoo_currencies_missing_in_merchant))
+
+
+
+        confirmation_string_for_user = "The Taler Merchant URL is valid and the currencies are compatible. "
         confirmation_string_for_user += "Merchant name: " + response["name"]
         confirmation_string_for_user += ". Merchant version: " + response["version"]
         confirmation_string_for_user += ". Currencies: "

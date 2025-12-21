@@ -11,7 +11,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - For the payment "Test Mode", there is a radio button in Odoo's interface to activate "Test Mode" for the payment method
 - Credentials are integrated as well
 
-- Add to the readme that users are advised to create a "Taler" payment journal to record  taler payments
+- Add to the readme that users are advised to create a "Taler" payment journal to record taler payments
 
 - See if my add-on has "iframe support", such as what is shown in the features for this repo https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
 
@@ -32,12 +32,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - For the refund system, use the field "refund_delay?: RelativeTime;" in the order creation payload
   - See https://docs.taler.net/core/api-merchant.html#creating-orders
 
-- When adding the merchant url, I should run a quick check that the inserted merchant URL accepts the currencies that I want to use.
-  - I can send empty request to [merchant_url]/config to know that, see video https://tutorials.taler.net/dev/merchant-api/versioning at 54 seconds
-
 - Add to the README file that, if there is an issue, they can open an issue on the git repository [repository_url]
-
-- Change the currency used in payments to use eur or chf
 
 - Add "How to remove the addon" in the guides
   - Show how to proceed with the removal on the app portal
@@ -47,9 +42,10 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Translate the README in French
   - Redo the tutorial pictures in French as well
 
-- Check at the beginning of any methods from taler_api_method, what the model's type is, and raise a ValidationError() when the model type is wrong
-
 - Check if every kind of Taler payment is recorded correctly in the journal (ecommerce, invoice online payment, invoice qr payment with manual payment reconciliation, pos, event ticket sale)
+
+- When adding the merchant url, I should run a quick check that the inserted merchant URL accepts the currencies that I want to use.
+  - I can send empty request to [merchant_url]/config to know that, see video https://tutorials.taler.net/dev/merchant-api/versioning at 54 seconds
 
 - After all the code cleanup is finished, and the only todos left are the ones to do at later steps of the project, then I should make picture tutorials in the readme for
   - Activation of taler payment provider after installation
