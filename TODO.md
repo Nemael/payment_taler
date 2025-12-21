@@ -9,7 +9,8 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - In the readme, tell which version of Odoo the addon is working for, and it was tested for
 
 - For the payment "Test Mode", there is a radio button in Odoo's interface to activate "Test Mode" for the payment method
-- Credentials are integrated as well
+  - Credentials are integrated as well
+  - It will take a lot of work to make the existing sysem work, but this is a great base to start
 
 - Add to the readme that users are advised to create a "Taler" payment journal to record taler payments
 
@@ -29,7 +30,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - When I do translation, don't forget to do translation of the .xml files
   - And the readme files as well
 
-- For the refund system, use the field "refund_delay?: RelativeTime;" in the order creation payload
+- For the refund system integration, use the field "refund_delay?: RelativeTime;" in the order creation payload
   - See https://docs.taler.net/core/api-merchant.html#creating-orders
 
 - Add to the README file that, if there is an issue, they can open an issue on the git repository [repository_url]
@@ -41,11 +42,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Translate the README in French
   - Redo the tutorial pictures in French as well
-
-- Check if every kind of Taler payment is recorded correctly in the journal (ecommerce, invoice online payment, invoice qr payment with manual payment reconciliation, pos, event ticket sale)
-
-- When adding the merchant url, I should run a quick check that the inserted merchant URL accepts the currencies that I want to use.
-  - I can send empty request to [merchant_url]/config to know that, see video https://tutorials.taler.net/dev/merchant-api/versioning at 54 seconds
 
 - After all the code cleanup is finished, and the only todos left are the ones to do at later steps of the project, then I should make picture tutorials in the readme for
   - Activation of taler payment provider after installation
