@@ -63,7 +63,7 @@ class TalerProvider(models.Model):
         confirmation_string_for_user += ". Currencies: "
         for currency in response["currencies"].keys():
             confirmation_string_for_user += currency + ", "
-        confirmation_string = confirmation_string_for_user[:-2] # Remove the last two characters, which will be ", "
+        confirmation_string_for_user = confirmation_string_for_user[:-2] # Remove the last two characters, which will be ", "
 
         return {
             'type': 'ir.actions.client',
