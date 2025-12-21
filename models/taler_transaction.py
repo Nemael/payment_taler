@@ -4,6 +4,7 @@ from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, generate_UUID, 
 from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid
 from odoo.addons.tops.controllers.taler_controller import TalerController
 
+
 class TalerTransaction(models.Model):
     _inherit = 'payment.transaction'
     #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv

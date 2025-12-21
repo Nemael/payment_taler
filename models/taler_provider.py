@@ -1,5 +1,8 @@
 from odoo import models, fields
 from odoo.addons.tops import const
+from odoo.exceptions import ValidationError
+from odoo.addons.tops.models.taler_api_methods import getMerchantConfiguration
+
 
 class TalerProvider(models.Model):
     _inherit = "payment.provider"
@@ -47,3 +50,28 @@ class TalerProvider(models.Model):
         if self.code != 'taler':
             return default_codes
         return const.DEFAULT_PAYMENT_METHOD_CODES
+
+    def merchant_url_check_button(self):
+        print("==============================================================================================================")
+        response = getMerchantConfiguration(self.taler_merchant_url)
+        if not response["name"] or not response["name"] == "taler-merchant" or not response["version"] or not response["currencies"]:
+            raise ValidationError("The Taler Merchant URL is invalid")
+
+        confirmation_string_for_user = "The Taler Merchant URL is valid."
+        confirmation_string_for_user += "Merchant name: " + response["name"]
+        confirmation_string_for_user += ". Merchant version: " + response["version"]
+        confirmation_string_for_user += ". Currencies: "
+        for currency in response["currencies"].keys():
+            confirmation_string_for_user += currency + ", "
+        confirmation_string = confirmation_string_for_user[:-2] # Remove the last two characters, which will be ", "
+
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': 'Info',
+                'message': confirmation_string_for_user,
+                'type': 'success',
+                'sticky': False,
+            }
+        }

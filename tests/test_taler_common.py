@@ -1,6 +1,7 @@
 from odoo.tests import tagged, TransactionCase
 from odoo.addons.payment.tests.common import PaymentCommon
 
+
 @tagged('taler')
 class TestTalerCommon(PaymentCommon):
     @classmethod

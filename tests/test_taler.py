@@ -9,6 +9,7 @@ from odoo.addons.payment.tests.http_common import PaymentHttpCommon
 from odoo.addons.tops.controllers.taler_controller import TalerController
 from odoo.addons.tops.tests.test_taler_common import TestTalerCommon
 
+
 @tagged('taler')
 class TestTaler(TestTalerCommon, PaymentHttpCommon):
     def test_compatible_providers(self):

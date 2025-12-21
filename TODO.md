@@ -4,19 +4,6 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 
-odoo differences community edition and enterprise edition
-how to install odoo enterprise edition on my own server
-
-
-First do a first draft of the logic used to make a payment to Taler
-	Reach out to the guy who is making the Python implementation for Frog logo ERP
-Then buy a subscription to Odoo Enterprise edition to implement this logic into existing modules that use payments, accounting is the priority
-
-
-Remove the __pycache__ folder from the repository
-
-
-
 Taler ideas:
     - For password
         - Maybe I should only store the Taler token, or a hash of the user's Taler password

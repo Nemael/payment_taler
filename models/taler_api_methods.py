@@ -4,8 +4,22 @@ from odoo.exceptions import ValidationError
 from odoo.addons.tops.utils.utils import tawarn, tadebug, taerror
 
 
-#This whole file is a temporary solution, I cannot do proper inheritance due to Odoo mixins, and this solution allows for some genericity that's enough for now+
-#Method names are in uppercase because they are meant to be class members
+def getMerchantConfiguration(url):
+    url += "/config"
+
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "TalerOdoo",
+    }
+    tadebug("Url: ", url)
+    tadebug("Headers: ", headers)
+    response = requests.request("GET", url, headers=headers)
+    tadebug("Response received: ", response.text)
+    if response.status_code != 200:
+        taerror("Error getting merchant config, bad response: ", response.text)
+        raise ValidationError("There was an issue connecting to the Taler Merchant URL, please make sure the URL is correct and the service is up.")
+    return response.json()
+
 def requestGetToken(model):
     tadebug("Running requestGetToken")
     taler_url = getTalerUrl(model)
@@ -17,6 +31,7 @@ def requestGetToken(model):
         "User-Agent": "TalerOdoo",
         "Authorization": "Bearer secret-token:" + getTalerPassword(model)
     }
+    tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
     response = requests.request("POST", url, json=payload, headers=headers)
@@ -42,6 +57,7 @@ def getOrderTalerUri(model, order_id):
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
         "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
+    tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
     response = requests.request("GET", url, data=payload, headers=headers)
@@ -75,6 +91,7 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
         "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
+    tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
     response = requests.request("POST", url, json=payload, headers=headers)
@@ -118,6 +135,7 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
         "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
+    tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
     response = requests.request("POST", url, json=payload, headers=headers)

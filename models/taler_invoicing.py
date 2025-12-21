@@ -2,6 +2,7 @@ from odoo import models, fields
 from odoo.addons.tops.utils.utils import generate_qr, generate_UUID, get_datetime_date_to_epoch
 from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage
 
+
 class TalerInvoicing(models.Model):
     _inherit = 'account.move'
     # Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
