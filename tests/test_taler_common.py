@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+#
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
 from odoo.tests import tagged, TransactionCase
 from odoo.addons.payment.tests.common import PaymentCommon
 

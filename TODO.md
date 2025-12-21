@@ -6,27 +6,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Make a dedicated email address for this add-on, to put on the addon shops' webpage, to receive emails for support and such
 
-Get a better version of the Taler logo to put in my app
-
-Have a discussion with the people that do auto licenses
-- Make a post on ICH about my experience and a summary of the discussions, and an explanation of the process
-
-Make a post on ICH asking about the Taler logos
-- Maybe ask if they have a Taler logo like this one https://www.taler.net/images/logo-2021.svg, but which would have the words removed a replaced by the full circles?
-- Post in the message all the references that Michiel gave me about the logos, and also specify that it is Michiel who gave me these references
-
-Have a discussion with the person that can help on the security aspect
-- Commons Caretakers BV, Eric Herman
-
-
-Change the tab name for every page in my addon (it currently shows "tops.welcome, 1" on the welcome page, which looks very bad
-
-
-At the end of the project, make sure that none of the logs are displaying sensitive information (such as passwords or secret-tokens)
-
-
-Add the acknowledgement to NGI and the grant to the Readme file, check email from Michiel
-
 
 Add the license text for CC0. This is for the purpose of marking files that are not copyrightable, for example configuration files such as .gitignore (See the PR from Gabriel from REUSE)
 This is functionally identical to putting the file into the public domain.
