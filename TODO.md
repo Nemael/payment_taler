@@ -190,6 +190,11 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 
 - Remove unused imports everywhere
 
+- Translate the README in french
+  - Redo the tutorial pictures in French as well
+
+- Check at the beginning of any methods from taler_api_method, what the model's type is, and raise a ValidationError() when the model type is wrong
+
 - After all the code cleanup is finished, and the only todos left are the ones to do at later steps of the project, then I should make picture tutorials in the readme for
   - Activation of taler payment provider after installation
     - Including explanation on what to put in the fields such as merchant_url, password, etc
