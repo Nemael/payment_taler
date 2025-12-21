@@ -215,8 +215,8 @@ def getOrderIdStatus(model):
     return response["contract_terms"]["order_id"], response["order_status"]
 
 def getTalerUrl(model):
-    tadebug("Running getTalerUrl")
     # Get Taler merchant url from the payment provider object
+    tadebug("Running getTalerUrl")
     if not validateModel(model):
         raise ValidationError("Method called on wrong model")
     taler_url = model.provider_id.taler_merchant_url
@@ -225,8 +225,8 @@ def getTalerUrl(model):
     return taler_url
 
 def getTalerPassword(model):
-    tadebug("Running getTalerPassword")
     # Get Taler merchant password from the payment provider object
+    tadebug("Running getTalerPassword")
     if not validateModel(model):
         raise ValidationError("Method called on wrong model")
     taler_password = model.provider_id.taler_merchant_password
