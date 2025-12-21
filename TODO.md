@@ -128,6 +128,7 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 - Add checks for which currency is used when the website or accounting systems are used
 
 - add maybe a "powered by Taler" on the invoices with Taler qr code
+  - With the "Taler" being the logo of Taler
 
 - When an invoice is created with a taler qr code, try to edit the invoice, and see if the taler qr code is still there
 
@@ -178,7 +179,16 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
 
 - Add to the README file that, if there is an issue, they can open an issue on the git repository [repository_url]
 
+- Remove the too many logs, and make them warning, errors, info as required
 
+- Change the currency used in payments to use eur or chf
+
+- Add "How to remove the addon" in the guides
+  - Show how to proceed with the removal on the app portal
+  - Show, for pos, how to remove the record manually added
+  - Show, for pos, if needed, how to remove the added payment option from the setting of a pos store
+
+- Remove unused imports everywhere
 
 - After all the code cleanup is finished, and the only todos left are the ones to do at later steps of the project, then I should make picture tutorials in the readme for
   - Activation of taler payment provider after installation
@@ -190,3 +200,4 @@ In the readme, tell which version of Odoo the addon is working for, and it was t
   - ticket sale process, with the info from the readme or TODO on how to install the ticket addon
   - pos setup for the online payment provider
   - pos payment process with qr code for the user
+
