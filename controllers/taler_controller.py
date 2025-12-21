@@ -1,20 +1,6 @@
-import hmac
-import logging
-import pprint
-import hashlib
-import hmac
-import requests
-
-#might be able to remove this unused import
-from werkzeug.exceptions import Forbidden
-
 from odoo import http
-from odoo.exceptions import ValidationError
 from odoo.http import request
 from odoo.addons.tops.utils.utils import talog, tawarn, taerror
-
-_logger = logging.getLogger(__name__)
-
 
 class TalerController(http.Controller):
     _fulfillment_url = '/payment/taler/return'

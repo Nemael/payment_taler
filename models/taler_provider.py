@@ -1,16 +1,14 @@
 from odoo import models, fields
 from odoo.addons.tops import const
-import hashlib
-import base64
-import random
-import string
-import json
-import logging
 
-class TalerPayment(models.Model):
+class TalerProvider(models.Model):
     _inherit = "payment.provider"
     # Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
     # It will inherit the ir security settings from the account.move model
+
+    # Odoo guidelines advise to archive payment providers instead of deleting them, when deleting a provider's addon
+    # This "active" field makes it so this payment provider model is archived instead of delete when deleting the tops addon
+    active = fields.Boolean(default=True)
 
     # This code = 'taler' is a check to recognize that this provider is for Taler
     code = fields.Selection(selection_add=[("taler", "Taler")], ondelete={"taler": "set default"})
@@ -30,7 +28,7 @@ class TalerPayment(models.Model):
                               groups='base.group_system') # Limits access to this field to admin users (system group)
 
     fulfillment_message = fields.Char(string="Taler fulfillment message",
-                                      help="Fulfillment message shown to the user after paying for the order",
+                                      help="""Fulfillment message shown to the user on the Taler merchant ordes after paying for the order. Note: This message does not show on Odoo itself, see the "Messages" tab for this purpose.""",
                                       default="Thank you for your payment with Taler")
 
 

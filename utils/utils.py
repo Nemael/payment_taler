@@ -2,12 +2,10 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 import uuid
-
-from datetime import datetime, time, timedelta
-import os
 import logging
 import qrcode
 import base64
+from datetime import datetime, time, timedelta
 from io import BytesIO
 
 _logger = logging.getLogger(__name__)

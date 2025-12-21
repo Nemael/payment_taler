@@ -1,14 +1,10 @@
-from odoo import fields, models
 from odoo.exceptions import ValidationError
 from odoo import models, fields
 from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, generate_UUID, get_datetime_now_to_epoch
 from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid
 from odoo.addons.tops.controllers.taler_controller import TalerController
 
-from werkzeug import urls
-
-#try to rename PaymentTransaction to TalerTransaction
-class PaymentTransaction(models.Model):
+class TalerTransaction(models.Model):
     _inherit = 'payment.transaction'
     #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
     #It will inherit the ir security settings from the account.move model

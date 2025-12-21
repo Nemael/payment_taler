@@ -1,7 +1,4 @@
-from odoo.tests.common import TransactionCase
-from odoo.exceptions import UserError
 from odoo.tests import tagged, TransactionCase
-
 from odoo.addons.payment.tests.common import PaymentCommon
 
 @tagged('taler')
