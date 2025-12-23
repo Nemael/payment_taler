@@ -10,6 +10,10 @@ SPDX-License-Identifier: LGPL-3.0-or-later
         <field name="name">Taler</field>
         <field name="code">taler</field>
         <field name="redirect_form_view_id" ref="redirect_form"/>
+        <field name="image_128"
+               type="base64"
+               file="tops/static/description/icon.png"
+        />
         <field name="payment_method_ids" eval="[Command.set([
                 ref('tops.payment_method_taler'),
             ])]" />

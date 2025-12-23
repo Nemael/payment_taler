@@ -17,7 +17,9 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 ---
 
-## Installation steps on an already-existing Odoo installation
+## Tutorials
+
+### Installation steps on an already-existing Odoo installation
 
 - Clone this repository
   - Preferably in {your Odoo install}/custom_addons
@@ -27,10 +29,9 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - Such as: `./odoo-bin --addons-path=./addons,./custom_addons -u tops -d odoo18_tops_0.1.1.1`
 - In Odoo, go to the `Apps` section in the app switcher (top-left button)
 - Click `Update Apps List` on the top bar
-  - I may need to activate developer mode to see this button, need to find another option for non-developper user, double-check if it is actually an issue
-- Search for the add-on Taler-Odoo Payment System`
+- Search for the add-on `Taler-Odoo Payment System`
 - Install it from there
-- Once installed, you just have to set the vendor url and the password
+- Once installed, you have to set the Taler Merchant url and the password
 - (The following steps are subject to change, please reach out to me if you find them inaccurate)
 - Go to `Taler-Odoo Payment System` using the app switcher (top-left button)
 - Click `Configuration` on the top bar and then `Settings`
@@ -42,25 +43,45 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 ---
 
-## Change settings using CLI
-- Run the Odoo CLI shell by adding `shell` to your original command line to start Odoo
-  - Such as `./odoo-bin shell --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -u tops -d odoo18_tops_0.1.1.1`
-- Run these commands to edit the setting you want to set. You can use `get_params` to print the current value, and `set_params` to set a new value.
-  - `env['ir.config_parameter'].set_param('tops.merchant_url', 'https://backend.demo.taler.net/instances/sandbox/')`
-  - `env['ir.config_parameter'].set_param('tops.password', 'https://backend.demo.taler.net/instances/sandbox/')`
-- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`IMPORTANT: Commit the changes to the database before closing the shell instance and restarting Odoo
-  - `env.cr.commit()`
-  - `exit()`
+<a id="setup_payment_provider"></a>
+### How to setup the Taler payment provider
+- Once the addon is installed from the Apps:
+  - Go to the payment providers menu. It can be accessed in multiple ways:
+    - Website -> Configuration -> eCommerce -> Payment Providers
+    - Invoicing -> Configuration -> Online Payments -> Payment Providers
+  - Either way you land here, this is the list of your currently available payment providers.
+  - You will see a new payment provider in this list, "Taler", which is set as disabled for now
+  - Click on the Taler payment provider
+  - Click the "Enabled" radio button
+  - In the "Credentials" tab, set the Taler Merchant URL you plan to use
+    - After setting the URL, you can click the "Confirm the url validity" button to check if the entered URL is reaching a valid Taler Merchant, and that this merchant's accepted currencies are compatible with you TOPS available currencies
+  - Then set your Taler Merchant Password, which will be used for API calls to the merchant
+  - You can change the Taler fulfillment message, which will be shown on created Taler transactions, only on Taler side, not on Odoo side.
+    - If you'd like to change the Odoo messages shown to the user after a payment using Taler, you can do so in the "Messages" tab on the same page
+  - The default values are for the sandbox merchant server
+    - URL: https://backend.demo.taler.net/instances/sandbox
+    - Password: sandbox
+- You are now set and Taler payment will be available in eCommerce and Invoicing.
+- ![img.png](./README_Pictures/Taler_provider_setting_complete.png)
 
----
 
-## Tutorials
+### Paying an ecommerce bill
+TODO
 
-### How to setup payment provider
+### Paying an invoice
+TODO
+
+### Paying on a Point of Sale
+TODO
+
+### Going through the refund process
+Not implemented yet
+
+
 
 ### How to setup POS payment provider
 - Preliminary steps
-  - Only do this step if you have setup Taler as a payment provider
+  - Only do this step if you have [setup Taler as a payment provider](#how-to-setup-the-Taler-payment-provider) first
   - Install the "Point of sale" Odoo addon
 - Create the Point of Sale payment method
   - On the top bar, press Configuration -> Payment Methods
@@ -76,21 +97,33 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - In Payment -> Payment Methods, add the payment method you just created. It can be named "Taler", or any other custom name you chose
 - You are now good to go, and can select your new payment provider when customer pay for an order.
 
+
+
+
 ---
 
-## Examples of the add-on running:
+### Change settings using CLI
+- Run the Odoo CLI shell by adding `shell` to your original command line to start Odoo
+  - Such as `./odoo-bin shell --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -u tops -d odoo18_tops_0.1.1.1`
+- Run these commands to edit the setting you want to set. You can use `get_params` to print the current value, and `set_params` to set a new value.
+  - `env['ir.config_parameter'].set_param('tops.merchant_url', 'https://backend.demo.taler.net/instances/sandbox/')`
+  - `env['ir.config_parameter'].set_param('tops.password', 'https://backend.demo.taler.net/instances/sandbox/')`
+- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`IMPORTANT: Commit the changes to the database before closing the shell instance and restarting Odoo
+  - `env.cr.commit()`
+  - `exit()`
 
-### Paying an ecommerce bill
-TODO
+---
 
-### Paying an invoice
-TODO
+### Uninstall the addon
+- 
 
-### Paying on a Point of Sale
-TODO
 
-### Going through the refund process
-Not implemented yet
+
+---
+
+Note: if any of these tutorials seem inaccurate, please reach out for clarifications or changes.
+
+---
 
 ## Folder structure
 
