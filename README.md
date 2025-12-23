@@ -41,9 +41,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 - You are now finished with the installation and can start using the add-on
 - Note: to update the add-on, you can pull from the repository you cloned earlier
 
----
 
-<a id="setup_payment_provider"></a>
 ### How to setup the Taler payment provider
 - Once the addon is installed from the Apps:
   - Go to the payment providers menu. It can be accessed in multiple ways:
@@ -61,23 +59,32 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - The default values are for the sandbox merchant server
     - URL: https://backend.demo.taler.net/instances/sandbox
     - Password: sandbox
-- You are now set and Taler payment will be available in eCommerce and Invoicing.
-- ![img.png](./README_Pictures/Taler_provider_setting_complete.png)
+- The initial setup is now complete and Taler payment will be available in all eCommerce and Invoicing apps.
+![img.png](README_Pictures/Taler_provider_setting_complete.png)
 
 
-### Paying an ecommerce bill
-TODO
+---
+## Flow examples and walkthrough
 
-### Paying an invoice
-TODO
+### Completes an eCommerce payment
+- Once you have completed the Taler initial setup, customers can pay on your website
+- To do so, they will open the shop and add any items in their cart
+- During the checkout, they can now choose the "Taler" payment method
+![img.png](README_Pictures/Taler_ecommerce_checkout.png)
+- After clicking "Pay now", a new Taler order will be created on the merchant side, and the customer will be redirected to the Taler order, from which they can pay with any Taler wallet on their phone or web browser
+![img.png](README_Pictures/Taler_ecommerce_wallet.png)
+- Upon completion of the payment using their wallet, the customer will be redirected back to the Odoo instance, where it will show a confirmation that the payment was successfully processed
+![img.png](README_Pictures/Taler_ecommerce_payment_processed.png)
 
-### Paying on a Point of Sale
-TODO
+### Creating an invoice that can be paid with Taler (TODO)
+- Talk about the QR Code
 
-### Going through the refund process
-Not implemented yet
+### Paying an invoice online with Taler (TODO)
+- This process is unrelated to the invoices created with Taler in the previous step
+  - Any invoices can be paid online using Taler
 
-
+### Tickets (TODO)
+- Talk about the addon I have to install to make tickets available
 
 ### How to setup POS payment provider
 - Preliminary steps
@@ -99,6 +106,10 @@ Not implemented yet
 
 
 
+### Paying on a Point of Sale (TODO)
+
+### Going through the refund process
+This flow is not implemented yet
 
 ---
 
@@ -114,45 +125,51 @@ Not implemented yet
 
 ---
 
-### Uninstall the addon
-- 
-
+### Editing rights to the payment provider settings
+- As with other payment providers, not all Odoo users on an instance can modify the Taler payment provider settings
+- Only user that belong in the `base.group_system` user group will be able to access and modify the Taler payment provider settings.
 
 
 ---
 
-Note: if any of these tutorials seem inaccurate, please reach out for clarifications or changes.
+### Uninstall the addon
+- To uninstall the addon, you have to go to the `Apps` app on Odoo
+- In there, search for and go to the `Taler-Odoo Payment System` addon
+- Click `Uninstall`, the addon should be uninstalled
+- You can reinstall the addon at a later time
 
 ---
 
 ## Folder structure
 
-This list is outdated and I will update it soon
-
 This add-on uses a quite standard folder structure
-- `data` contains the setup data that is processed when someone installs the add-on.
-
+- `controllers` contains the controllers for the mvc structure of this project
+- `data` contains setup data that is processed when someone installs the add-on.
 - `Devlog` is a text compendium of the posts I am making on the ICH forum
-
+- `LICENSES` contains the text of the licenses used in this project
 - `models` contains my Odoo models. There are:
-  - `Welcome` model (which contains method to interact with Taler)
-  - `Order` model (which allows for the storing an management of orders)
-  - `res_config_settings` model (which allows to store and edit settings for the add-on, and is currently used to set up Taler connection data)
-
-- `static` contains logo data and other assets I would need to use in the future
-
-- `test` is for unit testing, is currently unused
-
+  - `taler_api_method`, which contains the methods used to communicate to the Taler merchant API
+  - `taler_invoicing`, which contains the methods used when creating invoices with Taler
+  - `taler_provider`, which contains the methods used by the Taler payment provider
+  - `taler_transaction`, which contains the methods used to complete a transaction with Taler
+- `README_Pictures`, which contains all the pictures shown in this README
+- `static` contains logo data and other image assets for the addon
+- `tests` contains unit tests for this project
 - `utils` contains utility methods (such as logging)
-
 - `views` contains a view for each of my models.
 
 ---
 
 ## Running unit tests
 - To run unit tests on a new db, use this command
-  - ./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons --test-enable -d test_db_2 -i tops --stop-after-init --test-tags taler
+  - `./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons --test-enable -d test_db_2 -i tops --stop-after-init --test-tags taler`
   - The db name after -d is arbitrary and can be replaced by any other names
+- In the results, you should expect to see `odoo.tests.result: 0 failed, 0 error(s) of 9 tests when loading database`
+
+---
+
+Note: if any of these tutorials seem inaccurate, please reach out for clarifications or changes.
+
 ---
 
 ## Funding
