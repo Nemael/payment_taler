@@ -123,7 +123,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - Tickets are now available to buy using Online payments providers, including the Taler payment provider!
   - Customers can now navigate the "Events" tab on your website, and choose any event they'd like to purchase a ticket to
 
-<img src="Taler_ticketing_events_list.png" alt="Taler ticketing event list" style="max-height: 300px;">
+<img src="README_Pictures/Taler_ticketing_events_list.png" alt="Taler ticketing event list" style="max-height: 300px;">
 
   - When they click an event, they can register in it, which will prompt them to give some information, and then lead them to a payment page
   - On this payment page, the customer can select Taler as a payment provider
