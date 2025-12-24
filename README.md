@@ -17,7 +17,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 ---
 
-## Tutorials
+## Tutorials, flow examples and walkthrough
 
 ### Install the add-on on an already-existing Odoo installation
 
@@ -36,6 +36,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 
 ### How to setup the Taler payment provider
+
 - Once the addon is installed from the Apps:
   - Go to the payment providers menu. It can be accessed in multiple ways:
     - Website -> Configuration -> eCommerce -> Payment Providers
@@ -52,14 +53,15 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - The default values are for the sandbox merchant server
     - URL: https://backend.demo.taler.net/instances/sandbox
     - Password: sandbox
+  - It is advised, but completely optional, to create a Taler-specific Journal (available in the Configuration tab)
+    - This will help during the Accounting process
+    - This step could be helpful for you, depending on your accounting setup
 - The initial setup is now complete and Taler payment will be available in all eCommerce and Invoicing apps.
 
 <img src="README_Pictures/Taler_provider_setting_complete.png" alt="Taler providers settings" style="max-height: 400px;">
 
----
-## Flow examples and walkthrough
-
 ### Completes an eCommerce payment
+
 - Once you have completed the Taler initial setup, customers can pay on your website
 - To do so, they will open the shop and add any items in their cart
 - During the checkout, they can now choose the "Taler" payment provider
@@ -75,6 +77,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 <img src="README_Pictures/Taler_ecommerce_payment_processed.png" alt="Taler eCommerce payment processor" style="max-height: 400px;">
 
 ### Creating an invoice that can be paid with Taler
+
 - It is possible to create an invoice that can be paid specifically with Taler
   - Go to the Invoicing app and create a new invoice
   - Fill any data relevant to the invoice that you are creating
@@ -96,7 +99,8 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - Press "Create Payment"
 
 
-### Paying for an invoice online with Taler
+### Online invoice payment using Taler
+
 > This process is unrelated to the invoices created with Taler in the previous step
 > 
 > Any created invoices can be paid online using Taler
@@ -112,7 +116,12 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 <img src="README_Pictures/Taler_invoices_paid_online.png" alt="Taler invoices paid online" style="max-height: 400px;">
 
-### Event tickets
+### Online Event tickets purchases using Taler
+
+> Note: to have a fully working ticketing system, you might need to install the python module pycairo:
+>    - 1. sudo apt install libcairo2-dev
+>    - 2. pip install rlPyCairo
+
 - Here is how to make event tickets available for customers to pay using Taler
   - Add the "Events" add-on on your Odoo instance
   - Go to the settings app, and navigate to the "Events" settings
@@ -133,6 +142,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 <img src="README_Pictures/Taler_ticketing_event_payment_confirmation.png" alt="Taler ticketing event payment confirmation" style="max-height: 400px;">
 
 ### How to setup POS payment provider
+
 - Allowing Taler payment on the point-of-sale app requires a few more steps than online payments abovees
 - Preliminary steps
   - Only do this step if you have previously [setup Taler as a payment provider](#how-to-setup-the-Taler-payment-provider)
@@ -152,6 +162,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 - The setup is now complete, and you can select your new payment provider when a customer pay for an order on the Point of sale that you added the payment method to.
 
 ### Payment on a Point of Sale
+
 - Open a register on one of the Points of Sale for which you activated the Taler payment method in the previous step
 - Put any items in the order, and once done, click "Payment" at the bottom of the page
 - The "Taler" payment method, that you added earlier, should now be available in the payment options
@@ -168,11 +179,13 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 <img src="README_Pictures/Taler_pos_receipt.png" alt="Taler pos receipt" style="max-height: 400px;">
 
 ### Going through the refund process
+
 This flow is not implemented yet
 
 ---
 
 ### Change settings using CLI
+
 - Run the Odoo CLI shell by adding `shell` to your original command line to start Odoo
   - Such as `./odoo-bin shell --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -u tops -d odoo18_tops_0.1.1.1`
 - Run these commands to edit the setting you want to set. You can use `get_params` to print the current value, and `set_params` to set a new value.
@@ -185,6 +198,7 @@ This flow is not implemented yet
 ---
 
 ### Editing rights to the payment provider settings
+
 - As with other payment providers, not all Odoo users on an instance can modify the Taler payment provider settings
 - Only user that belong in the `base.group_system` user group will be able to access and modify the Taler payment provider settings.
 
@@ -192,34 +206,45 @@ This flow is not implemented yet
 ---
 
 ### Uninstall the addon
+
 - To uninstall the addon, you have to go to the `Apps` app on Odoo
 - In there, search for and go to the `Taler-Odoo Payment System` addon
 - Click `Uninstall`, the addon should be uninstalled
 - You can reinstall the addon at a later time
+- If you added a payment method record for the point of sale app:
+  - Go to the Point of Sale app, and navigate to `Configuration/Payment Methods`
+  - Click on the "Taler" record you created when setting up the point of sale payment system
+  - Click on the gear at the top, and then either "Archive" (better) or "Delete" (more risky because you might lose track of some payments)
+  - On the top bar, press Configuration -> Point of Sale list
+  - Select a point of sale that you made Taler payments available for
+  - Click on "More settings: Configurations > Settings", which will lead you to the point of sale's settings page
+  - In Payment -> Payment Methods, remove the Taler payment method. It can be named "Taler", or any other custom name you chose when first setting it up.
+  - Do this for every point of sale you made Taler payments available for
 
 ---
 
 ## Folder structure
 
 This add-on uses a quite standard folder structure
-- `controllers` contains the controllers for the mvc structure of this project
-- `data` contains setup data that is processed when someone installs the add-on.
+- `controllers` contains the controllers used by the addon
+- `data` contains setup data that is processed when someone installs the add-on
 - `Devlog` is a text compendium of the posts I am making on the ICH forum
 - `LICENSES` contains the text of the licenses used in this project
-- `models` contains my Odoo models. There are:
+- `models` contains the Odoo models. There are:
   - `taler_api_method`, which contains the methods used to communicate to the Taler merchant API
   - `taler_invoicing`, which contains the methods used when creating invoices with Taler
   - `taler_provider`, which contains the methods used by the Taler payment provider
   - `taler_transaction`, which contains the methods used to complete a transaction with Taler
-- `README_Pictures`, which contains all the pictures shown in this README
+- `README_Pictures` contains all the pictures shown in this README
 - `static` contains logo data and other image assets for the addon
 - `tests` contains unit tests for this project
 - `utils` contains utility methods (such as logging)
-- `views` contains a view for each of my models.
+- `views` contains a view for each of the models.
 
 ---
 
 ## Running unit tests
+
 - To run unit tests on a new db, use this command
   - `./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons --test-enable -d test_db_2 -i tops --stop-after-init --test-tags taler`
   - The db name after -d is arbitrary and can be replaced by any other names
@@ -227,7 +252,7 @@ This add-on uses a quite standard folder structure
 
 ---
 
-> If any of these tutorials or information seem inaccurate, please reach out for clarifications or changes.
+> If any of these tutorials or information seem inaccurate, please either reach out for clarifications or changes, or open an issue on the [TOPS repository](https://codeberg.org/Nemael/tops/)
 
 ---
 
@@ -236,6 +261,14 @@ This add-on uses a quite standard folder structure
 This project is funded through [NGI TALER Fund](https://nlnet.nl/taler), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program. Learn more at the [NLnet project page](https://nlnet.nl/project/TALER-Odoo-module).
 
 [<img src="https://nlnet.nl/logo/banner.png" alt="NLnet foundation logo" width="20%" />](https://nlnet.nl) 
+
+---
+
+## Special thanks to
+
+- The [Odoo Community Association (OCA)](https://github.com/OCA) and their many Open-Source addons, which helped me find my way around which Odoo flows to work on.
+- [petites singularites](https://ps.lesoiseaux.io/taler/) for the administration of the [ICH Forum](https://ich.taler.net/), where I could post questions and updates about my progress, and get support from the community.
+- The [Kashier](https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on) and [Sadad](https://github.com/Adnanghanchi/Odoo-Payment-Provider) payment providers integrations in Odoo, which provided examples that helped me steer my work in the right direction
 
 ---
 
