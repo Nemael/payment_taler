@@ -62,3 +62,9 @@ For now: steps to add Taler to point of sale
   - I can now clone and push using ssh to this repository
 
 - How to change the currency of my Odoo instance
+  - Change the main or secondary currencies in the settings of your instance
+
+- How to attach a tag to a commit
+  - After a commit is made and pushed to the repository
+  - Run `git tag "tag_string"` to make the tag
+  - Run `git push origin tag "tag_string"` to push the tag to the repository. `tag_string` must match with the previous command
