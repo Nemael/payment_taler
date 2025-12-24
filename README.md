@@ -86,7 +86,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - You can now click "Preview" to see the Invoice that will be sent to your customer
   - The Invoice PDF that is created will include a Taler payment QR Code, as well as Taler order information on the bottom:
 
-<img src="Taler_invoices_taler_qr_code.png" alt="Taler invoices taler qr code" style="max-height: 300px;">
+<img src="README_Pictures/Taler_invoices_taler_qr_code.png" alt="Taler invoices taler qr code" style="max-height: 300px;">
 
 - What should I do if the customer pays for an invoice using the Taler QR Code on the invoice?
   - If the customer pays for the invoice using the QR Code on the invoice, you will have to do a manual payment reconciliation
