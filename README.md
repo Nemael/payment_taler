@@ -54,7 +54,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
     - Password: sandbox
 - The initial setup is now complete and Taler payment will be available in all eCommerce and Invoicing apps.
 
-<img src="README_Pictures/Taler_provider_setting_complete.png" alt="Taler providers settings" style="max-height: 300px;">
+<img src="README_Pictures/Taler_provider_setting_complete.png" alt="Taler providers settings" style="max-height: 100px;">
 
 ---
 ## Flow examples and walkthrough
@@ -64,15 +64,15 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 - To do so, they will open the shop and add any items in their cart
 - During the checkout, they can now choose the "Taler" payment provider
 
-<img src="README_Pictures/Taler_ecommerce_checkout.png" alt="Taler eCommerce checkout" style="max-height: 300px;">
+<img src="README_Pictures/Taler_ecommerce_checkout.png" alt="Taler eCommerce checkout" style="max-height: 100px;">
 
 - After clicking "Pay now", a new Taler order will be created on the merchant side, and the customer will be redirected to the Taler order, from which they can pay with any Taler wallet on their phone or web browser
 
-<img src="README_Pictures/Taler_ecommerce_wallet.png" alt="Taler eCommerce wallet" style="max-height: 300px;">
+<img src="README_Pictures/Taler_ecommerce_wallet.png" alt="Taler eCommerce wallet" style="max-height: 100px;">
 
 - Upon completion of the payment using their wallet, the customer will be redirected back to the Odoo instance, where it will show a confirmation that the payment was successfully processed
 
-<img src="README_Pictures/Taler_ecommerce_payment_processed.png" alt="Taler eCommerce payment processor" style="max-height: 300px;">
+<img src="README_Pictures/Taler_ecommerce_payment_processed.png" alt="Taler eCommerce payment processor" style="max-height: 100px;">
 
 ### Creating an invoice that can be paid with Taler
 - It is possible to create an invoice that can be paid specifically with Taler
@@ -80,13 +80,13 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - Fill any data relevant to the invoice that you are creating
   - Important step: In the "Other Info" tab, set the Payment Method to "Taler":
   
-<img src="README_Pictures/Taler_invoices_payment_method.png" alt="Taler invoices payment method" style="max-height: 300px;">
+<img src="README_Pictures/Taler_invoices_payment_method.png" alt="Taler invoices payment method" style="max-height: 100px;">
 
 - When you are done, click "Confirm" at the top, you will be led to the invoice page
   - You can now click "Preview" to see the Invoice that will be sent to your customer
   - The Invoice PDF that is created will include a Taler payment QR Code, as well as Taler order information on the bottom:
 
-<img src="Taler_invoices_taler_qr_code.png" alt="Taler invoices taler qr code" style="max-height: 300px;">
+<img src="Taler_invoices_taler_qr_code.png" alt="Taler invoices taler qr code" style="max-height: 100px;">
 
 - What should I do if the customer pays for an invoice using the Taler QR Code on the invoice?
   - If the customer pays for the invoice using the QR Code on the invoice, you will have to do a manual payment reconciliation
@@ -105,12 +105,12 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 - Once created, you can press "Preview" to see the page that the customer will see
 - On this page, the user will be able to click "Pay Now", and choose Taler as a payment provider
 
-<img src="README_Pictures/Taler_invoices_online_payment.png" alt="Taler invoices online payment" style="max-height: 300px;">
+<img src="README_Pictures/Taler_invoices_online_payment.png" alt="Taler invoices online payment" style="max-height: 100px;">
 
 - Once they click this button, they will be redirected to the Taler order page, where they can pay with a Taler wallet on their phone or web browser
 - When the payment is complete, the customer will be sent back to the invoice page, with a green notice saying that the payment is complete
 
-<img src="README_Pictures/Taler_invoices_paid_online.png" alt="Taler invoices paid online" style="max-height: 300px;">
+<img src="README_Pictures/Taler_invoices_paid_online.png" alt="Taler invoices paid online" style="max-height: 100px;">
 
 ### Event tickets
 - Here is how to make event tickets available for customers to pay using Taler
@@ -118,19 +118,19 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
   - Go to the settings app, and navigate to the "Events" settings
   - Tick the "Online Ticketing" and save the changes
 
-<img src="README_Pictures/Taler_ticketing_settings.png" alt="Taler ticketing settings" style="max-height: 300px;">
+<img src="README_Pictures/Taler_ticketing_settings.png" alt="Taler ticketing settings" style="max-height: 100px;">
 
   - Tickets are now available to buy using Online payments providers, including the Taler payment provider!
   - Customers can now navigate the "Events" tab on your website, and choose any event they'd like to purchase a ticket to
 
-<img src="Taler_ticketing_events_list.png" alt="Taler ticketing event list" style="max-height: 300px;">
+<img src="Taler_ticketing_events_list.png" alt="Taler ticketing event list" style="max-height: 100px;">
 
   - When they click an event, they can register in it, which will prompt them to give some information, and then lead them to a payment page
   - On this payment page, the customer can select Taler as a payment provider
   - They will be redirected to a Taler order page, where they can pay with their wallet or web browser
   - Once payment is finished, the customer will land back on the odoo page, with their payment succesfully processed, and a .pdf of the event tickets available
 
-<img src="README_Pictures/Taler_ticketing_event_payment_confirmation.png" alt="Taler ticketing event payment confirmation" style="max-height: 300px;">
+<img src="README_Pictures/Taler_ticketing_event_payment_confirmation.png" alt="Taler ticketing event payment confirmation" style="max-height: 100px;">
 
 ### How to setup POS payment provider
 - Allowing Taler payment on the point-of-sale app requires a few more steps than online payments abovees
@@ -156,16 +156,16 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 - Put any items in the order, and once done, click "Payment" at the bottom of the page
 - The "Taler" payment method, that you added earlier, should now be available in the payment options
 
-<img src="README_Pictures/Taler_pos_taler_payment.png" alt="Taler pos taler payment" style="max-height: 300px;">
+<img src="README_Pictures/Taler_pos_taler_payment.png" alt="Taler pos taler payment" style="max-height: 100px;">
 
 - Clicking on the option and validating it will prompt the customer with a QR Code
 - Scanning this QR Code will redirect to an Odoo page, where they will be able to choose to pay with Taler
 - This will bring the customer to a Taler order page, and they will be able to pay using their Taler wallet or web browser
 - Upon the payment completion, the customer will be redirected to Odoo, with a confirmation of payment (first picture), and the order on the point of sale's side will show a successful payment, and produce the receipt (second picture)
 
-<img src="README_Pictures/Taler_pos_payment_complete.png" alt="Taler pos payment complete" style="max-height: 300px;">
+<img src="README_Pictures/Taler_pos_payment_complete.png" alt="Taler pos payment complete" style="max-height: 100px;">
 
-<img src="README_Pictures/Taler_pos_receipt.png" alt="Taler pos receipt" style="max-height: 300px;">
+<img src="README_Pictures/Taler_pos_receipt.png" alt="Taler pos receipt" style="max-height: 100px;">
 
 ### Going through the refund process
 This flow is not implemented yet
