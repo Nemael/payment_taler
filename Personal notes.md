@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+
+SPDX-License-Identifier: CC0
+-->
+
 DON'T FORGET THE RELEASE TAGS ON THE REPOSITORY
 
 Odoo addon creation
