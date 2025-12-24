@@ -17,6 +17,8 @@
         'data/taler_payment_provider_data.xml',
         'security/ir.model.access.csv' #The ir security file is not actually needed for now, but it stays included in case it is needed later.
     ],
+    'post_init_hook': 'post_init_hook',
+    'uninstall_hook': 'uninstall_hook',
     'installable': True,
     'application': True,
     'license': 'LGPL-3' #Complete license is "LGPL-3.0-or-later", see on top of any files in the module.

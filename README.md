@@ -213,7 +213,7 @@ This flow is not implemented yet
 - You can reinstall the addon at a later time
 - If you added a payment method record for the point of sale app:
   - Go to the Point of Sale app, and navigate to `Configuration/Payment Methods`
-  - Click on the "Taler" record you created when setting up the point of sale payment system
+  - Click on the "Taler" record you created when setting up the point of sale payment system, it should be highlighted in red because the payment provider is not available anymore
   - Click on the gear at the top, and then either "Archive" (better) or "Delete" (more risky because you might lose track of some payments)
   - On the top bar, press Configuration -> Point of Sale list
   - Select a point of sale that you made Taler payments available for

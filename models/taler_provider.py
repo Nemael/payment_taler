@@ -13,10 +13,6 @@ class TalerProvider(models.Model):
     # Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
     # It will inherit the ir security settings from the account.move model
 
-    # Odoo guidelines advise to archive payment providers instead of deleting them, when deleting a provider's addon
-    # This "active" field makes it so this payment provider model is archived instead of delete when deleting the tops addon
-    active = fields.Boolean(default=True)
-
     # This code = 'taler' is a check to recognize that this provider is for Taler
     code = fields.Selection(selection_add=[("taler", "Taler")], ondelete={"taler": "set default"})
 
