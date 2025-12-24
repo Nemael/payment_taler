@@ -54,3 +54,5 @@ For now: steps to add Taler to point of sale
     - This command has to return something such as "Identity added", otherwise it means the key wasn't added
   - Run `ssh-add -l` to confirm that the ssh key was added
   - I can now clone and push using ssh to this repository
+
+- How to change the currency of my Odoo instance

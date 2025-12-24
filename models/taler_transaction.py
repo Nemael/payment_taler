@@ -59,10 +59,8 @@ class TalerTransaction(models.Model):
         expiration_time_in_epoch = get_datetime_now_to_epoch(15)  # Calculate the epoch seconds in 15 minutes, to be used in the Taler order creation to set a max payment date
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
-                                                                                  #self.currency_id.name,
-                                                                                  "KUDOS", #testing value, remove for release and uncomment line above
-                                                                                  #self.amount,
-                                                                                  "0.01", #testing amount, remove for release and uncomment line above
+                                                                                  self.currency_id.name,
+                                                                                  self.amount,
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
                                                                                   TalerController._fulfillment_url + "/" + self.taler_uuid,

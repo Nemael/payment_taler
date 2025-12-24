@@ -47,10 +47,8 @@ class TalerInvoicing(models.Model):
         self.getToken()
         invoice_due_date_in_epoch = get_datetime_date_to_epoch(self.invoice_date_due) # Calculate the invoice due date in epoch seconds, to be used in the Taler order creation to set a max payment date
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,
-                                                                                                               # self.currency_id.name,
-                                                                                                               "KUDOS", # testing value, remove for release and uncomment line above
-                                                                                                               # self.amount_total,
-                                                                                                               "0.02", # testing value, remove for release and uncomment line above
+                                                                                                               self.currency_id.name,
+                                                                                                               self.amount_total,
                                                                                                                order_summary,
                                                                                                                self.provider_id.fulfillment_message + " Ref: " + self.taler_uuid,
                                                                                                                invoice_due_date_in_epoch) #Uses the invoice due date as expiration date of the payment
