@@ -8,10 +8,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - In the readme, explain which version of Odoo the addon is confirmed to be working for, and it was tested for
 
-- For the payment "Test Mode", there is a radio button in Odoo's interface to activate "Test Mode" for the payment method
-  - Credentials are integrated as well
-  - It will take a lot of work to make the existing system work, but this is a great base to start
-
 - See if my add-on has "iframe support", such as what is shown in the features for this repo https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
 
 - When I do translation, don't forget to do translation of the .xml files
@@ -22,3 +18,12 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Translate the README in French
   - Redo the tutorial pictures in French as well
+
+
+- Merchant test mode tasks:
+  - For the payment "Test Mode", there is a radio button in Odoo's interface to activate "Test Mode" for the payment method
+    - Credentials are integrated as well
+    - It will take a lot of work to make the existing system work, but this is a great base to start
+  - Make it so that the test mode make an order with kudos
+  - Complete the order
+  - Check that everything is ok
