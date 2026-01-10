@@ -34,6 +34,9 @@ class TalerProvider(models.Model):
                                       help="""Fulfillment message shown to the user on the Taler merchant ordes after paying for the order. Note: This message does not show on Odoo itself, see the "Messages" tab for this purpose.""",
                                       default="Thank you for your payment with Taler")
 
+    def is_in_test_mode(self):
+        provider_state = self.state # Possible values: disabled, enabled, test
+        return provider_state == 'test'
 
     def _get_supported_currencies(self):
         """ Override of payment to return the supported currencies. """

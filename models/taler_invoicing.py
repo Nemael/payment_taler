@@ -44,10 +44,13 @@ class TalerInvoicing(models.Model):
 
     def _taler_invoice_create(self):
         order_summary = "Odoo reference " + self.name + " for " + str(self.amount_total) + str(self.currency_id.symbol) + " " + self.currency_id.name
+        currency = self.currency_id.name # Gets the currency by name for the current order
+        if self.provider_id.is_in_test_mode(): # Checks if provider used is currently in test mode, and if so, uses KUDOS as currency (Kudos is the Taler test currency)
+            currency = "KUDOS"
         self.getToken()
         invoice_due_date_in_epoch = get_datetime_date_to_epoch(self.invoice_date_due) # Calculate the invoice due date in epoch seconds, to be used in the Taler order creation to set a max payment date
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentMessage(self,
-                                                                                                               self.currency_id.name,
+                                                                                                               currency,
                                                                                                                self.amount_total,
                                                                                                                order_summary,
                                                                                                                self.provider_id.fulfillment_message + " Ref: " + self.taler_uuid,
