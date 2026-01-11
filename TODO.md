@@ -29,7 +29,11 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - Make it so that the test mode make an order with kudos
   - Add some text when "test mode" is selected
     - A yellow square
-    - Text saying "Test mode is selected, this mode allows you to test if the payment process with Taler and the currently chosen Merchant completes correctly. On the Odoo UI, all the payment UI will show the relevant payment information (amount, currency, etc), but the currency will automatically be swapped to "Kudos" right before sending the order to the Taler merchant. Kudos is the Taler testing currency, and is a currency that can be used for test transactions with your order wallet. See "LINK TO THE KUDOS DOCUMENTATION" for more information about Kudos. "WARNING TRIANGLE" Do not use this mode in production or with published items for sale"
-  - Try to make it so that Odoo make an order internally using KUDOS
+    - Text saying "Test mode is selected, this mode allows you to test if the payment process with Taler and the currently chosen Merchant completes correctly. On the Odoo UI, all the payment UI will show the relevant payment information (amount, currency, etc), but the currency will automatically be swapped to "Kudos" right before sending the order to the Taler merchant. Kudos is the Taler testing currency, and is a currency that can be used for test transactions with your order wallet. See "LINK TO THE KUDOS DOCUMENTATION" for more information about Kudos. Add a link to the tutorial for merchant test mode on the codeberg repository as well. "WARNING TRIANGLE" Do not use this mode in production or with published items for sale"
   - Complete the order
   - Check that everything is ok
+
+- Add more tutorials
+  - One for the merchant test mode
+    - Show the steps for a regular transaction, and then show "Website -> Reporting -> Online sales -> Bottom right month" to show the exchange that was confirmed
+  - One for the refund system

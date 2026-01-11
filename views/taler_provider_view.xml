@@ -11,6 +11,26 @@ SPDX-License-Identifier: LGPL-3.0-or-later
         <field name="model">payment.provider</field>
         <field name="inherit_id" ref="payment.payment_provider_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//form/sheet/*[1]" position="before">
+                <widget
+                    name="web_ribbon"
+                    title="DISABLED"
+                    bg_color="bg-danger"
+                    invisible="code != 'taler' or state != 'disabled'"
+                />
+                <widget
+                    name="web_ribbon"
+                    title="TEST MODE"
+                    bg_color="bg-warning"
+                    invisible="code != 'taler' or state != 'test'"
+                />
+            </xpath>
+            <group name="payment_state" position="inside">
+                <div invisible="state != 'test'">
+                    <field name="fulfillment_message" required="code == 'taler' and state != 'disabled'"/>
+                    <strong>Warning</strong> Creating a payment provider from the <em>CREATE</em> button is not supported
+                </div>
+            </group>
             <group name="provider_credentials" position="inside">
                 <group invisible="code != 'taler'">
                     <field name="taler_merchant_url" required="code == 'taler' and state != 'disabled'" groups="base.group_system"/>
