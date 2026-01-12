@@ -182,6 +182,40 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 This flow is not implemented yet
 
+
+### Merchant test mode
+
+- The merchant test mode allows you to test the installation of the Taler-Odoo Payment System, and confirm that the module and the selected merchant are working properly.
+- In the Odoo UI, all the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to "Kudos" right before sending the order to the Taler merchant.
+- <strong>Warning:</strong> Do not use this mode in production or with published items for sale.
+- Here is an example of the flow for this feature:
+- On the payment provider's page, check the "Test Mode" radio button
+
+<img src="README_Pictures/Taler_test_mode_radio_button.png" alt="Taler test mode radio button selected" style="max-height: 400px;">
+
+- Then start the process for any online payment, I will show the process for an eCommerce payment
+- Navigate to the shop page
+- Select any product that you'd like to buy as a test, go to your cart and start the checkout process
+- Once you confirm your order, the Taler payment method will appear, with two icons
+
+<img src="README_Pictures/Taler_test_mode_payment_method_with_icons.png" alt="Taler test mode payment method with two icons, striked-through eye and yellow warning sign" style="max-height: 400px;">
+
+- Symbols:
+  - The red striked-through eye means "Unpublished". It is there to let you know that this payment method is not visible to visitors, only users that have access rights to the shop, will be able to see the test mode Taler payment provider.
+  - The yellow warning sign means "Test mode". It is there to warn you that the test mode is activated for this payment method.
+- Go ahead and pay the order. A corresponding order will be created on the Taler merchant, with a currency change.
+  - The currency is getting swapped with "Kudos"
+    - Kudos is an imaginary currency created for Taler. It can be used for free to test transactions with your order wallet.
+- A Taler order will be created, with the currency replaced by Kudos, that you can open and pay with your wallet
+
+<img src="README_Pictures/Taler_test_mode_taler_order_payment.png" alt="Taler test mode payment on Taler, showing kudos currency" style="max-height: 400px;">
+
+- Once the order is paid using the imaginary currency, you will be sent back to the completed Odoo order.
+
+<img src="README_Pictures/Taler_test_mode_taler_payment_completed.png" alt="Taler test mode payment shown as completed on Odoo website" style="max-height: 400px;">
+
+- If you reach this step in a similar manner with no raised issues, the test is complete, the add-on works and the Taler merchant can receive your orders for compatible currencies.
+
 ---
 
 ### Change settings using CLI
@@ -191,7 +225,7 @@ This flow is not implemented yet
 - Run these commands to edit the setting you want to set. You can use `get_params` to print the current value, and `set_params` to set a new value.
   - `env['ir.config_parameter'].set_param('tops.merchant_url', 'https://backend.demo.taler.net/instances/sandbox/')`
   - `env['ir.config_parameter'].set_param('tops.password', 'https://backend.demo.taler.net/instances/sandbox/')`
-- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`IMPORTANT: Commit the changes to the database before closing the shell instance and restarting Odoo
+- <strong>IMPORTANT:</strong> Commit the changes to the database before closing the shell instance and restarting Odoo
   - `env.cr.commit()`
   - `exit()`
 
