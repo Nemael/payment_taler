@@ -37,3 +37,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - One for the merchant test mode
     - Show the steps for a regular transaction, and then show "Website -> Reporting -> Online sales -> Bottom right month" to show the exchange that was confirmed
   - One for the refund system
+
+- Edit the two links in the test mode tooltip
+  - Make sure to add the link to the merchat test mode tutorial
+  - section that says "which is very likely" in the text, check if all Taler merchants will accept Kudos, if it is mandatory or optional, and add a link if relevant.
