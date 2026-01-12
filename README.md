@@ -214,7 +214,7 @@ This flow is not implemented yet
 
 <img src="README_Pictures/Taler_test_mode_taler_payment_completed.png" alt="Taler test mode payment shown as completed on Odoo website" style="max-height: 400px;">
 
-- If you reach this step in a similar manner with no raised issues, the test is complete, the add-on works and the Taler merchant can receive your orders for compatible currencies.
+- If you reach this step in a similar manner with no raised issues, the test is complete, the add-on works and the Taler merchant endpoint can receive your orders for compatible currencies.
 
 ---
 
