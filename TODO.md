@@ -54,3 +54,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Improve the taler_api_methods file to make it a mixin
   - For help making it work, ask the OCA
+
+- Add a tutorial on how to translate in the README
+  - It should be short, explain that you should copy the .pot file in the i18n folder, and rename it to the language they want to translate to + ".po", and then translate each line
+  - They can use the "fr.po" file as example
