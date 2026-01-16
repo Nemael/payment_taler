@@ -31,7 +31,7 @@ class TalerProvider(models.Model):
                               groups='base.group_system') # Limits access to this field to admin users (system group)
 
     fulfillment_message = fields.Char(string="Taler fulfillment message",
-                                      help="""Fulfillment message shown to the user on the Taler merchant ordes after paying for the order. Note: This message does not show on Odoo itself, see the "Messages" tab for this purpose.""",
+                                      help="""Fulfillment message shown to the user on the Taler merchant orders after paying for the order. Note: This message does not appear on Odoo itself, see the "Messages" tab for this purpose.""",
                                       default="Thank you for your payment with Taler")
 
     def is_in_test_mode(self):
