@@ -57,4 +57,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Add a tutorial on how to translate in the README
   - It should be short, explain that you should copy the .pot file in the i18n folder, and rename it to the language they want to translate to + ".po", and then translate each line
-  - They can use the "fr.po" file as example
+  - Explain that they can use the "fr.po" file as example
+
+- For the verification of milestone accessibility, if that makes sense and is easily comprehensible, I could make a video recording of a screen reader reading my add-on
