@@ -5,7 +5,7 @@
 import requests
 from werkzeug import urls
 from odoo.exceptions import ValidationError
-from odoo.addons.tops.utils.utils import tawarn, tadebug, taerror
+from odoo.addons.tops.utils.utils import tawarn, tadebug, taerror, talog
 
 
 def getMerchantConfiguration(url):
@@ -102,14 +102,14 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
         "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
     tadebug("Url: ", url)
-    tadebug("Headers: ", headers)
-    tadebug("Payload: ", payload)
+    talog("Headers: ", headers)
+    talog("Payload: ", payload)
     response = requests.request("POST", url, json=payload, headers=headers)
-    tadebug("Response received: ", response.text)
+    talog("Response received: ", response.text)
     if response.status_code != 200:
         taerror("Error placing order, bad response: ", response.text)
         if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
-            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created.")
+            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created. Epoch time set for the invoice: " + pay_deadline)
         raise ValidationError("Wrong response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         taerror("Error getting new order_id: ", response.text)
@@ -155,7 +155,7 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
     if response.status_code != 200:
         taerror("Error placing order, bad response: ", response.text)
         if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
-            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created.")
+            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created. Epoch time set for the invoice: " + pay_deadline)
         raise ValidationError("Wrong response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         taerror("Error getting new order_id: ", response.text)
@@ -246,3 +246,6 @@ def getCurrentTalerToken(model):
 
 def validateModel(model):
     return model._name == "payment.transaction" or model._name == "account.move"
+
+def sendRefundForOrder(amount):
+    print("API METHOD SEND REFUND")

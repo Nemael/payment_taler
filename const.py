@@ -36,7 +36,7 @@ SUPPORTED_CURRENCIES = [
     #'THB',
     #'TWD',
     #For testing purposes, USD is used, but it should not be used in production
-    # 'USD',
+    'USD',
     #'ZAR'
 ]
 

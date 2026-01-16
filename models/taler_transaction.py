@@ -5,7 +5,7 @@
 from odoo.exceptions import ValidationError
 from odoo import models, fields
 from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, generate_UUID, get_datetime_now_to_epoch
-from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid
+from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, sendRefundForOrder
 from odoo.addons.tops.controllers.taler_controller import TalerController
 
 
@@ -39,6 +39,29 @@ class TalerTransaction(models.Model):
         if (payment_status == 'paid'):
             talog("Order paid")
             self._set_done()
+            print("SETTING DONE TRANSACTION")
+            print("payment_id: ", self.payment_id)
+            print("state", self.state)  # must be 'done'
+            print("payment", self.payment_id)  # must exist
+            print("payment state", self.payment_id.state)  # must be 'posted'
+            print("payment move state", self.payment_id.move_id.state)  # must be 'posted'
+            print("calling post process")
+            print("is post processed", self.is_post_processed)
+            self._post_process()
+            print("SETTING DONE TRANSACTION")
+            print("payment_id: ", self.payment_id)
+            print("state", self.state)  # must be 'done'
+            print("payment", self.payment_id)  # must exist
+            print("payment state", self.payment_id.state)  # must be 'posted'
+            print("payment move state", self.payment_id.move_id.state)  # must be 'posted'
+            print("calling post process")
+            print("is post processed", self.is_post_processed)
+            print("called post process")
+            print("is post processed", self.is_post_processed)
+            #Testing process, remove the following line action_validate for release
+            #This line skips the reconciliation process, that should be done manually
+            #Sets the payment as "Paid" when transaction is completed
+            # self.payment_id.action_validate()
         elif (payment_status == 'claimed'):
             talog("Order is claimed by a wallet")
         elif (payment_status == 'unpaid'):
@@ -94,3 +117,42 @@ class TalerTransaction(models.Model):
             raise ValidationError("Taler: No transaction found matching reference " + reference)
 
         return transaction
+
+
+    def _send_refund_request(self, refund_amount=None):
+        print("RUNNING SEND REFUND REQUEST")
+        self.ensure_one()
+
+        if self.provider_code != 'taler':
+            return super()._send_refund_request(refund_amount)
+
+        # refund_amount is a float, may be partial
+        #amount = refund_amount or self.amount
+        # For now, only refund the full amount, and at later step, see if Taler can manage a partial refund
+        amount = refund_amount or self.amount
+
+        try:
+            response = sendRefundForOrder(amount)
+        except Exception as e:
+            self._set_error(str(e))
+            return
+
+        self._process_refund_response(response)
+
+    def _process_refund_response(self, response):
+        print("PROCESSING REFUND RESPONSE")
+        if response.get("status") == "success":
+            self._set_done()
+            self._post_process()
+            self.provider_reference = response.get("refund_id")
+            print("SETTING DONE INVOICING")
+            print("payment_id: ", self.payment_id)
+            print("calling post process")
+            print("called post process")
+        elif response.get("status") == "pending":
+            #This one is useful for asynchronous refunds, which is not relevant for Taler refunds.
+            #I can probably remove this "elif"
+            self._set_pending()
+            self.provider_reference = response.get("refund_id")
+        else:
+            self._set_error(response.get("error", "Refund failed"))
