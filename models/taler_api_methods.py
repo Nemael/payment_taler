@@ -5,7 +5,7 @@
 import requests
 from werkzeug import urls
 from odoo.exceptions import ValidationError
-from odoo.addons.tops.utils.utils import tawarn, tadebug, taerror
+from odoo.addons.tops.utils.utils import tawarn, tadebug, taerror, talog
 
 
 def getMerchantConfiguration(url):
@@ -147,9 +147,9 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
         "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
-    tadebug("Url: ", url)
-    tadebug("Headers: ", headers)
-    tadebug("Payload: ", payload)
+    talog("Url: ", url)
+    talog("Headers: ", headers)
+    talog("Payload: ", payload)
     response = requests.request("POST", url, json=payload, headers=headers)
     tadebug("Response received: ", response.text)
     if response.status_code != 200:
@@ -169,7 +169,7 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
 
 
 def requestGetOrderFromId(model):
-    tadebug("Running postPlaceOrderWithFulfillmentUrl")
+    tadebug("Running requestGetOrderFromId")
     if not validateModel(model):
         raise ValidationError("Method called on wrong model")
     taler_url = getTalerUrl(model)
