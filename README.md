@@ -19,7 +19,9 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 ## Current status of the module:
 
-This is a paragraph written for [Issue #18](https://codeberg.org/Nemael/tops/issues/18), I will update it with newer updates.
+This is a paragraph written for [Issue #18](https://codeberg.org/Nemael/tops/issues/18), I will update it with newer information when available.
+
+This is currently developed for Odoo 18, but once the work is complete, I plan on testing and tweaking the add-on to make sure it is working on Odoo 19, and potentially on Odoo 20 when it releases.
 
 Regarding the add-on's status, the module is usable and in a stable state, but the feature list is not fully implemented yet. You can install the add-on and activate payments for your customers using Taler, and they will be able to pay using their Taler wallet. Note: The add-on is working and has been tested, but it has not been used in any production environment yet.
 
