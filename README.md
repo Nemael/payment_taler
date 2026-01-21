@@ -17,6 +17,16 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 ---
 
+## Current status of the module:
+
+This is a paragraph written for [Issue #18](https://codeberg.org/Nemael/tops/issues/18), I will update it with newer updates.
+
+Regarding the add-on's status, the module is usable and in a stable state, but the feature list is not fully implemented yet. You can install the add-on and activate payments for your customers using Taler, and they will be able to pay using their Taler wallet. Note: The add-on is working and has been tested, but it has not been used in any production environment yet.
+
+I am planning to release a new version within the next few weeks that includes the online payment refund process, as well as a test mode. This update will mark the end of the "new features" for this add-on, for now.
+
+After it, there are more updates coming, that will include non-feature changes, such as internationalization and accessibility, or better documentation. After they will be released, the goal of this current work on the add-on will be reached, and I will be able to focus on bugfixes and improvements.
+
 ## Tutorials, flow examples and walkthrough
 
 ### Install the add-on on an already-existing Odoo installation
