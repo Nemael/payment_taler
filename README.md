@@ -27,6 +27,8 @@ I am planning to release a new version within the next few weeks that includes t
 
 After it, there are more updates coming, that will include non-feature changes, such as internationalization and accessibility, or better documentation. After they will be released, the goal of this current work on the add-on will be reached, and I will be able to focus on bugfixes and improvements.
 
+---
+
 ## Tutorials, flow examples and walkthrough
 
 ### Install the add-on on an already-existing Odoo installation
