@@ -60,3 +60,5 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - Explain that they can use the "fr.po" file as example
 
 - For the verification of milestone accessibility, if that makes sense and is easily comprehensible, I could make a video recording of a screen reader reading my add-on
+
+- Check if the accessibility itself is translated (see if aria-label are translated)

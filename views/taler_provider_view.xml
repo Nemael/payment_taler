@@ -26,12 +26,12 @@ SPDX-License-Identifier: LGPL-3.0-or-later
                 />
             </xpath>
             <group name="payment_state" position="inside">
-                <div invisible="code != 'taler' or state != 'test'" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px">
+                <div invisible="code != 'taler' or state != 'test'" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px" role="region" aria-label="Test mode warning">
                     Test mode is enabled. This mode allows you to test the payment process with Taler and the chosen Merchant.<br/>
                     In the Odoo UI, all the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to "Kudos" right before sending the order to the Taler merchant.<br/>
                     Kudos is an imaginary currency created for Taler. It can be used for free to test transactions with your order wallet. The selected merchant needs to be compatible with Kudos (most Taler merchants will be compatible with Kudos)<br/>
                     See (here)("LINK TO THE TEST MODE TUTORIAL") for a tutorial on what to expect when using test mode.<br/>
-                    <strong>Warning: </strong>Do not use this mode in production or with published items for sale.<br/>
+                    <strong>Warning: </strong>Do not use this test mode in production or with published items for sale.<br/>
                 </div>
             </group>
             <group name="provider_credentials" position="inside">
