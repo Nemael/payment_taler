@@ -22,7 +22,7 @@ msgid ""
 "                            Use above order URI if you are having an issue with the QR Code."
 msgstr ""
 "<br/>\n"
-"                            PREMIER JET-En cas de problème avec le code QR, utilisez l'URI ci-dessus."
+"                            En cas de problème lors de l'utilisation du code QR, utilisez l'URI ci-dessus."
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__code
@@ -43,7 +43,6 @@ msgstr "DÉSACTIVÉ"
 #: model:ir.model.fields,help:tops.field_payment_provider__fulfillment_message
 msgid ""
 "Message shown on the Taler order after payment. Note: This message does not appear on Odoo itself, see the \"Messages\" tab for this purpose."
-
 msgstr ""
 "Message affiché sur la page Taler après confirmation du paiement. Remarque : ce message n'apparaitra pas dans la page Odoo. Pour ce faire, veuilliez consulter l'onglet \"Messages\."
 
@@ -88,7 +87,7 @@ msgstr "URI de paiement"
 msgid ""
 "Please scan this QR Code with your Taler wallet to complete the payment."
 msgstr ""
-"Scannez le Code QR à l'aide de votre porte-monnaie Taler pour procéder au paiement."
+"Scannez ce Code QR à l'aide de votre porte-monnaie Taler pour procéder au paiement."
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo

@@ -12,7 +12,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
             <t t-if="o.is_taler_invoice">
                 <!--Encase the whole taler-relevant information, including the QR code, in a fixed-height div-->
                 <!--Otherwise, during the first load, WKHtmlToPdf ignores the loading of the QR code, and cuts the bottom of the invoice-->
-                <div style="min-height: 350px; max-height:350px">
+                <div style="min-height: 400px; max-height:400">
                     <t t-if="o.taler_qr">
                         <div class="text-center">
                             Please scan this QR Code with your Taler wallet to complete the payment.
