@@ -15,11 +15,11 @@ SPDX-License-Identifier: LGPL-3.0-or-later
                 <div style="min-height: 350px; max-height:350px">
                     <t t-if="o.taler_qr">
                         <div class="text-center">
-                            Please scan this QR Code with your Taler Wallet to complete the payment.
+                            Please scan this QR Code with your Taler wallet to complete the payment.
                         </div>
                         <div class="text-center">
                             <img t-att-src="'data:image/png;base64,%s' % o.taler_qr"
-                                 style="max-height:200px;" aria-label="QR Code area. Please use the URI below to pay without QR Code"/>
+                                 style="max-height:200px;" aria-label="QR Code. Please use the URI below to pay without QR Code"/>
                         </div>
                     </t>
 
@@ -31,9 +31,9 @@ SPDX-License-Identifier: LGPL-3.0-or-later
                             <br/>
                         </t>
                         <t t-if="o.taler_order_uri">
-                            Taler order URI: <a t-attf-href="{{o.taler_order_uri}}" t-esc="o.taler_order_uri" aria-label="Payment URI"></a>
+                            Order URI: <a t-attf-href="{{o.taler_order_uri}}" t-esc="o.taler_order_uri" aria-label="Order URI"></a>
                             <br/>
-                            Please use above URI if you have an issue with the above Taler QR Code.
+                            Use above order URI if you are having an issue with the QR Code.
                         </t>
                     </p>
                 </div>

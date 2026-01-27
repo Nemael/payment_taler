@@ -22,16 +22,16 @@ class TalerProvider(models.Model):
                                      default="https://backend.demo.taler.net/instances/sandbox", # this default value is the url to the Taler merchant sandbox environment
                                      groups='base.group_system') # Limits access to this field to admin users (system group)
 
-    taler_merchant_password = fields.Char(string="Taler Merchant Password",
-                                          help="Password to the Taler merchant instance you'd like to use",
+    taler_merchant_password = fields.Char(string="Merchant Password",
+                                          help="Password to the chosen Taler merchant instance",
                                           default="sandbox", # sandbox is the password to the Taler merchant sandbox environment
                                           groups='base.group_system') # Limits access to this field to admin users (system group)
 
     taler_token = fields.Char(string="Taler Merchant Token, you should not be able to see this parameter",
                               groups='base.group_system') # Limits access to this field to admin users (system group)
 
-    fulfillment_message = fields.Char(string="Taler fulfillment message",
-                                      help="""Fulfillment message shown to the user on the Taler merchant orders after paying for the order. Note: This message does not appear on Odoo itself, see the "Messages" tab for this purpose.""",
+    fulfillment_message = fields.Char(string="Fulfillment message",
+                                      help="""Message shown on the Taler order after payment. Note: This message does not appear on Odoo itself, see the "Messages" tab for this purpose.""",
                                       default="Thank you for your payment with Taler")
 
     def is_in_test_mode(self):
