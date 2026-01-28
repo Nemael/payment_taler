@@ -69,3 +69,5 @@ Translation issues:
 - Invoice preview is in english
 - Test mode warning is in english
 - Copy all the original lines from fr.po to tops.pot, to make sure the two files are in sync
+
+- Add more tests, for the refunds for example

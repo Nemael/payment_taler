@@ -3,3 +3,13 @@ Seller - Commerçant
 Fulfillment message - Message de confirmation
 Order ID - Numéro de commande
 Wallet - porte-monnaie (virtuel)
+
+
+"Message affiché sur la page Taler après confirmation du paiement. Remarque : ce message n'apparaitra pas dans la page Odoo. Pour consulter les messages liés à Odoo, consultez l'onglet \"Messages\"."
+texte modifié
+"Le mode test est activé. Il vous permet de tester le processus de paiement en effectuant des paiements tests par Taler pour le vendeur sélectionné.<br/>\n"
+texte modifié
+"Scannez ce Code QR à l'aide de votre porte-monnaie Taler pour procéder<br/>\n au paiement."
+met a la ligne
+"En cas de problème lors de l'utilisation du code QR, utilisez l'URI ci-dessus."
+Pas de PREMIER JET
