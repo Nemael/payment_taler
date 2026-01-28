@@ -9,6 +9,9 @@ from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlace
 from odoo.addons.tops.controllers.taler_controller import TalerController
 
 
+import logging
+
+
 class TalerTransaction(models.Model):
     _inherit = 'payment.transaction'
     #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
@@ -37,7 +40,8 @@ class TalerTransaction(models.Model):
         # Update the payment state based on payment status on the merchant's side
         payment_status = data.get('paymentStatus')
         if (payment_status == 'paid'):
-            talog("Order paid")
+            talog("Order paidzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
+            _logger = logging.getLogger(__name__)
             self._set_done()
             print("SETTING DONE TRANSACTION")
             print("payment_id: ", self.payment_id)
@@ -47,7 +51,7 @@ class TalerTransaction(models.Model):
             print("payment move state", self.payment_id.move_id.state)  # must be 'posted'
             print("calling post process")
             print("is post processed", self.is_post_processed)
-            self._post_process()
+            # self._post_process()
             print("SETTING DONE TRANSACTION")
             print("payment_id: ", self.payment_id)
             print("state", self.state)  # must be 'done'
@@ -62,6 +66,19 @@ class TalerTransaction(models.Model):
             #This line skips the reconciliation process, that should be done manually
             #Sets the payment as "Paid" when transaction is completed
             # self.payment_id.action_validate()
+            # self._set_transaction_done()
+            print("state_message: ", str(self.state_message))
+            print("sale_order_ids: ", self.sale_order_ids)
+            print("Transaction %s successfully called _set_done(). Final state: %s", self.reference,
+                         self.state)
+            print("Transaction %s is_post_processed: %s", self.reference, self.is_post_processed)
+            # except Exception as e:
+            #     _logger.error("CRITICAL ERROR during _set_done() for transaction %s: %s", self.reference, e,
+            #                   exc_info=True)
+            #     # This will catch errors during post-processing and log the full traceback
+            #     self._set_error(f"Post-processing failed: {e}")
+            #     return False
+            return False
         elif (payment_status == 'claimed'):
             talog("Order is claimed by a wallet")
         elif (payment_status == 'unpaid'):
@@ -85,8 +102,10 @@ class TalerTransaction(models.Model):
         expiration_time_in_epoch = get_datetime_now_to_epoch(15)  # Calculate the epoch seconds in 15 minutes, to be used in the Taler order creation to set a max payment date
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
-                                                                                  currency,
-                                                                                  self.amount,
+                                                                                  # currency,
+                                                                                  "KUDOS",
+                                                                                  # self.amount,
+                                                                                  "0.02",
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
                                                                                   TalerController._fulfillment_url + "/" + self.taler_uuid,
@@ -119,23 +138,27 @@ class TalerTransaction(models.Model):
         return transaction
 
 
-    def _send_refund_request(self, refund_amount=None):
+    def _send_refund_request(self, amount_to_refund=None):
         print("RUNNING SEND REFUND REQUEST")
+        print("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
         self.ensure_one()
 
         if self.provider_code != 'taler':
-            return super()._send_refund_request(refund_amount)
+            return super()._send_refund_request(amount_to_refund)
 
         # refund_amount is a float, may be partial
         #amount = refund_amount or self.amount
         # For now, only refund the full amount, and at later step, see if Taler can manage a partial refund
-        amount = refund_amount or self.amount
+        amount = amount_to_refund or self.amount
 
         try:
             response = sendRefundForOrder(amount)
         except Exception as e:
             self._set_error(str(e))
             return
+
+        print("Taler order id:")
+        print(self.taler_order_id)
 
         self._process_refund_response(response)
 

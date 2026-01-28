@@ -46,6 +46,13 @@ class TalerProvider(models.Model):
     #         res['refund'] = True
     #     return res
 
+    def _compute_feature_support_fields(self):
+        super()._compute_feature_support_fields()
+        for provider in self:
+            self.filtered(lambda p: p.code == 'taler').update({
+                'support_refund': 'full_only'
+            })
+
     def _get_supported_currencies(self):
         """ Override of payment to return the supported currencies. """
         supported_currencies = super()._get_supported_currencies()

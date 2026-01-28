@@ -156,6 +156,9 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
         taerror("Error placing order, bad response: ", response.text)
         if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
             raise ValidationError("The invoice due date is in the past. The Taler order cannot be created. Epoch time set for the invoice: " + pay_deadline)
+        print(response.json()["code"])
+        if response.json()["code"] == 2514:
+            raise ValidationError("You are trying to pay in a currency that is not supported by the chosen Taler merchant. Please reach out to the shop administator.")
         raise ValidationError("Wrong response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         taerror("Error getting new order_id: ", response.text)

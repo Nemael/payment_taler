@@ -70,3 +70,6 @@ For now: steps to add Taler to point of sale
   - Run `git push origin tag "tag_string"` to push the tag to the repository. `tag_string` must match with the previous command
 
 - For the refund testing, install the Sales module
+
+- How to go through the refund flow:
+  - make an on

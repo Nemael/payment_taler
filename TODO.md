@@ -54,3 +54,5 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Improve the taler_api_methods file to make it a mixin
   - For help making it work, ask the OCA
+
+- Send in the OCA discord how I resolved the refunds issue
