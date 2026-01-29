@@ -170,6 +170,31 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
 
     return order_id, order_url, order_uri
 
+def requestRefundForOrder(model, amount, currency, reason):
+    print("API METHOD SEND REFUND")
+    if not validateModel(model):
+        raise ValidationError("Method called on wrong model")
+    taler_url = getTalerUrl(model)
+    url = taler_url + "/private/orders/" + model.taler_order_id
+    payload = {
+        "refund": currency + ":" + amount,
+        "reason": reason
+    }
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "TalerOdoo/insomnia/11.3.0",
+        "Authorization": "Bearer " + getCurrentTalerToken(model)
+    }
+    talog("Built URL: ", url)
+    talog("Headers: ", headers)
+    talog("Payload: ", payload)
+    response = requests.request("GET", url, data=payload, headers=headers)
+    tadebug("Response received: ", response.text)
+    if response.status_code != 200:
+        taerror("Error getting order from id, bad response: ", response.text)
+        return
+
+    return response.json()
 
 def requestGetOrderFromId(model):
     tadebug("Running postPlaceOrderWithFulfillmentUrl")
@@ -249,6 +274,3 @@ def getCurrentTalerToken(model):
 
 def validateModel(model):
     return model._name == "payment.transaction" or model._name == "account.move"
-
-def sendRefundForOrder(amount):
-    print("API METHOD SEND REFUND")

@@ -69,8 +69,7 @@ class TalerTransaction(models.Model):
             # self._set_transaction_done()
             print("state_message: ", str(self.state_message))
             print("sale_order_ids: ", self.sale_order_ids)
-            print("Transaction %s successfully called _set_done(). Final state: %s", self.reference,
-                         self.state)
+            print("Transaction %s successfully called _set_done(). Final state: %s", self.reference, self.state)
             print("Transaction %s is_post_processed: %s", self.reference, self.is_post_processed)
             print("state", self.state)  # must be 'done'
             print("state", self.payment_id.state)  # must be 'posted'
@@ -138,7 +137,6 @@ class TalerTransaction(models.Model):
             #     # This will catch errors during post-processing and log the full traceback
             #     self._set_error(f"Post-processing failed: {e}")
             #     return False
-            return False
         elif (payment_status == 'claimed'):
             talog("Order is claimed by a wallet")
         elif (payment_status == 'unpaid'):
@@ -211,16 +209,31 @@ class TalerTransaction(models.Model):
         # For now, only refund the full amount, and at later step, see if Taler can manage a partial refund
         amount = amount_to_refund or self.amount
 
+        currency = self.currency_id.name  # Gets the currency by name for the current order
+        if self.provider_id.is_in_test_mode():  # Checks if provider used is currently in test mode
+            currency = "KUDOS"
+
+        reason = "Refunding the product"
+
+        print("Starting the api call")
+
+        response = "DELETE THIS LINE!! No value assigned yet"
+        self.getToken()
+        # MAYBE I CAN REMOVE THE TRY + EXCEPT, and use the structure I usually use for these API calls
         try:
-            response = sendRefundForOrder(amount)
+            print("Trying refund request")
+            response = requestRefundForOrder(self, amount, currency, reason)
+            print("Past refund request")
         except Exception as e:
-            self._set_error(str(e))
-            return
+            print("Exception reached :(", response)
+            talog(response)
+            raise ValidationError("Error in refund response from Taler: " + str(e))
 
         print("Taler order id:")
         print(self.taler_order_id)
 
         self._process_refund_response(response)
+        print ("After the process refund call")
 
     def _process_refund_response(self, response):
         print("PROCESSING REFUND RESPONSE")
