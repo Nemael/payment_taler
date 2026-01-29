@@ -55,4 +55,12 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Improve the taler_api_methods file to make it a mixin
   - For help making it work, ask the OCA
 
-- Send in the OCA discord how I resolved the refunds issue
+- Send in the OCA discord how I resolved the refund issue
+
+- Add tests
+  - For test mode (maybe check that the currency is indeed changed to KUDOS before we send the payload)
+  - For refunds
+
+- For the translations, add _() to all the strings, to make sure that all the strings are in the .po file, for example the error messages are not there.
+
+- Translation: edit the pictures of the README file, to make the foundation for the README_FR filee

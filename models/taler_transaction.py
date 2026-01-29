@@ -51,7 +51,7 @@ class TalerTransaction(models.Model):
             print("payment move state", self.payment_id.move_id.state)  # must be 'posted'
             print("calling post process")
             print("is post processed", self.is_post_processed)
-            # self._post_process()
+            self._post_process()
             print("SETTING DONE TRANSACTION")
             print("payment_id: ", self.payment_id)
             print("state", self.state)  # must be 'done'
@@ -65,13 +65,73 @@ class TalerTransaction(models.Model):
             #Testing process, remove the following line action_validate for release
             #This line skips the reconciliation process, that should be done manually
             #Sets the payment as "Paid" when transaction is completed
-            # self.payment_id.action_validate()
+            self.payment_id.action_validate()
             # self._set_transaction_done()
             print("state_message: ", str(self.state_message))
             print("sale_order_ids: ", self.sale_order_ids)
             print("Transaction %s successfully called _set_done(). Final state: %s", self.reference,
                          self.state)
             print("Transaction %s is_post_processed: %s", self.reference, self.is_post_processed)
+            print("state", self.state)  # must be 'done'
+            print("state", self.payment_id.state)  # must be 'posted'
+            print("operation", self.operation)
+            # self.operation = "online"
+            print("operation fixed?", self.operation)
+            # print("is_refundable", self.payment_id.is_refundable)
+            print("payment state", self.payment_id.state)  # must be 'posted'
+            print("refund support: ", self.provider_id.support_refund)
+            print("child transaction ids", self.child_transaction_ids)
+            print("refunds_count", self.refunds_count)
+            print("invoices_count", self.invoices_count)
+            print("self.amount", self.amount)
+            # print("payment_id.refunded_amount", self.payment_id.refunded_amount) doesn't exist
+            print("payment_id.amount_available_for_refund", self.payment_id.amount_available_for_refund)
+            self.payment_id.amount_available_for_refund = 100
+            print("payment_id.amount_available_for_refund", self.payment_id.amount_available_for_refund)
+            # self.refunds_count = 1
+            # self.invoices_count = 1
+            # print("refunds_count fixed?", self.refunds_count)
+            # print("invoices_count fixed?", self.invoices_count)
+
+            # print("COMPUTING STUFF")
+            # for payment in self.payment_id:
+            #     print("payment", payment)
+            #     print("IN FOR LOOP")
+            #     tx_sudo = payment.payment_transaction_id.sudo()
+            #     payment_method = (
+            #             tx_sudo.payment_method_id.primary_payment_method_id
+            #             or tx_sudo.payment_method_id
+            #     )
+            #     print(payment_method)
+            #     print("if values:")
+            #     print(tx_sudo)
+            #     print(tx_sudo.provider_id.support_refund, tx_sudo.provider_id.support_refund != 'none')
+            #     print(payment_method.support_refund, payment_method.support_refund != 'none')
+            #     print(tx_sudo.operation, tx_sudo.operation != 'refund')
+            #     if (
+            #             tx_sudo  # The payment was created by a transaction.
+            #             and tx_sudo.provider_id.support_refund != 'none'
+            #             and payment_method.support_refund != 'none'
+            #             and tx_sudo.operation != 'refund'
+            #     ):
+            #         print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            #         # Only consider refund transactions that are confirmed by summing the amounts of
+            #         # payments linked to such refund transactions. Indeed, should a refund transaction
+            #         # be stuck forever in a transient state (due to webhook failure, for example), the
+            #         # user would never be allowed to refund the source transaction again.
+            #         refund_payments = self.search([('source_payment_id', '=', payment.id)])
+            #         refunded_amount = abs(sum(refund_payments.mapped('amount')))
+            #         print(payment.amount_available_for_refund)
+            #         payment.amount_available_for_refund = payment.amount - refunded_amount
+            #         print(payment.amount_available_for_refund)
+            #
+            #     else:
+            #         print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+            #         print(payment.amount_available_for_refund)
+            #         payment.amount_available_for_refund = 0
+            #         print(payment.amount_available_for_refund)
+            #     print("ZZZZZZZZZZZZZZZZ", payment.amount_available_for_refund)
+
             # except Exception as e:
             #     _logger.error("CRITICAL ERROR during _set_done() for transaction %s: %s", self.reference, e,
             #                   exc_info=True)
