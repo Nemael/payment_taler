@@ -69,8 +69,7 @@ class TalerTransaction(models.Model):
             # self._set_transaction_done()
             print("state_message: ", str(self.state_message))
             print("sale_order_ids: ", self.sale_order_ids)
-            print("Transaction %s successfully called _set_done(). Final state: %s", self.reference,
-                         self.state)
+            print("Transaction %s successfully called _set_done(). Final state: %s", self.reference, self.state)
             print("Transaction %s is_post_processed: %s", self.reference, self.is_post_processed)
             # except Exception as e:
             #     _logger.error("CRITICAL ERROR during _set_done() for transaction %s: %s", self.reference, e,
@@ -78,7 +77,6 @@ class TalerTransaction(models.Model):
             #     # This will catch errors during post-processing and log the full traceback
             #     self._set_error(f"Post-processing failed: {e}")
             #     return False
-            return False
         elif (payment_status == 'claimed'):
             talog("Order is claimed by a wallet")
         elif (payment_status == 'unpaid'):
@@ -151,8 +149,14 @@ class TalerTransaction(models.Model):
         # For now, only refund the full amount, and at later step, see if Taler can manage a partial refund
         amount = amount_to_refund or self.amount
 
+        currency = self.currency_id.name  # Gets the currency by name for the current order
+        if self.provider_id.is_in_test_mode():  # Checks if provider used is currently in test mode
+            currency = "KUDOS"
+
+        reason = "Refunding the product"
+
         try:
-            response = sendRefundForOrder(amount)
+            response = sendRefundForOrder(self, amount, currency, reason)
         except Exception as e:
             self._set_error(str(e))
             return
