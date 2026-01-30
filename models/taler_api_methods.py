@@ -173,28 +173,45 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
 def requestRefundForOrder(model, amount, currency, reason):
     print("API METHOD SEND REFUND")
     if not validateModel(model):
+        print("Getting validation error")
         raise ValidationError("Method called on wrong model")
     taler_url = getTalerUrl(model)
-    url = taler_url + "/private/orders/" + model.taler_order_id
+    print("a")
+    url = taler_url + "/private/orders/" + model.taler_order_id + "/refund"
+    print("b")
+    print(currency)
+    print(amount)
+    print(reason)
     payload = {
-        "refund": currency + ":" + amount,
+        # "refund": currency + ":" + str(amount),
+        "refund": "KUDOS:0.02",
         "reason": reason
     }
+    print(payload)
+    print("c")
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
         "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
+    print("d")
     talog("Built URL: ", url)
     talog("Headers: ", headers)
     talog("Payload: ", payload)
-    response = requests.request("GET", url, data=payload, headers=headers)
+    print("e")
+    response = requests.request("POST", url, json=payload, headers=headers)
     tadebug("Response received: ", response.text)
+    print("f")
+    print("Refund response log")
+    print(response.text)
+    print(response.json())
     if response.status_code != 200:
         taerror("Error getting order from id, bad response: ", response.text)
         return
 
-    return response.json()
+    refund_uri = response.json()["taler_refund_uri"]
+
+    return refund_uri
 
 def requestGetOrderFromId(model):
     tadebug("Running postPlaceOrderWithFulfillmentUrl")

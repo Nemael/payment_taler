@@ -4,8 +4,8 @@
 
 from odoo.exceptions import ValidationError
 from odoo import models, fields
-from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, generate_UUID, get_datetime_now_to_epoch
-from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, sendRefundForOrder
+from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, generate_UUID, get_datetime_now_to_epoch, generate_qr
+from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, requestRefundForOrder
 from odoo.addons.tops.controllers.taler_controller import TalerController
 
 
@@ -23,6 +23,8 @@ class TalerTransaction(models.Model):
     # This UUID is only used for the fulfillment url. Without the UUID in the url, the Taler merchant could mix up two orders with the same Odoo ID, on two different Odoo instances
     # This is not a perfect solution, as two duplicate UUID + OrderID could be generated on two different Odoo instances, on the same Taler Merchant, but this is highly unlikely.
     taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generate_UUID())
+    taler_refund_qr = fields.Char(string="Taler Refund QR Code", default="")
+    taler_refund_uri = fields.Char(string="Taler Refund URI", default="")
 
     def getToken(self):
         requestGetToken(self)
@@ -51,7 +53,7 @@ class TalerTransaction(models.Model):
             print("payment move state", self.payment_id.move_id.state)  # must be 'posted'
             print("calling post process")
             print("is post processed", self.is_post_processed)
-            self._post_process()
+            # self._post_process()
             print("SETTING DONE TRANSACTION")
             print("payment_id: ", self.payment_id)
             print("state", self.state)  # must be 'done'
@@ -65,8 +67,8 @@ class TalerTransaction(models.Model):
             #Testing process, remove the following line action_validate for release
             #This line skips the reconciliation process, that should be done manually
             #Sets the payment as "Paid" when transaction is completed
-            self.payment_id.action_validate()
-            # self._set_transaction_done()
+            # self.payment_id.action_validate()
+            # self._set_transaction_done() doesn't work
             print("state_message: ", str(self.state_message))
             print("sale_order_ids: ", self.sale_order_ids)
             print("Transaction %s successfully called _set_done(). Final state: %s", self.reference, self.state)
@@ -199,10 +201,14 @@ class TalerTransaction(models.Model):
     def _send_refund_request(self, amount_to_refund=None):
         print("RUNNING SEND REFUND REQUEST")
         print("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
-        self.ensure_one()
+        # self.ensure_one()
+
+        # The refund_txn object is returned from super(), but it actually has the same fields as those implemented
+        # in this TalerTransaction class, so that includes the taler_refund_uri and taler_refund_qr fields
+        refund_txn = super()._send_refund_request(amount_to_refund=amount_to_refund)
 
         if self.provider_code != 'taler':
-            return super()._send_refund_request(amount_to_refund)
+            return refund_txn
 
         # refund_amount is a float, may be partial
         #amount = refund_amount or self.amount
@@ -220,23 +226,44 @@ class TalerTransaction(models.Model):
         response = "DELETE THIS LINE!! No value assigned yet"
         self.getToken()
         # MAYBE I CAN REMOVE THE TRY + EXCEPT, and use the structure I usually use for these API calls
+        # MAYBE I WANT TO KEEP THIS STRUCTURE FOR THE EXCEPTION MANIPULATION, FOR EXAMPLE IF I TRY TO REFUND AN ALREADY REFUNDED ORDER
         try:
             print("Trying refund request")
-            response = requestRefundForOrder(self, amount, currency, reason)
+            taler_refund_uri = requestRefundForOrder(self, amount, currency, reason)
             print("Past refund request")
         except Exception as e:
             print("Exception reached :(", response)
             talog(response)
-            raise ValidationError("Error in refund response from Taler: " + str(e))
+            raise ValidationError("Error in refund response from Taler")
 
+        talog("Refund request response for transaction wih reference %s: ", self.reference)
         print("Taler order id:")
         print(self.taler_order_id)
 
-        self._process_refund_response(response)
+        taler_refund_qr = generate_qr(taler_refund_uri)
+        print("Taler refund uri: ", taler_refund_uri)
+        print("Taler refund qr: ", taler_refund_qr)
+        print("Reference: ", self.reference)
+
+        # self._process_refund_response(response)
         print ("After the process refund call")
+
+        print(refund_txn.taler_refund_uri)
+        print(refund_txn.taler_refund_qr)
+
+        refund_txn.taler_refund_uri = taler_refund_uri
+        refund_txn.taler_refund_qr = taler_refund_qr
+
+        self._send_refund_email(refund_txn)
+
+        refund_txn._set_done()
+
+        return refund_txn
 
     def _process_refund_response(self, response):
         print("PROCESSING REFUND RESPONSE")
+        #CHECKER LA MEME METHODE DANS LE DOSSIER PAYMENT_STRIPE, OU ALORS PAYMENT_ADYEN, POUR CORRECTEMENT IMPLEMENTER LA CREATION D'UNE TRANSACTION "REFUND"
+        #Add an error message if I am trying to create a refund for an order that was already fully refunded
         if response.get("status") == "success":
             self._set_done()
             self._post_process()
@@ -252,3 +279,18 @@ class TalerTransaction(models.Model):
             self.provider_reference = response.get("refund_id")
         else:
             self._set_error(response.get("error", "Refund failed"))
+        #At the end of this, mark the refund as completed
+
+    def _send_refund_email(self, refund_txn):
+        print("RUNNING SEND REFUND EMAIL")
+        # refund_txn.write({
+        #     "reference": "abcdefgh",
+        #     "partner_name": "Polyphemus"
+        # })
+        template = self.env.ref('tops.email_refund')
+        if template:
+            # Send email
+            template.send_mail(refund_txn.id, force_send=True)
+        else:
+            raise ValidationError("Email template not found!")
+

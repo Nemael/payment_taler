@@ -64,3 +64,13 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - For the translations, add _() to all the strings, to make sure that all the strings are in the .po file, for example the error messages are not there.
 
 - Translation: edit the pictures of the README file, to make the foundation for the README_FR filee
+
+- Check if there is a better way to organize email templates in Odoo that email_templates folder
+
+- Make a translation for the email template and email description and email subject
+
+- Fix the negative refund amount in the refund email template
+
+- See if I can implement the partial refunds
+
+

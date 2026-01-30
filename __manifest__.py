@@ -15,6 +15,7 @@
         'views/taler_invoice_view.xml',
         'data/taler_payment_method_data.xml',
         'data/taler_payment_provider_data.xml',
+        'data/email_refund_template_data.xml',
         'security/ir.model.access.csv' #The ir security file is not actually needed for now, but it stays included in case it is needed later.
     ],
     'post_init_hook': 'post_init_hook',
