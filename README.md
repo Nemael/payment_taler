@@ -4,6 +4,12 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 
+_This page is also available in French (here)[link to lisezmoi_fr.md] LISEZMOI_FR.md, check with Marie if I should translate the filename from readme to lisezmoi_
+
+_Cette page est également disponible en Français (ici)[lien vers lisezmoi_fr.md] LISEZMOI_FR.md_
+
+---
+
 # TOPS: Taler-Odoo Payment System
 
 TOPS is a currently in-development add-on for Odoo.
