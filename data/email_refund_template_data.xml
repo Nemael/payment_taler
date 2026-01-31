@@ -16,7 +16,7 @@
         Dear <t t-out="object.partner_id.name or ''"/>
     </p>
     <p>
-ex        A refund for your order <t t-out="object.reference or ''"/> has been initiated for the amount of <t t-out="abs(object.amount) if object.amount else ''"/><t t-out="object.currency_id.symbol or ''"/>
+        A refund for your order <t t-out="object.reference or ''"/> has been initiated for the amount of <t t-out="abs(object.amount) if object.amount else ''"/><t t-out="object.currency_id.symbol or ''"/>
     </p>
     <p>
         To receive the refund, please scan the QR code below with your Taler wallet
@@ -25,7 +25,8 @@ ex        A refund for your order <t t-out="object.reference or ''"/> has been i
         <img t-att-src="'data:image/png;base64,%s' % object.taler_refund_qr" style="max-height:200px; max-width:200px" alt="Refund QR Code"/>
     </div>
     <p>
-        If you cannot use the QR code, please use the following URI: <t t-out="object.taler_refund_uri or ''"/>
+        If you cannot use the QR code, please use the following URI:<br/>
+        <t t-out="object.taler_refund_uri or ''"/>
     </p>
     <p>
         For any questions or requests, please contact us at <t t-out="object.company_id.email or ''"/>

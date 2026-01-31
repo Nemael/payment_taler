@@ -80,3 +80,5 @@ For now: steps to add Taler to point of sale
   - Click refund button on the top-left
   - The customer will receive an email
     - They will have to scan the refund QR Code to complete the refund
+
+- Second account in my Odoo: kilotimes@email.com; abcdefgh

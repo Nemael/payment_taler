@@ -20,9 +20,12 @@ class TalerTransaction(models.Model):
     taler_order_id = fields.Char(string="Taler Order Id", default="")
     taler_order_url = fields.Char(string="Taler Order Url", default="")
     taler_order_uri = fields.Char(string="Taler Order Uri", default="")
+
     # This UUID is only used for the fulfillment url. Without the UUID in the url, the Taler merchant could mix up two orders with the same Odoo ID, on two different Odoo instances
     # This is not a perfect solution, as two duplicate UUID + OrderID could be generated on two different Odoo instances, on the same Taler Merchant, but this is highly unlikely.
     taler_uuid = fields.Char(string="Taler UUID", readonly=True, default=generate_UUID())
+
+    # These fields are only used for refund transaction
     taler_refund_qr = fields.Char(string="Taler Refund QR Code", default="")
     taler_refund_uri = fields.Char(string="Taler Refund URI", default="")
 
@@ -42,103 +45,10 @@ class TalerTransaction(models.Model):
         # Update the payment state based on payment status on the merchant's side
         payment_status = data.get('paymentStatus')
         if (payment_status == 'paid'):
-            talog("Order paidzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
+            talog("Order paid")
             _logger = logging.getLogger(__name__)
             self._set_done()
-            print("SETTING DONE TRANSACTION")
-            print("payment_id: ", self.payment_id)
-            print("state", self.state)  # must be 'done'
-            print("payment", self.payment_id)  # must exist
-            print("payment state", self.payment_id.state)  # must be 'posted'
-            print("payment move state", self.payment_id.move_id.state)  # must be 'posted'
-            print("calling post process")
-            print("is post processed", self.is_post_processed)
-            # self._post_process()
-            print("SETTING DONE TRANSACTION")
-            print("payment_id: ", self.payment_id)
-            print("state", self.state)  # must be 'done'
-            print("payment", self.payment_id)  # must exist
-            print("payment state", self.payment_id.state)  # must be 'posted'
-            print("payment move state", self.payment_id.move_id.state)  # must be 'posted'
-            print("calling post process")
-            print("is post processed", self.is_post_processed)
-            print("called post process")
-            print("is post processed", self.is_post_processed)
-            #Testing process, remove the following line action_validate for release
-            #This line skips the reconciliation process, that should be done manually
-            #Sets the payment as "Paid" when transaction is completed
-            # self.payment_id.action_validate()
-            # self._set_transaction_done() doesn't work
-            print("state_message: ", str(self.state_message))
-            print("sale_order_ids: ", self.sale_order_ids)
-            print("Transaction %s successfully called _set_done(). Final state: %s", self.reference, self.state)
-            print("Transaction %s is_post_processed: %s", self.reference, self.is_post_processed)
-            print("state", self.state)  # must be 'done'
-            print("state", self.payment_id.state)  # must be 'posted'
-            print("operation", self.operation)
-            # self.operation = "online"
-            print("operation fixed?", self.operation)
-            # print("is_refundable", self.payment_id.is_refundable)
-            print("payment state", self.payment_id.state)  # must be 'posted'
-            print("refund support: ", self.provider_id.support_refund)
-            print("child transaction ids", self.child_transaction_ids)
-            print("refunds_count", self.refunds_count)
-            print("invoices_count", self.invoices_count)
-            print("self.amount", self.amount)
-            # print("payment_id.refunded_amount", self.payment_id.refunded_amount) doesn't exist
-            print("payment_id.amount_available_for_refund", self.payment_id.amount_available_for_refund)
-            self.payment_id.amount_available_for_refund = 100
-            print("payment_id.amount_available_for_refund", self.payment_id.amount_available_for_refund)
-            # self.refunds_count = 1
-            # self.invoices_count = 1
-            # print("refunds_count fixed?", self.refunds_count)
-            # print("invoices_count fixed?", self.invoices_count)
-
-            # print("COMPUTING STUFF")
-            # for payment in self.payment_id:
-            #     print("payment", payment)
-            #     print("IN FOR LOOP")
-            #     tx_sudo = payment.payment_transaction_id.sudo()
-            #     payment_method = (
-            #             tx_sudo.payment_method_id.primary_payment_method_id
-            #             or tx_sudo.payment_method_id
-            #     )
-            #     print(payment_method)
-            #     print("if values:")
-            #     print(tx_sudo)
-            #     print(tx_sudo.provider_id.support_refund, tx_sudo.provider_id.support_refund != 'none')
-            #     print(payment_method.support_refund, payment_method.support_refund != 'none')
-            #     print(tx_sudo.operation, tx_sudo.operation != 'refund')
-            #     if (
-            #             tx_sudo  # The payment was created by a transaction.
-            #             and tx_sudo.provider_id.support_refund != 'none'
-            #             and payment_method.support_refund != 'none'
-            #             and tx_sudo.operation != 'refund'
-            #     ):
-            #         print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-            #         # Only consider refund transactions that are confirmed by summing the amounts of
-            #         # payments linked to such refund transactions. Indeed, should a refund transaction
-            #         # be stuck forever in a transient state (due to webhook failure, for example), the
-            #         # user would never be allowed to refund the source transaction again.
-            #         refund_payments = self.search([('source_payment_id', '=', payment.id)])
-            #         refunded_amount = abs(sum(refund_payments.mapped('amount')))
-            #         print(payment.amount_available_for_refund)
-            #         payment.amount_available_for_refund = payment.amount - refunded_amount
-            #         print(payment.amount_available_for_refund)
-            #
-            #     else:
-            #         print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-            #         print(payment.amount_available_for_refund)
-            #         payment.amount_available_for_refund = 0
-            #         print(payment.amount_available_for_refund)
-            #     print("ZZZZZZZZZZZZZZZZ", payment.amount_available_for_refund)
-
-            # except Exception as e:
-            #     _logger.error("CRITICAL ERROR during _set_done() for transaction %s: %s", self.reference, e,
-            #                   exc_info=True)
-            #     # This will catch errors during post-processing and log the full traceback
-            #     self._set_error(f"Post-processing failed: {e}")
-            #     return False
+            # self.payment_id.amount_available_for_refund = 100
         elif (payment_status == 'claimed'):
             talog("Order is claimed by a wallet")
         elif (payment_status == 'unpaid'):
@@ -151,12 +61,13 @@ class TalerTransaction(models.Model):
 
 
     def _get_specific_rendering_values(self, values):
+        """ Overrides the rendering values method to insert the Taler flow """
         new_values = super()._get_specific_rendering_values(values)
         if self.provider_code != 'taler':
             return new_values
         order_summary = "Odoo reference " + self.reference + " for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
-        currency = self.currency_id.name # Gets the currency by name for the current order
-        if self.provider_id.is_in_test_mode(): # Checks if provider used is currently in test mode
+        currency = self.currency_id.name
+        if self.provider_id.is_in_test_mode(): # Checks if tops is currently in test mode
             currency = "KUDOS"
         self.getToken()
         expiration_time_in_epoch = get_datetime_now_to_epoch(15)  # Calculate the epoch seconds in 15 minutes, to be used in the Taler order creation to set a max payment date
@@ -164,7 +75,7 @@ class TalerTransaction(models.Model):
                                                                                   self,
                                                                                   # currency,
                                                                                   "KUDOS",
-                                                                                  # self.amount,
+                                                                                  # self.amount, DONT FORGET TO REMOVE THIS
                                                                                   "0.02",
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
@@ -200,8 +111,7 @@ class TalerTransaction(models.Model):
 
 
     def _send_refund_request(self, amount_to_refund=None):
-        print("RUNNING SEND REFUND REQUEST")
-
+        """ Override of the refund request process to integrate the Taler refund flow """
         # The refund_txn object is returned from super(), but it actually has the same fields as those implemented
         # in this TalerTransaction class, so that includes the taler_refund_uri and taler_refund_qr fields
         refund_txn = super()._send_refund_request(amount_to_refund=amount_to_refund)
@@ -210,9 +120,8 @@ class TalerTransaction(models.Model):
             return refund_txn
 
         amount = amount_to_refund or self.amount
-
-        currency = self.currency_id.name  # Gets the currency by name for the current order
-        if self.provider_id.is_in_test_mode():  # Checks if provider used is currently in test mode
+        currency = self.currency_id.name
+        if self.provider_id.is_in_test_mode(): # Checks if tops is currently in test mode
             currency = "KUDOS"
 
         reason = "Refunding the product"
@@ -238,6 +147,7 @@ class TalerTransaction(models.Model):
         return refund_txn
 
     def _send_refund_email(self, refund_txn):
+        """ Send an email to the customer containing the refund QR Code """
         email_refund_template_name = "tops.email_refund"
         template = self.env.ref(email_refund_template_name)
         if template:

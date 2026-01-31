@@ -180,7 +180,18 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 ### Going through the refund process
 
-This flow is not implemented yet
+_Note: You can do full refunds using the Taler add-on. Partial refunds are not (yet?) implemented, but Taler allows for partial refunds, so it could be implemented._
+
+- To run the refund process, you first have to find the payment
+- On the `website` or `invoicing` add-on, navigate to `Configuration -> Payment Transactions` on the top bar.
+- This page will show you all the transactions that have been completed. Click on the one that you would like to refund
+
+<img src="README_Pictures/Taler_refund_list_of_transactions.png" alt="Taler pos receipt" style="max-height: 400px;">
+
+- On the transaction page, click on the linked payment.
+  - In the picture, the linked payment is `PBNK1/2026/00029`
+
+<img src="README_Pictures/Taler_refund_transaction.png" alt="Taler pos receipt" style="max-height: 400px;">
 
 
 ### Merchant test mode
@@ -287,6 +298,15 @@ This add-on uses a quite standard folder structure
 ---
 
 > If any of these tutorials or information seem inaccurate, please either reach out for clarifications or changes, or open an issue on the [TOPS repository](https://codeberg.org/Nemael/tops/)
+
+---
+
+## How to contribute?
+
+- Guide on how to clone, run, and contribute to the code
+- Ideas on features that could be implemented
+  - More translations (make a specific guide on how to make a new translation)
+  - Partial refunds
 
 ---
 
