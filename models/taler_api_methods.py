@@ -159,7 +159,7 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
         print(response.json()["code"])
         if response.json()["code"] == 2514:
             raise ValidationError("You are trying to pay in a currency that is not supported by the chosen Taler merchant. Please reach out to the shop administator.")
-        raise ValidationError("Wrong response code. The Taler order cannot be created.")
+        raise ValidationError("Bad response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         taerror("Error getting new order_id: ", response.text)
         raise ValidationError("Received no OrderId. The Taler order cannot be created.")

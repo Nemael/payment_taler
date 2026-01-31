@@ -37,25 +37,21 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Add to the bottom of the readme page, an email address for support (see what I can do to create this email address)
 
-- Add the devlog link to the readme.md
-
 - Shorten the time that a token is valid, for security reasons
 
 - Automated release goals:
   - Zip file available
   - Auto version bumping
-  - Auto tagging in git
   - Auto creation of artifact (zip file)
+  - Auto tagging in git
 
 
 
-
-- Add unit tests
-  - For merchant test mode (maybe check that the currency is indeed changed to KUDOS before we send the payload)
-  - For refunds
-
-- Add a popup "refund created with id: " + refund.id quand une refund est cree 
 
 - Before the PR merge, make sure to remove the testing "Kudos" that are in the payment_transaction, and taler_api_methods
 
+- Remove the testing "KUDOS" override in transaction AND IN TALER_API_METHODS
+
 - Clean up refund code, and merge it
+
+- Add the devlog link to the readme.md

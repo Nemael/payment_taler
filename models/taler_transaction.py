@@ -74,8 +74,10 @@ class TalerTransaction(models.Model):
         expiration_time_in_epoch = get_datetime_now_to_epoch(15)  # Calculate the epoch seconds in 15 minutes, to be used in the Taler order creation to set a max payment date
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
-                                                                                  currency,
-                                                                                  self.amount,
+                                                                                  # currency,
+                                                                                  "KUDOS",
+                                                                                  # self.amount,
+                                                                                  "0.02",
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
                                                                                   TalerController._fulfillment_url + "/" + self.taler_uuid,
@@ -138,7 +140,7 @@ class TalerTransaction(models.Model):
         refund_txn.taler_refund_uri = taler_refund_uri
         refund_txn.taler_refund_qr = taler_refund_qr
 
-        # self._send_refund_email(refund_txn)
+        self._send_refund_email(refund_txn)
 
         refund_txn._set_done()
         return refund_txn
