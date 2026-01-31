@@ -200,6 +200,8 @@ This flow is not implemented yet
 
 <img src="README_Pictures/Taler_test_mode_payment_method_with_icons.png" alt="Taler test mode payment method with two icons, striked-through eye and yellow warning sign" style="max-height: 400px;">
 
+<img src="README_Pictures/Taler_test_mode_payment_method_with_icons.png" alt="desc" width="10">
+
 - Symbols:
   - The red striked-through eye means "Unpublished". It is there to let you know that this payment method is not visible to visitors, only users that have access rights to the shop, will be able to see the test mode Taler payment provider.
   - The yellow warning sign means "Test mode". It is there to warn you that the test mode is activated for this payment method.
