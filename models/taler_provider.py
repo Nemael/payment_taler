@@ -38,14 +38,6 @@ class TalerProvider(models.Model):
         provider_state = self.state # Possible values: disabled, enabled, test
         return provider_state == 'test'
 
-    #don't use this following method
-    # def _get_supported_features(self):
-    #     print("GET SUPPORTED FEATURES")
-    #     res = super()._get_supported_features()
-    #     if self.code == 'my_provider':
-    #         res['refund'] = True
-    #     return res
-
     def _compute_feature_support_fields(self):
         super()._compute_feature_support_fields()
         for provider in self:

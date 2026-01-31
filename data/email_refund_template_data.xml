@@ -16,7 +16,7 @@
         Dear <t t-out="object.partner_id.name or ''"/>
     </p>
     <p>
-        A refund for your order <t t-out="object.reference or ''"/> has been initiated for the amount of <t t-out="object.amount or ''"/><t t-out="object.currency_id.symbol or ''"/>
+ex        A refund for your order <t t-out="object.reference or ''"/> has been initiated for the amount of <t t-out="abs(object.amount) if object.amount else ''"/><t t-out="object.currency_id.symbol or ''"/>
     </p>
     <p>
         To receive the refund, please scan the QR code below with your Taler wallet

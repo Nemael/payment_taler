@@ -4,7 +4,7 @@
 from odoo.addons.base.models.ir_qweb import FORMAT_REGEX
 from odoo.exceptions import ValidationError
 from odoo import models, fields
-from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, generate_UUID, get_datetime_now_to_epoch, generate_qr
+from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, taerror, generate_UUID, get_datetime_now_to_epoch, generate_qr
 from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, requestRefundForOrder
 from odoo.addons.tops.controllers.taler_controller import TalerController
 
@@ -189,6 +189,7 @@ class TalerTransaction(models.Model):
 
         reference = notification_data.get('reference')
         if not reference:
+            taerror("Taler: Received data with missing reference.")
             raise ValidationError("Taler: Received data with missing reference.")
         transaction = self.search([('reference', '=', reference), ('provider_code', '=', 'taler')])
 
@@ -200,8 +201,6 @@ class TalerTransaction(models.Model):
 
     def _send_refund_request(self, amount_to_refund=None):
         print("RUNNING SEND REFUND REQUEST")
-        print("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
-        # self.ensure_one()
 
         # The refund_txn object is returned from super(), but it actually has the same fields as those implemented
         # in this TalerTransaction class, so that includes the taler_refund_uri and taler_refund_qr fields
@@ -210,9 +209,6 @@ class TalerTransaction(models.Model):
         if self.provider_code != 'taler':
             return refund_txn
 
-        # refund_amount is a float, may be partial
-        #amount = refund_amount or self.amount
-        # For now, only refund the full amount, and at later step, see if Taler can manage a partial refund
         amount = amount_to_refund or self.amount
 
         currency = self.currency_id.name  # Gets the currency by name for the current order
@@ -220,36 +216,18 @@ class TalerTransaction(models.Model):
             currency = "KUDOS"
 
         reason = "Refunding the product"
-
-        print("Starting the api call")
-
-        response = "DELETE THIS LINE!! No value assigned yet"
+        response = ""
         self.getToken()
-        # MAYBE I CAN REMOVE THE TRY + EXCEPT, and use the structure I usually use for these API calls
-        # MAYBE I WANT TO KEEP THIS STRUCTURE FOR THE EXCEPTION MANIPULATION, FOR EXAMPLE IF I TRY TO REFUND AN ALREADY REFUNDED ORDER
-        try:
-            print("Trying refund request")
-            taler_refund_uri = requestRefundForOrder(self, amount, currency, reason)
-            print("Past refund request")
-        except Exception as e:
-            print("Exception reached :(", response)
-            talog(response)
-            raise ValidationError("Error in refund response from Taler")
 
-        talog("Refund request response for transaction wih reference %s: ", self.reference)
-        print("Taler order id:")
-        print(self.taler_order_id)
+        try:
+            tadebug("Sending refund request to the Taler merchant")
+            taler_refund_uri = requestRefundForOrder(self, amount, currency, reason)
+        except Exception as e:
+            taerror("Error in refund response from Taler merchant. Response received from Taler merchant: ")
+            taerror(response)
+            raise ValidationError("Error in refund response from Taler, see logs")
 
         taler_refund_qr = generate_qr(taler_refund_uri)
-        print("Taler refund uri: ", taler_refund_uri)
-        print("Taler refund qr: ", taler_refund_qr)
-        print("Reference: ", self.reference)
-
-        # self._process_refund_response(response)
-        print ("After the process refund call")
-
-        print(refund_txn.taler_refund_uri)
-        print(refund_txn.taler_refund_qr)
 
         refund_txn.taler_refund_uri = taler_refund_uri
         refund_txn.taler_refund_qr = taler_refund_qr
@@ -257,45 +235,13 @@ class TalerTransaction(models.Model):
         self._send_refund_email(refund_txn)
 
         refund_txn._set_done()
-
         return refund_txn
 
-    def _process_refund_response(self, response):
-        print("PROCESSING REFUND RESPONSE")
-        #CHECKER LA MEME METHODE DANS LE DOSSIER PAYMENT_STRIPE, OU ALORS PAYMENT_ADYEN, POUR CORRECTEMENT IMPLEMENTER LA CREATION D'UNE TRANSACTION "REFUND"
-        #Add an error message if I am trying to create a refund for an order that was already fully refunded
-        if response.get("status") == "success":
-            self._set_done()
-            self._post_process()
-            self.provider_reference = response.get("refund_id")
-            print("SETTING DONE INVOICING")
-            print("payment_id: ", self.payment_id)
-            print("calling post process")
-            print("called post process")
-        elif response.get("status") == "pending":
-            #This one is useful for asynchronous refunds, which is not relevant for Taler refunds.
-            #I can probably remove this "elif"
-            self._set_pending()
-            self.provider_reference = response.get("refund_id")
-        else:
-            self._set_error(response.get("error", "Refund failed"))
-        #At the end of this, mark the refund as completed
-
     def _send_refund_email(self, refund_txn):
-        print("RUNNING SEND REFUND EMAIL")
-        # refund_txn.write({
-        #     "reference": "abcdefgh",
-        #     "partner_name": "Polyphemus"
-        # })
-        template = self.env.ref('tops.email_refund')
+        email_refund_template_name = "tops.email_refund"
+        template = self.env.ref(email_refund_template_name)
         if template:
             # Send email
             template.send_mail(refund_txn.id, force_send=True)
         else:
-            raise ValidationError("Email template not found!")
-
-        # NEXT STEPS:
-        # ADD PARTIAL REFUNDS
-        # CLEAN UP CODE
-        # ADD A FEW ERROR MESSAGES AND ERROR MANAGEMENT
-        # ADD THE REFUND TUTORIAL TO THE README
+            raise ValidationError("Email template not found! Looking for: " + email_refund_template_name)

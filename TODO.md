@@ -82,3 +82,13 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Add to the bottom of the readme page, an email address for support (see what I can do to create this email address)
 
 - Add the devlog link to the readme.md
+
+- See if I can implement partial refunds
+
+- Clean up mechant test code, and merge it
+
+- Clean up refund code, and merge it
+
+- Add the refund flow to the readme
+
+- Shorten the time that a token is valid
