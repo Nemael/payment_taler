@@ -45,10 +45,8 @@ class TalerTransaction(models.Model):
         # Update the payment state based on payment status on the merchant's side
         payment_status = data.get('paymentStatus')
         if (payment_status == 'paid'):
-            talog("Order paid")
-            _logger = logging.getLogger(__name__)
+            talog("Order paid: ", self.reference)
             self._set_done()
-            # self.payment_id.amount_available_for_refund = 100
         elif (payment_status == 'claimed'):
             talog("Order is claimed by a wallet")
         elif (payment_status == 'unpaid'):

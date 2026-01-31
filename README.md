@@ -182,16 +182,28 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 _Note: You can do full refunds using the Taler add-on. Partial refunds are not (yet?) implemented, but Taler allows for partial refunds, so it could be implemented._
 
-- To run the refund process, you first have to find the payment
-- On the `website` or `invoicing` add-on, navigate to `Configuration -> Payment Transactions` on the top bar.
+- To make a refund, you first have to find the payment you wish to refund
+- In the `website` or `invoicing` add-on, navigate to `Configuration -> Payment Transactions` on the top bar.
 - This page will show you all the transactions that have been completed. Click on the one that you would like to refund
 
-<img src="README_Pictures/Taler_refund_list_of_transactions.png" alt="Taler pos receipt" style="max-height: 400px;">
+<img src="README_Pictures/Taler_refund_list_of_transactions.png" alt="Taler list of transactions" style="max-height: 400px;">
 
 - On the transaction page, click on the linked payment.
   - In the picture, the linked payment is `PBNK1/2026/00029`
 
-<img src="README_Pictures/Taler_refund_transaction.png" alt="Taler pos receipt" style="max-height: 400px;">
+<img src="README_Pictures/Taler_refund_transaction.png" alt="Taler transaction page" style="max-height: 400px;">
+
+- On the payment page, click the `Refund` button in the action button section and confirm the refund
+
+<img src="README_Pictures/Taler_refund_payment.png" alt="Taler payment page" style="max-height: 400px;">
+
+- Confirming the refund will create a new transaction in the previously-shown list, with the nam `R-{Odoo reference number}`
+  - An email containing a QR Code for the customer will also be sent to the customer's email address
+    - You can find the list of emails in `Settings -> Technical -> Emails`
+  - To receive the refund, the customer has to scan the QR Code with their Taler wallet.
+
+<img src="README_Pictures/Taler_refund_email.png" alt="Taler refund email to customer" style="max-height: 400px;">
+
 
 
 ### Merchant test mode
