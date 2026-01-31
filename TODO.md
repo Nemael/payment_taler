@@ -17,11 +17,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Translate the README in French
   - Redo the tutorial pictures in French as well
 
-- Edit the two links in the test mode tooltip
-  - Make sure to add the link to the merchant test mode tutorial
-  - section that says "which is very likely" in the text, check if all Taler merchants will accept Kudos, if it is mandatory or optional, and add a link if relevant.
-
-
 - Find a solution to this predicament:
   - The milestone i18n depends on the documentation
   - The milestone documentation depends on the addon being on a storefront (OCA + Odoo)
@@ -35,3 +30,5 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - For help making it work, ask the OCA
 
 - See if there is a way to reduce the image size in the README
+
+- Before starting the translation again, re-read the README file, to make sure there are no mistakes
