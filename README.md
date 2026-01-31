@@ -66,7 +66,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 - To do so, they will open the shop and add any items in their cart
 - During the checkout, they can now choose the "Taler" payment provider
 
-<img src="README_Pictures/Taler_ecommerce_checkout.png" alt="Taler eCommerce checkout" width="700px" height="700px">
+<img src="README_Pictures/Taler_ecommerce_checkout.png" alt="Taler eCommerce checkout" width="700px">
 
 <img src="README_Pictures/Taler_ecommerce_checkout.png" alt="desc" width="700px">
 
