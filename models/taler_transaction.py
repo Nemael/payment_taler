@@ -55,11 +55,14 @@ class TalerTransaction(models.Model):
         if self.provider_code != 'taler':
             return new_values
         order_summary = "Odoo reference " + self.reference + " for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
+        currency = self.currency_id.name # Gets the currency by name for the current order
+        if self.provider_id.is_in_test_mode(): # Checks if provider used is currently in test mode
+            currency = "KUDOS"
         self.getToken()
         expiration_time_in_epoch = get_datetime_now_to_epoch(15)  # Calculate the epoch seconds in 15 minutes, to be used in the Taler order creation to set a max payment date
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
-                                                                                  self.currency_id.name,
+                                                                                  currency,
                                                                                   self.amount,
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
