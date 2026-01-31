@@ -26,12 +26,12 @@ SPDX-License-Identifier: LGPL-3.0-or-later
                 />
             </xpath>
             <group name="payment_state" position="inside">
-                <div invisible="code != 'taler' or state != 'test'" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px">
-                    Test mode is enabled. This mode allows you to test the payment process with Taler and the chosen Merchant.<br/>
-                    In the Odoo UI, all the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to "Kudos" right before sending the order to the Taler merchant.<br/>
-                    Kudos is an imaginary currency created for Taler. It can be used for free to test transactions with your order wallet. The selected merchant needs to be compatible with Kudos (most Taler merchants will be compatible with Kudos)<br/>
+                <div invisible="code != 'taler' or state != 'test'" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px" role="region" aria-label="Test mode information">
+                    Test mode is enabled. This mode allows you to test the payment process by running test payments with Taler and the chosen Merchant.<br/>
+                    In the Odoo UI, these payments' information will be displayed with actual values (amount, currency, etc), but the currency will automatically be swapped to "Kudos" right before sending the order to the Taler merchant.<br/>
+                    KUDOS is an imaginary currency created for Taler. It can be used for free to test transactions with your order wallet. The selected merchant needs to be compatible with Kudos (most Taler merchants will be compatible with Kudos).<br/>
                     <a href="https://codeberg.org/Nemael/tops/#merchant-test-mode">Click here</a> for a tutorial on what to expect when using test mode.<br/>
-                    <strong>Warning: </strong>Do not use this mode in production or with published items for sale.<br/>
+                    <strong>Warning: </strong>To avoid clients using Kudos to pay for their order, do not use this test mode in production.<br/>
                 </div>
             </group>
             <group name="provider_credentials" position="inside">
