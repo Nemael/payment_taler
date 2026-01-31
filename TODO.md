@@ -92,3 +92,9 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Add the refund flow to the readme
 
 - Shorten the time that a token is valid
+
+- Automated release goals:
+  - Zip file available
+  - Auto version bumping
+  - Auto tagging in git
+  - Auto creation of artifact (zip file)
