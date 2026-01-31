@@ -29,6 +29,29 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Improve the taler_api_methods file to make it a mixin
   - For help making it work, ask the OCA
 
-- See if there is a way to reduce the image size in the README
+- For the translations, add _() to all the strings, to make sure that all the strings are in the .po file, for example the error messages are not there.
 
-- Before starting the translation again, re-read the README file, to make sure there are no mistakes
+- Translation: edit the pictures of the README file, to make the foundation for the README_FR file
+
+- Make a translation for the email template and email description and email subject
+
+- Add to the bottom of the readme page, an email address for support (see what I can do to create this email address)
+
+- Shorten the time that a token is valid, for security reasons
+
+- Automated release goals:
+  - Zip file available
+  - Auto version bumping
+  - Auto creation of artifact (zip file)
+  - Auto tagging in git
+
+
+
+
+- Before the PR merge, make sure to remove the testing "Kudos" that are in the payment_transaction, and taler_api_methods
+
+- Remove the testing "KUDOS" override in transaction AND IN TALER_API_METHODS
+
+- Clean up refund code, and merge it
+
+- Add the devlog link to the readme.md
