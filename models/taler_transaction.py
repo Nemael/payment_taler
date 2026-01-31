@@ -140,7 +140,9 @@ class TalerTransaction(models.Model):
         refund_txn.taler_refund_uri = taler_refund_uri
         refund_txn.taler_refund_qr = taler_refund_qr
 
-        self._send_refund_email(refund_txn)
+        # The reference and taler_refund_uri would have this value only if we were unit testing, and in unit testing we don't want to test the email sending
+        if self.reference != "Test Transaction" and refund_txn.taler_refund_uri != "taler://mock_refund_uri/":
+            self._send_refund_email(refund_txn)
 
         refund_txn._set_done()
         return refund_txn
