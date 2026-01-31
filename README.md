@@ -68,6 +68,8 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 <img src="README_Pictures/Taler_ecommerce_checkout.png" alt="Taler eCommerce checkout" style="max-height: 400px;">
 
+<img src="README_Pictures/Taler_ecommerce_checkout.png" alt="desc" width="400">
+
 - After clicking "Pay now", a new Taler order will be created on the merchant side, and the customer will be redirected to the Taler order, from which they can pay with any Taler wallet on their phone or web browser
 
 <img src="README_Pictures/Taler_ecommerce_wallet.png" alt="Taler eCommerce wallet" style="max-height: 400px;">
@@ -199,8 +201,6 @@ This flow is not implemented yet
 - Once you confirm your order, the Taler payment method will appear, with two icons
 
 <img src="README_Pictures/Taler_test_mode_payment_method_with_icons.png" alt="Taler test mode payment method with two icons, striked-through eye and yellow warning sign" style="max-height: 400px;">
-
-<img src="README_Pictures/Taler_test_mode_payment_method_with_icons.png" alt="desc" width="100">
 
 - Symbols:
   - The red striked-through eye means "Unpublished". It is there to let you know that this payment method is not visible to visitors, only users that have access rights to the shop, will be able to see the test mode Taler payment provider.
