@@ -68,7 +68,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 <img src="README_Pictures/Taler_ecommerce_checkout.png" alt="Taler eCommerce checkout" style="max-height: 400px;">
 
-<img src="README_Pictures/Taler_ecommerce_checkout.png" alt="desc" width="400">
+<img src="README_Pictures/Taler_ecommerce_checkout.png" alt="desc" width="700px">
 
 - After clicking "Pay now", a new Taler order will be created on the merchant side, and the customer will be redirected to the Taler order, from which they can pay with any Taler wallet on their phone or web browser
 
