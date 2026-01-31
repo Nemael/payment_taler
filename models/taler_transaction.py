@@ -35,6 +35,11 @@ class TalerTransaction(models.Model):
     def isPaid(self):
         return checkOrderIsPaid(self)
 
+    def getCurrency(self):
+        if self.provider_id.is_in_test_mode():  # Checks if tops is currently in test mode
+            return "KUDOS"
+        return self.currency_id.name
+
     def _process_notification_data(self, data):
         super()._process_notification_data(data)
         if self.provider_code != 'taler':
@@ -64,17 +69,13 @@ class TalerTransaction(models.Model):
         if self.provider_code != 'taler':
             return new_values
         order_summary = "Odoo reference " + self.reference + " for " + str(self.amount) + str(self.currency_id.symbol) + " " + self.currency_id.name
-        currency = self.currency_id.name
-        if self.provider_id.is_in_test_mode(): # Checks if tops is currently in test mode
-            currency = "KUDOS"
+        currency = self.getCurrency()
         self.getToken()
         expiration_time_in_epoch = get_datetime_now_to_epoch(15)  # Calculate the epoch seconds in 15 minutes, to be used in the Taler order creation to set a max payment date
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
-                                                                                  # currency,
-                                                                                  "KUDOS",
-                                                                                  # self.amount, DONT FORGET TO REMOVE THIS
-                                                                                  "0.02",
+                                                                                  currency,
+                                                                                  self.amount,
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
                                                                                   TalerController._fulfillment_url + "/" + self.taler_uuid,
@@ -118,9 +119,7 @@ class TalerTransaction(models.Model):
             return refund_txn
 
         amount = amount_to_refund or self.amount
-        currency = self.currency_id.name
-        if self.provider_id.is_in_test_mode(): # Checks if tops is currently in test mode
-            currency = "KUDOS"
+        currency = self.getCurrency()
 
         reason = "Refunding the product"
         response = ""
@@ -139,7 +138,7 @@ class TalerTransaction(models.Model):
         refund_txn.taler_refund_uri = taler_refund_uri
         refund_txn.taler_refund_qr = taler_refund_qr
 
-        self._send_refund_email(refund_txn)
+        # self._send_refund_email(refund_txn)
 
         refund_txn._set_done()
         return refund_txn

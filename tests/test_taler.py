@@ -22,17 +22,17 @@ class TestTaler(TestTalerCommon, PaymentHttpCommon):
         providers = self.env['payment.provider']._get_compatible_providers(
             self.company.id, self.partner.id, self.amount, currency_id=self.currency_eur.id
         )
-        self.assertIn(self.taler, providers)
+        self.assertIn(self.taler_provider, providers)
 
         providers = self.env['payment.provider']._get_compatible_providers(
             self.company.id, self.partner.id, self.amount, currency_id=self.currency_chf.id
         )
-        self.assertIn(self.taler, providers)
+        self.assertIn(self.taler_provider, providers)
 
         providers = self.env['payment.provider']._get_compatible_providers(
             self.company.id, self.partner.id, self.amount, currency_id=self.currency_zar.id
         )
-        self.assertNotIn(self.taler, providers)
+        self.assertNotIn(self.taler_provider, providers)
 
     def test_get_taler_token(self):
         # Tests if the token-fetching method updates the provider settings properly
@@ -202,4 +202,70 @@ class TestTaler(TestTalerCommon, PaymentHttpCommon):
         self.assertGreater(epoch_in_15_minute, int((datetime.now() + timedelta(minutes=14)).timestamp()))
         # Test that epoch_in_15_minute is smaller that epoch in 6 minutes
         self.assertLess(epoch_in_15_minute, int((datetime.now() + timedelta(minutes=16)).timestamp()))
+
+    def test_merchant_test_mode(self):
+        # Tests that, when using a provider in TEST_MODE, the currency "KUDOS" is used
+        talog("Unit test test_merchant_test_mode")
+        # The method call needs to come from a transaction object
+        transaction = self._create_transaction(flow='redirect')  # Only flow implemented
+
+        self.taler_provider.state = "test" # Tests for provider in test mode
+        currency = transaction.getCurrency()
+        self.assertEqual(currency, "KUDOS")
+
+        self.taler_provider.state = "enabled" # Tests for provider in regular enabled mode
+        currency = transaction.getCurrency()
+        self.assertEqual(currency, transaction.currency_id.name)
+
+    def test_refunds_flow(self):
+        # Tests that the refund flow creates a new refund transaction of the same amount
+        talog("Unit test test_refunds_flow")
+
+        with self.assertRaises(ValidationError):
+            self.env['payment.transaction']._handle_notification_data(
+                'taler', self.notification_data
+            )
+
+        transaction = self._create_transaction('redirect')
+        self.notification_data['reference'] = transaction.reference
+        data = {'reference': transaction.reference,
+                                 'merchantOrderId': '98765432100123456789',
+                                 'paymentStatus': 'paid'
+        }
+        self.env['payment.transaction']._handle_notification_data('taler', data)
+        self.assertEqual(transaction.state, 'done')
+        self.assertEqual(transaction.provider_reference, self.notification_data['merchantOrderId'])
+
+
+        mock_response_token = Mock()
+        mock_response_token.status_code = 200
+        mock_response_token.json.return_value = {
+            "access_token": "secret-token:mocked_access_token",
+            "token": "secret-token:mocked_secret_token",
+            "scope": "write",
+            "refreshable": False,
+            "expiration": {"t_s": 1234567890},
+        }
+
+        mock_response_refund = Mock()
+        mock_response_refund.status_code = 200
+        mock_response_refund.json.return_value = {
+            "taler_refund_uri": "taler://mock_refund_uri/",
+            "h_contract": "5T1SMOCK_H_CONTRACT"
+        }
+
+        with patch('requests.request', side_effect=[mock_response_token, mock_response_refund]) as mock_get:
+            refund_txn = transaction._send_refund_request(transaction.amount)
+
+        # Checks that the original transaction has empty refund fields and the set reference
+        # And that the refund transaction has filled refund fields and its reference is the same as transaction with an added "R-" at the beginning
+        self.assertEqual(transaction.taler_refund_uri, "")
+        self.assertEqual(transaction.taler_refund_qr, "")
+        self.assertEqual(transaction.reference, "Test Transaction")
+        self.assertEqual(refund_txn.taler_refund_uri, "taler://mock_refund_uri/")
+        self.assertEqual(refund_txn.taler_refund_qr, "iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAAB20lEQVR4nO2aQY7jIBBFXw1IWWKpD5CjkKvNzeyj9A1g2RLRnwWQsbKZ2TixY1ggsJ/krwoURVVM/Lstv/4DgkEN6kBUttZu2YxlAjPz9Kf+XbpOQTlJkiBIdsseKQFRUh3tWv3Rqba8AQgFlmuhbojbW3WdiMpmxO+HxV/wxVNT/mkuKB6yL+/VdQaq2r4Hmq7YahoE5PfoOgt1rwFNfRCTqwcui5mZTe/T9emUb8sbgAxaJoegsL507VX9sSmk5CQlpz4FSWX9dt6r+mNT1c6aVyOn2v0N8oftt6SiJLvliyD8mN1CwexanqjX6/poygNOFue713L9MWJC7djNlz7aq/pjUx7yV6H+AN8elikhuHsIifZ2r+qPTdGO2dByN7V7+Pua6Rn+fhOqWVeSiJKAHvHMOI2zdkOKlsLESXNQ7Yg15OwbYth+E6o7mdByyMTUw8vWRny/FbXyOT2gLw9//9gLe1V/bIrVGo+pX7CUnPp02H5L6qludXmctTByaZtTrW7V67XU3OZE3Qt7V/8RVCjV2G21B4ll1MpfRun31POYMd1Ncyi70PWJVM8h17tVqbWT5mmAEd9vSHng3jJm5C+xTA6Wa/ECsFq53av6Y1M2/hM4qBNSfwAPWj1wpfTvqgAAAABJRU5ErkJggg==")
+        self.assertEqual(refund_txn.reference, "R-Test Transaction")
+
+
+
 
