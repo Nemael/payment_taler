@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
-
+from odoo.addons.base.models.ir_qweb import FORMAT_REGEX
 from odoo.exceptions import ValidationError
 from odoo import models, fields
 from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, generate_UUID, get_datetime_now_to_epoch, generate_qr
@@ -294,3 +294,8 @@ class TalerTransaction(models.Model):
         else:
             raise ValidationError("Email template not found!")
 
+        # NEXT STEPS:
+        # ADD PARTIAL REFUNDS
+        # CLEAN UP CODE
+        # ADD A FEW ERROR MESSAGES AND ERROR MANAGEMENT
+        # ADD THE REFUND TUTORIAL TO THE README

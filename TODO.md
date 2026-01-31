@@ -73,4 +73,12 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - See if I can implement the partial refunds
 
+- Before the PR merge, make sure to remove the testing "Kudos" that are in the payment_transaction, and taler_api_methods
 
+- Test the refunds when buying a product with an account that is new, different from mitchell admin, and will be sent
+
+- Respond to the issue in Codeberg, explain that I was slow to implement the changes because I was deep in the code changs to implement refunds
+
+- Add to the bottom of the readme page, an email address for support (see what I can do to create this email address)
+
+- Add the devlog link to the readme.md

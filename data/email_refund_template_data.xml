@@ -10,34 +10,8 @@
             <field name="description">Sent to customers when a refund is triggered for Taler payments. It carries the QR code that the customer will have to scan to complete the refund.</field>
             <field name="email_from">"{{ object.company_id.name }}"</field>
             <field name="email_to">{{ object.partner_email }}</field>
-<!--            <field name="auto_delete???">Odoo: refund initiated for Taler payment</field>-->
-<!--            maybe I don't need `![CDATA[`-->
-<!--            <field name="body_html"><![CDATA[-->
-<!--                <div>-->
-<!--                    <p>-->
-<!--                        Dear <t t-out="object.partner_id.name or ''">-->
-<!--                    </p>-->
-<!--                    <p>-->
-<!--                        A refund for your order {{ record.reference }} has been initiated for the amount of {{ format_amount(object.amount, object.currency_id.symbol) }}-->
-<!--                    </p>-->
-<!--                    <p>-->
-<!--                        To receive the refund, please scan the QR code below with your Taler wallet-->
-<!--                    </p>-->
-<!--                    <div>align here</div>-->
-<!--                    <div>-->
-<!--                        <img src="data:image/png;base64,{{ object.refund_qr_code }}" alt="Refund QR Code"/>-->
-<!--                    </div>-->
-<!--                    <p>-->
-<!--                        Any questions?-->
-<!--                    </p>-->
-<!--                    <p>-->
-<!--                        Thank you,<br/>-->
-<!--                        {{ object.company_id.name }}-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            ]]></field>-->
             <field name="body_html" type="html">
-<div>
+<div style="font-family: 'Arial'; font-size: 14px;">
     <p>
         Dear <t t-out="object.partner_id.name or ''"/>
     </p>
@@ -47,18 +21,14 @@
     <p>
         To receive the refund, please scan the QR code below with your Taler wallet
     </p>
-    <div>align the qr code and set width height limits</div>
-    <div>qr base64: <t t-out="object.taler_refund_qr"/></div>
-    <div>
-<!--        <img src="data:image/png;base64,<t t-out='object.refund_qr_code'/>" alt='Refund QR Code'/>-->
-<!--        <img src="data:image/png;base64,object.taler_refund_qr" alt='Refund QR Code'/>-->
-        <img t-att-src="'data:image/png;base64,%s' % object.taler_refund_qr" alt="Refund QR Code"/>
+    <div style="text-align: center;">
+        <img t-att-src="'data:image/png;base64,%s' % object.taler_refund_qr" style="max-height:200px; max-width:200px" alt="Refund QR Code"/>
     </div>
     <p>
         If you cannot use the QR code, please use the following URI: <t t-out="object.taler_refund_uri or ''"/>
     </p>
     <p>
-        If you have any questions, please contact us at <t t-out="object.company_id.email or ''"/>
+        For any questions or requests, please contact us at <t t-out="object.company_id.email or ''"/>
     </p>
     <p>
         Thank you,<br/>
