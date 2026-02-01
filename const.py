@@ -15,7 +15,7 @@ SUPPORTED_CURRENCIES = [
     'CHF',
     # 'CZK',
     # 'DKK',
-    'EUR',
+    # 'EUR',
     # 'GBP',
     #'HKD',
     #'HRK',
