@@ -32,7 +32,7 @@ class TalerTransaction(models.Model):
         return checkOrderIsPaid(self)
 
     def getCurrency(self):
-        if self.provider_id.is_in_test_mode():  # Checks if tops is currently in test mode
+        if self.provider_code == 'taler' and self.provider_id.is_in_test_mode():  # Checks if the tops payment provider is currently in test mode
             return "KUDOS"
         return self.currency_id.name
 
