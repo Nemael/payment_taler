@@ -4,9 +4,9 @@
 
 from odoo.exceptions import ValidationError
 from odoo import models, fields
-from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, taerror, generate_UUID, get_datetime_now_to_epoch, generate_qr
-from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, requestRefundForOrder
-from odoo.addons.tops.controllers.taler_controller import TalerController
+from odoo.addons.payment_taler.utils.utils import talog, tawarn, tadebug, taerror, generate_UUID, get_datetime_now_to_epoch, generate_qr
+from odoo.addons.payment_taler.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, requestRefundForOrder
+from odoo.addons.payment_taler.controllers.taler_controller import TalerController
 
 class TalerTransaction(models.Model):
     _inherit = 'payment.transaction'
@@ -32,7 +32,7 @@ class TalerTransaction(models.Model):
         return checkOrderIsPaid(self)
 
     def getCurrency(self):
-        if self.provider_id.is_in_test_mode():  # Checks if tops is currently in test mode
+        if self.provider_code != 'taler' and self.provider_id.is_in_test_mode():  # Checks if the payment_taler provider is currently in test mode
             return "KUDOS"
         return self.currency_id.name
 
@@ -143,7 +143,7 @@ class TalerTransaction(models.Model):
 
     def _send_refund_email(self, refund_txn):
         """ Send an email to the customer containing the refund QR Code """
-        email_refund_template_name = "tops.email_refund"
+        email_refund_template_name = "payment_taler.email_refund"
         template = self.env.ref(email_refund_template_name)
         if template:
             # Send email

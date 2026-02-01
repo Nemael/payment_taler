@@ -11,8 +11,8 @@ Odoo addon creation
 	- To set it, go to /opt/odoo and use `source venv/bin/activate`
 Start Odoo with:
 	`./odoo-bin --addons-path=./addons,./custom_addons`
-	`./odoo-bin --addons-path=./addons,./custom_addons -u tops -d odoo18_tops_0.1.1.1`
-	`./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -u tops -d odoo18_tops_0.1.1.1`
+	`./odoo-bin --addons-path=./addons,./custom_addons -u payment_taler -d odoo18_tops_0.1.1.1`
+	`./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -u payment_taler -d odoo18_tops_0.1.1.1`
 
 
 How to edit the database directly to postgres
@@ -39,13 +39,13 @@ For now: steps to add Taler to point of sale
 - Go in pos settings and add TalerOnline in the "payment method" section for one of the shops
 - Setting "Allowed Providers" should be set to "Taler" only
 
-- DB `./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i tops -u tops --init tops -d odoo18_tops_0.3.1.5` is the reliable one
+- DB `./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i payment_taler -u tops --init tops -d odoo18_tops_0.3.1.5` is the reliable one
 
 - The list of countries is stored in `odoo/addons/base/data/res_country_data.xml`
 
 - How to run odoo with debug logs:
   - Add `--log-level=debug` at the end of the command
-  - `./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i tops -u tops --init tops -d odoo18_tops_0.3.1.19 --log-level=debug`
+  - `./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i payment_taler -u tops --init tops -d odoo18_tops_0.3.1.19 --log-level=debug`
 
 - Delete a database (to free up space)
   - `sudo -u postgres psql`

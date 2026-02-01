@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: LGPL-3.0-or-later
 
 from odoo import models, fields
-from odoo.addons.tops import const
+from odoo.addons.payment_taler import const
 from odoo.exceptions import ValidationError
-from odoo.addons.tops.models.taler_api_methods import getMerchantConfiguration
+from odoo.addons.payment_taler.models.taler_api_methods import getMerchantConfiguration
 
 
 class TalerProvider(models.Model):
