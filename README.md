@@ -37,7 +37,7 @@ More updates are coming. They will include non-feature changes, such as internat
 ## Tutorials, flow examples and walkthrough
 
 ### Install the add-on on an already-existing Odoo installation
-
+=
 - Clone this repository.
   - Preferably in {your Odoo install}/custom_addons
     - Make sure that the "tops" directory in "custom_addons"
@@ -330,6 +330,21 @@ This add-on uses a quite standard folder structure:
 ---
 
 > If any of these tutorials or information seem inaccurate, please either reach out for clarifications or changes on [Support email not created yet], or open an issue on the [TOPS repository](https://codeberg.org/Nemael/tops/)
+
+---
+
+## Common issues
+
+### The "Check URL validity" button is showing me an error
+
+- This button is meant to check that the Taler merchant is valid and supports the same currencies that you are using.
+  - The error message will explain if there are any discrepancies, and show the supported currencies on the merchant side.
+- To change the currencies you'd like to support with Taler, go to the `Configuration` tab in the payment provider, and navigate to `Availability -> Currencies`.
+  - This change will be overwritten when you restart the Odoo server.
+  - For a more permanent change, you can edit the `const.py` file, and comment/uncomment the currencies that you want to set as Taler configuration.
+  - `const.py` is loaded at server start, 
+
+_Note: Because KUDOS is an imaginary currency, you will not find it in this list._
 
 ---
 

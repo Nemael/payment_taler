@@ -31,7 +31,15 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - For the translations, add _() to all the strings, to make sure that all the strings are in the .po file, for example the error messages are not there.
 
-- Translation: edit the pictures of the README file, to make the foundation for the README_FR file
+- Translation:
+  - Do an overhaul of the README.md file before handing it to my translator
+  - Edit the pictures of the README file, to make the foundation for the README_FR file
+
+- UI explanation:
+  - Take screenshots of all the pages that I modified
+  - Add red squares on each relevant UI element
+  - Assign a number to each square
+  - Below the picture, explain for each square what UI element it is
 
 - Make a translation for the email template and email description and email subject
 
@@ -55,3 +63,18 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - For the translation milestone, see if I can delete the field "SUPPORTED_LOCALES" from the file const.py.
   - I think it is not used
+
+- Implement the proposed changes of repository folders, move every directory file currently in the root, into a "payment_taler" folder, to change the add-on name.
+  - I will need to change the installation instructions if I go through this change
+    - Maybe the install by cloning will not be working anymore
+  - Also double-check that the uninstallation goes smoothly
+
+- Instead of using a "main" branch
+  - Use an "18.0" branch (double-check the branch name on the OCA modules)
+  - This will be useful when 18.0 is fully released, and I can make a "19.0" branch, with 19.0-specific fixes, for the update compatibility.
+
+- Next steps:
+  - Once the whole software is ready for the translation and sent ove
+  - Implement the rolling releases, it will be useful for the propored directory changes, and other small fixes.
+    - For auto releases, Codeberg implements auto zipping, I believe:
+      - https://docs.codeberg.org/git/using-tags/#creating-tags-and-releases
