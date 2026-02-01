@@ -40,6 +40,7 @@ def requestGetToken(model):
     tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
+
     response = requests.request("POST", url, json=payload, headers=headers)
     tadebug("Response received: ", response.text)
     if response.status_code != 200:
@@ -48,6 +49,7 @@ def requestGetToken(model):
     if "token" not in response.json():
         taerror("Error getting new token: ", response.text)
         return
+
     # Set the new token value directly on the payment provider object
     model.provider_id.taler_token = response.json()["token"]
     tadebug("New token: ", model.provider_id.taler_token)
@@ -68,6 +70,7 @@ def getOrderTalerUri(model, order_id):
     tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
+
     response = requests.request("GET", url, data=payload, headers=headers)
     tadebug("Response received: ", response.text)
     if response.status_code != 200:
@@ -76,6 +79,7 @@ def getOrderTalerUri(model, order_id):
     if "taler_pay_uri" not in response.json():
         taerror("Error getting taler_pay_uri field: ", response.text)
         return ""
+
     return response.json()["taler_pay_uri"]
 
 def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfillment_message, pay_deadline=None):
@@ -104,6 +108,7 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
     tadebug("Url: ", url)
     talog("Headers: ", headers)
     talog("Payload: ", payload)
+
     response = requests.request("POST", url, json=payload, headers=headers)
     talog("Response received: ", response.text)
     if response.status_code != 200:
@@ -150,6 +155,7 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
     tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
+
     response = requests.request("POST", url, json=payload, headers=headers)
     tadebug("Response received: ", response.text)
     if response.status_code != 200:
@@ -163,6 +169,7 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
     if "order_id" not in response.json():
         taerror("Error getting new order_id: ", response.text)
         raise ValidationError("Received no OrderId. The Taler order cannot be created.")
+
     order_id = response.json()["order_id"]
     order_url = taler_url + "/orders/" + order_id
     order_uri = getOrderTalerUri(model, order_id)
@@ -171,43 +178,30 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
     return order_id, order_url, order_uri
 
 def requestRefundForOrder(model, amount, currency, reason):
-    print("API METHOD SEND REFUND")
     if not validateModel(model):
-        print("Getting validation error")
+        taerror("Getting validation error")
         raise ValidationError("Method called on wrong model")
     taler_url = getTalerUrl(model)
-    print("a")
     url = taler_url + "/private/orders/" + model.taler_order_id + "/refund"
-    print("b")
-    print(currency)
-    print(amount)
-    print(reason)
     payload = {
         # "refund": currency + ":" + str(amount),
         "refund": "KUDOS:0.02",
         "reason": reason
     }
-    print(payload)
-    print("c")
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "TalerOdoo/insomnia/11.3.0",
         "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
-    print("d")
-    talog("Built URL: ", url)
-    talog("Headers: ", headers)
-    talog("Payload: ", payload)
-    print("e")
+    tadebug("URL: ", url)
+    tadebug("Headers: ", headers)
+    tadebug("Payload: ", payload)
+
     response = requests.request("POST", url, json=payload, headers=headers)
     tadebug("Response received: ", response.text)
-    print("f")
-    print("Refund response log")
-    print(response.text)
-    print(response.json())
     if response.status_code != 200:
         taerror("Error getting order from id, bad response: ", response.text)
-        return
+        raise ValidationError("Method called on wrong model")
 
     refund_uri = response.json()["taler_refund_uri"]
 
