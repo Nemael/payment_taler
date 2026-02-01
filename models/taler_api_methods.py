@@ -5,7 +5,7 @@
 import requests
 from werkzeug import urls
 from odoo.exceptions import ValidationError
-from odoo.addons.tops.utils.utils import tawarn, tadebug, taerror, talog
+from odoo.addons.tops.utils.utils import tawarn, tadebug, taerror
 
 
 def getMerchantConfiguration(url):
@@ -110,7 +110,7 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
     tadebug("Payload: ", payload)
 
     response = requests.request("POST", url, json=payload, headers=headers)
-    talog("Response received: ", response.text)
+    tadebug("Response received: ", response.text)
     if response.status_code != 200:
         taerror("Error placing order, bad response: ", response.text)
         if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
