@@ -19,13 +19,18 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 ## Current status of the module:
 
-This is a paragraph written for [Issue #18](https://codeberg.org/Nemael/tops/issues/18), I will update it with newer information when available.
+The TOPS add-on is currently developed for Odoo 18, but once the work is complete, I plan on testing and tweaking the add-on to make sure it is working on Odoo 19, and potentially on Odoo 20 when it releases.
 
-This is currently developed for Odoo 18, but once the work is complete, I plan on testing and tweaking the add-on to make sure it is working on Odoo 19, and potentially on Odoo 20 when it releases.
-
-Regarding the add-on's status, the module is usable and is feature-complete. You can install the add-on and activate payments for your customers using Taler, and they will be able to pay using their Taler wallet. Note: The add-on is working and has been tested, but it has not been used in any production environment yet.
+Regarding the add-on's status, the module is stable and feature-complete. You can install the add-on and activate payments for your customers using Taler, and they will be able to pay using their Taler wallet. Note: The add-on is working and has been tested, but it has not been used in any production environment yet.
 
 More updates are coming. They will include non-feature changes, such as internationalization and accessibility, or better documentation. After they will be released, the goal of this current work on the add-on will be reached, and I will be able to focus on bugfixes and improvements.
+
+---
+
+## Following the updates of this module:
+
+- You can see updates announcement in this category of the ICH.taler.net forum: NUFYQntuqfntyuqáÈÙÁqf
+- I also post regular devlogs in this thread of the same forum, where I explain my process: tnfyquntguyqá
 
 ---
 

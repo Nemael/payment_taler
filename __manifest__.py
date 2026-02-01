@@ -4,11 +4,13 @@
 
 {
     'name': 'Taler-Odoo Payment System',
-    'version': '1.0',
+    'version': '18.0.3.0',
+    'summary': 'Integration of the Taler payment system in Odoo.',
+    'description': 'This is Free and Open-Source Software - This add-on works for the Invoicing, ECommerce online payments and Point-of-sale modules. You can also trigger full refunds for customers paying online using Taler, and use the test mode to verify the payment flow.',
     'author': 'Nemael',
     'category': 'Accounting/Payment Providers',
-    'summary': 'Free Open-Source Software - Integration of the Taler payment system in Odoo. Works for Invoicing, ECommerce online payments and Point-of-sale. See https://codeberg.org/Nemael/tops for the code repository',
-    'depends': ['base', 'payment', 'website', 'website_sale', 'account', 'point_of_sale'],
+    'website': 'https://codeberg.org/Nemael/tops',
+    'depends': ['payment', 'website', 'website_sale', 'account', 'point_of_sale'],
     'data': [
         'views/taler_payment_template.xml',
         'views/taler_provider_view.xml',
@@ -16,7 +18,7 @@
         'data/taler_payment_method_data.xml',
         'data/taler_payment_provider_data.xml',
         'data/email_refund_template_data.xml',
-        'security/ir.model.access.csv' #The ir security file is not actually needed for now, but it stays included in case it is needed later.
+        'security/ir.model.access.csv' #The ir security file is not actually used for now, but it will stay included in the files.
     ],
     'post_init_hook': 'post_init_hook',
     'uninstall_hook': 'uninstall_hook',
