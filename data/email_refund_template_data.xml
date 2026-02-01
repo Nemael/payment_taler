@@ -1,5 +1,11 @@
-<odoo>
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 
+SPDX-License-Identifier: LGPL-3.0-or-later
+-->
+
+<odoo>
     <!-- Mail template are declared in a NOUPDATE block so users can freely customize/delete them -->
     <data noupdate="1">
         <record id="email_refund" model="mail.template">

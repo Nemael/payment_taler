@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
+
 from odoo.exceptions import ValidationError
 from odoo import models, fields
 from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, taerror, generate_UUID, get_datetime_now_to_epoch, generate_qr

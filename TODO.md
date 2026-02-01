@@ -50,6 +50,9 @@ SPDX-License-Identifier: LGPL-3.0-or-later
     - Parameters, payloads, headers, response, return values
   - Explain the use of tokens to send payloads
 
+- Security checks:
+  - Talk about the meetings I had with cybersecurity professionals
+
 - For the translation milestone, see if I can delete the field "SUPPORTED_LOCALES" from the file const.py.
   - I think it is not used
 
