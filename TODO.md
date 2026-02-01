@@ -55,11 +55,3 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - For the translation milestone, see if I can delete the field "SUPPORTED_LOCALES" from the file const.py.
   - I think it is not used
-
-
-
-
-
-- Add the devlog link to the readme.md
-
-- Check that there are dots at the end of every sentence in the README

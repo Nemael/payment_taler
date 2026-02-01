@@ -29,8 +29,8 @@ More updates are coming. They will include non-feature changes, such as internat
 
 ## Following the updates of this module:
 
-- You can see updates announcement in this category of the ICH.taler.net forum: NUFYQntuqfntyuqáÈÙÁqf
-- I also post regular devlogs in this thread of the same forum, where I explain my process: tnfyquntguyqá
+- You can see updates announcement in this category of the ICH.taler.net forum: https://ich.taler.net/c/integrations/odoo/29
+- I also post regular devlogs in this thread of the same forum, where I explain my process: https://ich.taler.net/t/taler-odoo-payment-system-devlog/437
 
 ---
 
