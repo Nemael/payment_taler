@@ -40,6 +40,7 @@ def requestGetToken(model):
     tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
+
     response = requests.request("POST", url, json=payload, headers=headers)
     tadebug("Response received: ", response.text)
     if response.status_code != 200:
@@ -48,6 +49,7 @@ def requestGetToken(model):
     if "token" not in response.json():
         taerror("Error getting new token: ", response.text)
         return
+
     # Set the new token value directly on the payment provider object
     model.provider_id.taler_token = response.json()["token"]
     tadebug("New token: ", model.provider_id.taler_token)
@@ -68,6 +70,7 @@ def getOrderTalerUri(model, order_id):
     tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
+
     response = requests.request("GET", url, data=payload, headers=headers)
     tadebug("Response received: ", response.text)
     if response.status_code != 200:
@@ -76,6 +79,7 @@ def getOrderTalerUri(model, order_id):
     if "taler_pay_uri" not in response.json():
         taerror("Error getting taler_pay_uri field: ", response.text)
         return ""
+
     return response.json()["taler_pay_uri"]
 
 def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfillment_message, pay_deadline=None):
@@ -104,12 +108,14 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
     tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
+
     response = requests.request("POST", url, json=payload, headers=headers)
     tadebug("Response received: ", response.text)
     if response.status_code != 200:
         taerror("Error placing order, bad response: ", response.text)
         if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
-            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created.")
+            taerror("The invoice due date is in the past, the Taler order cannot be created. Epoch time set for the invoice: " + pay_deadline)
+            raise ValidationError("The invoice due date is in the past, the Taler order cannot be created. Please see the logs for more details.")
         raise ValidationError("Wrong response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         taerror("Error getting new order_id: ", response.text)
@@ -150,16 +156,20 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
     tadebug("Url: ", url)
     tadebug("Headers: ", headers)
     tadebug("Payload: ", payload)
+
     response = requests.request("POST", url, json=payload, headers=headers)
     tadebug("Response received: ", response.text)
     if response.status_code != 200:
         taerror("Error placing order, bad response: ", response.text)
         if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
-            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created.")
-        raise ValidationError("Wrong response code. The Taler order cannot be created.")
+            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created. Epoch time set for the invoice: " + pay_deadline)
+        if response.json()["code"] == 2514:
+            raise ValidationError("You are trying to pay in a currency that is not supported by the chosen Taler merchant. Please reach out to the shop administator.")
+        raise ValidationError("Bad response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         taerror("Error getting new order_id: ", response.text)
         raise ValidationError("Received no OrderId. The Taler order cannot be created.")
+
     order_id = response.json()["order_id"]
     order_url = taler_url + "/orders/" + order_id
     order_uri = getOrderTalerUri(model, order_id)
@@ -167,6 +177,34 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
 
     return order_id, order_url, order_uri
 
+def requestRefundForOrder(model, amount, currency, reason):
+    if not validateModel(model):
+        taerror("Getting validation error")
+        raise ValidationError("Method called on wrong model")
+    taler_url = getTalerUrl(model)
+    url = taler_url + "/private/orders/" + model.taler_order_id + "/refund"
+    payload = {
+        "refund": currency + ":" + str(amount),
+        "reason": reason
+    }
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "TalerOdoo/insomnia/11.3.0",
+        "Authorization": "Bearer " + getCurrentTalerToken(model)
+    }
+    tadebug("URL: ", url)
+    tadebug("Headers: ", headers)
+    tadebug("Payload: ", payload)
+
+    response = requests.request("POST", url, json=payload, headers=headers)
+    tadebug("Response received: ", response.text)
+    if response.status_code != 200:
+        taerror("Error getting order from id, bad response: ", response.text)
+        raise ValidationError("Method called on wrong model")
+
+    refund_uri = response.json()["taler_refund_uri"]
+
+    return refund_uri
 
 def requestGetOrderFromId(model):
     tadebug("Running postPlaceOrderWithFulfillmentUrl")

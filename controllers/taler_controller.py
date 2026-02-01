@@ -9,6 +9,7 @@ from odoo.addons.tops.utils.utils import talog, tawarn, taerror
 class TalerController(http.Controller):
     _fulfillment_url = '/payment/taler/return'
 
+    # Route that online payments use
     @http.route(_fulfillment_url + "/<string:taler_uuid>/<string:recvd_order_id>", type='http', auth='public', methods=['GET'])
     def taler_return_from_checkout(self, **data):
         talog("Returning after transaction completion. Taler_uuid: " + data['taler_uuid'] + ", Received_order_id: " + data['recvd_order_id'])
@@ -33,6 +34,7 @@ class TalerController(http.Controller):
 
         return request.redirect('/payment/status')
 
+    # Route that invoices use
     @http.route(_fulfillment_url + "/<string:taler_uuid>/<string:prefix>/<int:year>/<string:number>/", type='http', auth='public')
     def taler_return_from_invoice(self, **data):
         reference = data.get('prefix') + "/" + str(data.get('year')) + "/" + data.get('number')

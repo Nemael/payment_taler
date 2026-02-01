@@ -45,13 +45,18 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - Auto creation of artifact (zip file)
   - Auto tagging in git
 
+- Security report goals:
+  - List all the outgoing request
+    - Parameters, payloads, headers, response, return values
+  - Explain the use of tokens to send payloads
+
+- For the translation milestone, see if I can delete the field "SUPPORTED_LOCALES" from the file const.py.
+  - I think it is not used
 
 
 
-- Before the PR merge, make sure to remove the testing "Kudos" that are in the payment_transaction, and taler_api_methods
 
-- Remove the testing "KUDOS" override in transaction AND IN TALER_API_METHODS
-
-- Clean up refund code, and merge it
 
 - Add the devlog link to the readme.md
+
+- Check that there are dots at the end of every sentence in the README

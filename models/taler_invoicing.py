@@ -53,6 +53,6 @@ class TalerInvoicing(models.Model):
                                                                                                                currency,
                                                                                                                self.amount_total,
                                                                                                                order_summary,
-                                                                                                               self.provider_id.fulfillment_message + " Ref: " + self.taler_uuid,
+                                                                                                               self.provider_id.fulfillment_message + " Reference: " + self.taler_uuid,
                                                                                                                invoice_due_date_in_epoch) #Uses the invoice due date as expiration date of the payment
         self.taler_qr = generate_qr(self.taler_order_uri)
