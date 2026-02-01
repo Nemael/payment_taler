@@ -122,7 +122,7 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 >    - 1. sudo apt install libcairo2-dev
 >    - 2. pip install rlPyCairo
 
-- Here is how to make event tickets available for customers to pay using Taler
+- How to make event tickets available for customers to pay for using Taler
   - Add the "Events" add-on on your Odoo instance
   - Go to the settings app, and navigate to the "Events" settings
   - Tick the "Online Ticketing" and save the changes
@@ -178,31 +178,34 @@ Once finished, it will be made available on the Odoo Apps store https://apps.odo
 
 <img src="README_Pictures/Taler_pos_receipt.png" alt="Taler pos receipt" style="max-height: 400px;">
 
-### Going through the refund process
+### Refunding an online payment
 
-_Note: You can do full refunds using the Taler add-on. Partial refunds are not (yet?) implemented, but Taler allows for partial refunds, so it could be implemented._
-
-- To make a refund, you first have to find the payment you wish to refund
+- To make a refund, you first have to find the payment you wish to refund.
 - In the `website` or `invoicing` add-on, navigate to `Configuration -> Payment Transactions` on the top bar.
-- This page will show you all the transactions that have been completed. Click on the one that you would like to refund
+  - This page will show you all the transactions that have been completed.
+- Click the transaction that you would like to refund.
+  - In the picture, the transaction to refund is `S00060`.
 
-<img src="README_Pictures/Taler_refund_list_of_transactions.png" alt="Taler list of transactions" style="max-height: 400px;">
+<img src="README_Pictures/Taler_refund_list_of_transactions.png" alt="Taler list of transactions" width="700px">
 
 - On the transaction page, click on the linked payment.
-  - In the picture, the linked payment is `PBNK1/2026/00029`
+  - In the picture, the linked payment is `PBNK1/2026/00029`.
 
-<img src="README_Pictures/Taler_refund_transaction.png" alt="Taler transaction page" style="max-height: 400px;">
+<img src="README_Pictures/Taler_refund_transaction.png" alt="Taler transaction page" width="700px">
 
-- On the payment page, click the `Refund` button in the action button section and confirm the refund
+- On the payment page, click `Refund` in the action button section and confirm the refund.
 
-<img src="README_Pictures/Taler_refund_payment.png" alt="Taler payment page" style="max-height: 400px;">
+<img src="README_Pictures/Taler_refund_payment.png" alt="Taler payment page" width="700px">
 
-- Confirming the refund will create a new transaction in the previously-shown list, with the nam `R-{Odoo reference number}`
+- Confirming the refund will create a new transaction, that you can view in the list of transactions, with the name `R-{Odoo reference number}`
   - An email containing a QR Code for the customer will also be sent to the customer's email address
     - You can find the list of emails in `Settings -> Technical -> Emails`
-  - To receive the refund, the customer has to scan the QR Code with their Taler wallet.
+  - To receive the refund, the customer will have to scan the QR Code with their Taler wallet.
 
-<img src="README_Pictures/Taler_refund_email.png" alt="Taler refund email to customer" style="max-height: 400px;">
+<img src="README_Pictures/Taler_refund_email.png" alt="Taler refund email to customer" width="700px">
+
+_Note: You can only do full refunds using Taler. Partial refunds are not implemented, but Taler does allow for partial refunds, so it could be a supplementary feature._
+
 
 
 

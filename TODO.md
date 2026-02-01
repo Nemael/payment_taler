@@ -55,3 +55,5 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Clean up refund code, and merge it
 
 - Add the devlog link to the readme.md
+
+- Check that there are dots at the end of every sentence in the README
