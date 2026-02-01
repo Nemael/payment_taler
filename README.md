@@ -316,7 +316,7 @@ This add-on uses a quite standard folder structure
 
 ---
 
-## How to contribute?
+## How to contribute? (Unfinished section)
 
 - Guide on how to clone, run, and contribute to the code
 - Ideas on features that could be implemented

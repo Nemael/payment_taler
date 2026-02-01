@@ -45,8 +45,19 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - Auto creation of artifact (zip file)
   - Auto tagging in git
 
+- Security report
+  - List all the outgoing request
+    - Parameters, payloads, headers, response, return values
+  - Explain the use of tokens to send payloads
+
+- For the translation milestone, see if I can delete the field "SUPPORTED_LOCALES" from the file const.py.
+  - I think it is not used
 
 
+
+
+
+- Just before merging the refund, check if refunds using the test mode works (use a cheap product)
 
 - Before the PR merge, make sure to remove the testing "Kudos" that are in the payment_transaction, and taler_api_methods
 

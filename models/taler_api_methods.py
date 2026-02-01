@@ -106,15 +106,16 @@ def postPlaceOrderWithFulfillmentMessage(model, currency, amount, summary, fulfi
         "Authorization": "Bearer " + getCurrentTalerToken(model)
     }
     tadebug("Url: ", url)
-    talog("Headers: ", headers)
-    talog("Payload: ", payload)
+    tadebug("Headers: ", headers)
+    tadebug("Payload: ", payload)
 
     response = requests.request("POST", url, json=payload, headers=headers)
     talog("Response received: ", response.text)
     if response.status_code != 200:
         taerror("Error placing order, bad response: ", response.text)
         if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
-            raise ValidationError("The invoice due date is in the past. The Taler order cannot be created. Epoch time set for the invoice: " + pay_deadline)
+            taerror("The invoice due date is in the past, the Taler order cannot be created. Epoch time set for the invoice: " + pay_deadline)
+            raise ValidationError("The invoice due date is in the past, the Taler order cannot be created. Please see the logs for more details.")
         raise ValidationError("Wrong response code. The Taler order cannot be created.")
     if "order_id" not in response.json():
         taerror("Error getting new order_id: ", response.text)
@@ -162,7 +163,6 @@ def postPlaceOrderWithFulfillmentUrl(model, currency, amount, summary, fulfillme
         taerror("Error placing order, bad response: ", response.text)
         if response.json()["hint"] == "The order creation request is invalid because the given payment deadline is in the past.":
             raise ValidationError("The invoice due date is in the past. The Taler order cannot be created. Epoch time set for the invoice: " + pay_deadline)
-        print(response.json()["code"])
         if response.json()["code"] == 2514:
             raise ValidationError("You are trying to pay in a currency that is not supported by the chosen Taler merchant. Please reach out to the shop administator.")
         raise ValidationError("Bad response code. The Taler order cannot be created.")
@@ -184,8 +184,7 @@ def requestRefundForOrder(model, amount, currency, reason):
     taler_url = getTalerUrl(model)
     url = taler_url + "/private/orders/" + model.taler_order_id + "/refund"
     payload = {
-        # "refund": currency + ":" + str(amount),
-        "refund": "KUDOS:0.02",
+        "refund": currency + ":" + str(amount),
         "reason": reason
     }
     headers = {

@@ -1,16 +1,11 @@
 # SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
-from odoo.addons.base.models.ir_qweb import FORMAT_REGEX
 from odoo.exceptions import ValidationError
 from odoo import models, fields
 from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, taerror, generate_UUID, get_datetime_now_to_epoch, generate_qr
 from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, requestRefundForOrder
 from odoo.addons.tops.controllers.taler_controller import TalerController
-
-
-import logging
-
 
 class TalerTransaction(models.Model):
     _inherit = 'payment.transaction'
@@ -74,10 +69,8 @@ class TalerTransaction(models.Model):
         expiration_time_in_epoch = get_datetime_now_to_epoch(15)  # Calculate the epoch seconds in 15 minutes, to be used in the Taler order creation to set a max payment date
         self.taler_order_id, self.taler_order_url, self.taler_order_uri = postPlaceOrderWithFulfillmentUrl(
                                                                                   self,
-                                                                                  # currency,
-                                                                                  "KUDOS",
-                                                                                  # self.amount,
-                                                                                  "0.02",
+                                                                                  currency,
+                                                                                  self.amount,
                                                                                   order_summary,
                                                                                   self.provider_id.fulfillment_message,
                                                                                   TalerController._fulfillment_url + "/" + self.taler_uuid,
@@ -140,7 +133,7 @@ class TalerTransaction(models.Model):
         refund_txn.taler_refund_uri = taler_refund_uri
         refund_txn.taler_refund_qr = taler_refund_qr
 
-        # The reference and taler_refund_uri would have this value only if we were unit testing, and in unit testing we don't want to test the email sending
+        # The reference and taler_refund_uri would have these value only if we were unit testing, and in unit testing we don't want to test the email sending
         if self.reference != "Test Transaction" and refund_txn.taler_refund_uri != "taler://mock_refund_uri/":
             self._send_refund_email(refund_txn)
 
