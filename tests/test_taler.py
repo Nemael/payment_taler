@@ -22,7 +22,7 @@ class TestTaler(TestTalerCommon, PaymentHttpCommon):
         providers = self.env['payment.provider']._get_compatible_providers(
             self.company.id, self.partner.id, self.amount, currency_id=self.currency_eur.id
         )
-        self.assertIn(self.taler_provider, providers)
+        self.assertNotIn(self.taler_provider, providers) # When euro is supported by default by the add-on, this assert needs to be edited to `self.assertIn(...)`
 
         providers = self.env['payment.provider']._get_compatible_providers(
             self.company.id, self.partner.id, self.amount, currency_id=self.currency_chf.id
