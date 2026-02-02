@@ -82,3 +82,6 @@ For now: steps to add Taler to point of sale
     - They will have to scan the refund QR Code to complete the refund
 
 - Second account in my Odoo: kilotimes@email.com; abcdefgh
+
+- To skip demo data when creating a new DB, add the command `--without-demo=all`
+  - Example: `./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i tops -u tops --init tops -d odoo18_tops_0.4.1.13 --without-demo=all`

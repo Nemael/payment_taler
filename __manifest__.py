@@ -6,7 +6,6 @@
     'name': 'Taler-Odoo Payment System',
     'version': '18.0.4.0',
     'summary': 'Integration of the Taler payment system in Odoo.',
-    'description': 'This is Free and Open-Source Software - This add-on works for the Invoicing, ECommerce online payments and Point-of-sale modules. You can also trigger full refunds for customers paying online using Taler, and use the test mode to verify the payment flow.',
     'author': 'Nemael',
     'category': 'Accounting/Payment Providers',
     'website': 'https://codeberg.org/Nemael/tops',
