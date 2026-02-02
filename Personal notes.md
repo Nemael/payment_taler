@@ -68,3 +68,20 @@ For now: steps to add Taler to point of sale
   - After a commit is made and pushed to the repository
   - Run `git tag "tag_string"` to make the tag
   - Run `git push origin tag "tag_string"` to push the tag to the repository. `tag_string` must match with the previous command
+
+- For the refund testing, install the Sales module
+
+- How to go through the refund flow:
+  - make sure it is configured correctly, both in taler_payment_method_data.xml, and in taler_provider.py
+  - Make an online payment
+  - Go to "configuration", "payment transactions"
+    - Or go through the journal, this is probably better?
+  - Go to the transaction you want to refund
+  - Click refund button on the top-left
+  - The customer will receive an email
+    - They will have to scan the refund QR Code to complete the refund
+
+- Second account in my Odoo: kilotimes@email.com; abcdefgh
+
+- To skip demo data when creating a new DB, add the command `--without-demo=all`
+  - Example: `./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -i tops -u tops --init tops -d odoo18_tops_0.4.1.13 --without-demo=all`

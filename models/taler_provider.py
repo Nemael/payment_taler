@@ -38,6 +38,13 @@ class TalerProvider(models.Model):
         provider_state = self.state # Possible values: disabled, enabled, test
         return provider_state == 'test'
 
+    def _compute_feature_support_fields(self):
+        super()._compute_feature_support_fields()
+        for provider in self:
+            self.filtered(lambda p: p.code == 'taler').update({
+                'support_refund': 'full_only'
+            })
+
     def _get_supported_currencies(self):
         """ Override of payment to return the supported currencies. """
         supported_currencies = super()._get_supported_currencies()
@@ -55,7 +62,7 @@ class TalerProvider(models.Model):
         return const.DEFAULT_PAYMENT_METHOD_CODES
 
     def merchant_url_check_button(self):
-        # Checks the validity of the URL set by the user
+        """ Checks the validity of the Taler merchant URL set by the user. """
         response = getMerchantConfiguration(self.taler_merchant_url)
         if not response["name"] or not response["name"] == "taler-merchant" or not response["version"] or not response["currencies"]:
             raise ValidationError("The Taler Merchant URL is invalid")
@@ -64,10 +71,11 @@ class TalerProvider(models.Model):
         merchant_currencies = []
         for currency in response["currencies"].keys():
             merchant_currencies.append(currency)
+
         odoo_currencies_missing_in_merchant = []
-        for odoo_currency in const.SUPPORTED_CURRENCIES:
-            if odoo_currency not in merchant_currencies:
-                odoo_currencies_missing_in_merchant.append(odoo_currency)
+        for odoo_currency in self.available_currency_ids:
+            if odoo_currency.name not in merchant_currencies:
+                odoo_currencies_missing_in_merchant.append(odoo_currency.name)
         if len(odoo_currencies_missing_in_merchant) > 0:
             raise ValidationError("The Taler Merchant URL is invalid.\nCurrencies supported on Odoo side: " + str(odoo_currencies_missing_in_merchant) + ".\nCurrencies supported on Taler merchant side: " + str(merchant_currencies) + ".\nDiscrepancy: " + str(odoo_currencies_missing_in_merchant))
 
