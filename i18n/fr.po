@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-24 02:49+0000\n"
-"PO-Revision-Date: 2026-01-24 02:49+0000\n"
+"POT-Creation-Date: 2026-02-03 05:22+0000\n"
+"PO-Revision-Date: 2026-02-03 05:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,8 +25,40 @@ msgstr ""
 "                            En cas de problème lors de l'utilisation du code QR, utilisez l'URI ci-dessus."
 
 #. module: tops
-#: model:ir.model.fields,field_description:tops.field_payment_provider__code
-msgid "Code"
+#: model:mail.template,body_html:tops.email_refund
+msgid ""
+"<div style=\"font-family: 'Arial'; font-size: 14px;\">\n"
+"    <p>\n"
+"        Dear <t t-out=\"object.partner_id.name or ''\"/>\n"
+"    </p>\n"
+"    <p>\n"
+"        A refund for your order <t t-out=\"object.reference or ''\"/> has been initiated for the amount of <t t-out=\"abs(object.amount) if object.amount else ''\"/><t t-out=\"object.currency_id.symbol or ''\"/>\n"
+"    </p>\n"
+"    <p>\n"
+"        To receive the refund, please scan the QR code below with your Taler wallet\n"
+"    </p>\n"
+"    <div style=\"text-align: center;\">\n"
+"        <img t-att-src=\"'data:image/png;base64,%s' % object.taler_refund_qr\" style=\"max-height:200px; max-width:200px\" alt=\"Refund QR Code\"/>\n"
+"    </div>\n"
+"    <p>\n"
+"        If you cannot use the QR code, please use the following URI:<br/>\n"
+"        <t t-out=\"object.taler_refund_uri or ''\"/>\n"
+"    </p>\n"
+"    <p>\n"
+"        For any questions or requests, please contact us at <t t-out=\"object.company_id.email or ''\"/>\n"
+"    </p>\n"
+"    <p>\n"
+"        Thank you,<br/>\n"
+"        <t t-out=\"object.company_id.name or ''\"/>\n"
+"    </p>\n"
+"</div>\n"
+"            "
+msgstr ""
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid "Bad response code. The Taler order cannot be created."
 msgstr ""
 
 #. module: tops
@@ -36,26 +68,82 @@ msgstr "Vérifier la validité de l'URL"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
+msgid "Click here"
+msgstr "Cliquer ici"
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_payment_provider__code
+msgid "Code"
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+
+#. module: tops
+#: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
 msgid "DISABLED"
 msgstr "DÉSACTIVÉ"
 
 #. module: tops
-#: model:ir.model.fields,help:tops.field_payment_provider__fulfillment_message
-msgid ""
-"Message shown on the Taler order after payment. Note: This message does not appear on Odoo itself, see the \"Messages\" tab for this purpose."
+#. odoo-python
+#: code:addons/tops/models/taler_transaction.py:0
+msgid "Email template not found! Looking for: "
 msgstr ""
-"Message affiché sur la page Taler après confirmation du paiement. Remarque : ce message n'apparaitra pas dans la page Odoo. Pour consulter les messages liés à Odoo, consultez l'onglet \"Messages\"."
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_transaction.py:0
+msgid "Error in refund response from Taler, see logs"
+msgstr ""
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid "Error while connecting to the Taler Merchant"
+msgstr ""
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_payment_provider__fulfillment_message
+msgid "Fulfillment message"
+msgstr "Message de confirmation"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__is_taler_invoice
 #: model:ir.model.fields,field_description:tops.field_account_move__is_taler_invoice
 msgid "Is Taler Invoice"
-msgstr ""
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #: model:ir.model,name:tops.model_account_move
 msgid "Journal Entry"
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_payment_provider__taler_merchant_password
+msgid "Merchant Password"
+msgstr "Mot de passe vendeur"
+
+#. module: tops
+#: model:ir.model.fields,help:tops.field_payment_provider__fulfillment_message
+msgid ""
+"Message shown on the Taler order after payment. Note: This message does not "
+"appear on Odoo itself, see the \"Messages\" tab for this purpose."
 msgstr ""
+"Message affiché sur la page Taler après confirmation du paiement. Remarque : ce message n'apparaitra pas "
+"dans la page Odoo. Pour consulter les messages liés à Odoo, consultez l'onglet \"Messages\"."
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid "Method called on wrong model"
+msgstr ""
+
+#. module: tops
+#: model:mail.template,name:tops.email_refund
+msgid "Odoo Taler refund email"
+msgstr ""
+
+#. module: tops
+#: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
+msgid "Order URI"
+msgstr "URI de commande"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
@@ -70,17 +158,12 @@ msgstr "Mot de passe de l'instance Taler sélectionnée."
 #. module: tops
 #: model:ir.model,name:tops.model_payment_provider
 msgid "Payment Provider"
-msgstr ""
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #: model:ir.model,name:tops.model_payment_transaction
 msgid "Payment Transaction"
-msgstr ""
-
-#. module: tops
-#: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
-msgid "Payment URI"
-msgstr "URI de paiement"
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
@@ -91,8 +174,26 @@ msgstr ""
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
-msgid "QR Code. Please use the URI below to pay without QR Code."
+msgid "QR Code. Please use the URI below to pay without QR Code"
 msgstr "Code QR. Pour payer autrement, utilisez l'URI ci-dessous."
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid "Received no Order ID from Taler. The order cannot be created."
+msgstr ""
+
+#. module: tops
+#: model:mail.template,subject:tops.email_refund
+msgid "Refund initiated for Taler payment, order {{ object.reference }}"
+msgstr ""
+
+#. module: tops
+#: model:mail.template,description:tops.email_refund
+msgid ""
+"Sent to customers when a refund is triggered for Taler payments. It contains"
+" the QR code that the customer will have to scan to complete the refund."
+msgstr ""
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
@@ -108,14 +209,9 @@ msgid "Taler"
 msgstr "Taler"
 
 #. module: tops
-#: model:ir.model.fields,field_description:tops.field_payment_provider__taler_merchant_password
-msgid "Merchant Password"
-msgstr "Mot de passe vendeur"
-
-#. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__taler_token
 msgid "Taler Merchant Token, you should not be able to see this parameter"
-msgstr ""
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__taler_merchant_url
@@ -141,7 +237,15 @@ msgstr "URI de commande Taler"
 #: model:ir.model.fields,field_description:tops.field_account_move__taler_order_url
 #: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_order_url
 msgid "Taler Order URL"
-msgstr "URL de commande Taler"
+msgstr "Taler Order URL"
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid ""
+"Taler Password is empty or incorrect. Did you set it correctly in the "
+"provider view?"
+msgstr ""
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__provider_id
@@ -153,6 +257,30 @@ msgstr "Prestataire Taler"
 #: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_qr
 #: model:ir.model.fields,field_description:tops.field_account_move__taler_qr
 msgid "Taler QR"
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_refund_qr
+msgid "Taler Refund QR Code"
+msgstr ""
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_refund_uri
+msgid "Taler Refund URI"
+msgstr ""
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid "Taler Token is empty"
+msgstr ""
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid ""
+"Taler URL is empty or incorrect. Did you set it correctly in the provider "
+"view?"
 msgstr ""
 
 #. module: tops
@@ -160,12 +288,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:tops.field_account_move__taler_uuid
 #: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_uuid
 msgid "Taler UUID"
-msgstr ""
-
-#. module: tops
-#: model:ir.model.fields,field_description:tops.field_payment_provider__fulfillment_message
-msgid "Fulfillment message"
-msgstr "Message de confirmation"
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
@@ -179,19 +302,16 @@ msgstr ""
 "                            Numéro de commande :"
 
 #. module: tops
-#: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
-msgid ""
-"Test mode is enabled. This mode allows you to test the payment process by running test payments with Taler and the chosen Merchant.<br/>\n"
-"                    In the Odoo UI, these payments' information will be displayed with actual values (amount, currency, etc), but the currency will automatically be swapped to \"Kudos\" right before sending the order to the Taler merchant.<br/>\n"
-"                    KUDOS is an imaginary currency created for Taler. It can be used for free to test transactions with your order wallet. The selected merchant needs to be compatible with Kudos (most Taler merchants will be compatible with Kudos).<br/>\n"
-"                    Click (here)[\"LINK TO THE TEST MODE TUTORIAL\"] for a tutorial on what to expect when using test mode.<br/>\n"
-"                    <strong>Warning: </strong>To avoid clients using Kudos to pay for their order, do not use this test mode in production.<br/>"
+#. odoo-python
+#: code:addons/tops/models/taler_transaction.py:0
+msgid "Taler: No transaction found matching reference "
 msgstr ""
-"Le mode test est activé. Il vous permet de tester le processus de paiement en effectuant des paiements tests par Taler pour le vendeur sélectionné.<br/>\n"
-"                    Les détails de ces paiements seront affichés en monnaie réelle (montant, devise, etc.) dans l'interface Odoo, mais la devise sera convertie automatiquement en \"KUDOS\" juste avant le transfert vers le vendeur Taler.<br/>\n"
-"                    Le KUDOS est une devise imaginaire créée afin de tester gratuitement des transactions avec votre porte-monnaie virtuel Taler. Le vendeur Taler sélectionné doit être compatible (la plupart le seront).<br/>\n"
-"                    Cliquer (ici)[\"LIEN VERS LE TUTORIEL DU MODE TEST\"] pour consulter le tutoriel du mode test.<br/>\n"
-"                    <strong>Attention</strong> : n'activez pas le mode test sur un serveur de production pour éviter que les clients puissent utiliser des KUDOS pour effectuer un paiement."
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_transaction.py:0
+msgid "Taler: Received data with missing reference."
+msgstr ""
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
@@ -199,8 +319,59 @@ msgid "Test mode information"
 msgstr "Renseignements sur le mode test."
 
 #. module: tops
+#: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
+msgid ""
+"Test mode is enabled. This mode allows you to test the payment process by running test payments with Taler and the chosen Merchant.<br/>\n"
+"                    In the Odoo UI, these payments' information will be displayed with actual values (amount, currency, etc), but the currency will automatically be swapped to \"Kudos\" right before sending the order to the Taler merchant.<br/>\n"
+"                    KUDOS is an imaginary currency created for Taler. It can be used for free to test transactions with your order wallet. The selected merchant needs to be compatible with Kudos (most Taler merchants are compatible with Kudos).<br/>"
+msgstr ""
+"Le mode test est activé. Il vous permet de tester le processus de paiement en effectuant des paiements tests par Taler pour le vendeur sélectionné.<br/>\n"
+"                    Les détails de ces paiements seront affichés en monnaie réelle (montant, devise, etc.) dans l'interface Odoo, mais la devise sera convertie automatiquement en \"KUDOS\" juste avant le transfert vers le vendeur Taler.<br/>\n"
+"                    Le KUDOS est une devise imaginaire créée afin de tester gratuitement des transactions avec votre porte-monnaie virtuel Taler. Le vendeur Taler sélectionné doit être compatible (la plupart le seront).<br/>\n"
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_provider.py:0
+msgid "The Taler Merchant URL is invalid"
+msgstr ""
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_provider.py:0
+msgid ""
+"The Taler Merchant URL is invalid.\n"
+"Currencies supported on Odoo side: .\n"
+"Currencies supported on Taler merchant side: .\n"
+"Discrepancy: "
+msgstr ""
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid ""
+"The invoice due date is in the past, the Taler order cannot be created. "
+"Please see the logs for more details."
+msgstr ""
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid ""
+"The invoice due date is in the past. The Taler order cannot be created. "
+"Epoch time set for the invoice: "
+msgstr ""
+
+#. module: tops
 #: model:ir.model.fields,help:tops.field_payment_provider__code
 msgid "The technical code of this payment provider."
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid ""
+"There was an issue connecting to the Taler Merchant URL, please make sure "
+"the URL is correct and the service is up."
 msgstr ""
 
 #. module: tops
@@ -209,11 +380,25 @@ msgid "URL to the Taler merchant instance you'd like to use"
 msgstr "URL vers le vendeur Taler sélectionné."
 
 #. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid "Wrong response code. The Taler order cannot be created."
+msgstr ""
+
+#. module: tops
+#. odoo-python
+#: code:addons/tops/models/taler_api_methods.py:0
+msgid ""
+"You are trying to pay in a currency that is not supported by the chosen "
+"Taler merchant. Please reach out to the shop administator."
+msgstr ""
+
+#. module: tops
 #: model_terms:payment.provider,auth_msg:tops.payment_provider_taler
 msgid "Your payment has been authorized."
 msgstr "Votre paiement a été approuvé."
 
-#. module: tops`
+#. module: tops
 #: model_terms:payment.provider,cancel_msg:tops.payment_provider_taler
 msgid "Your payment has been cancelled."
 msgstr "Votre paiement a été annulé."
@@ -229,3 +414,12 @@ msgstr ""
 #: model_terms:payment.provider,done_msg:tops.payment_provider_taler
 msgid "Your payment has been successfully processed."
 msgstr "Votre paiement a été effectué."
+
+#. module: tops
+#: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
+msgid ""
+"for a tutorial on what to expect when using test mode.<br/>\n"
+"                    <strong>Warning: </strong>To avoid clients using Kudos to pay for their order, do not use this test mode in production.<br/>"
+msgstr ""
+"pour consulter le tutoriel du mode test. (disponible en Français)<br/>\n"
+"                    <strong>Attention</strong> : n'activez pas le mode test sur un serveur de production pour éviter que les clients puissent utiliser des KUDOS pour effectuer un paiement."

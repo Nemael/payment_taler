@@ -7,15 +7,16 @@ from odoo import models, fields
 from odoo.addons.tops.utils.utils import talog, tawarn, tadebug, taerror, generate_UUID, get_datetime_now_to_epoch, generate_qr
 from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, requestRefundForOrder
 from odoo.addons.tops.controllers.taler_controller import TalerController
+from odoo.tools import _
 
 class TalerTransaction(models.Model):
     _inherit = 'payment.transaction'
     #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
     #It will inherit the ir security settings from the account.move model
 
-    taler_order_id = fields.Char(string="Taler Order Id", default="")
-    taler_order_url = fields.Char(string="Taler Order Url", default="")
-    taler_order_uri = fields.Char(string="Taler Order Uri", default="")
+    taler_order_id = fields.Char(string="Taler Order ID", default="")
+    taler_order_url = fields.Char(string="Taler Order URL", default="")
+    taler_order_uri = fields.Char(string="Taler Order URI", default="")
 
     # This UUID is only used for the fulfillment url. Without the UUID in the url, the Taler merchant could mix up two orders with the same Odoo ID, on two different Odoo instances
     # This is not a perfect solution, as two duplicate UUID + OrderID could be generated on two different Odoo instances, on the same Taler Merchant, but this is highly unlikely.
@@ -96,11 +97,11 @@ class TalerTransaction(models.Model):
         reference = notification_data.get('reference')
         if not reference:
             taerror("Taler: Received data with missing reference.")
-            raise ValidationError("Taler: Received data with missing reference.")
+            raise ValidationError(_("Taler: Received data with missing reference."))
         transaction = self.search([('reference', '=', reference), ('provider_code', '=', 'taler')])
 
         if not transaction:
-            raise ValidationError("Taler: No transaction found matching reference " + reference)
+            raise ValidationError(_("Taler: No transaction found matching reference " + reference))
 
         return transaction
 
@@ -127,7 +128,7 @@ class TalerTransaction(models.Model):
         except Exception as e:
             taerror("Error in refund response from Taler merchant. Response received from Taler merchant: ")
             taerror(response)
-            raise ValidationError("Error in refund response from Taler, see logs")
+            raise ValidationError(_("Error in refund response from Taler, see logs"))
 
         taler_refund_qr = generate_qr(taler_refund_uri)
 
@@ -149,4 +150,4 @@ class TalerTransaction(models.Model):
             # Send email
             template.send_mail(refund_txn.id, force_send=True)
         else:
-            raise ValidationError("Email template not found! Looking for: " + email_refund_template_name)
+            raise ValidationError(_("Email template not found! Looking for: " + email_refund_template_name))
