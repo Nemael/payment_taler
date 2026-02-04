@@ -96,6 +96,20 @@ Translation issues:
     - For auto releases, Codeberg implements auto zipping, I believe:
       - https://docs.codeberg.org/git/using-tags/#creating-tags-and-releases
 
+- Before finishing the translation milestone, do a runaround of all the features
+  - First in English
+  - Then in French
+
+- When the tutorial for the test mode is finished being translated, Check that the link in the test mode warning does point to the tutorial in French, and does not lead to a 404.
+
+- When I finish the software translation, merge it to the main branch already, and make a tag "software_translation"
+
+- Next steps:
+  - Finish software translation
+  - Check the upload requirements on the OCA and Odoo appstore
+  - See if I can send my add-on for approval, and if I want to do it already
+    - Before sending it, see if I can implement the changes from issue#18
+
 - For the Odoo store publishing:
   - Add a folder payment_taler to the root of my repository
   - Guidelines are here: https://apps.odoo.com/apps/vendor-guidelines

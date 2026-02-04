@@ -6,6 +6,7 @@ from odoo import models, fields
 from odoo.addons.tops import const
 from odoo.exceptions import ValidationError
 from odoo.addons.tops.models.taler_api_methods import getMerchantConfiguration
+from odoo.tools import _
 
 
 class TalerProvider(models.Model):
@@ -65,7 +66,7 @@ class TalerProvider(models.Model):
         """ Checks the validity of the Taler merchant URL set by the user. """
         response = getMerchantConfiguration(self.taler_merchant_url)
         if not response["name"] or not response["name"] == "taler-merchant" or not response["version"] or not response["currencies"]:
-            raise ValidationError("The Taler Merchant URL is invalid")
+            raise ValidationError(_("The Taler Merchant URL is invalid"))
 
         # Checks if the currencies used by Odoo are all included in the supported currencies by the Taler Merchant
         merchant_currencies = []
@@ -77,7 +78,7 @@ class TalerProvider(models.Model):
             if odoo_currency.name not in merchant_currencies:
                 odoo_currencies_missing_in_merchant.append(odoo_currency.name)
         if len(odoo_currencies_missing_in_merchant) > 0:
-            raise ValidationError("The Taler Merchant URL is invalid.\nCurrencies supported on Odoo side: " + str(odoo_currencies_missing_in_merchant) + ".\nCurrencies supported on Taler merchant side: " + str(merchant_currencies) + ".\nDiscrepancy: " + str(odoo_currencies_missing_in_merchant))
+            raise ValidationError(_("The Taler Merchant URL is invalid.\nCurrencies supported on Odoo side: " + str(odoo_currencies_missing_in_merchant) + ".\nCurrencies supported on Taler merchant side: " + str(merchant_currencies) + ".\nDiscrepancy: " + str(odoo_currencies_missing_in_merchant)))
 
         # If everything is ok, create an "ok" popup for the user
         confirmation_string_for_user = "The Taler Merchant URL is valid and the currencies are compatible. "
