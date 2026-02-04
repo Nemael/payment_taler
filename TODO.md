@@ -91,7 +91,13 @@ Translation issues:
   - This will be useful when 18.0 is fully released, and I can make a "19.0" branch, with 19.0-specific fixes, for the update compatibility.
 
 - Next steps:
-  - Once the whole software is ready for the translation and sent ove
-  - Implement the rolling releases, it will be useful for the propored directory changes, and other small fixes.
+  - Once the whole software is ready for the translation and sent over, merge the code right away
+  - Implement the rolling releases, it will be useful for the proposed directory changes, and other small fixes.
     - For auto releases, Codeberg implements auto zipping, I believe:
       - https://docs.codeberg.org/git/using-tags/#creating-tags-and-releases
+
+- For the Odoo store publishing:
+  - Add a folder payment_taler to the root of my repository
+  - Guidelines are here: https://apps.odoo.com/apps/vendor-guidelines
+  - See if I can easily setup the `live_test_url` field in the manifest
+  - Add the `support` field in the manifest, with my support URL 
