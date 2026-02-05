@@ -89,7 +89,7 @@ msgstr ""
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
 msgid ""
-"Demo data is currently in use for the Taler merchant URL and password.<br/>\n"
+"Demo data is currently used for the Taler merchant URL and password.<br/>\n"
 "                        <strong>Warning: Only use this demo data in a test mode or non-production setting!</strong><br/>\n"
 "                        You can find the sandbox demobank"
 msgstr ""

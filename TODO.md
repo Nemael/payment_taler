@@ -115,3 +115,9 @@ Translation issues:
   - Guidelines are here: https://apps.odoo.com/apps/vendor-guidelines
   - See if I can easily setup the `live_test_url` field in the manifest
   - Add the `support` field in the manifest, with my support URL 
+
+- Add a big "Unpublished/Published" button on top of the payment provider, like most other payment existing providers (for example, paypal)
+  - That meas I have to remove whatever code that makes the add-on unpublished automatically when in test mode.
+  - And add the same logic as other payment providers, to change the published state of the payment provider.
+  - See issue #23 https://codeberg.org/Nemael/tops/issues/23
+  - Make sure that when I try to publish a disabled payment provider, it shows a pop-up saying "You cannot publish a disabled provider." See the same behaviour in paypal provider 
