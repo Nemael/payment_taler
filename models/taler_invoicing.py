@@ -14,9 +14,9 @@ class TalerInvoicing(models.Model):
 
     is_taler_invoice = fields.Boolean(default=False) # This value is used in the xml file for invoices. If true, the invoice will contain the Taler QR Code
 
-    taler_order_id = fields.Char(string="Taler Order ID", default="")
-    taler_order_url = fields.Char(string="Taler Order URL", default="")
-    taler_order_uri = fields.Char(string="Taler Order URI", default="")
+    taler_order_id = fields.Char(string="Taler order ID", default="")
+    taler_order_url = fields.Char(string="Taler order URL", default="")
+    taler_order_uri = fields.Char(string="Taler order URI", default="")
     taler_qr = fields.Char(string="Taler QR")
 
     # For an explanation on this field, see the equivalent field in model TalerTransaction
