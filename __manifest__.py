@@ -17,7 +17,7 @@
         'data/taler_payment_method_data.xml',
         'data/taler_payment_provider_data.xml',
         'data/email_refund_template_data.xml',
-        'security/ir.model.access.csv' #The ir security file is not actually used for now, but it will stay included in the files.
+        'security/ir.model.access.csv'
     ],
     'post_init_hook': 'post_init_hook',
     'uninstall_hook': 'uninstall_hook',

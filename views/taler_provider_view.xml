@@ -40,6 +40,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
                     <button name="merchant_url_check_button" type="object" string="Confirm the merchant url validity and currency compatibility" class="btn-primary"/>
                     <field name="taler_merchant_password" required="code == 'taler' and state != 'disabled'" password="True" groups="base.group_system"/>
                     <field name="fulfillment_message" required="code == 'taler' and state != 'disabled'"/>
+                    <button name="merchant_add_demo_data" type="object" string="Use demo data" class="btn-primary"/>
                 </group>
             </group>
         </field>

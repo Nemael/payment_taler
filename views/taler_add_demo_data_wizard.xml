@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+
+SPDX-License-Identifier: LGPL-3.0-or-later
+-->
+
+<record id="view_add_demo_data_wizard_form" model="ir.ui.view">
+    <field name="name">tops.add.demo.data.wizard.form</field>
+    <field name="model">tops.add.demo.data.wizard</field>
+    <field name="arch" type="xml">
+        <form string="Confirmation popup to add demo data">
+            <sheet>
+                <p>
+                    This will insert the Taler sandbox Merchant URL and Password
+                    You can find the sandbox demobank here: https://backend.demo.taler.net/instances/sandbox/webui/#/orders
+                    This action will overwrite the current merchant URL and password.
+                    Warning: Do not use this demo data in production!
+                    Do you want to proceed?
+                </p>
+            </sheet>
+            <footer>
+                <button
+                    name="action_proceed"
+                    type="object"
+                    string="Yes"
+                    class="btn-primary"/>
+
+                <button
+                    name="action_cancel"
+                    type="object"
+                    string="No"
+                    class="btn-secondary"/>
+            </footer>
+        </form>
+    </field>
+</record>

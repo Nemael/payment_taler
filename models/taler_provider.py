@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 
-from odoo import models, fields
+from odoo import api, models, fields
 from odoo.addons.tops import const
 from odoo.exceptions import ValidationError
 from odoo.addons.tops.models.taler_api_methods import getMerchantConfiguration
@@ -19,12 +19,14 @@ class TalerProvider(models.Model):
 
     taler_merchant_url = fields.Char(string="Taler Merchant URL",
                                      help="URL to the Taler merchant instance you'd like to use",
-                                     default="https://backend.demo.taler.net/instances/sandbox", # this default value is the url to the Taler merchant sandbox environment
+                                     default="",
+                                     required_if_provider='taler',
                                      groups='base.group_system') # Limits access to this field to admin users (system group)
 
     taler_merchant_password = fields.Char(string="Taler Merchant Password",
                                           help="Password to the Taler merchant instance you'd like to use",
-                                          default="sandbox", # sandbox is the password to the Taler merchant sandbox environment
+                                          default="",
+                                          required_if_provider='taler',
                                           groups='base.group_system') # Limits access to this field to admin users (system group)
 
     taler_token = fields.Char(string="Taler Merchant Token, you should not be able to see this parameter",
@@ -98,3 +100,24 @@ class TalerProvider(models.Model):
                 'sticky': False,
             }
         }
+
+    def merchant_add_demo_data(self):
+        """ Adds demo Taler Merchant URL and demo Merchant Password to the payment provider."""
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_window",
+            "name": "Confirmation popup to add demo data",
+            "res_model": "tops.add.demo.data.wizard",
+            "view_mode": "form",
+            "target": "new",
+            "context": {
+                "active_id": self.id,
+                "active_model": self._name,
+            },
+        }
+
+    # @api.onchange('taler_merchant_url')
+    # def _onchange_some_field(self):
+    #     print("OHIUGQRHOUGHRQOUGHROQHGUORQHUOGHRQOUGHURQOHGUOQRHGOURHQUOGHRUQHGOURQHOGUHRQHOGQROHIUGQRHOUGHRQOUGHROQHGUORQHUOGHRQOUGHURQOHGUOQRHGOURHQUOGHRUQHGOURQHOGUHRQHOGQROHIUGQRHOUGHRQOUGHROQHGUORQHUOGHRQOUGHURQOHGUOQRHGOURHQUOGHRUQHGOURQHOGUHRQHOGQROHIUGQRHOUGHRQOUGHROQHGUORQHUOGHRQOUGHURQOHGUOQRHGOURHQUOGHRUQHGOURQHOGUHRQHOGQROHIUGQRHOUGHRQOUGHROQHGUORQHUOGHRQOUGHURQOHGUOQRHGOURHQUOGHRUQHGOURQHOGUHRQHOGQROHIUGQRHOUGHRQOUGHROQHGUORQHUOGHRQOUGHURQOHGUOQRHGOURHQUOGHRUQHGOURQHOGUHRQHOGQROHIUGQRHOUGHRQOUGHROQHGUORQHUOGHRQOUGHURQOHGUOQRHGOURHQUOGHRUQHGOURQHOGUHRQHOGQROHIUGQRHOUGHRQOUGHROQHGUORQHUOGHRQOUGHURQOHGUOQRHGOURHQUOGHRUQHGOURQHOGUHRQHOGQR")
+    #     self.taler_merchant_url = "abcd"
+    #     self.taler_merchant_password = self.taler_merchant_password
