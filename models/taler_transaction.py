@@ -14,9 +14,9 @@ class TalerTransaction(models.Model):
     #Because this model inherits, and does not have its own name, there is no need for it to appear in ir.model.access.csv
     #It will inherit the ir security settings from the account.move model
 
-    taler_order_id = fields.Char(string="Taler Order ID", default="")
-    taler_order_url = fields.Char(string="Taler Order URL", default="")
-    taler_order_uri = fields.Char(string="Taler Order URI", default="")
+    taler_order_id = fields.Char(string="Taler order ID", default="")
+    taler_order_url = fields.Char(string="Taler order URL", default="")
+    taler_order_uri = fields.Char(string="Taler order URI", default="")
 
     # This UUID is only used for the fulfillment url. Without the UUID in the url, the Taler merchant could mix up two orders with the same Odoo ID, on two different Odoo instances
     # This is not a perfect solution, as two duplicate UUID + OrderID could be generated on two different Odoo instances, on the same Taler Merchant, but this is highly unlikely.

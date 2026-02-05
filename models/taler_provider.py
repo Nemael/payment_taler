@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 
-from odoo import models, fields
+from odoo import api, models, fields
 from odoo.addons.tops import const
 from odoo.exceptions import ValidationError
 from odoo.addons.tops.models.taler_api_methods import getMerchantConfiguration
@@ -18,12 +18,12 @@ class TalerProvider(models.Model):
     code = fields.Selection(selection_add=[("taler", "Taler")], ondelete={"taler": "set default"})
 
 
-    taler_merchant_url = fields.Char(string="Taler Merchant URL",
+    taler_merchant_url = fields.Char(string="Taler merchant URL",
                                      help="URL to the Taler merchant instance you'd like to use",
                                      default="https://backend.demo.taler.net/instances/sandbox", # this default value is the url to the Taler merchant sandbox environment
                                      groups='base.group_system') # Limits access to this field to admin users (system group)
 
-    taler_merchant_password = fields.Char(string="Merchant Password",
+    taler_merchant_password = fields.Char(string="Taler merchant password",
                                           help="Password to the chosen Taler merchant instance",
                                           default="sandbox", # sandbox is the password to the Taler merchant sandbox environment
                                           groups='base.group_system') # Limits access to this field to admin users (system group)
@@ -34,6 +34,12 @@ class TalerProvider(models.Model):
     fulfillment_message = fields.Char(string="Fulfillment message",
                                       help="""Message shown on the Taler order after payment. Note: This message does not appear on Odoo itself, see the "Messages" tab for this purpose.""",
                                       default="Thank you for your payment with Taler")
+
+    demo_warning_visibility = fields.Boolean(
+        string="Demo warning visibility",
+        compute='_compute_demo_warning_visibility',
+        store=False
+    )
 
     def is_in_test_mode(self):
         provider_state = self.state # Possible values: disabled, enabled, test
@@ -99,3 +105,11 @@ class TalerProvider(models.Model):
                 'sticky': False,
             }
         }
+
+    @api.depends('taler_merchant_url')
+    def _compute_demo_warning_visibility(self):
+        for record in self:
+            if self.taler_merchant_url == "https://backend.demo.taler.net/instances/sandbox":
+                record.demo_warning_visibility = True
+            else:
+                record.demo_warning_visibility = False

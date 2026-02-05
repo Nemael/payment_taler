@@ -238,6 +238,7 @@ _Notes:_
 - In the Odoo UI, all the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to "Kudos" right before sending the order to the Taler merchant.
 - <strong>Warning:</strong> Do not use this mode in production or with published items for sale.
 - Here is an example of the flow for this feature:
+- _Note: The test mode makes the payment provider "unpublished", which means that only administator users will be able to see the payment provider in this state. To go through this flow, I usually use the "Mitchell Admin" user available from Odoo's demo data._
 - On the payment provider's page, check the "Test Mode" radio button.
 
 <img src="README_Pictures/Taler_test_mode_radio_button.png" alt="Taler test mode radio button selected" width="700px">
