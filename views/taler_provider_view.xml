@@ -36,7 +36,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
             </group>
             <group name="provider_credentials" position="inside">
                 <group invisible="code != 'taler'">
-                    <div invisible="not demo_warning_visibility" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px" role="region" aria-label="Demo data inserted">
+                    <div invisible="not demo_warning_visibility" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px" role="region" aria-label="Demo data in provider">
                         Demo data is currently in use for the Taler merchant URL and password.<br/>
                         <strong>Warning: Only use this demo data in a test mode or non-production setting!</strong><br/>
                         You can find the sandbox demobank <a href="https://backend.demo.taler.net/instances/sandbox/">here</a>

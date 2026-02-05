@@ -23,12 +23,12 @@ class TalerProvider(models.Model):
                                      default="https://backend.demo.taler.net/instances/sandbox", # this default value is the url to the Taler merchant sandbox environment
                                      groups='base.group_system') # Limits access to this field to admin users (system group)
 
-    taler_merchant_password = fields.Char(string="Taler merchant password",
+    taler_merchant_password = fields.Char(string="Merchant password",
                                           help="Password to the chosen Taler merchant instance",
                                           default="sandbox", # sandbox is the password to the Taler merchant sandbox environment
                                           groups='base.group_system') # Limits access to this field to admin users (system group)
 
-    taler_token = fields.Char(string="Taler Merchant Token, you should not be able to see this parameter",
+    taler_token = fields.Char(string="Taler merchant Token, you should not be able to see this parameter",
                               groups='base.group_system') # Limits access to this field to admin users (system group)
 
     fulfillment_message = fields.Char(string="Fulfillment message",

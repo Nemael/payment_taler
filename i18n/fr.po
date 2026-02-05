@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 05:22+0000\n"
-"PO-Revision-Date: 2026-02-03 05:22+0000\n"
+"POT-Creation-Date: 2026-02-05 17:48+0000\n"
+"PO-Revision-Date: 2026-02-05 17:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -82,6 +82,24 @@ msgid "DISABLED"
 msgstr "DÉSACTIVÉ"
 
 #. module: tops
+#: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
+msgid "Demo data in provider"
+msgstr ""
+
+#. module: tops
+#: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
+msgid ""
+"Demo data is currently in use for the Taler merchant URL and password.<br/>\n"
+"                        <strong>Warning: Only use this demo data in a test mode or non-production setting!</strong><br/>\n"
+"                        You can find the sandbox demobank"
+msgstr ""
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_payment_provider__demo_warning_visibility
+msgid "Demo warning visibility"
+msgstr ""
+
+#. module: tops
 #. odoo-python
 #: code:addons/tops/models/taler_transaction.py:0
 msgid "Email template not found! Looking for: "
@@ -117,7 +135,7 @@ msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__taler_merchant_password
-msgid "Merchant Password"
+msgid "Merchant password"
 msgstr "Mot de passe vendeur"
 
 #. module: tops
@@ -209,37 +227,6 @@ msgid "Taler"
 msgstr "Taler"
 
 #. module: tops
-#: model:ir.model.fields,field_description:tops.field_payment_provider__taler_token
-msgid "Taler Merchant Token, you should not be able to see this parameter"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
-
-#. module: tops
-#: model:ir.model.fields,field_description:tops.field_payment_provider__taler_merchant_url
-msgid "Taler Merchant URL"
-msgstr "URL vendeur Taler"
-
-#. module: tops
-#: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_order_id
-#: model:ir.model.fields,field_description:tops.field_account_move__taler_order_id
-#: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_order_id
-msgid "Taler Order ID"
-msgstr "Numéro de commande Taler"
-
-#. module: tops
-#: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_order_uri
-#: model:ir.model.fields,field_description:tops.field_account_move__taler_order_uri
-#: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_order_uri
-msgid "Taler Order URI"
-msgstr "URI de commande Taler"
-
-#. module: tops
-#: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_order_url
-#: model:ir.model.fields,field_description:tops.field_account_move__taler_order_url
-#: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_order_url
-msgid "Taler Order URL"
-msgstr "Taler Order URL"
-
-#. module: tops
 #. odoo-python
 #: code:addons/tops/models/taler_api_methods.py:0
 msgid ""
@@ -289,6 +276,37 @@ msgstr ""
 #: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_uuid
 msgid "Taler UUID"
 msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_payment_provider__taler_token
+msgid "Taler merchant Token, you should not be able to see this parameter"
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_payment_provider__taler_merchant_url
+msgid "Taler merchant URL"
+msgstr "URL vendeur Taler"
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_order_id
+#: model:ir.model.fields,field_description:tops.field_account_move__taler_order_id
+#: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_order_id
+msgid "Taler order ID"
+msgstr "Numéro de commande Taler"
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_order_uri
+#: model:ir.model.fields,field_description:tops.field_account_move__taler_order_uri
+#: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_order_uri
+msgid "Taler order URI"
+msgstr "URI de commande Taler"
+
+#. module: tops
+#: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_order_url
+#: model:ir.model.fields,field_description:tops.field_account_move__taler_order_url
+#: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_order_url
+msgid "Taler order URL"
+msgstr "URL de commande Taler"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
@@ -423,3 +441,8 @@ msgid ""
 msgstr ""
 "pour consulter le tutoriel du mode test. (disponible en Français)<br/>\n"
 "                    <strong>Attention</strong> : n'activez pas le mode test sur un serveur de production pour éviter que les clients puissent utiliser des KUDOS pour effectuer un paiement."
+
+#. module: tops
+#: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
+msgid "here"
+msgstr "ici"
