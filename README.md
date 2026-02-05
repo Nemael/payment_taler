@@ -69,6 +69,7 @@ More updates are coming. They will include non-feature changes, such as internat
   - Click on the Taler payment provider.
   - Click the "Enabled" radio button.
   - In the "Credentials" tab, set the Taler Merchant URL you plan to use.
+    - By default, the demobank's credentials are used. You can access the demobank (here)[https://backend.demo.taler.net/instances/sandbox/]
     - After setting the URL, you can click the "Confirm the url validity" button to check if the entered URL is reaching a valid Taler Merchant, and that this merchant's accepted currencies are compatible with you TOPS available currencies.
   - Then set your Taler Merchant Password, which will be used for API calls to the merchant.
   - You can change the Taler fulfillment message, which will be shown on created Taler transactions, only on Taler side, not on Odoo side.
