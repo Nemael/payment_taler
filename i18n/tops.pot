@@ -81,6 +81,11 @@ msgstr ""
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
+msgid "Warning about merchant information"
+msgstr ""
+
+#. module: tops
+#: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
 msgid "Demo data inserted"
 msgstr ""
 

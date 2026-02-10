@@ -54,12 +54,38 @@ msgid ""
 "</div>\n"
 "            "
 msgstr ""
+"<div style=\"font-family: 'Arial'; font-size: 14px;\">\n"
+"    <p>\n"
+"        <t t-out=\"object.partner_id.name or ''\"/>,\n"
+"    </p>\n"
+"    <p>\n"
+"        Une demande de remboursement pour la commande <t t-out=\"object.reference or ''\"/> d'un montant de <t t-out=\"abs(object.amount) if object.amount else ''\"/><t t-out=\"object.currency_id.symbol or ''\"/> a été émise.\n"
+"    </p>\n"
+"    <p>\n"
+"        Pour confirmer le remboursement, veuillez scanner le code QR ci-dessous à l'aide de votre porte-monnaie Taler.\n"
+"    </p>\n"
+"    <div style=\"text-align: center;\">\n"
+"        <img t-att-src=\"'data:image/png;base64,%s' % object.taler_refund_qr\" style=\"max-height:200px; max-width:200px\" alt=\"Refund QR Code\"/>\n"
+"    </div>\n"
+"    <p>\n"
+"        En cas de problème lors de l'utilisation du code QR, utilisez l'URI ci-dessous:<br/>\n"
+"        <t t-out=\"object.taler_refund_uri or ''\"/>\n"
+"    </p>\n"
+"    <p>\n"
+"        Pour toute question, contactez-nous à <t t-out=\"object.company_id.email or ''\"/>\n"
+"    </p>\n"
+"    <p>\n"
+"        Merci,<br/>\n"
+"        <t t-out=\"object.company_id.name or ''\"/>\n"
+"    </p>\n"
+"</div>\n"
+"            "
 
 #. module: tops
 #. odoo-python
 #: code:addons/tops/models/taler_api_methods.py:0
 msgid "Bad response code. The Taler order cannot be created."
-msgstr ""
+msgstr "Code-réponse erroné, la commande Taler n'a pas pu être effectuée."
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
@@ -83,8 +109,8 @@ msgstr "DÉSACTIVÉ"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
-msgid "Demo data in provider"
-msgstr ""
+msgid "Warning about merchant information"
+msgstr "Avertissement sur les identifiants du vendeur"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
