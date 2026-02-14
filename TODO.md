@@ -115,3 +115,5 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 
 - Rajouter un "." à "here" et "ici" dans la case jaune d'avertissement qu'on utilise les demo data de taler merchant.
+
+- Write in the documentation that invoices and client refund messages are also translated in French, if the client is using French

@@ -100,7 +100,7 @@ msgstr "Cliquer ici"
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__code
 msgid "Code"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "Code"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
@@ -126,7 +126,7 @@ msgstr ""
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__demo_warning_visibility
 msgid "Demo warning visibility"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "Visibilité de l'avertissement du mode démo"
 
 #. module: tops
 #. odoo-python
@@ -155,12 +155,12 @@ msgstr "Message de confirmation"
 #: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__is_taler_invoice
 #: model:ir.model.fields,field_description:tops.field_account_move__is_taler_invoice
 msgid "Is Taler Invoice"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "Est une facture Taler"
 
 #. module: tops
 #: model:ir.model,name:tops.model_account_move
 msgid "Journal Entry"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "Entrée dans le journal"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__taler_merchant_password
@@ -205,12 +205,12 @@ msgstr "Mot de passe de l'instance Taler sélectionnée."
 #. module: tops
 #: model:ir.model,name:tops.model_payment_provider
 msgid "Payment Provider"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "Fournisseur de paiement"
 
 #. module: tops
 #: model:ir.model,name:tops.model_payment_transaction
 msgid "Payment Transaction"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "Opérations de paiement"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
@@ -276,17 +276,17 @@ msgstr "Prestataire Taler"
 #: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_qr
 #: model:ir.model.fields,field_description:tops.field_account_move__taler_qr
 msgid "Taler QR"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "QR Code Taler"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_refund_qr
 msgid "Taler Refund QR Code"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "QR Code de remboursement Taler"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_refund_uri
 msgid "Taler Refund URI"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "URI de remboursement Taler"
 
 #. module: tops
 #. odoo-python
@@ -309,12 +309,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:tops.field_account_move__taler_uuid
 #: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_uuid
 msgid "Taler UUID"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "UUID Taler"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__taler_token
 msgid "Taler merchant Token, you should not be able to see this parameter"
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "Jeton de connexion du vendeur Taler, vous ne devriez pas pouvoir voir ce paramètre"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__taler_merchant_url
@@ -424,7 +424,7 @@ msgstr ""
 #. module: tops
 #: model:ir.model.fields,help:tops.field_payment_provider__code
 msgid "The technical code of this payment provider."
-msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
+msgstr "Le code technique de ce fournisseur de paiement"
 
 #. module: tops
 #. odoo-python
