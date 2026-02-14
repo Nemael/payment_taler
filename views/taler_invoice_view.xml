@@ -12,14 +12,14 @@ SPDX-License-Identifier: LGPL-3.0-or-later
             <t t-if="o.is_taler_invoice">
                 <!--Encase the whole taler-relevant information, including the QR code, in a fixed-height div-->
                 <!--Otherwise, during the first load, WKHtmlToPdf ignores the loading of the QR code, and cuts the bottom of the invoice-->
-                <div style="min-height: 320px; max-height:320px">
+                <div style="min-height: 400px; max-height:400">
                     <t t-if="o.taler_qr">
                         <div class="text-center">
-                            Please scan this QR Code with your Taler Wallet to complete the payment.
+                            Please scan this QR Code with your Taler wallet to complete the payment.
                         </div>
                         <div class="text-center">
                             <img t-att-src="'data:image/png;base64,%s' % o.taler_qr"
-                                 style="max-height:200px;"/>
+                                 style="max-height:200px;" aria-label="QR Code. Please use the URI below to pay without QR Code"/>
                         </div>
                     </t>
 
@@ -31,9 +31,9 @@ SPDX-License-Identifier: LGPL-3.0-or-later
                             <br/>
                         </t>
                         <t t-if="o.taler_order_uri">
-                            Taler order URI: <t t-esc="o.taler_order_uri"/>
+                            Order URI: <a t-attf-href="{{o.taler_order_uri}}" t-esc="o.taler_order_uri" aria-label="Order URI"></a>
                             <br/>
-                            Please use above URI if you have an issue with the above Taler QR Code.
+                            Use above order URI if you are having an issue with the QR Code.
                         </t>
                     </p>
                 </div>

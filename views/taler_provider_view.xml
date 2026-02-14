@@ -36,14 +36,14 @@ SPDX-License-Identifier: LGPL-3.0-or-later
             </group>
             <group name="provider_credentials" position="inside">
                 <group invisible="code != 'taler'">
-                    <div invisible="not demo_warning_visibility" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px" role="region" aria-label="Demo data inserted">
-                        Demo data is currently in use for the Taler merchant URL and password.<br/>
+                    <div invisible="not demo_warning_visibility" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px" role="region" aria-label="Warning about merchant information">
+                        Demo data is currently used for the Taler merchant URL and password.<br/>
                         <strong>Warning: Only use this demo data in a test mode or non-production setting!</strong><br/>
-                        You can find the sandbox demobank <a href="https://backend.demo.taler.net/instances/sandbox/">here</a>
+                        You can find the sandbox demobank <a href="https://backend.demo.taler.net/instances/sandbox/"><u>here</u></a>
                     </div>
                     <field name="taler_merchant_url" required="code == 'taler' and state != 'disabled'" groups="base.group_system"/>
-                    <button name="merchant_url_check_button" type="object" string="Confirm the merchant url validity and currency compatibility" class="btn-primary"/>
                     <field name="taler_merchant_password" required="code == 'taler' and state != 'disabled'" password="True" groups="base.group_system"/>
+                    <button name="merchant_url_check_button" type="object" string="Check URL validity" class="btn-primary" tooltip="Check the merchant url validity and currency compatibility"/>
                     <field name="fulfillment_message" required="code == 'taler' and state != 'disabled'"/>
                 </group>
             </group>

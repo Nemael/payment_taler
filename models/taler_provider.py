@@ -6,6 +6,7 @@ from odoo import api, models, fields
 from odoo.addons.tops import const
 from odoo.exceptions import ValidationError
 from odoo.addons.tops.models.taler_api_methods import getMerchantConfiguration
+from odoo.tools import _
 
 
 class TalerProvider(models.Model):
@@ -22,16 +23,16 @@ class TalerProvider(models.Model):
                                      default="https://backend.demo.taler.net/instances/sandbox", # this default value is the url to the Taler merchant sandbox environment
                                      groups='base.group_system') # Limits access to this field to admin users (system group)
 
-    taler_merchant_password = fields.Char(string="Taler merchant password",
-                                          help="Password to the Taler merchant instance you'd like to use",
+    taler_merchant_password = fields.Char(string="Merchant password",
+                                          help="Password to the chosen Taler merchant instance",
                                           default="sandbox", # sandbox is the password to the Taler merchant sandbox environment
                                           groups='base.group_system') # Limits access to this field to admin users (system group)
 
-    taler_token = fields.Char(string="Taler Merchant Token, you should not be able to see this parameter",
+    taler_token = fields.Char(string="Taler merchant Token, you should not be able to see this parameter",
                               groups='base.group_system') # Limits access to this field to admin users (system group)
 
-    fulfillment_message = fields.Char(string="Taler fulfillment message",
-                                      help="""Fulfillment message shown to the user on the Taler merchant ordes after paying for the order. Note: This message does not show on Odoo itself, see the "Messages" tab for this purpose.""",
+    fulfillment_message = fields.Char(string="Fulfillment message",
+                                      help="""Message shown on the Taler order after payment. Note: This message does not appear on Odoo itself, see the "Messages" tab for this purpose.""",
                                       default="Thank you for your payment with Taler")
 
     demo_warning_visibility = fields.Boolean(
@@ -71,7 +72,7 @@ class TalerProvider(models.Model):
         """ Checks the validity of the Taler merchant URL set by the user. """
         response = getMerchantConfiguration(self.taler_merchant_url)
         if not response["name"] or not response["name"] == "taler-merchant" or not response["version"] or not response["currencies"]:
-            raise ValidationError("The Taler Merchant URL is invalid")
+            raise ValidationError(_("The Taler Merchant URL is invalid"))
 
         # Checks if the currencies used by Odoo are all included in the supported currencies by the Taler Merchant
         merchant_currencies = []
@@ -83,7 +84,7 @@ class TalerProvider(models.Model):
             if odoo_currency.name not in merchant_currencies:
                 odoo_currencies_missing_in_merchant.append(odoo_currency.name)
         if len(odoo_currencies_missing_in_merchant) > 0:
-            raise ValidationError("The Taler Merchant URL is invalid.\nCurrencies supported on Odoo side: " + str(odoo_currencies_missing_in_merchant) + ".\nCurrencies supported on Taler merchant side: " + str(merchant_currencies) + ".\nDiscrepancy: " + str(odoo_currencies_missing_in_merchant))
+            raise ValidationError(_("The Taler Merchant URL is invalid.\nCurrencies supported on Odoo side: " + str(odoo_currencies_missing_in_merchant) + ".\nCurrencies supported on Taler merchant side: " + str(merchant_currencies) + ".\nDiscrepancy: " + str(odoo_currencies_missing_in_merchant)))
 
         # If everything is ok, create an "ok" popup for the user
         confirmation_string_for_user = "The Taler Merchant URL is valid and the currencies are compatible. "
