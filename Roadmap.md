@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 These are the Milestones to the end of the project
 
 ### Groundwork & Mock up - Done!
