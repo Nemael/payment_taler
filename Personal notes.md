@@ -50,7 +50,7 @@ For now: steps to add Taler to point of sale
 - Delete a database (to free up space)
   - `sudo -u postgres psql`
   - `\l` to display list of db
-  - `DROP DATABASE database_name;` to drop what I want
+  - `DROP DATABASE "database_name";` to drop what I want
 
 - SSH troubles
   - On opening a new terminal for git, that has the wrong ssh authentication (can't connect to Codeberg)

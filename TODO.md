@@ -68,32 +68,18 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - For the translation milestone, see if I can delete the field "SUPPORTED_LOCALES" from the file const.py.
   - I think it is not used
 
-- Implement the proposed changes of repository folders, move every directory file currently in the root, into a "payment_taler" folder, to change the add-on name.
-  - I will need to change the installation instructions if I go through this change
-    - Maybe the installation with `git clone` will not be working anymore
-  - Also double-check that the uninstallation goes smoothly
-  - This is required to upload an add-on on the Odoo app store
-
-
-- Next steps:
-  - Once the whole software is ready for the translation and sent over, merge the code right away
-  - Implement the rolling releases, it will be useful for the proposed directory changes, and other small fixes.
-    - For auto releases, Codeberg implements auto zipping, I believe:
-      - https://docs.codeberg.org/git/using-tags/#creating-tags-and-releases
-
-- Before finishing the translation milestone, do a runaround of all the features
-  - First in English
-  - Then in French
-
 - When the tutorial for the test mode is finished being translated, Check that the link in the test mode warning does point to the tutorial in French, and does not lead to a 404.
-
-- When I finish the software translation, merge it to the main branch already, and make a tag "software_translation"
-  - After this, do the 
 
 - Next steps:
   - Finish software translation
   - Merge it
   - Do the structure change requested by issue 18
+    - Implement the proposed changes of repository folders, move every directory file currently in the root, into a "payment_taler" folder, to change the add-on name.
+    - I will need to change the installation instructions if I go through this change
+      - Maybe the installation with `git clone` will not be working anymore
+    - Also double-check that the uninstallation goes smoothly
+    - This is required to upload an add-on on the Odoo app store
+
   - Do the unpublished/published change requested by issue 23
     - Add a big "Unpublished/Published" button on top of the payment provider, like most other payment existing providers (for example, paypal)
       - That means I have to remove whatever code that makes the add-on unpublished automatically when in test mode.
@@ -104,6 +90,9 @@ SPDX-License-Identifier: LGPL-3.0-or-later
     - Instead of using a "main" branch
       - Use an "18.0" branch (double-check the branch name on the OCA modules)
       - This will be useful when 18.0 is fully released, and I can make a "19.0" branch, with 19.0-specific fixes, for update compatibility.
+  - Implement rolling releases. it will be useful for the proposed directory changes, and other small fixes.
+    - For auto releases, Codeberg implements auto zipping, I believe:
+      - https://docs.codeberg.org/git/using-tags/#creating-tags-and-releases
   - Check the upload requirements on the OCA and Odoo appstore
   - See if I can send my add-on for approval, and if I want to do it already
 
@@ -117,3 +106,5 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Rajouter un "." à "here" et "ici" dans la case jaune d'avertissement qu'on utilise les demo data de taler merchant.
 
 - Write in the documentation that invoices and client refund messages are also translated in French, if the client is using French
+
+- Create zaclys email, and use it for email support, and add it to my thunderbird
