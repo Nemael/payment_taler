@@ -13,6 +13,10 @@ Start Odoo with:
 	`./odoo-bin --addons-path=./addons,./custom_addons`
 	`./odoo-bin --addons-path=./addons,./custom_addons -u tops -d odoo18_tops_0.1.1.1`
 	`./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons -u tops -d odoo18_tops_0.1.1.1`
+With the new paths, start Odoo with:
+	`./odoo-bin --addons-path=./addons,./custom_addons/tops`
+	`./odoo-bin --addons-path=./addons,./custom_addons/tops -u taler_payment -d odoo18_tops_0.1.1.1`
+	`./odoo-bin --addons-path=./addons,/media/sf_VMSharedFolders/custom_addons/tops -u taler_payment -d odoo18_tops_0.1.1.1`
 
 
 How to edit the database directly to postgres

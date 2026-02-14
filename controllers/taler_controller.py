@@ -4,7 +4,7 @@
 
 from odoo import http
 from odoo.http import request
-from odoo.addons.tops.utils.utils import talog, tawarn, taerror
+from odoo.addons.payment_taler.utils.utils import talog, tawarn, taerror
 
 class TalerController(http.Controller):
     _fulfillment_url = '/payment/taler/return'

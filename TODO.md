@@ -108,3 +108,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Write in the documentation that invoices and client refund messages are also translated in French, if the client is using French
 
 - Create zaclys email, and use it for email support, and add it to my thunderbird
+
+- Update url at line 19 of taler_provider_view.xml, to fit the new url with the directory change
+
+- After changing the payment_taler directory, check that the translation is still working
