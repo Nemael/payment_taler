@@ -112,3 +112,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - Guidelines are here: https://apps.odoo.com/apps/vendor-guidelines
   - See if I can easily setup the `live_test_url` field in the manifest
   - Add the `support` field in the manifest, with my support URL
+
+
+- Rajouter un "." à "here" et "ici" dans la case jaune d'avertissement qu'on utilise les demo data de taler merchant.

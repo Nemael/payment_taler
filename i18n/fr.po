@@ -119,29 +119,32 @@ msgid ""
 "                        <strong>Warning: Only use this demo data in a test mode or non-production setting!</strong><br/>\n"
 "                        You can find the sandbox demobank"
 msgstr ""
+"Les identifiants vendeurs de démonstration occupent les champs de l'URL vendeur Taler et de mot de passe."
+"                        <strong>Attention : n'utilisez ces identifiants de démonstration qu'en mode test et jamais sur serveur de production !</strong><br/>\n"
+"                        Vous trouverez la demobanque bac à sable"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__demo_warning_visibility
 msgid "Demo warning visibility"
-msgstr ""
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #. odoo-python
 #: code:addons/tops/models/taler_transaction.py:0
 msgid "Email template not found! Looking for: "
-msgstr ""
+msgstr "Gabarit de l'e-mail introuvable à l'emplacement :"
 
 #. module: tops
 #. odoo-python
 #: code:addons/tops/models/taler_transaction.py:0
 msgid "Error in refund response from Taler, see logs"
-msgstr ""
+msgstr "Erreur lors du remboursement, plus d'information dans les logs."
 
 #. module: tops
 #. odoo-python
 #: code:addons/tops/models/taler_api_methods.py:0
 msgid "Error while connecting to the Taler Merchant"
-msgstr ""
+msgstr "Erreur lors de la connection au vendeur Taler."
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_provider__fulfillment_message
@@ -177,12 +180,12 @@ msgstr ""
 #. odoo-python
 #: code:addons/tops/models/taler_api_methods.py:0
 msgid "Method called on wrong model"
-msgstr ""
+msgstr "La méthode a été appelée sur le mauvais modèle."
 
 #. module: tops
 #: model:mail.template,name:tops.email_refund
 msgid "Odoo Taler refund email"
-msgstr ""
+msgstr "E-mail de remboursement Taler dans Odoo"
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.taler_invoice_footer_logo
@@ -225,12 +228,12 @@ msgstr "Code QR. Pour payer autrement, utilisez l'URI ci-dessous."
 #. odoo-python
 #: code:addons/tops/models/taler_api_methods.py:0
 msgid "Received no Order ID from Taler. The order cannot be created."
-msgstr ""
+msgstr "Taler n'a émis aucun numéro de commande. La commande n'a pas pu être créée."
 
 #. module: tops
 #: model:mail.template,subject:tops.email_refund
 msgid "Refund initiated for Taler payment, order {{ object.reference }}"
-msgstr ""
+msgstr "Remboursement du paiement Taler de la commande {{ object.reference }}"
 
 #. module: tops
 #: model:mail.template,description:tops.email_refund
@@ -238,6 +241,8 @@ msgid ""
 "Sent to customers when a refund is triggered for Taler payments. It contains"
 " the QR code that the customer will have to scan to complete the refund."
 msgstr ""
+"E-mail envoyé au client après confirmation du remboursement Taler. Pour"
+" l'exécuter, le client devra scanner le code QR qui s'y trouve."
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
@@ -258,7 +263,8 @@ msgstr "Taler"
 msgid ""
 "Taler Password is empty or incorrect. Did you set it correctly in the "
 "provider view?"
-msgstr ""
+msgstr "Mot de passe Taler manquant ou erroné. Vérifiez-le dans la vue "
+"fournisseur."
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__provider_id
@@ -275,18 +281,18 @@ msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_refund_qr
 msgid "Taler Refund QR Code"
-msgstr ""
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_payment_transaction__taler_refund_uri
 msgid "Taler Refund URI"
-msgstr ""
+msgstr "PURPOSEFULLY LEFT BLANK!!!!!!!!!!!!!!!!!"
 
 #. module: tops
 #. odoo-python
 #: code:addons/tops/models/taler_api_methods.py:0
 msgid "Taler Token is empty"
-msgstr ""
+msgstr "Jeton Taler vide"
 
 #. module: tops
 #. odoo-python
@@ -295,6 +301,8 @@ msgid ""
 "Taler URL is empty or incorrect. Did you set it correctly in the provider "
 "view?"
 msgstr ""
+"URL Taler manquante ou erronée. Vérifiez-la dans la vue "
+"fournisseur."
 
 #. module: tops
 #: model:ir.model.fields,field_description:tops.field_account_bank_statement_line__taler_uuid
@@ -349,13 +357,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/tops/models/taler_transaction.py:0
 msgid "Taler: No transaction found matching reference "
-msgstr ""
+msgstr "Taler : transaction introuvable pour la référence : "
 
 #. module: tops
 #. odoo-python
 #: code:addons/tops/models/taler_transaction.py:0
 msgid "Taler: Received data with missing reference."
-msgstr ""
+msgstr "Taler : référence manquante dans les données reçues."
 
 #. module: tops
 #: model_terms:ir.ui.view,arch_db:tops.payment_provider_form
@@ -377,7 +385,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/tops/models/taler_provider.py:0
 msgid "The Taler Merchant URL is invalid"
-msgstr ""
+msgstr "URL vendeur Taler invalide."
 
 #. module: tops
 #. odoo-python
@@ -388,6 +396,10 @@ msgid ""
 "Currencies supported on Taler merchant side: .\n"
 "Discrepancy: "
 msgstr ""
+"URL vendeur Taler invalide.\n"
+"Devises disponibles dans votre instance Odoo : .\n"
+"Devises disponibles dans le vendeur Taler : .\n"
+"Disparité : "
 
 #. module: tops
 #. odoo-python
@@ -396,6 +408,8 @@ msgid ""
 "The invoice due date is in the past, the Taler order cannot be created. "
 "Please see the logs for more details."
 msgstr ""
+"L'échéance de la facture est passée, la commande Taler ne peut pas être créée. "
+"Consultez les logs pour plus d'information."
 
 #. module: tops
 #. odoo-python
@@ -404,6 +418,8 @@ msgid ""
 "The invoice due date is in the past. The Taler order cannot be created. "
 "Epoch time set for the invoice: "
 msgstr ""
+"L'échéance de la facture est passée, la commande Taler ne peut pas être créée. "
+"Moment Epoch de la facture : "
 
 #. module: tops
 #: model:ir.model.fields,help:tops.field_payment_provider__code
@@ -417,6 +433,8 @@ msgid ""
 "There was an issue connecting to the Taler Merchant URL, please make sure "
 "the URL is correct and the service is up."
 msgstr ""
+"Erreur de connection à l'URL vendeur Taler, veuillez vous assurer qu'elle "
+"est correcte et que le serveur est actif."
 
 #. module: tops
 #: model:ir.model.fields,help:tops.field_payment_provider__taler_merchant_url
@@ -427,7 +445,7 @@ msgstr "URL vers le vendeur Taler sélectionné."
 #. odoo-python
 #: code:addons/tops/models/taler_api_methods.py:0
 msgid "Wrong response code. The Taler order cannot be created."
-msgstr ""
+msgstr "Code réponse erroné, la commande Taler ne peut pas être créée."
 
 #. module: tops
 #. odoo-python
@@ -436,6 +454,8 @@ msgid ""
 "You are trying to pay in a currency that is not supported by the chosen "
 "Taler merchant. Please reach out to the shop administator."
 msgstr ""
+"La devise de cette transaction n'est pas disponible dans le vendeur Taler "
+"sélectionné. Veuillez contacter votre administrateur boutique."
 
 #. module: tops
 #: model_terms:payment.provider,auth_msg:tops.payment_provider_taler

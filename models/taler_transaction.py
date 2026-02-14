@@ -97,6 +97,7 @@ class TalerTransaction(models.Model):
         reference = notification_data.get('reference')
         if not reference:
             taerror("Taler: Received data with missing reference.")
+            taerror(notification_data)
             raise ValidationError(_("Taler: Received data with missing reference."))
         transaction = self.search([('reference', '=', reference), ('provider_code', '=', 'taler')])
 
