@@ -9,6 +9,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
     <record id="payment_provider_taler" model="payment.provider">
         <field name="name">Taler</field>
         <field name="code">taler</field>
+        <field name="module_id" ref="base.module_tops"/>
         <field name="redirect_form_view_id" ref="redirect_form"/>
         <field name="image_128"
                type="base64"

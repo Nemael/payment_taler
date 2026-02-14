@@ -11,20 +11,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
         <field name="model">payment.provider</field>
         <field name="inherit_id" ref="payment.payment_provider_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//form/sheet/*[1]" position="before">
-                <widget
-                    name="web_ribbon"
-                    title="DISABLED"
-                    bg_color="bg-danger"
-                    invisible="code != 'taler' or state != 'disabled'"
-                />
-                <widget
-                    name="web_ribbon"
-                    title="TEST MODE"
-                    bg_color="bg-warning"
-                    invisible="code != 'taler' or state != 'test'"
-                />
-            </xpath>
             <group name="payment_state" position="inside">
                 <div invisible="code != 'taler' or state != 'test'" style="background-color: #FFFAA0; border-radius: 3px; padding: 10px" role="region" aria-label="Test mode information">
                     Test mode is enabled. This mode allows you to test the payment process by running test payments with Taler and the chosen Merchant.<br/>
