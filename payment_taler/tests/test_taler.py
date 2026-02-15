@@ -8,10 +8,10 @@ from datetime import datetime, timedelta
 from odoo.exceptions import ValidationError
 from odoo.tests import tagged
 from unittest.mock import patch, Mock
-from odoo.addons.tops.utils.utils import talog, generate_qr, generate_UUID, get_datetime_date_to_epoch, get_datetime_now_to_epoch
+from odoo.addons.payment_taler.utils.utils import talog, generate_qr, generate_UUID, get_datetime_date_to_epoch, get_datetime_now_to_epoch
 from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.tops.controllers.taler_controller import TalerController
-from odoo.addons.tops.tests.test_taler_common import TestTalerCommon
+from odoo.addons.payment_taler.controllers.taler_controller import TalerController
+from odoo.addons.payment_taler.tests.test_taler_common import TestTalerCommon
 
 
 @tagged('taler')
