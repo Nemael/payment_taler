@@ -11,7 +11,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
         <field name="code">taler</field>
         <field name="sequence">1</field>
         <field name="active">True</field>
-        <field name="image" type="base64" file="tops/static/description/icon.png"/>
+        <field name="image" type="base64" file="payment_taler/static/description/icon.png"/>
         <!--Edit this support_refund field to accurately reflect current refund functionality. Possible values: none, partial, full_only-->
         <field name="support_refund">full_only</field>
     </record>

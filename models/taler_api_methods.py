@@ -5,7 +5,7 @@
 import requests
 from werkzeug import urls
 from odoo.exceptions import ValidationError
-from odoo.addons.tops.utils.utils import tawarn, tadebug, taerror, talog
+from odoo.addons.payment_taler.utils.utils import tawarn, tadebug, taerror, talog
 from odoo.tools import _
 
 def getMerchantConfiguration(url):

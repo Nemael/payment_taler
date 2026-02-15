@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: LGPL-3.0-or-later
 
 from odoo import models, fields
-from odoo.addons.tops.utils.utils import generate_qr, generate_UUID, get_datetime_date_to_epoch
-from odoo.addons.tops.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage
+from odoo.addons.payment_taler.utils.utils import generate_qr, generate_UUID, get_datetime_date_to_epoch
+from odoo.addons.payment_taler.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentMessage
 
 
 class TalerInvoicing(models.Model):
