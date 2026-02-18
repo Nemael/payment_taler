@@ -11,18 +11,6 @@ steps:
       POSTGRES_PASSWORD: odoo
       HOST: db
     commands:
-      - echo "Starting Odoo unit tests..."
-      - echo "Current directory:"
-      - pwd
-      - echo "Files in .:"
-      - ls -l .
-      - echo "Files in /woodpecker/src:"
-      - ls -l /woodpecker/src
-      - echo "Files in /woodpecker/:"
-      - ls -l /woodpecker/
-      - echo "Files in /:"
-      - ls -l /
-      - echo "Waiting for Postgres..."
       - until pg_isready -h $HOST -U $POSTGRES_USER; do sleep 1; done
       - >
         odoo 
