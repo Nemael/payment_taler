@@ -15,7 +15,7 @@ steps:
       - apt-get update
       - apt-get install -y git gcc build-essential libpq-dev wget node-less
 
-      - apt-get install -y wkhtmltopdf
+#      - apt-get install -y wkhtmltopdf
 
       - pip install --upgrade pip
       - pip install wheel setuptools
