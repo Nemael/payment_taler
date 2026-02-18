@@ -9,7 +9,7 @@ steps:
       POSTGRES_DB: odoo
       POSTGRES_USER: odoo
       POSTGRES_PASSWORD: odoo
-      HOST: odoo
+      HOST: db
     commands:
       - echo "Starting Odoo unit tests..."
       - echo "Current directory:"
