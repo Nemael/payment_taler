@@ -13,7 +13,7 @@ steps:
     commands:
       - >
         odoo 
-        --d test_db
+        -d test_db
         --db_host=$HOST
         --db_user=$POSTGRES_USER
         --db_password=$POSTGRES_PASSWORD
