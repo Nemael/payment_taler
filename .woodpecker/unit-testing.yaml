@@ -23,7 +23,7 @@ steps:
 
       - git clone --depth 1 --branch 18.0 https://github.com/odoo/odoo.git /odoo
 
-      - pip install -r /odoo/requirements.txt
+      - pip install -no-build-isolation -r /odoo/requirements.txt
 
       - mkdir -p /mnt/custom_addons
       - mkdir -p /mnt/custom_addons/tops
