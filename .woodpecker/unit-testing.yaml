@@ -14,7 +14,7 @@ steps:
       HOST: postgres
     commands:
       - odoo \
-          -d test_db \
+          --database=test_db \
           --db_host=$HOST \
           --db_user=$POSTGRES_USER \
           --db_password=$POSTGRES_PASSWORD \
@@ -23,6 +23,7 @@ steps:
           --test-enable \
           --test-tags taler \
           --stop-after-init \
+          --without-demo=all \
           --log-level=test
 
 services:
