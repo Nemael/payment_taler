@@ -67,4 +67,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Re-read the README file and make it better, and make sure all the links and screenshots are correct.
 
-- Make a post on the ICH to thank the company for the QA
+- Make a post on the ICH to thank Jans for the QA and the info on how to standardize my code
+
+- Add a short README file to the root of the repository, explaining the purpose of each folder in the repository, as well as indicating users that what they're looking for can be found in payment_taler directory

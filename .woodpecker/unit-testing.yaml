@@ -1,0 +1,35 @@
+when:
+  - event: [push, pull_request]
+
+steps:
+  unit-tests:
+    image: odoo:18
+    pull: true
+    environment:
+      POSTGRES_DB: odoo
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      HOST: db
+    commands:
+      - until pg_isready -h $HOST -U $POSTGRES_USER; do sleep 1; done
+      - >
+        odoo 
+        --db_host=$HOST
+        --db_port=5432
+        --db_user=$POSTGRES_USER
+        --db_password=$POSTGRES_PASSWORD
+        --addons-path=/usr/lib/python3/dist-packages/odoo/addons,.
+        -d test_db
+        -i payment_taler
+        --test-enable
+        --test-tags taler
+        --stop-after-init
+        --without-demo=all
+        --log-level=test
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
