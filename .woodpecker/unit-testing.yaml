@@ -41,6 +41,7 @@ steps:
           --addons-path=/odoo/addons,/mnt/custom_addons/tops \
           -i payment_taler \
           --test-enable \
+          --test-tags taler \
           --stop-after-init \
           --log-level=test
 
