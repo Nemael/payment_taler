@@ -11,6 +11,15 @@ steps:
       POSTGRES_PASSWORD: postgres
       HOST: postgres
     commands:
+      - echo "Starting Odoo unit tests..."
+      - echo "Current directory:"
+      - pwd
+      - echo "Files in /woodpecker/src:"
+      - ls -l /woodpecker/src
+      - echo "Files in /woodpecker/:"
+      - ls -l /woodpecker/
+      - echo "Files in /:"
+      - ls -l /
       - >
         odoo 
         -d test_db
