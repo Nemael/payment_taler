@@ -3,7 +3,7 @@ when:
 
 steps:
   - name: test-payment-taler
-    image: python:3.10
+    image: python:3.11
 
     environment:
       POSTGRES_DB: postgres
