@@ -108,3 +108,5 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Write in the documentation that invoices and client refund messages are also translated in French, if the client is using French
 
 - Create zaclys email, and use it for email support, and add it to my thunderbird
+
+- Add a short README file to the root of the repository, explaining the purpose of each folder in the repository, as well as indicating users that what they're looking for can be found in payment_taler directory
