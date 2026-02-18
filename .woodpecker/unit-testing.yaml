@@ -1,39 +1,19 @@
 when:
-  event: [push, pull_request]
+  - event: [push, pull_request]
 
 steps:
-  - name: test-payment-taler
-    image: python:3.11
-
+  unit-tests:
+    image: odoo:18
+    pull: true
+    volumes:
+      - /woodpecker/src:/mnt/custom_addons
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       HOST: postgres
-
     commands:
-      - apt-get update
-      - apt-get install -y git gcc build-essential libpq-dev wget node-less
-
-#      - apt-get install -y wkhtmltopdf
-
-      - pip install --upgrade pip
-      - pip install wheel setuptools
-      - pip install psycopg2-binary
-
-      - git clone --depth 1 --branch 18.0 https://github.com/odoo/odoo.git /odoo
-
-      - pip install --no-build-isolation -r /odoo/requirements.txt
-
-      - mkdir -p /mnt/custom_addons
-      - mkdir -p /mnt/custom_addons/tops
-      - mkdir -p /mnt/custom_addons/tops/payment_taler
-      - cp -r . /mnt/custom_addons/tops/payment_taler
-
-      - sleep 5
-
-      - |
-        python /odoo/odoo-bin \
+      - odoo \
           -d test_db \
           --db_host=$HOST \
           --db_user=$POSTGRES_USER \
@@ -46,8 +26,8 @@ steps:
           --log-level=test
 
 services:
-  - name: postgres
-    image: postgres:13
+  db:
+    image: postgres:15
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
