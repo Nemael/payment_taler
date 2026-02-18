@@ -6,10 +6,10 @@ steps:
     image: odoo:18
     pull: true
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      HOST: postgres
+      POSTGRES_DB: odoo
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      HOST: odoo
     commands:
       - echo "Starting Odoo unit tests..."
       - echo "Current directory:"
@@ -40,5 +40,5 @@ services:
   db:
     image: postgres:15
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
