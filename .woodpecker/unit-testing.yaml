@@ -5,8 +5,8 @@ steps:
   unit-tests:
     image: odoo:18
     pull: true
-    volumes:
-      - /woodpecker/src:/mnt/custom_addons
+#    volumes:
+#      - /woodpecker/src:/mnt/custom_addons
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
@@ -18,7 +18,7 @@ steps:
           --db_host=$HOST \
           --db_user=$POSTGRES_USER \
           --db_password=$POSTGRES_PASSWORD \
-          --addons-path=/odoo/addons,/mnt/custom_addons/tops \
+          --addons-path=/odoo/addons,/woodpecker/src \
           -i payment_taler \
           --test-enable \
           --test-tags taler \
