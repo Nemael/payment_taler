@@ -4,9 +4,9 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 
-_This page is also available in French (here)[link to lisezmoi_fr.md] LISEZMOI_FR.md
+_This page is also available in French [here](https://codeberg.org/Nemael/tops/src/branch/18.0/README_FR.md). 
 
-_Cette page est également disponible en Français (ici)[lien vers lisezmoi_fr.md] LISEZMOI_FR.md_
+_Cette page est également disponible en Français [here](https://codeberg.org/Nemael/tops/src/branch/18.0/README_FR.md).
 
 ---
 

@@ -4,9 +4,9 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 
-_This page is also available in French (here)[link to lisezmoi_fr.md] LISEZMOI_FR.md
+_This page is also available in French [here](https://codeberg.org/Nemael/tops/src/branch/18.0/README_FR.md). 
 
-_Cette page est également disponible en Français (ici)[lien vers lisezmoi_fr.md] LISEZMOI_FR.md_
+_Cette page est également disponible en Français [here](https://codeberg.org/Nemael/tops/src/branch/18.0/README_FR.md).
 
 ---
 
@@ -103,7 +103,7 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 <img src="payment_taler/README_Pictures/FR/Taler_invoices_payment_method.png" alt="Taler invoices payment method" width="700px">
 
 - When you are done, click `Confirm` at the top, you will be led to the invoice page.
-  - You can now click `Preview` to see the Invoice that will be sent to your customer.
+  - You can now click `Aperçu` to see the Invoice that will be sent to your customer.
   - The invoice's PDF will include a Taler payment QR Code, as well as some Taler order information.
 
 <img src="payment_taler/README_Pictures/FR/Taler_invoices_taler_qr_code.png" alt="Taler invoices taler qr code" width="700px">
@@ -200,16 +200,16 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 - In the `website` or `invoicing` add-on, navigate to `Configuration -> Payment Transactions` on the top bar.
   - This page will show you all the transactions that have been completed.
 - Click the transaction that you would like to refund.
-  - In the picture below, the transaction to refund is `S00060`.
+  - In the picture below, the transaction to refund is `S00041-3`.
 
 <img src="payment_taler/README_Pictures/FR/Taler_refund_list_of_transactions.png" alt="Taler list of transactions" width="700px">
 
 - On the transaction page, click on the linked payment found in `Payment`.
-  - In the picture below, the linked payment is `PBNK1/2026/00029`.
+  - In the picture below, the linked payment is `PBNK1/2026/00001`.
 
 <img src="payment_taler/README_Pictures/FR/Taler_refund_transaction.png" alt="Taler transaction page" width="700px">
 
-- On the payment page, click `Refund` in the action button section (top-left) and confirm the refund.
+- On the payment page, click `Remboursement` in the action button section (top-left) and confirm the refund.
 
 <img src="payment_taler/README_Pictures/FR/Taler_refund_payment.png" alt="Taler payment page" width="700px">
 
