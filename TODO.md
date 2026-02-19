@@ -62,8 +62,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - When the addon is online on both odoo and oca shops, add the links to section `TOPS:` in the README
   - And add in the installation instructions how to install them from these respective websites, in `Install the add-on` section
 
-- Remove `current status` section
-
 - When the add-on is updated for Odoo 19, change the last line in `TOPS:` section
 
 - When I do the 1.0 release, make sure that the add-on manifest.py version is also `18.1.0.0`

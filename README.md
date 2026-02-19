@@ -50,9 +50,9 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 > To update the add-on, first update the code using the same way that you first downloaded it, then restart the server and finally click `Upgrade` on the add-on page
 
 
-### How to setup the Taler payment provider
+### Setup the Taler payment provider
 
-- Once the addon is installed from the Apps:
+- Once the add-on is installed from the Apps:
   - Go to the payment providers menu. It can be accessed in multiple ways:
     - `Website -> Configuration -> eCommerce -> Payment Providers`.
     - `Invoicing -> Configuration -> Online Payments -> Payment Provider`s.
@@ -77,7 +77,7 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 
 <img src="payment_taler/README_Pictures/EN/Taler_provider_setting_complete.png" alt="Taler providers settings" width="700px">
 
-### Complete an eCommerce payment
+### Complete an eCommerce payment using Taler
 
 - Once you have completed the Taler initial setup, customers can pay on your website.
 - To do so, they will open the shop and add any items to their cart.
@@ -93,7 +93,7 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 
 <img src="payment_taler/README_Pictures/EN/Taler_ecommerce_payment_processed.png" alt="Taler eCommerce payment processor" width="700px">
 
-### Create an invoice that can be paid with Taler
+### Create an invoice that can be paid using Taler
 
 - It is possible to create an invoice that includes a Taler QR Code to pay it.
   - Go to the Invoicing app and create a new invoice.
@@ -115,7 +115,7 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
   - Press `Create Payment`.
 
 
-### Online invoice payment using Taler
+### Pay an invoice online using Taler
 
 > This process is unrelated to the invoices created with Taler in the previous step\
 > Any invoice can be paid online using Taler
@@ -137,118 +137,120 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 > `sudo apt install libcairo2-dev`\
 > `pip install rlPyCairo`
 
-- How to make event tickets available for customers to pay for using Taler.
-  - Add the "Events" add-on on your Odoo instance.
-  - Go to the settings app, and navigate to the "Events" settings.
-  - Tick the "Online Ticketing" and save the changes.
+- To make event tickets available for customers to pay using Taler:
+  - Add the `Events` add-on on your Odoo instance.
+  - Go to the settings app, and navigate to the `Events` settings.
+  - Tick the `Online Ticketing` setting and save the changes.
 
 <img src="payment_taler/README_Pictures/EN/Taler_ticketing_settings.png" alt="Taler ticketing settings" width="700px">
 
-  - Tickets are now available to buy using Online payments providers, including the Taler payment provider!
-  - Customers can now navigate the "Events" tab on your website, and choose any event they'd like to purchase a ticket to.
+  - Tickets will now be available to buy using online payments providers, including the Taler payment provider.
+  - Customers can navigate the `Events` tab on your website, and choose a ticket to any event they're interested in.
 
 <img src="payment_taler/README_Pictures/EN/Taler_ticketing_events_list.png" alt="Taler ticketing event list" width="700px">
 
-  - When they click an event, they can register in it, which will prompt them to give some information, and then lead them to a payment page
+  - Upon clicking an event, they will be asked to provide some identifying information, and then will be lead to a payment page.
   - On this payment page, the customer can select Taler as a payment provider.
-  - They will be redirected to a Taler order page, where they can pay with their wallet or web browser.
-  - Once payment is finished, the customer will land back on the odoo page, with their payment successfully processed, and a .pdf of the event tickets available.
+  - They will be redirected to a Taler order page, where they can pay using their Taler wallet on the app or web browser.
+  - Once the payment is completed, the customer will land back on the odoo page, with their payment successfully processed, and a .pdf of the event tickets available.
 
 <img src="payment_taler/README_Pictures/EN/Taler_ticketing_event_payment_confirmation.png" alt="Taler ticketing event payment confirmation" width="700px">
 
-### How to setup POS payment provider
+### Configure Taler payment for point of sale
 
 - Allowing Taler payment on the point-of-sale app requires a few more steps than online payments aboves.
-- Preliminary steps.
-  - Only do this step if you have previously [setup Taler as a payment provider](#how-to-setup-the-Taler-payment-provider).
-  - Install the "Point of sale" Odoo addon.
-- Create the Point of Sale payment method.
-  - On the top bar, press Configuration -> Payment Methods.
+- Preliminary steps:
+  - You need to have previously [setup Taler as a payment provider](#setup-the-Taler-payment-provider).
+  - Install the `Point of sale` Odoo app.
+- Create the Point of Sale payment method:
+  - On the top bar, press `Configuration -> Payment Methods`.
   - Create a new Payment Method.
-  - Call it "Taler" (You can call it anything but Taler is easier to remember).
-  - Check "Online Payment".
-  - Select "Taler" in the "Allowed Providers" field.
-- Adding Taler to the point of sale (Make sure that the point of sale register is closed for this step).
-  - On the top bar, press Configuration -> Point of Sale list.
-  - Select the point of sale you'd like to add Taler payment to (for test data, Clothes Shop is a good candidate).
-  - Click on "More settings: Configurations > Settings", which will lead you to the point of sale's settings page.
-    - Alternatively, you can access this page by going to Settings through the app switcher on the top right, then going to "Point of Sale" section, and selecting the point of sale that you would like to modify.
-  - In Payment -> Payment Methods, add the payment method you just created. It can be named "Taler", or any other custom name you chose.
-- The setup is now complete, and you can select your new payment provider when a customer pay for an order on the Point of sale that you added the payment method to.
+    - Name it `Taler` (You can call it something else, but `Taler` is easier to keep track of).
+    - Check the `Online Payment` checkbox.
+    - Select `Taler` in the `Allowed Providers` field.
+- Add Taler to the point of sale:
+  - Make sure that the point of sale register is closed for this step.
+  - On the top bar, press `Configuration -> Point of Sales`, you will be redirected to the point of sale list.
+  - Select the point of sale you'd like to add Taler payment to.
+  - Click on `More settings: Configurations > Settings`, which will lead you to the point of sale's settings page.
+    - Alternatively, you can access this page by going to Settings through the app switcher (top-left button), then going to `Point of Sale` section, and selecting the point of sale that you would like to modify.
+  - In `Payment -> Payment Methods`, add the payment method you just created (generally `Taler`).
+- The setup is now complete, and you can select this new payment provider when a customer pay for an order on the Point of sale that you added the payment method to.
 
-### Payment on a Point of Sale
+### Pay using Taler on a Point of Sale
 
-- Open a register on one of the Points of Sale for which you activated the Taler payment method in the previous step.
-- Put any items in the order, and once done, click "Payment" at the bottom of the page.
-- The "Taler" payment method, that you added earlier, should now be available in the payment options.
+- Open a register on one of the Points of Sale for which you have activated the Taler payment method.
+- Add any items to the order and click `Payment` at the bottom of the page.
+- Select the payment method `Taler` payment method.
 
 <img src="payment_taler/README_Pictures/EN/Taler_pos_taler_payment.png" alt="Taler pos taler payment" width="700px">
 
-- Clicking on the option and validating it will prompt the customer with a QR Code.
-- Scanning this QR Code will redirect to an Odoo page, where they will be able to choose to pay with Taler.
+- Click `Validate`, it will show a QR Code.
+- Scanning this QR Code will redirect to an Odoo page, where the customer will be able to pay with Taler.
 - This will bring the customer to a Taler order page, and they will be able to pay using their Taler wallet or web browser.
-- Upon the payment completion, the customer will be redirected to Odoo, with a confirmation of payment (first picture), and the order on the point of sale's side will show a successful payment, and produce the receipt (second picture).
+- Upon payment completion, the customer will be redirected to Odoo, with a confirmation of payment (first picture), and the order on the point of sale's side will show a successful payment, and produce the receipt (second picture).
 
 <img src="payment_taler/README_Pictures/EN/Taler_pos_payment_complete.png" alt="Taler pos payment complete" width="700px">
 
 <img src="payment_taler/README_Pictures/EN/Taler_pos_receipt.png" alt="Taler pos receipt" width="700px">
 
-### Refunding an online payment
+### Refund an online payment made using Taler
 
-- To make a refund, you first have to find the payment you wish to refund.
+- To make a refund to a payment made using Taler, you first have to find the payment you wish to refund.
 - In the `website` or `invoicing` add-on, navigate to `Configuration -> Payment Transactions` on the top bar.
   - This page will show you all the transactions that have been completed.
 - Click the transaction that you would like to refund.
-  - In the picture, the transaction to refund is `S00060`.
+  - In the picture below, the transaction to refund is `S00060`.
 
 <img src="payment_taler/README_Pictures/EN/Taler_refund_list_of_transactions.png" alt="Taler list of transactions" width="700px">
 
-- On the transaction page, click on the linked payment.
-  - In the picture, the linked payment is `PBNK1/2026/00029`.
+- On the transaction page, click on the linked payment found in `Payment`.
+  - In the picture below, the linked payment is `PBNK1/2026/00029`.
 
 <img src="payment_taler/README_Pictures/EN/Taler_refund_transaction.png" alt="Taler transaction page" width="700px">
 
-- On the payment page, click `Refund` in the action button section and confirm the refund.
+- On the payment page, click `Refund` in the action button section (top-left) and confirm the refund.
 
 <img src="payment_taler/README_Pictures/EN/Taler_refund_payment.png" alt="Taler payment page" width="700px">
 
 - Confirming the refund will create a new transaction, that you can view in the list of transactions, with the name `R-{Odoo reference number}`.
-  - An email containing a QR Code for the customer will also be sent to the customer's email address.
-    - You can find the list of emails in `Settings -> Technical -> Emails`
+  - An email containing the refund QR Code will also be sent to the customer's email address.
+    - You can view this email in the list of sent emails, found in `Settings app -> Technical -> Emails`
   - To receive the refund, the customer will have to scan the QR Code with their Taler wallet.
 
 <img src="payment_taler/README_Pictures/EN/Taler_refund_email.png" alt="Taler refund email to customer" width="700px">
 
 _Notes:_
-  - _You need a functional email address for this feature to work properly._
-    - _Without an email address, the email will be generated and can be read, but it will not be sent._ 
-  - _You can only do full refunds using Taler. Partial refunds are not implemented, but Taler does allow for partial refunds, so it could be a supplementary feature._
+  - _You need a functional email sender for this feature to work properly._
+    - _Without an email sender, the email will be generated and can be read, but it will not be sent._ 
+  - _You can only do full refunds using Taler. Partial refunds are not implemented._
 
-### Merchant test mode
+### Test the add-on using the merchant test mode
 
-- The merchant test mode allows you to test the installation of the Taler-Odoo Payment System, and confirm that the module and the selected merchant are working properly.
-- In the Odoo UI, all the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to "Kudos" right before sending the order to the Taler merchant.
+- The merchant test mode allows you to test the installation of the module, and confirm that the selected merchant are working properly.
 - <strong>Warning:</strong> Do not use this mode in production or with published items for sale.
+  - _Note: You can decide to keep the payment provider `Unpublished` when using Test Mode, or to `Publish` it by clicking the button at the top of the page. If a payment provider is unpublished only an administrator users will be able to see and use the payment provider. It is advised to keep the payment provider unpublished when using the Test Mode._
+  - _Second note: In the Odoo UI, the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to `Kudos` right before sending the order to the Taler merchant._
+
 - Here is an example of the flow for this feature:
-- _Note: The test mode makes the payment provider "unpublished", which means that only administrator users will be able to see the payment provider in this state. To go through this flow, I usually use the "Mitchell Admin" user available from Odoo's demo data._
-- On the payment provider's page, check the "Test Mode" radio button.
+  - On the payment provider's page, check the `Test Mode` radio button.
 
 <img src="payment_taler/README_Pictures/EN/Taler_test_mode_radio_button.png" alt="Taler test mode radio button selected" width="700px">
 
-- Then start the process for any online payment, I will show the process for an eCommerce payment.
-- Navigate to the shop page.
-- Select any product that you'd like to buy as a test, go to your cart and start the checkout process.
-- Once you confirm your order, the Taler payment method will appear, with two icons.
+- Start the process for any online payment, I will show the process for an eCommerce payment.
+  - Navigate to the shop page.
+  - Select any product that you'd like to buy as a test, go to your cart and start the checkout process.
+  - Once you confirm your order, the Taler payment method will appear, with some icons.
 
 <img src="payment_taler/README_Pictures/EN/Taler_test_mode_payment_method_with_icons.png" alt="Taler test mode payment method with two icons, striked-through eye and yellow warning sign" width="700px">
 
-- Symbols:
-  - The red striked-through eye means "Unpublished". It is there to let you know that this payment method is not visible to visitors, only users that have access rights to the shop, will be able to see the test mode Taler payment provider.
-  - The yellow warning sign means "Test mode". It is there to warn you that the test mode is activated for this payment method.
-- Go ahead and pay the order. A corresponding order will be created on the Taler merchant, with a currency change.
-  - The currency is getting swapped with "Kudos".
-    - Kudos is an imaginary currency created for Taler. It can be used for free to test transactions with your order wallet.
-- A Taler order will be created, with the currency replaced by Kudos, that you can open and pay with your wallet.
+- Explanation of the icons:
+  - The red striked-through eye means `Unpublished`. It is there to let you know that this payment method is not visible to visitors, only users that have administrator access rights to the shop will be able to see the test mode Taler payment provider.
+  - The yellow warning sign means `Test mode`. It is there to warn you that the test mode is activated for this payment method.
+- Pay the order. A corresponding order will be created on the Taler merchant, with a currency change.
+  - The currency originally used will be swapped with `Kudos`.
+    - Kudos is an imaginary currency created for Taler. It can be used for free to test transactions with your Taler wallet.
+- A Taler order will be created, you can open it and pay with your wallet. (Notice that the currency is replaced with Kudos.)
 
 <img src="payment_taler/README_Pictures/EN/Taler_test_mode_taler_order_payment.png" alt="Taler test mode payment on Taler, showing kudos currency" width="700px">
 
@@ -256,18 +258,18 @@ _Notes:_
 
 <img src="payment_taler/README_Pictures/EN/Taler_test_mode_taler_payment_completed.png" alt="Taler test mode payment shown as completed on Odoo website" width="700px">
 
-- If you reach this step in a similar manner with no raised issues, the test is complete, the add-on works and the Taler merchant endpoint can receive your orders for compatible currencies.
+- Once this step is done, the test is complete. The add-on works and the Taler merchant endpoint can receive your orders for compatible currencies.
 
 ---
 
 ### Change settings using CLI
 
-- Run the Odoo CLI shell by adding `shell` to your original command line to start Odoo.
-  - Such as `./odoo-bin shell --addons-path=./addons,{custom_addons_path} -u tops -d odoo18_tops_0.1.1.1`
-- Run these commands to edit the setting you want to set. You can use `get_params` to print the current value, and `set_params` to set a new value:
-  - `env['ir.config_parameter'].set_param('tops.merchant_url', 'https://backend.demo.taler.net/instances/sandbox/')`
-  - `env['ir.config_parameter'].set_param('tops.password', 'https://backend.demo.taler.net/instances/sandbox/')`
-- <strong>IMPORTANT:</strong> Commit the changes to the database before closing the shell instance and restarting Odoo:
+- To change Odoo settings using CLI, run the Odoo CLI shell by adding `shell` to your original command line to start Odoo.
+  - Such as `./odoo-bin shell --addons-path=./addons,{custom_addons_path}/tops -u payment_taler -d odoo18_tops_0.1.1.1`
+- Run these commands to edit the settings. You can use `get_params` to print the current value, and `set_params` to set a new value:
+  - `env['ir.config_parameter'].set_param('payment_taler.taler_merchant_url', 'https://backend.demo.taler.net/instances/sandbox/')`
+  - `env['ir.config_parameter'].set_param('payment_taler.taler_merchant_password', 'sandbox')`
+- <strong>WARNING:</strong> You need to commit the changes to the database before closing the shell instance and restarting Odoo:
   - `env.cr.commit()`
   - `exit()`
 
@@ -275,131 +277,128 @@ _Notes:_
 
 ### Editing rights to the payment provider settings
 
-- As with other payment providers, not all Odoo users on an instance can modify the Taler payment provider settings.
+- As with other payment providers, Odoo users will have limited access to the Taler payment provider settings.
 - Only user that belong in the `base.group_system` user group will be able to access and modify the Taler payment provider settings.
-
 
 ---
 
-### Uninstall the addon
+### Uninstall the add-on
 
-- To uninstall the addon, you have to go to the `Apps` app on Odoo.
-- In there, search for and go to the `Taler-Odoo Payment System` addon.
-- Click `Uninstall`, the addon should be uninstalled.
-- You can reinstall the addon at a later time.
-- If you added a payment method record for the point of sale app:
-  - Go to the Point of Sale app, and navigate to `Configuration/Payment Methods`.
-  - Click on the "Taler" record you created when setting up the point of sale payment system, it should be highlighted in red because the payment provider is not available anymore.
-  - Click on the gear at the top, and then either "Archive" (better) or "Delete" (more risky because you might lose track of some payments)
-  - On the top bar, press Configuration -> Point of Sale list.
+- To uninstall the add-on, you have to go to the `Apps` app on Odoo.
+- Search for, and go to the `Taler-Odoo Payment System` add-on.
+- Click `Uninstall`, the add-on should be uninstalled.
+  - _Note: If you have made any transactions using Taler with this add-on, you will not be able to uninstall it._
+- You can reinstall the add-on at a later time.
+- If you added a payment method record for the point of sale app: ([see the related section](#configure-taler-payment-for-point-of-sale)):
+  - Go to the `Point of Sale` app, and navigate to `Configuration/Payment Methods`.
+  - Click on the `Taler` record you created when setting up the point of sale payment system, it should be highlighted in red because the payment provider is not available anymore.
+  - Click on the gear at the top, and then either `Archive` (better for data conservation) or `Delete` (more risky because you might lose track of some payments)
+  - On the top bar, go to `Configuration -> Point of Sales`.
   - Select a point of sale that you made Taler payments available for.
-  - Click on "More settings: Configurations > Settings", which will lead you to the point of sale's settings page.
-  - In Payment -> Payment Methods, remove the Taler payment method. It can be named "Taler", or any other custom name you chose when first setting it up.
-  - Do this for every point of sale you made Taler payments available for.
+  - Click on `More settings: Configurations > Settings`, which will lead you to the point of sale's settings page.
+  - In Payment -> Payment Methods, remove the Taler payment method.
+    - Do this step for every point of sale you made Taler payments available for.
 
 ---
 
 ## Folder structure
 
 This add-on uses a quite standard folder structure:
-- `controllers` contains the controllers used by the addon.
+- `controllers` contains the controllers used by the add-on.
 - `data` contains setup data that is processed when someone installs the add-on, as well as email templates.
-- `Devlog` is a text compendium of the posts I am making on the ICH forum
-- `LICENSES` contains the text of the licenses used in this project.
-- `models` contains the Odoo models. There are:
+- `i18n` contains the data for localization and translation.
+- `models` contains the Odoo models. There are 4 models:
   - `taler_api_method`, which contains the methods used to communicate to the Taler merchant API.
   - `taler_invoicing`, which contains the methods used when creating invoices with Taler.
   - `taler_provider`, which contains the methods used by the Taler payment provider.
   - `taler_transaction`, which contains the methods used to complete a transaction with Taler.
-- `payment_taler/README_Pictures` contains all the pictures shown in this README.
-- `static` contains logo data and other image assets for the addon.
+- `README_Pictures` contains all the pictures shown in this README.
+- `security` contains the (unused) `ir.moder.access.csv` file to manage access rights.
+- `static` contains logo data and other image assets for the add-on.
 - `tests` contains unit tests for this project.
 - `utils` contains utility methods (such as logging).
-- `views` contains a view for each of the models.
+- `views` contains the views used for the models.
 
 ---
 
-## Running unit tests
+## Run unit tests
 
 - To run unit tests on a new db, use this command:
-  - `./odoo-bin --addons-path=./addons,{custom_addon_path} --test-enable -d test_db_2 -i tops --stop-after-init --test-tags taler`
-  - The db name after -d is arbitrary and can be replaced by any other names.
-- In the results, you should expect to see `odoo.tests.result: 0 failed, 0 error(s) of 9 tests when loading database`.
-
----
-
-> If any of these tutorials or information seem inaccurate, please either reach out for clarifications or changes on [Support email not created yet], or open an issue on the [TOPS repository](https://codeberg.org/Nemael/tops/)
+  - `./odoo-bin --addons-path=./addons,{custom_addons_path}/tops --test-enable -d test_db_2 -i payment_taler --stop-after-init --test-tags taler`
+    - The db name after -d is arbitrary and can be replaced by any other names.
+- In the results logs, you should expect to see `odoo.tests.result: 0 failed, 0 error(s) of x tests when loading database`.
+  - x is the number of unit tests, currently 11.
 
 ---
 
 ## Common issues
 
-### The "Check URL validity" button is showing me an error
+### The `Check URL validity` button is showing an error
 
-- This button is meant to check that the Taler merchant is valid and supports the same currencies that you are using.
-  - The error message will explain if there are any discrepancies, and show the supported currencies on the merchant side.
+- This button checks that the chosen Taler merchant is valid and supports the same currencies that you are using. If your Taler provider accepts a currency not supported by the Taler merchant, an error will be raised.
+  - The error message will show any discrepancies, and the accepted currencies on both sides.
 - To change the currencies you'd like to support with Taler, go to the `Configuration` tab in the payment provider, and navigate to `Availability -> Currencies`.
   - This change will be overwritten when you restart the Odoo server.
-  - For a more permanent change, you can edit the `const.py` file, and comment/uncomment the currencies that you want to set as Taler configuration.
+  - For a more permanent change, you can edit the `const.py` file at the root of this add-on, and comment/uncomment the currencies that you want to set as Taler configuration.
   - `const.py` is loaded at server start, 
 
-_Note: Because KUDOS is an imaginary currency, you will not find it in this list._
+_Note: Because KUDOS is an imaginary currency, you will not find it in the list in Odoo._
 
 ---
 
 ## Translation & Available languages
 
 - This module is currently available in English and French
-  - Invoices and emails sent to customer for refund are also translated, adn will be snet in the language that is set for the customer, in their customer profile.
-  - This README is also translated in file README_FR (Add the link to the README_FR file here) 
-  - Translation in other languages is welcome, please see ADD LINK HERE TO `How to translate` SECTION for a how-to-translate.
-
----
+  - Invoices and emails sent to customer for refund are also translated, and will be sent in the language set on the customer's profile.
+  - This README is also translated in the file README_FR (ADD LINK TO THE README_FR.md FILE HERE) 
+  - Translation in other languages is welcome, please see [here](#how-to-add-a-translation) for a guide on how to add a translation.
 
 ---
 
 ## Following the updates of this module:
 
 - You can see updates announcement in this category of the ICH.taler.net forum: https://ich.taler.net/c/integrations/odoo/29
-- I also post regular devlogs in this thread of the same forum, where I explain my process: https://ich.taler.net/t/taler-odoo-payment-system-devlog/437
+- I also post regular devlogs in this thread of the same forum: https://ich.taler.net/t/taler-odoo-payment-system-devlog/437
 
 ---
 
-## How to contribute? (WIP)
+## How to contribute?
 
-- Guide on how to clone, run, and contribute to the code.
-- Ideas on features that could be implemented.
-  - More translations (See ADD LINK HERE TO `How to translate` SECTION)
-  - Partial refunds.
-  - Implementing functionality for
-    - Odoo 19 (will probably be done by the time 1.0 is released)
-    - Future Odoo releases (20, ...)
+- Contributions to the Taler payment integration are always welcome!
+- To make a contribution:
+  - Fork this repository
+  - Clone the fork on your local machine
+  - Create a new branch
+  - Make your changes
+  - Commit your changes
+  - Push to your fork
+  - Open a pull request on the original TOPS repository
+
+
+- Some features that may need further development:
+  - Add more translations to help make the add-on more accessible (see [here](#how-to-add-a-translation) for a guide on how to add a translation).
+  - Implement partial refunds for customers.
+  - Update the add-on for Odoo 19.
+  - Keep the add-on updated for future Odoo releases.
 
 ---
 
-## How to translate
+## How to add a translation
 
-- If you would like to do a translation of the module, the process is rather simple
-  - The file `i18n/payment_taler.pot` ADD LINK TO THIS FILE HERE is the base translation file, with all the strings of text stored in it
-  - Copy this file into a new file `{New language}.po`, such as `fr.po`
-  - In this new file, translate all the strings of text that you would like to translate, you can use `fr.po` ADD LINK TO THIS FILE HERE as a guide on how to format the translation.
-  - Once complete, you can re-make your Odoo test database, and change your user's language to the desired language. The translation you made should appear on Odoo.
-  - If you are encountering any issues, please open a thread in this forum category https://ich.taler.net/c/integrations/odoo/29 (You can ping me as well @Nemael), and specify that you are doing a new translation.
+- If you would like to add a translation to the module, the process is rather simple:
+  - The file `i18n/payment_taler.pot` [available here](https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/payment_taler.pot) is the base translation file, with all the strings of text stored in it.
+  - Copy this file's content in a new file `{New language}.po`, such as `fr.po`
+  - In this new file, translate all the strings of text that you would like to translate. You can use `fr.po` [available here](https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/fr.po) as a guide on how to format the translation.
+  - Once complete, you can re-make your Odoo test database, and change your user's language to the added translation's language. The translation you made should appear on Odoo.
+  - If you are encountering any issues, please open a thread in this forum category https://ich.taler.net/c/integrations/odoo/29 (You can ping me as well, @Nemael). Please specify that you are doing a new translation and for which language.
+
 ---
 
 ## Tech support
 
-If you are encountering any issues with the add-on, please don't hesitate to either
-- Open a thread in this forum category https://ich.taler.net/c/integrations/odoo/29 (You can ping me as well @Nemael). Please explain your situation in detail, and the problem you are encountering.
-- Open an issue on the Codeberg repository https://codeberg.org/Nemael/tops/issue. Please explain the issue you are having on a technical point-of-view.
-
----
-
-## Funding
-
-This project is funded through [NGI TALER Fund](https://nlnet.nl/taler), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program. Learn more at the [NLnet project page](https://nlnet.nl/project/TALER-Odoo-module).
-
-[<img src="https://nlnet.nl/logo/banner.png" alt="NLnet foundation logo" width="20%" />](https://nlnet.nl) 
+If you are encountering any issues with the add-on, please don't hesitate to either:
+- Open a thread in this forum category https://ich.taler.net/c/integrations/odoo/29 (You can ping me as well, @Nemael). Please explain your issue in detail.
+- Open an issue on the Codeberg repository https://codeberg.org/Nemael/tops/issue. Please explain in details the issue you are encountering.
 
 ---
 
@@ -407,7 +406,16 @@ This project is funded through [NGI TALER Fund](https://nlnet.nl/taler), a fund 
 
 - The [Odoo Community Association (OCA)](https://github.com/OCA) and their many Open-Source addons, which helped me find my way around which Odoo flows to work on.
 - [petites singularites](https://ps.lesoiseaux.io/taler/) for the administration of the [ICH Forum](https://ich.taler.net/), where I could post questions and updates about my progress, and get support from the community.
-- The [Kashier](https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on) and [Sadad](https://github.com/Adnanghanchi/Odoo-Payment-Provider) payment providers integrations in Odoo, which provided examples that helped me steer my work in the right direction.
+- The [Kashier](https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on) and [Sadad](https://github.com/Adnanghanchi/Odoo-Payment-Provider) payment providers integrations in Odoo, which provided payment integration examples that helped me steer my work in the right direction.
+- Codeberg user @jans for their QA and their help to standardize my code. 
+
+---
+
+## Funding
+
+This project is funded through [NGI TALER Fund](https://nlnet.nl/taler), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program. More information at the [NLnet project page](https://nlnet.nl/project/TALER-Odoo-module).
+
+[<img src="https://nlnet.nl/logo/banner.png" alt="NLnet foundation logo" width="20%" />](https://nlnet.nl) 
 
 ---
 
