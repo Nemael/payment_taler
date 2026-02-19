@@ -4,8 +4,6 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 
-- Make a dedicated email address for support on this add-on, to put on the addon shops' webpage, to receive emails for support and such
-
 - Update the add-on for Odoo 19
 
 - See if my add-on has "iframe support", such as what is shown in the features for this repo https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on
@@ -29,7 +27,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - Do an overhaul of the README.md file before handing it to my translator
   - Edit the pictures of the README file, to make the foundation for the README_FR file
 
-- UI explanation:
+- UI explanation goals:
   - Take screenshots of all the pages that I modified
   - Add red squares on each relevant UI element
   - Assign a number to each square
@@ -48,14 +46,6 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - When the tutorial for the test mode is finished being translated, Check that the link in the test mode warning does point to the tutorial in French, and does not lead to a 404.
 
-
-
-  - Implement rolling releases. it will be useful for the proposed directory changes, and other small fixes.
-    - For auto releases, Codeberg implements auto zipping, I believe:
-      - https://docs.codeberg.org/git/using-tags/#creating-tags-and-releases
-  - Check the upload requirements on the OCA and Odoo appstore
-  - See if I can send my add-on for approval, and if I want to do it already
-
 - For the Odoo store publishing:
   - Add a folder payment_taler to the root of my repository
   - Guidelines are here: https://apps.odoo.com/apps/vendor-guidelines
@@ -69,4 +59,11 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Make a post on the ICH to thank Jans for the QA and the info on how to standardize my code
 
-- Add a short README file to the root of the repository, explaining the purpose of each folder in the repository, as well as indicating users that what they're looking for can be found in payment_taler directory
+- When the addon is online on both odoo and oca shops, add the links to section `TOPS:` in the README
+  - And add in the installation instructions how to install them from these respective websites, in `Install the add-on` section
+
+- Remove `current status` section
+
+- When the add-on is updated for Odoo 19, change the last line in `TOPS:` section
+
+- When I do the 1.0 release, make sure that the add-on manifest.py version is also `18.1.0.0`
