@@ -158,9 +158,9 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 
 ### Configure Taler payment for point of sale
 
-- Allowing Taler payment on the point-of-sale app requires a few more steps than online payments aboves.
+- Allowing Taler payment on the point-of-sale app requires a few more steps than online payments above.
 - Preliminary steps:
-  - You need to have previously [setup Taler as a payment provider](#setup-the-Taler-payment-provider).
+  - You need to have previously [setup Taler as a payment provider](#setup-the-taler-payment-provider).
   - Install the `Point of sale` Odoo app.
 - Create the Point of Sale payment method:
   - On the top bar, press `Configuration -> Payment Methods`.
