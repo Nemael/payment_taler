@@ -75,7 +75,7 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
   - Click the `Enabled` radio button.
 - The initial setup is now complete and Taler payment will be available in all eCommerce, online payments and Invoicing apps.
 
-<img src="payment_taler/README_Pictures/FR/Taler_provider_setting_complete.png" alt="Taler providers settings" width="700px">
+<img src="README_Pictures/FR/Taler_provider_setting_complete.png" alt="Taler providers settings" width="700px">
 
 ### Complete an eCommerce payment using Taler
 
@@ -83,15 +83,15 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 - To do so, they will open the shop and add any items to their cart.
 - During the checkout, they can now select the `Taler` payment provider.
 
-<img src="payment_taler/README_Pictures/FR/Taler_ecommerce_checkout.png" alt="Taler eCommerce checkout" width="700px">
+<img src="README_Pictures/FR/Taler_ecommerce_checkout.png" alt="Taler eCommerce checkout" width="700px">
 
 - After clicking `Pay now`, a new Taler order will be created on the merchant side, and the customer will be redirected to the Taler order, from which they can pay with any Taler wallet on their phone or web browser.
 
-<img src="payment_taler/README_Pictures/FR/Taler_ecommerce_wallet.png" alt="Taler eCommerce wallet" width="300px">
+<img src="README_Pictures/FR/Taler_ecommerce_wallet.png" alt="Taler eCommerce wallet" width="300px">
 
 - On completion of the payment using their wallet, the customer will be redirected back to your Odoo website, which will show a successful payment confirmation.
 
-<img src="payment_taler/README_Pictures/FR/Taler_ecommerce_payment_processed.png" alt="Taler eCommerce payment processor" width="700px">
+<img src="README_Pictures/FR/Taler_ecommerce_payment_processed.png" alt="Taler eCommerce payment processor" width="700px">
 
 ### Create an invoice that can be paid using Taler
 
@@ -100,13 +100,13 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
   - Fill any data relevant to the invoice that you are creating.
   - Important step: In the `Other Info` tab, set the Payment Method to `Taler` (see below). Otherwise, the QR Code will not be generated.
   
-<img src="payment_taler/README_Pictures/FR/Taler_invoices_payment_method.png" alt="Taler invoices payment method" width="700px">
+<img src="README_Pictures/FR/Taler_invoices_payment_method.png" alt="Taler invoices payment method" width="700px">
 
 - When you are done, click `Confirm` at the top, you will be led to the invoice page.
   - You can now click `Aperçu` to see the Invoice that will be sent to your customer.
   - The invoice's PDF will include a Taler payment QR Code, as well as some Taler order information.
 
-<img src="payment_taler/README_Pictures/FR/Taler_invoices_taler_qr_code.png" alt="Taler invoices taler qr code" width="700px">
+<img src="README_Pictures/FR/Taler_invoices_taler_qr_code.png" alt="Taler invoices taler qr code" width="700px">
 
 - If a customer pays for the invoice using the QR Code present in the PDF, you will have to do a manual payment reconciliation.
   - To do this, once you confirm that you received the payment, go to the Invoices' app page.
@@ -124,12 +124,12 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 - Once created, you can press `Preview` to see the page that the customer will see.
 - On this page, the user will be able to click `Pay Now`, and choose Taler as a payment option.
 
-<img src="payment_taler/README_Pictures/FR/Taler_invoices_online_payment.png" alt="Taler invoices online payment" width="700px">
+<img src="README_Pictures/FR/Taler_invoices_online_payment.png" alt="Taler invoices online payment" width="700px">
 
 - Once they click `Pay`, they will be redirected to the Taler order page, where they can pay with a Taler wallet on their phone or web browser (in the same way as for an eCommerce payment).
 - When the payment is complete, the customer will be sent back to the invoice page, with a notice saying that the payment is successful.
 
-<img src="payment_taler/README_Pictures/FR/Taler_invoices_paid_online.png" alt="Taler invoices paid online" width="700px">
+<img src="README_Pictures/FR/Taler_invoices_paid_online.png" alt="Taler invoices paid online" width="700px">
 
 ### Purchase an Event ticket online using Taler
 
@@ -142,19 +142,19 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
   - Go to the settings app, and navigate to the `Events` settings.
   - Tick the `Online Ticketing` setting and save the changes.
 
-<img src="payment_taler/README_Pictures/FR/Taler_ticketing_settings.png" alt="Taler ticketing settings" width="700px">
+<img src="README_Pictures/FR/Taler_ticketing_settings.png" alt="Taler ticketing settings" width="700px">
 
   - Tickets will now be available to buy using online payments providers, including the Taler payment provider.
   - Customers can navigate the `Events` tab on your website, and choose a ticket to any event they're interested in.
 
-<img src="payment_taler/README_Pictures/FR/Taler_ticketing_events_list.png" alt="Taler ticketing event list" width="700px">
+<img src="README_Pictures/FR/Taler_ticketing_events_list.png" alt="Taler ticketing event list" width="700px">
 
   - Upon clicking an event, they will be asked to provide some identifying information, and then will be lead to a payment page.
   - On this payment page, the customer can select Taler as a payment provider.
   - They will be redirected to a Taler order page, where they can pay using their Taler wallet on the app or web browser.
   - Once the payment is completed, the customer will land back on the odoo page, with their payment successfully processed, and a .pdf of the event tickets available.
 
-<img src="payment_taler/README_Pictures/FR/Taler_ticketing_event_payment_confirmation.png" alt="Taler ticketing event payment confirmation" width="700px">
+<img src="README_Pictures/FR/Taler_ticketing_event_payment_confirmation.png" alt="Taler ticketing event payment confirmation" width="700px">
 
 ### Configure Taler payment for point of sale
 
@@ -183,16 +183,16 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 - Add any items to the order and click `Payment` at the bottom of the page.
 - Select the payment method `Taler` payment method.
 
-<img src="payment_taler/README_Pictures/FR/Taler_pos_taler_payment.png" alt="Taler pos taler payment" width="700px">
+<img src="README_Pictures/FR/Taler_pos_taler_payment.png" alt="Taler pos taler payment" width="700px">
 
 - Click `Validate`, it will show a QR Code.
 - Scanning this QR Code will redirect to an Odoo page, where the customer will be able to pay with Taler.
 - This will bring the customer to a Taler order page, and they will be able to pay using their Taler wallet or web browser.
 - Upon payment completion, the customer will be redirected to Odoo, with a confirmation of payment (first picture), and the order on the point of sale's side will show a successful payment, and produce the receipt (second picture).
 
-<img src="payment_taler/README_Pictures/FR/Taler_pos_payment_complete.png" alt="Taler pos payment complete" width="700px">
+<img src="README_Pictures/FR/Taler_pos_payment_complete.png" alt="Taler pos payment complete" width="700px">
 
-<img src="payment_taler/README_Pictures/FR/Taler_pos_receipt.png" alt="Taler pos receipt" width="700px">
+<img src="README_Pictures/FR/Taler_pos_receipt.png" alt="Taler pos receipt" width="700px">
 
 ### Refund an online payment made using Taler
 
@@ -202,23 +202,23 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 - Click the transaction that you would like to refund.
   - In the picture below, the transaction to refund is `S00041-3`.
 
-<img src="payment_taler/README_Pictures/FR/Taler_refund_list_of_transactions.png" alt="Taler list of transactions" width="700px">
+<img src="README_Pictures/FR/Taler_refund_list_of_transactions.png" alt="Taler list of transactions" width="700px">
 
 - On the transaction page, click on the linked payment found in `Payment`.
   - In the picture below, the linked payment is `PBNK1/2026/00001`.
 
-<img src="payment_taler/README_Pictures/FR/Taler_refund_transaction.png" alt="Taler transaction page" width="700px">
+<img src="README_Pictures/FR/Taler_refund_transaction.png" alt="Taler transaction page" width="700px">
 
 - On the payment page, click `Remboursement` in the action button section (top-left) and confirm the refund.
 
-<img src="payment_taler/README_Pictures/FR/Taler_refund_payment.png" alt="Taler payment page" width="700px">
+<img src="README_Pictures/FR/Taler_refund_payment.png" alt="Taler payment page" width="700px">
 
 - Confirming the refund will create a new transaction, that you can view in the list of transactions, with the name `R-{Odoo reference number}`.
   - An email containing the refund QR Code will also be sent to the customer's email address.
     - You can view this email in the list of sent emails, found in `Settings app -> Technical -> Emails`
   - To receive the refund, the customer will have to scan the QR Code with their Taler wallet.
 
-<img src="payment_taler/README_Pictures/FR/Taler_refund_email.png" alt="Taler refund email to customer" width="700px">
+<img src="README_Pictures/FR/Taler_refund_email.png" alt="Taler refund email to customer" width="700px">
 
 _Notes:_
   - _You need a functional email sender for this feature to work properly._
@@ -235,14 +235,14 @@ _Notes:_
 - Here is an example of the flow for this feature:
   - On the payment provider's page, check the `Test Mode` radio button.
 
-<img src="payment_taler/README_Pictures/FR/Taler_test_mode_radio_button.png" alt="Taler test mode radio button selected" width="700px">
+<img src="README_Pictures/FR/Taler_test_mode_radio_button.png" alt="Taler test mode radio button selected" width="700px">
 
 - Start the process for any online payment, I will show the process for an eCommerce payment.
   - Navigate to the shop page.
   - Select any product that you'd like to buy as a test, go to your cart and start the checkout process.
   - Once you confirm your order, the Taler payment method will appear, with some icons.
 
-<img src="payment_taler/README_Pictures/FR/Taler_test_mode_payment_method_with_icons.png" alt="Taler test mode payment method with two icons, striked-through eye and yellow warning sign" width="700px">
+<img src="README_Pictures/FR/Taler_test_mode_payment_method_with_icons.png" alt="Taler test mode payment method with two icons, striked-through eye and yellow warning sign" width="700px">
 
 - Explanation of the icons:
   - The red striked-through eye means `Unpublished`. It is there to let you know that this payment method is not visible to visitors, only users that have administrator access rights to the shop will be able to see the test mode Taler payment provider.
@@ -252,11 +252,11 @@ _Notes:_
     - Kudos is an imaginary currency created for Taler. It can be used for free to test transactions with your Taler wallet.
 - A Taler order will be created, you can open it and pay with your wallet. (Notice that the currency is replaced with Kudos.)
 
-<img src="payment_taler/README_Pictures/FR/Taler_test_mode_taler_order_payment.png" alt="Taler test mode payment on Taler, showing kudos currency" width="700px">
+<img src="README_Pictures/FR/Taler_test_mode_taler_order_payment.png" alt="Taler test mode payment on Taler, showing kudos currency" width="700px">
 
 - Once the order is paid using the imaginary currency, you will be sent back to the completed Odoo order.
 
-<img src="payment_taler/README_Pictures/FR/Taler_test_mode_taler_payment_completed.png" alt="Taler test mode payment shown as completed on Odoo website" width="700px">
+<img src="README_Pictures/FR/Taler_test_mode_taler_payment_completed.png" alt="Taler test mode payment shown as completed on Odoo website" width="700px">
 
 - Once this step is done, the test is complete. The add-on works and the Taler merchant endpoint can receive your orders for compatible currencies.
 
@@ -362,7 +362,7 @@ _Note: Because KUDOS is an imaginary currency, you will not find it in the list 
 
 ---
 
-## How to contribute?
+## How to contribute
 
 - Contributions to the Taler payment integration are always welcome!
 - To make a contribution:
