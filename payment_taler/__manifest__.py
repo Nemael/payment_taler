@@ -9,6 +9,7 @@
     'author': 'Nemael',
     'category': 'Accounting/Payment Providers',
     'website': 'https://codeberg.org/Nemael/tops',
+    'images': ['images/thumbnail.png'],
     'depends': ['payment', 'website', 'website_sale', 'account', 'point_of_sale'],
     'data': [
         'views/taler_payment_template.xml',
