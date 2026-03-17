@@ -21,6 +21,8 @@ It is available on the Odoo Apps store (https://apps.odoo.com/apps) PENDING LINK
 
 It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0 is reached.
 
+The technical name for this add-on is payment_taler.
+
 ---
 
 ## Tutorials and flow walkthrough
@@ -197,18 +199,11 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 ### Refund an online payment made using Taler
 
 - To make a refund to a payment made using Taler, you first have to find the payment you wish to refund.
-- In the `website` or `invoicing` add-on, navigate to `Configuration -> Payment Transactions` on the top bar.
-  - This page will show you all the transactions that have been completed.
-- Click the transaction that you would like to refund.
-  - In the picture below, the transaction to refund is `S00060`.
-
-<img src="README_Pictures/EN/Taler_refund_list_of_transactions.png" alt="Taler list of transactions" width="700px">
-
-- On the transaction page, click on the linked payment found in `Payment`.
-  - In the picture below, the linked payment is `PBNK1/2026/00029`.
-
-<img src="README_Pictures/EN/Taler_refund_transaction.png" alt="Taler transaction page" width="700px">
-
+- In the `invoicing` add-on, navigate to `Customers -> Customer Payments` on the top bar.
+  - This page will show you all the payments that have been completed.
+  - In this example, we want to refund the payment `PBNK1/2026/00029`.
+  - For a more technical option, activate the developper mode in the settings, navigate to `Configuration -> Payment Transactions` on the top bar, selecte a transaction, and click on the payment in the `payment` field on the transaction's page.
+- Click on the payment that you would like to start the refund process for.
 - On the payment page, click `Refund` in the action button section (top-left) and confirm the refund.
 
 <img src="README_Pictures/EN/Taler_refund_payment.png" alt="Taler payment page" width="700px">
@@ -216,6 +211,7 @@ It has been built for Odoo 18, and will be updated to Odoo 19 once milestone 1.0
 - Confirming the refund will create a new transaction, that you can view in the list of transactions, with the name `R-{Odoo reference number}`.
   - An email containing the refund QR Code will also be sent to the customer's email address.
     - You can view this email in the list of sent emails, found in `Settings app -> Technical -> Emails`
+      - You may need to activate Odoo's `Developer` mode (found in the settings) to access the `Technical` tab.
   - To receive the refund, the customer will have to scan the QR Code with their Taler wallet.
 
 <img src="README_Pictures/EN/Taler_refund_email.png" alt="Taler refund email to customer" width="700px">
