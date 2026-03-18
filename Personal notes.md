@@ -4,8 +4,6 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: CC0-1.0
 -->
 
-DON'T FORGET THE RELEASE TAGS ON THE REPOSITORY
-
 Odoo addon creation
 - I used a virtual env in python named venv
 	- To set it, go to /opt/odoo and use `source venv/bin/activate`

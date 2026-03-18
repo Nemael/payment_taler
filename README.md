@@ -38,17 +38,17 @@ The technical name for this add-on is payment_taler.
     - PENDING
   - Manually add the code yourself in your Odoo install (Multiple options)
     - First download the add-on code with either of these 4 methods
-        - Download the add-on from [the apps.odoo.com page](https://apps.odoo.com/apps/modules/18.0/payment_taler)
-        - Download the add-on from [the OCA add-on store](https://apps.odoo-community.org/shop/payment-taler-8413#attr=9381)
         - Download the latest version from the releases (https://codeberg.org/Nemael/tops/releases)
           - Downloading the latest release provides the most stable and tested code
+        - Download the add-on from [the apps.odoo.com page](https://apps.odoo.com/apps/modules/18.0/payment_taler)
+        - Download the add-on from the OCA add-on store (link currently unavailable)
         - Clone this repository (git clone https://codeberg.org/Nemael/tops.git)
           - Preferably clone it in `{your Odoo install}/custom_addons`
             - Ensure that the `tops` directory is in `custom_addons`
             - Cloning the repository provides the most up-to-date code, and you can simply use `git pull` to obtain the latest updates. However, the code obtained this way might be unstable
     - Then move the files to your Odoo folder
       - Extract the zip file to `{your Odoo install}/custom_addons`
-      - Ensure that the `tops` directory is in `custom_addons`
+      - Ensure that the `tops` or `payment_taler` directory is in `custom_addons`
   - Note: the add-on code can be stored anywhere, but it's easier store it within the Odoo folder
 - In the command line you used to start Odoo, specify the path to this add-on by adding the argument `--addons-path=./addons,./custom_addons/tops`
   - Such as: `./odoo-bin --addons-path=./addons,./custom_addons/tops -u tops -d odoo18_tops_0.1.1.1`
