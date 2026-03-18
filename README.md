@@ -29,19 +29,27 @@ The technical name for this add-on is payment_taler.
 
 ### Install or update the add-on on an already-existing Odoo installation
 
-- There are multiple ways to install this add-on
+- There are multiple options to install this add-on
+  - Install from the Odoo Apps store
+    - Navigate to [the module's apps.odoo.com page](https://apps.odoo.com/apps/modules/18.0/payment_taler)
+    - Click on `Deploy on Odoo.sh`
+    - The add-on should be now installed on your Odoo.sh instance
   - Install from the OCA community shop
     - PENDING
-  - Install from the Odoo Apps store
-    - PENDING
-  - Add the code yourself in your Odoo install (by cloning or downloading the release)
-    - Clone this repository (git clone https://codeberg.org/Nemael/tops.git)
-      - Preferably clone it in `{your Odoo install}/custom_addons`
-        - Ensure that the `tops` directory is in `custom_addons`
-    - Download the latest version from the releases (https://codeberg.org/Nemael/tops/releases)
+  - Manually add the code yourself in your Odoo install (Multiple options)
+    - First download the add-on code with either of these 4 methods
+        - Download the add-on from [the apps.odoo.com page](https://apps.odoo.com/apps/modules/18.0/payment_taler)
+        - Download the add-on from [the OCA add-on store](https://apps.odoo-community.org/shop/payment-taler-8413#attr=9381)
+        - Download the latest version from the releases (https://codeberg.org/Nemael/tops/releases)
+          - Downloading the latest release provides the most stable and tested code
+        - Clone this repository (git clone https://codeberg.org/Nemael/tops.git)
+          - Preferably clone it in `{your Odoo install}/custom_addons`
+            - Ensure that the `tops` directory is in `custom_addons`
+            - Cloning the repository provides the most up-to-date code, and you can simply use `git pull` to obtain the latest updates. However, the code obtained this way might be unstable
+    - Then move the files to your Odoo folder
       - Extract the zip file to `{your Odoo install}/custom_addons`
       - Ensure that the `tops` directory is in `custom_addons`
-    - Note: the code can be stored anywhere, but it's easier store it within the Odoo folder
+  - Note: the add-on code can be stored anywhere, but it's easier store it within the Odoo folder
 - In the command line you used to start Odoo, specify the path to this add-on by adding the argument `--addons-path=./addons,./custom_addons/tops`
   - Such as: `./odoo-bin --addons-path=./addons,./custom_addons/tops -u tops -d odoo18_tops_0.1.1.1`
 - In Odoo, go to the `Apps` section in the app switcher (top-left button)
@@ -362,20 +370,23 @@ _Note: Because KUDOS is an imaginary currency, you will not find it in the list 
 
 - Contributions to the Taler payment integration are always welcome!
 - To make a contribution:
-  - Fork this repository
+  - Fork this repository (https://codeberg.org/Nemael/tops/)
   - Clone the fork on your local machine
   - Create a new branch
-  - Make your changes
+  - Make your changes in the code
   - Commit your changes
   - Push to your fork
-  - Open a pull request on the original TOPS repository
+  - Open a pull request on the original TOPS repository (https://codeberg.org/Nemael/tops/)
 
 
-- Some features that may need further development:
+- Some features that need further development:
   - Add more translations to help make the add-on more accessible (see [here](#how-to-add-a-translation) for a guide on how to add a translation).
   - Implement partial refunds for customers.
   - Update the add-on for Odoo 19.
-  - Keep the add-on updated for future Odoo releases.
+  - Maintain the add-on up to date for future Odoo releases (Odoo 20 is just around the corner).
+  - Improve the README file.
+    - Split it in multiple different file, for an easier navigation.
+  - Translate the documentation + README in French
 
 ---
 
