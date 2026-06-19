@@ -20,6 +20,10 @@ Installing this module enables merchants to accept payments from customers using
 
 The module is also available on the Odoo Apps store (https://apps.odoo.com/apps/modules/18.0/payment_taler). It has been built for Odoo 18, and will soon be updated to Odoo 19. The technical name for this add-on is payment_taler.
 
+---
+
+## Documentation
+
 A complete documentation for this module is available here. (ADD LINK TO DOCUMENTATION HERE)
 
 Contributions and translations are welcome! A detailed explanation on how to contribute is available here. (ADD LINK TO DOCUMENTATION PAGE ABOUT MAKING CONTRIBUTIONS HERE)
