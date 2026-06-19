@@ -28,3 +28,9 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Add link to french documentation in section "Project/Translation Status/Translation & available languages"
 
 - Remove what steps were completed from "Project/How to contribute/How to contribute"
+
+- Edit the "this page is also available in French here" from the documentation, to say "this documentation is also available in french here"
+
+- Add the link to the new documentation in the README file.
+- 
+- Add the link to the new documentation page about making contributions in the README file.
