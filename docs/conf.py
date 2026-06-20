@@ -31,3 +31,9 @@ html_use_index = False
 html_css_files = [
     'image_outline.css',
 ]
+
+language = 'en'
+
+locale_dirs = ['locale/']
+gettext_compact = False
+gettext_additional_targets = ["image"]

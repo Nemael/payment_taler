@@ -14,10 +14,19 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - When the add-on is updated for Odoo 19, change the last line in `TOPS:` section (in the readme probably?)
 
-- Make instructions in the documentation on how to build the docs
+- Add instructions in the documentation on how to build the docs
   - Explain how to add to the docs, edit the docs, and build the docs
   - Use this command to build the documentation: sphinx-build -M html sourcedir outputdir
     - Or `make html`
+
+- Add instructions in the documentation on how to update the docs and the translation:
+  - Rebuild the .pot files: sphinx-build -b gettext . _build/gettext
+  - Remake the language-specific .po files: sphinx-intl update -p _build/gettext -l fr
+  - And to rebuild the docs:
+    - sphinx-build -D language=en -b html . _build/html/en
+    - sphinx-build -D language=fr -b html . _build/html/fr
+
+
 
 - In the documentation, add a section "How to update translation after a change in documentation"
   - That explains how to re-generate the .po files, and tells you what you should translate again
@@ -32,5 +41,9 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Edit the "this page is also available in French here" from the documentation, to say "this documentation is also available in french here"
 
 - Add the link to the new documentation in the README file.
-- 
+
 - Add the link to the new documentation page about making contributions in the README file.
+
+- Check if I can fix why the repository is non-compliant with REUSE (See licensing section at end of README)
+
+

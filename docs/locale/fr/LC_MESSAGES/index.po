@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Nemael
+# This file is distributed under the same license as the Taler-Odoo Payment
+# System package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler-Odoo Payment System \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 10:16-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../index.rst:17
+msgid "Contents:"
+msgstr ""
+
+#: ../../index.rst:5
+msgid "Welcome to Taler-Odoo Payment System's documentation!"
+msgstr ""
+"Bienvenue sur la page de documentation de l'add-on Taler-Odoo Payment "
+"System!"
+
+#: ../../index.rst:7
+msgid ""
+"TOPS is an add-on for Odoo. It allows users to pay with Taler, similar to"
+" other existing payment integrations in Odoo. The module integrates into "
+"and increase functionality of other existing Odoo modules (eCommerce, "
+"invoices, ticket sales, online payment, etc.). It also implements refunds"
+" to customers that used Taler to pay."
+msgstr ""
+
+#: ../../index.rst:9
+msgid ""
+"Installing this module enables merchants to accept payments from "
+"customers using their Taler Wallet, giving them the option to choose a "
+"payment system that respects their privacy."
+msgstr ""
+
+#: ../../index.rst:11
+msgid ""
+"It is available on the Odoo Apps store "
+"(https://apps.odoo.com/apps/modules/18.0/payment_taler) , as well as on "
+"the OCA community shop (Link pending)"
+msgstr ""
+
+#: ../../index.rst:13
+msgid "The technical name for this add-on is payment_taler."
+msgstr ""
+
+#: ../../index.rst:15
+msgid "This documentation is organized in the following sections:"
+msgstr ""
+
+#~ msgid ""
+#~ "Blah blah description of the project "
+#~ "TODO Documentation is organized in the"
+#~ " following sections:"
+#~ msgstr ""
+

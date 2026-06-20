@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Nemael
+# This file is distributed under the same license as the Taler-Odoo Payment
+# System package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler-Odoo Payment System \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 10:59-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../user-guide/configuration.rst:5
+msgid "Configuration"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:8
+msgid "On this page:"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:14
+msgid "Configuration of the Taler payment provider"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:16
+msgid "Once the add-on is installed from the Apps:"
+msgstr "Une fois que l'add-on est installé depuis le menu Apps:"
+
+#: ../../user-guide/configuration.rst:18
+msgid "Go to the payment providers menu. It can be accessed in multiple ways:"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:21
+msgid "``Website -> Configuration -> eCommerce -> Payment Providers``."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:22
+msgid "``Invoicing -> Configuration -> Online Payments -> Payment Provider``\\ s."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:24
+msgid ""
+"Either way you land here, this is the list of your currently available "
+"payment providers."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:26
+msgid ""
+"A new ``Taler`` payment provider will be in this list, set as disabled "
+"for now."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:28
+msgid "Click on the Taler payment provider."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:29
+msgid "In the ``Credentials`` tab, set the Taler merchant URL."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:31
+msgid ""
+"By default, the demobank’s credentials are used. You can access the "
+"demobank `here <https://backend.demo.taler.net/instances/sandbox/>`__"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:34
+msgid ""
+"After setting the URL, you can click the ``Check URL validity`` button to"
+" check if the entered URL is reaching a valid Taler merchant, and that "
+"this merchant’s accepted currencies are compatible with you Taler "
+"available currencies."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:39
+msgid "You can find the accepted currencies in the ``Configuration`` tab."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:42
+msgid ""
+"Then set the Taler Merchant Password. It will be used for API calls to "
+"the merchant."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:44
+msgid ""
+"You may want change the Taler fulfillment message as well. It will be "
+"shown on created Taler transactions"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:47
+msgid "This change is only for the Taler order, there will be no change in Odoo."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:49
+msgid ""
+"If you’d like to change the Odoo fulfillment messages shown to the "
+"customers after a payment using Taler, you can do so in the ``Messages`` "
+"tab."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:53
+msgid "The default values are connecting to the sandbox Taler merchant:"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:55
+msgid "URL: https://backend.demo.taler.net/instances/sandbox"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:56
+msgid "Password: sandbox"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:58
+msgid ""
+"It is advised, but completely optional, to create a Taler-specific "
+"Journal (this can be set in the Configuration tab)."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:61
+msgid "This will help during the Accounting process."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:63
+msgid "Click the ``Enabled`` radio button."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:65
+msgid ""
+"The initial setup is now complete and Taler payment will be available in "
+"all eCommerce, online payments and Invoicing apps."
+msgstr ""
+
+#: ../../user-guide/configuration.rst:-1
+msgid "Taler providers settings"
+msgstr ""
+
+#: ../../user-guide/configuration.rst:-1
+msgid ".. image:: ../images/EN/Taler_provider_setting_complete.png"
+msgstr ".. image:: ../images/FR/Taler_provider_setting_complete.png"
+

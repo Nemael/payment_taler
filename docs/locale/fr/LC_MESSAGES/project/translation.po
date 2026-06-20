@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Nemael
+# This file is distributed under the same license as the Taler-Odoo Payment
+# System package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler-Odoo Payment System \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 09:46-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../project/translation.rst:5
+msgid "Translation Status"
+msgstr ""
+
+#: ../../project/translation.rst:8
+msgid "On this page:"
+msgstr ""
+
+#: ../../project/translation.rst:11
+msgid "Translation & Available languages"
+msgstr ""
+
+#: ../../project/translation.rst:13
+msgid ""
+"This module and its documentation is currently available in English and "
+"French"
+msgstr ""
+
+#: ../../project/translation.rst:15
+msgid ""
+"Invoices and emails sent to customer for refund are also translated, and "
+"will be sent in the language set on the customer’s profile."
+msgstr ""
+
+#: ../../project/translation.rst:16
+msgid ""
+"This documentation is also available in French (ADD LINK TO FRENCH "
+"DOCUMENTATION FILE HERE)"
+msgstr ""
+
+#: ../../project/translation.rst:17
+msgid ""
+"Translation of the software or the documentation in any other languages "
+"is welcome, please see :ref:`here <how-to-add-a-translation>` for a guide"
+" on how to add a translation."
+msgstr ""
+
