@@ -49,7 +49,7 @@ class TalerProvider(models.Model):
         super()._compute_feature_support_fields()
         for provider in self:
             self.filtered(lambda p: p.code == 'taler').update({
-                'support_refund': 'full_only'
+                'support_refund': 'partial'
             })
 
     def _get_supported_currencies(self):

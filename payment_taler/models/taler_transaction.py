@@ -119,7 +119,12 @@ class TalerTransaction(models.Model):
         amount = amount_to_refund or self.amount
         currency = self.getCurrency()
 
-        reason = "Refunding the product"
+        if (self._current_total_refunded_amount() + abs(amount)) > self.amount:
+            raise ValidationError(
+                _("Refund amount exceeds original payment.")
+            )
+
+        reason = "Refunding the product for " + str(amount) + str(currency)
         response = ""
         self.getToken()
 
@@ -152,3 +157,19 @@ class TalerTransaction(models.Model):
             template.send_mail(refund_txn.id, force_send=True)
         else:
             raise ValidationError(_("Email template not found! Looking for: " + email_refund_template_name))
+
+    def _current_total_refunded_amount(self):
+        # Searches for all the completed refunds for this transaction and sum their total value
+        total_amount_refunded = 0
+        existing_refunds = self.env['payment.transaction'].search([
+            ('source_transaction_id', '=', self.id),
+            ('state', '=', 'done'),
+        ])
+        tadebug("These refunds have been found: " + str(existing_refunds))
+        for refund in existing_refunds:
+            total_amount_refunded += abs(refund.amount)
+            tadebug("Refund found:")
+            tadebug(refund)
+            tadebug(refund.amount)
+        tadebug("Total amount currently refunded: " + str(total_amount_refunded))
+        return total_amount_refunded
