@@ -18,7 +18,7 @@ The module integrates into and increase functionality of other existing Odoo mod
 
 Installing this module enables merchants to accept payments from customers using their Taler Wallet, giving them the option to choose a payment system that respects their privacy.
 
-The module is also available on the Odoo Apps store (https://apps.odoo.com/apps/modules/18.0/payment_taler). It has been built for Odoo 18, and will soon be updated to Odoo 19. The technical name for this add-on is payment_taler.
+The module is also available on the Odoo Apps store (https://apps.odoo.com/apps/modules/18.0/payment_taler). It has been built for Odoo 18, and is compatible with Odoo 19. The technical name for this add-on is payment_taler.
 
 ---
 

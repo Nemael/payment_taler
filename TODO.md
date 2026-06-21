@@ -62,3 +62,9 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Make french version of the pictures for UI-Explanation documentation
 
 - When the documentation is uploaded to ReadTheDocs, add the links that are needed in the README.md
+
+- Make a new release when the MoU is finished and I did my last commit for now
+
+- When translation is finished, complete the translation of the readme.md
+
+- See why woodpecker does not do the pipeline checks
