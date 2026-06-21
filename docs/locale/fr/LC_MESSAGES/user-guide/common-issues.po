@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Nemael
+# This file is distributed under the same license as the Taler-Odoo Payment
+# System package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler-Odoo Payment System \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 09:46-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../user-guide/common-issues.rst:5
+msgid "Common issues"
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:8
+msgid "On this page:"
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:11
+msgid "Tech support"
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:13
+msgid ""
+"If you are encountering any issues with the add-on, please don’t hesitate"
+" to either:"
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:16
+msgid ""
+"Open a thread in this forum category "
+"https://ich.taler.net/c/integrations/odoo/29 (You can ping me as well, "
+"@Nemael). Please explain your issue in detail."
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:17
+msgid ""
+"Open an issue on the Codeberg repository "
+"https://codeberg.org/Nemael/tops/issue. Please explain in details the "
+"issue you are encountering."
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:22
+msgid "The ``Check URL validity`` button is showing an error"
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:24
+msgid ""
+"This button checks that the chosen Taler merchant is valid and supports "
+"the same currencies that you are using. If your Taler provider accepts a "
+"currency not supported by the Taler merchant, an error will be raised."
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:29
+msgid ""
+"The error message will show any discrepancies, and the accepted "
+"currencies on both sides."
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:32
+msgid ""
+"To change the currencies you’d like to support with Taler, go to the "
+"``Configuration`` tab in the payment provider, and navigate to "
+"``Availability -> Currencies``."
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:36
+msgid "This change will be overwritten when you restart the Odoo server."
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:37
+msgid ""
+"For a more permanent change, you can edit the ``const.py`` file at the "
+"root of this add-on, and comment/uncomment the currencies that you want "
+"to set as Taler configuration."
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:40
+msgid "``const.py`` is loaded at server start,"
+msgstr ""
+
+#: ../../user-guide/common-issues.rst:43
+msgid ""
+"Because KUDOS is an imaginary currency, you will not find it in Odoo's "
+"currency list."
+msgstr ""
+

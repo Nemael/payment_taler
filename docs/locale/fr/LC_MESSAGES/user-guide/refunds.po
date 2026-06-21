@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Nemael
+# This file is distributed under the same license as the Taler-Odoo Payment
+# System package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler-Odoo Payment System \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 10:59-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../user-guide/refunds.rst:5
+msgid "Refunds"
+msgstr ""
+
+#: ../../user-guide/refunds.rst:8
+msgid "On this page:"
+msgstr ""
+
+#: ../../user-guide/refunds.rst:11
+msgid "Refund an online payment made using Taler"
+msgstr ""
+
+#: ../../user-guide/refunds.rst:13
+msgid ""
+"To make a refund to a payment made using Taler, you first have to find "
+"the payment you wish to refund."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:15
+msgid ""
+"In the ``invoicing`` add-on, navigate to ``Customers -> Customer "
+"Payments`` on the top bar."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:18
+msgid "This page will show you all the payments that have been completed."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:19
+msgid "In this example, we want to refund the payment ``PBNK1/2026/00029``."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:20
+msgid ""
+"For a more technical option, activate the developper mode in the "
+"settings, navigate to ``Configuration -> Payment Transactions`` on the "
+"top bar, selecte a transaction, and click on the payment in the "
+"``payment`` field on the transaction’s page."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:25
+msgid "Click on the payment that you would like to start the refund process for."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:27
+msgid ""
+"On the payment page, click ``Refund`` in the action button section (top-"
+"left) and confirm the refund."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:-1
+msgid "Taler payment page"
+msgstr ""
+
+#: ../../user-guide/refunds.rst:-1
+msgid ".. image:: ../images/EN/Taler_refund_payment.png"
+msgstr ".. image:: ../images/FR/Taler_refund_payment.png"
+
+#: ../../user-guide/refunds.rst:35
+msgid ""
+"Confirming the refund will create a new transaction, that you can view in"
+" the list of transactions, with the name ``R-{Odoo reference number}``."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:39
+msgid ""
+"An email containing the refund QR Code will also be sent to the "
+"customer’s email address."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:42
+msgid ""
+"You can view this email in the list of sent emails, found in ``Settings "
+"app -> Technical -> Emails``"
+msgstr ""
+
+#: ../../user-guide/refunds.rst:45
+msgid ""
+"You may need to activate Odoo’s ``Developer`` mode (found in the "
+"settings) to access the ``Technical`` tab."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:48
+msgid ""
+"To receive the refund, the customer will have to scan the QR Code with "
+"their Taler wallet."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:-1
+msgid "Taler refund email to customer"
+msgstr ""
+
+#: ../../user-guide/refunds.rst:-1
+msgid ".. image:: ../images/EN/Taler_refund_email.png"
+msgstr ".. image:: ../images/FR/Taler_refund_email.png"
+
+#: ../../user-guide/refunds.rst:57
+msgid "You need a functional email sender for this feature to work properly."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:58
+msgid ""
+"Without an email sender, the email will be generated and can be read, but"
+" it will not be sent."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:59
+msgid ""
+"You can only do full refunds using Taler. Partial refunds are not "
+"implemented."
+msgstr ""
+

@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Nemael
+# This file is distributed under the same license as the Taler-Odoo Payment
+# System package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler-Odoo Payment System \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 10:59-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../user-guide/invoicing.rst:5
+msgid "Invoicing"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:8
+msgid "On this page:"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:11
+msgid "Create an invoice that can be paid using Taler"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:13
+msgid ""
+"It is possible to create an invoice that includes a Taler QR Code to pay "
+"it."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:16 ../../user-guide/invoicing.rst:59
+msgid "Go to the Invoicing app and create a new invoice."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:17
+msgid "Fill any data relevant to the invoice that you are creating."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:18
+msgid ""
+"Important step: In the ``Other Info`` tab, set the Payment Method to "
+"``Taler`` (see below). Otherwise, the QR Code will not be generated."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:-1
+msgid "Taler invoices payment method"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:-1
+msgid ".. image:: ../images/EN/Taler_invoices_payment_method.png"
+msgstr ".. image:: ../images/FR/Taler_invoices_payment_method.png"
+
+#: ../../user-guide/invoicing.rst:26
+msgid ""
+"When you are done, click ``Confirm`` at the top, you will be led to the "
+"invoice page."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:29
+msgid ""
+"You can now click ``Preview`` to see the Invoice that will be sent to "
+"your customer."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:31
+msgid ""
+"The invoice’s PDF will include a Taler payment QR Code, as well as some "
+"Taler order information."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:-1
+msgid "Taler invoices taler qr code"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:-1
+msgid ".. image:: ../images/EN/Taler_invoices_taler_qr_code.png"
+msgstr ".. image:: ../images/FR/Taler_invoices_taler_qr_code.png"
+
+#: ../../user-guide/invoicing.rst:39
+msgid ""
+"If a customer pays for the invoice using the QR Code present in the PDF, "
+"you will have to do a manual payment reconciliation."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:42
+msgid ""
+"To do this, once you confirm that you received the payment, go to the "
+"Invoices’ app page."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:44
+msgid "Click on ``Pay``."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:45
+msgid ""
+"Confirm the data shown in the opened window, it is recommended to add the"
+" Taler OrderID shown on the invoice, to the ``Memo`` field, to keep track"
+" of the payment more easily."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:48
+msgid "Press ``Create Payment``."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:53
+msgid "Pay an invoice online using Taler"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:56
+msgid ""
+"This process is unrelated to the invoices created with Taler in the "
+"previous step Any invoice can be paid online using Taler"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:60
+msgid ""
+"Once created, you can press ``Preview`` to see the page that the customer"
+" will see."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:62
+msgid ""
+"On this page, the user will be able to click ``Pay Now``, and choose "
+"Taler as a payment option."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:-1
+msgid "Taler invoices online payment"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:-1
+msgid ".. image:: ../images/EN/Taler_invoices_online_payment.png"
+msgstr ".. image:: ../images/FR/Taler_invoices_online_payment.png"
+
+#: ../../user-guide/invoicing.rst:70
+msgid ""
+"Once they click ``Pay``, they will be redirected to the Taler order page,"
+" where they can pay with a Taler wallet on their phone or web browser (in"
+" the same way as for an eCommerce payment)."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:73
+msgid ""
+"When the payment is complete, the customer will be sent back to the "
+"invoice page, with a notice saying that the payment is successful."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:-1
+msgid "Taler invoices paid online"
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:-1
+msgid ".. image:: ../images/EN/Taler_invoices_paid_online.png"
+msgstr ".. image:: ../images/FR/Taler_invoices_paid_online.png"
+

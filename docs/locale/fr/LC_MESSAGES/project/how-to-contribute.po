@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Nemael
+# This file is distributed under the same license as the Taler-Odoo Payment
+# System package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler-Odoo Payment System \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 09:46-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../project/how-to-contribute.rst:5
+msgid "How to Contribute"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:8
+msgid "On this page:"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:11
+msgid "How to contribute"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:13
+msgid "Contributions to the Taler payment integration are always welcome!"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:15
+msgid "To make a contribution:"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:17
+msgid "Fork this repository (https://codeberg.org/Nemael/tops/)"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:18
+msgid "Clone the fork on your local machine"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:19
+msgid "Create a new branch"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:20
+msgid "Make your changes in the code"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:21
+msgid "Commit your changes"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:22
+msgid "Push to your fork"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:23
+msgid ""
+"Open a pull request on the original TOPS repository "
+"(https://codeberg.org/Nemael/tops/)"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:26
+msgid "Some features that need further development:"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:28
+msgid ""
+"Add more translations to help make the add-on more accessible (see "
+":ref:`here <how-to-add-a-translation>` for a guide on how to add a "
+"translation)."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:31
+msgid "Implement partial refunds for customers."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:32
+msgid "Update the add-on for Odoo 19."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:33
+msgid ""
+"Maintain the add-on up to date for future Odoo releases (Odoo 20 is just "
+"around the corner)."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:35
+msgid "Improve the README file."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:37
+msgid "Split it in multiple different file, for an easier navigation."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:39
+msgid "Translate the documentation + README in French"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:44
+msgid "How to add a translation"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:46
+msgid ""
+"If you would like to add a translation to the module, the process is "
+"rather simple:"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:49
+msgid ""
+"The file ``i18n/payment_taler.pot`` `available here "
+"<https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/payment_taler.pot>`__"
+" is the base translation file, with all the strings of text stored in it."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:53
+msgid ""
+"Copy this file’s content in a new file ``{New language}.po``, such as "
+"``fr.po``"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:55
+msgid ""
+"In this new file, translate all the strings of text that you would like "
+"to translate. You can use ``fr.po`` `available here "
+"<https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/fr.po>`__"
+" as a guide on how to format the translation."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:59
+msgid ""
+"Once complete, you can re-make your Odoo test database, and change your "
+"user’s language to the added translation’s language. The translation you "
+"made should appear on Odoo."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:62
+msgid ""
+"If you are encountering any issues, please open a thread in this forum "
+"category https://ich.taler.net/c/integrations/odoo/29 (You can ping me as"
+" well, @Nemael). Please specify that you are doing a new translation and "
+"for which language."
+msgstr ""
+

@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Nemael
+# This file is distributed under the same license as the Taler-Odoo Payment
+# System package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler-Odoo Payment System \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 09:46-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../user-guide/technical-information.rst:5
+msgid "Technical Information"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:8
+msgid "On this page:"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:11
+msgid "Change settings using CLI"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:13
+msgid ""
+"To change Odoo settings using CLI, run the Odoo CLI shell by adding "
+"``shell`` to your original command line to start Odoo."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:16
+msgid ""
+"Such as ``./odoo-bin shell --addons-"
+"path=./addons,{custom_addons_path}/tops -u payment_taler -d "
+"odoo18_tops_0.1.1.1``"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:19
+msgid ""
+"Run these commands to edit the settings. You can use ``get_params`` to "
+"print the current value, and ``set_params`` to set a new value:"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:22
+msgid ""
+"``env['ir.config_parameter'].set_param('payment_taler.taler_merchant_url',"
+" 'https://backend.demo.taler.net/instances/sandbox/')``"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:23
+msgid ""
+"``env['ir.config_parameter'].set_param('payment_taler.taler_merchant_password',"
+" 'sandbox')``"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:27
+msgid ""
+"You need to commit the changes to the database before closing the shell "
+"instance and restarting Odoo:"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:29
+msgid "``env.cr.commit()``"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:30
+msgid "``exit()``"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:34
+msgid "Editing rights to the payment provider settings"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:36
+msgid ""
+"As with other payment providers, Odoo users will have limited access to "
+"the Taler payment provider settings."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:37
+msgid ""
+"Only user that belong in the ``base.group_system`` user group will be "
+"able to access and modify the Taler payment provider settings."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:41
+msgid "Run unit tests"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:43
+msgid "To run unit tests on a new db, use this command:"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:45
+msgid ""
+"``./odoo-bin --addons-path=./addons,{custom_addons_path}/tops --test-"
+"enable -d test_db_2 -i payment_taler --stop-after-init --test-tags "
+"taler``"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:47
+msgid "The db name after -d is arbitrary and can be replaced by any other names."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:50
+msgid ""
+"In the results logs, you should expect to see ``odoo.tests.result: 0 "
+"failed, 0 error(s) of x tests when loading database``."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:53
+msgid "x is the number of unit tests, currently 11."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:57
+msgid "Folder structure"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:59
+msgid "This add-on uses a standard folder structure:"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:61
+msgid "``controllers`` contains the controllers used by the add-on."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:62
+msgid ""
+"``data`` contains setup data that is processed when someone installs the "
+"add-on, as well as email templates."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:63
+msgid "``i18n`` contains the data for localization and translation."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:64
+msgid "``models`` contains the Odoo models. There are 4 models:"
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:66
+msgid ""
+"``taler_api_method``, which contains the methods used to communicate to "
+"the Taler merchant API."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:67
+msgid ""
+"``taler_invoicing``, which contains the methods used when creating "
+"invoices with Taler."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:68
+msgid ""
+"``taler_provider``, which contains the methods used by the Taler payment "
+"provider."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:69
+msgid ""
+"``taler_transaction``, which contains the methods used to complete a "
+"transaction with Taler."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:71
+msgid ""
+"``security`` contains the (unused) ``ir.moder.access.csv`` file to manage"
+" access rights."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:72
+msgid "``static`` contains logo data and other image assets for the add-on."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:73
+msgid "``tests`` contains unit tests for this project."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:74
+msgid "``utils`` contains utility methods (such as logging)."
+msgstr ""
+
+#: ../../user-guide/technical-information.rst:75
+msgid "``views`` contains the views used for the models."
+msgstr ""
+

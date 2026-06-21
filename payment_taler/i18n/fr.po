@@ -132,6 +132,12 @@ msgstr ""
 #. module: payment_taler
 #. odoo-python
 #: code:addons/payment_taler/models/taler_transaction.py:0
+msgid "Refund amount exceeds original payment."
+msgstr "Le montant du remboursement dépasse celui du paiement d'origine."
+
+#. module: payment_taler
+#. odoo-python
+#: code:addons/payment_taler/models/taler_transaction.py:0
 msgid "Error in refund response from Taler, see logs"
 msgstr "Gabarit de l'e-mail introuvable à l'emplacement :"
 
