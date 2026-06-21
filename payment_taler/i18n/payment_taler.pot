@@ -101,6 +101,12 @@ msgstr ""
 #. module: payment_taler
 #. odoo-python
 #: code:addons/payment_taler/models/taler_transaction.py:0
+msgid "Refund amount exceeds original payment."
+msgstr ""
+
+#. module: payment_taler
+#. odoo-python
+#: code:addons/payment_taler/models/taler_transaction.py:0
 msgid "Error in refund response from Taler, see logs"
 msgstr ""
 
