@@ -28,9 +28,14 @@ class TalerController(http.Controller):
             return
         data = {'reference': data.get('recvd_order_id'),
                 'merchantOrderId': transaction.taler_order_id,
-                'paymentStatus': taler_order_status
+                'paymentStatus': taler_order_status,
+                'amount': {
+                    'amount': transaction.amount,
+                    'currency_code': transaction.currency_id.name,
+                    'precision_digits': 2
+                }
         }
-        transaction._handle_notification_data('taler', data)
+        transaction._process('taler', data)
 
         return request.redirect('/payment/status')
 
@@ -56,6 +61,6 @@ class TalerController(http.Controller):
                 'merchantOrderId': transaction.taler_order_id,
                 'paymentStatus': taler_orderStatus
         }
-        transaction._handle_notification_data('taler', data)
+        transaction._process('taler', data)
 
         return request.redirect('/payment/status')

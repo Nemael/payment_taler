@@ -68,3 +68,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - When translation is finished, complete the translation of the readme.md
 
 - See why woodpecker does not do the pipeline checks
+
+- Odoo 19 issues:
+  - The yellow text in the payment provider is not displaying properly. Same for the test mode yellow text
+  - Go through each of the flows and check that they are working

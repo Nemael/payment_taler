@@ -4,7 +4,7 @@
 
 {
     'name': 'Taler-Odoo Payment System',
-    'version': '18.0.1.0',
+    'version': '19.0.1.1',
     'summary': 'Integration of the Taler payment system in Odoo.',
     'author': 'Nemael',
     'category': 'Accounting/Payment Providers',

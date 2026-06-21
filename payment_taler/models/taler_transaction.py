@@ -37,8 +37,9 @@ class TalerTransaction(models.Model):
             return "KUDOS"
         return self.currency_id.name
 
-    def _process_notification_data(self, data):
-        super()._process_notification_data(data)
+    def _process(self, provider_code, data):
+        print(data)
+        super()._process(provider_code, data)
         if self.provider_code != 'taler':
             tadebug("Getting different provider code than taler: ", self.provider_code, ". This is not necessarily an error")
             return
@@ -58,6 +59,12 @@ class TalerTransaction(models.Model):
             tawarn("Setting this transaction as cancelled, with error")
             self._set_canceled()
             self._set_error("Taler: Received data with invalid payment status: " + payment_status)
+
+    def _extract_amount_data(self, payment_data):
+        # Any payment provider made for Odoo 19 and further must implement this method.
+        # The return value should be the name of the field containing amount, currency and precision digits
+        # Otherwise they can return "None", in which case the amount validation will be skipped
+        return payment_data['amount']
 
 
     def _get_specific_rendering_values(self, values):
