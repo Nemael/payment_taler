@@ -60,3 +60,5 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 - Make sure that the error message "Refund amount exceeds original payment." is translated
 
 - Make french version of the pictures for UI-Explanation documentation
+
+- When the documentation is uploaded to ReadTheDocs, add the links that are needed in the README.md
