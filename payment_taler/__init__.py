@@ -6,6 +6,7 @@ from odoo.addons.payment import setup_provider, reset_payment_provider
 
 from . import models
 from . import controllers
+from . import tests
 
 def post_init_hook(env):
     setup_provider(env, 'taler')

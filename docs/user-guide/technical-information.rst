@@ -42,9 +42,9 @@ Run unit tests
 
 - To run unit tests on a new db, use this command:
 
-  - ``./odoo-bin --addons-path=./addons,{custom_addons_path}/tops --test-enable -d test_db_2 -i payment_taler --stop-after-init --test-tags taler``
+  - ``./odoo-bin --addons-path=./addons,{custom_addons_path}/tops --test-enable -d test_db_2 -i payment_taler -u payment_taler --stop-after-init --test-tags taler``
 
-    - The db name after -d is arbitrary and can be replaced by any other
+    - The db name (after -d) is arbitrary and can be replaced by any other
       names.
 
 - In the results logs, you should expect to see

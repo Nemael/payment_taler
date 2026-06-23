@@ -12,8 +12,8 @@ Refund an online payment made using Taler
 
 - To make a refund to a payment made using Taler, you first have to find
   the payment you wish to refund.
-- In the ``invoicing`` add-on, navigate to
-  ``Customers -> Customer Payments`` on the top bar.
+- For Odoo 18, in the ``invoicing`` add-on, navigate to ``Customers -> Customer Payments`` on the top bar.
+- For Odoo 19, the location is ``Customers -> Payments``.
 
   - This page will show you all the payments that have been completed.
   - In this example, we want to refund the payment ``PBNK1/2026/00029``.

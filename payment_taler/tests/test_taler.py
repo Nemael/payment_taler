@@ -122,9 +122,12 @@ class TestTaler(TestTalerCommon, PaymentHttpCommon):
         """ Test that a transaction is indeed completed once receiving the "paid" value from Mocked Taler response """
         talog("Unit test test_taler_redirect_processing")
         with self.assertRaises(ValidationError):
-            self.env['payment.transaction']._handle_notification_data(
-                'taler', self.notification_data
+            tx = self.env['payment.transaction']._search_by_reference(
+                'taler',
+                self.notification_data,
             )
+
+            tx._apply_updates(self.notification_data)
 
         transaction = self._create_transaction('redirect')
         self.notification_data['reference'] = transaction.reference

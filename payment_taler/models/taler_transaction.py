@@ -118,42 +118,84 @@ class TalerTransaction(models.Model):
         """ Override of the refund request process to integrate the Taler refund flow """
         # The refund_txn object is returned from super(), but it actually has the same fields as those implemented
         # in this TalerTransaction class, so that includes the taler_refund_uri and taler_refund_qr fields
-        refund_txn = super()._send_refund_request(amount_to_refund=amount_to_refund)
+        # refund_txn = super()._send_refund_request(amount_to_refund=amount_to_refund)
+        super()._send_refund_request()
+        # refund_txn = super()._refund(amount_to_refund=amount_to_refund)
 
         if self.provider_code != 'taler':
-            return refund_txn
+            return self
+        print("past hierarchy")
+        print(amount_to_refund)
+        print(self.amount)
 
         amount = amount_to_refund or self.amount
+        # The refund amount is negative in Odoo 19, so we take the absolute of the value, to send it to the Taler merchant
+        amount = abs(amount)
         currency = self.getCurrency()
 
-        if (self._current_total_refunded_amount() + abs(amount)) > self.amount:
+
+        # Grabs the taler_order_id and the amount of the original/source transaction of this refund transaction, to compare with multiple refunds
+        original_transaction = self.source_transaction_id
+        original_transaction_amount = original_transaction.amount
+        original_transaction_taler_order_id = original_transaction.taler_order_id
+        print(original_transaction._current_total_refunded_amount())
+        print(amount)
+        print("original_transaction_amount", original_transaction_amount)
+        print("original_transaction_taler_order_id", original_transaction_taler_order_id)
+
+        if (original_transaction._current_total_refunded_amount() + abs(amount)) > original_transaction_amount:
             raise ValidationError(
                 _("Refund amount exceeds original payment.")
             )
+
+        print("c")
 
         reason = "Refunding the product for " + str(amount) + str(currency)
         response = ""
         self.getToken()
 
+        print("d")
+
+        # Taler refunds work in a slightly different way to other payment providers
+        # When doing multiple refunds, the refund amount sent via request to Taler will represent the total amount to be refunded.
+        # So multiple refund request will not be incremented
+        # Example: Sending a request for refund for 4 euros, and then sending a request for refund for 9 euros will provide a refund of 9 euros total, and not a refund of 4 + 9 = 13 euros.
+        # Odoo's refund system does increment the refunds
+        # So, to send the refunds to Taler, we have to add the requested refund amount to all the already refunds for a transaction, to make it a total that will correspond to the incremented amount.
+        # See this page for more information, section "Giving refunds": https://gitlab.com/taler/docs/-/blob/master/taler-merchant-api-tutorial.rst
+        taler_refund_amount = abs(amount) + abs(self._current_total_refunded_amount())
+
         try:
             tadebug("Sending refund request to the Taler merchant")
-            taler_refund_uri = requestRefundForOrder(self, amount, currency, reason)
+            print("requestrefundfororder")
+            print(amount, currency, reason)
+            taler_refund_uri = requestRefundForOrder(self, original_transaction_taler_order_id, taler_refund_amount, currency, reason)
         except Exception as e:
             taerror("Error in refund response from Taler merchant. Response received from Taler merchant: ")
             taerror(response)
             raise ValidationError(_("Error in refund response from Taler, see logs"))
 
+        print("e")
+
         taler_refund_qr = generate_qr(taler_refund_uri)
 
-        refund_txn.taler_refund_uri = taler_refund_uri
-        refund_txn.taler_refund_qr = taler_refund_qr
+        print("f")
+
+        self.taler_refund_uri = taler_refund_uri
+        self.taler_refund_qr = taler_refund_qr
+
+        print("g")
 
         # The reference and taler_refund_uri would have these value only if we were unit testing, and in unit testing we don't want to test the email sending
-        if self.reference != "Test Transaction" and refund_txn.taler_refund_uri != "taler://mock_refund_uri/":
-            self._send_refund_email(refund_txn)
+        if self.reference != "Test Transaction" and self.taler_refund_uri != "taler://mock_refund_uri/":
+            self._send_refund_email(self)
 
-        refund_txn._set_done()
-        return refund_txn
+        print("h")
+        print(self.state)
+        self._set_done()
+        print(self.state)
+        print("i")
+        return self
 
     def _send_refund_email(self, refund_txn):
         """ Send an email to the customer containing the refund QR Code """
