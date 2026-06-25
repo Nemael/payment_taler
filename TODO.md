@@ -6,15 +6,8 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Remove this TODO when I finish the work on this MoU
 
-- Update the add-on for Odoo 19
-
 - Translate the README + documentation in French
   - Redo the tutorial pictures in French as well
-
-- Improve the taler_api_methods file to make it a mixin
-  - For help making it work, ask the OCA
-
-- When the add-on is updated for Odoo 19, change the last line in `TOPS:` section (in the readme probably?)
 
 - Add instructions in the documentation on how to build the docs
   - Explain how to add to the docs, edit the docs, and build the docs
@@ -34,30 +27,20 @@ SPDX-License-Identifier: LGPL-3.0-or-later
   - That explains how to re-generate the .po files, and tells you what you should translate again
   - This is the same thing that I will have to do when I update documentation after I add the partial refund feature, and I update my addon for Odoo 19.
 
-- Remove the UI-Explanation.md file once the new documentation is complete
-
 - Add link to french documentation in section "Project/Translation Status/Translation & available languages"
 
 - Remove what steps were completed from "Project/How to contribute/How to contribute"
 
 - Edit the "this page is also available in French here" from the documentation, to say "this documentation is also available in French here"
 
-- Add the link to the new documentation in the README file.
+- Add the link to the new documentation in the README file. (when it is uploaded to readthedocs)
+
+- Add the first draft of documentation to ReadTheDocs
+  - And update the links for french/en text in the readme and the documentation
 
 - Add the link to the new documentation page about making contributions in the README file.
 
 - Check if I can fix why the repository is non-compliant with REUSE (See licensing section at end of README)
-
-- When I update the add-on to Odoo 19, check all the flows individually if they are working fine
-
-- Add in the partial refunds documentation that you can do multiple partial refunds if needed, and the customer will receive multiple emails with QR Codes
-  - Verify this in my own flow as well.
-
-- Update the unit tests for the partial refunds
-
-- Run the unit tests after the Odoo 19 upgrades
-
-- Make sure that the error message "Refund amount exceeds original payment." is translated
 
 - Make French version of the pictures for UI-Explanation documentation
 
@@ -69,10 +52,4 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - See why woodpecker does not do the pipeline checks
 
-- Odoo 19 issues:
-  - The yellow text in the payment provider is not displaying properly. Same for the test mode yellow text
-  - Fix the unit tests
-
 - Make the github mirror
-
-- Upload docs to ReadTheDocs

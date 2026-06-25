@@ -34,8 +34,9 @@ Refund an online payment made using Taler
 
 - You can set the amount you'd like to refund. The refund amount cannot be higher than the transaction amount
 
-  - You can make multiple partial refunds (for example, a 30 euros transaction can be refunded by 5 euros, and then 10 euros later)
+  - You can make multiple partial refunds (for example, a 30 euros transaction can be refunded by 5 euros, and then by 10 euros later)
   - In case of partial refunds, the total refunded amount across multiple refunds of one transaction cannot exceed the transaction amount.
+  - The refunded customer will receive one refund email per partial refund, with each containing a different QR Code to be scanned into their wallet.
 
 - Confirming the refund will create a new transaction, that you can view
   in the list of transactions, with the name
