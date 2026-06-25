@@ -75,14 +75,14 @@ Pay using Taler at a Point of Sale
 - This will bring the customer to a Taler order page, and they will be
   able to pay using their Taler wallet or web browser.
 - Upon payment completion, the customer will be redirected to Odoo, with
-  a confirmation of payment (first picture), and the order on the point
-  of sale’s side will show a successful payment, and produce the receipt
-  (second picture).
+  a confirmation of payment.
 
 .. image:: ../images/EN/Taler_pos_payment_complete.png
    :alt: Taler pos payment complete
    :width: 100%
    :align: center
+
+- The point of sale's side will show a successful payment, and produce a receipt.
 
 .. image:: ../images/EN/Taler_pos_receipt.png
    :alt: Taler pos receipt

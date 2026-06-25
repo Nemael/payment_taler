@@ -46,9 +46,7 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - When the documentation is uploaded to ReadTheDocs, add the links that are needed in the README.md
 
-- Make a new release when the MoU is finished and I did my last commit for now
-
-- When translation is finished, complete the translation of the readme.md
+- Make a new release when the MoU is finished and I did my current final commit
 
 - See why woodpecker does not do the pipeline checks
 
