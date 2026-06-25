@@ -4,6 +4,8 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 
+[![REUSE status](https://api.reuse.software/badge/codeberg.org/Nemael/tops)](https://api.reuse.software/info/codeberg.org/Nemael/tops)
+
 ---
 
 # TOPS: Taler-Odoo Payment System
@@ -46,7 +48,5 @@ This project is funded through [NGI TALER Fund](https://nlnet.nl/taler), a fund 
 ---
 
 ## Licensing
-
-[![REUSE status](https://api.reuse.software/badge/codeberg.org/Nemael/tops)](https://api.reuse.software/info/codeberg.org/Nemael/tops)
 
 This work is published under license [LGPL-3.0-or-later](./LICENSES/LGPL-3.0-or-later), and the devlog is published under license [CC0-1.0](./LICENSES/CC0-1.0.txt). You can find license information at the top of each file.
