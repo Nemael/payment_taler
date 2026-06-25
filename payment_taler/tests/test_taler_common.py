@@ -12,9 +12,14 @@ class TestTalerCommon(PaymentCommon):
     def setUpClass(cls):
         super().setUpClass()
 
-        cls.currency_eur = cls._prepare_currency('EUR') # Supported currency
-        cls.currency_chf = cls._prepare_currency('CHF') # Supported currency
-        cls.currency_zar = cls._prepare_currency('ZAR') # Unsupported currency
+        # cls.currency_eur = cls._prepare_currency('EUR') # Supported currency
+        # cls.currency_chf = cls._prepare_currency('CHF') # Supported currency
+        # cls.currency_zar = cls._prepare_currency('ZAR') # Unsupported currency
+
+        cls.currency_eur = cls.env.ref('base.EUR') # Supported currency
+        cls.currency_chf = cls.env.ref('base.CHF') # Supported currency
+        cls.currency_zar = cls.env.ref('base.ZAR') # Unsupported currency
+
         cls.taler_provider = cls._prepare_provider('taler', update_values={
             'taler_merchant_url': 'https://backend.demo.taler.net/instances/sandbox',
             'taler_merchant_password': 'dummy password',

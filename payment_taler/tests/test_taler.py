@@ -122,17 +122,24 @@ class TestTaler(TestTalerCommon, PaymentHttpCommon):
         """ Test that a transaction is indeed completed once receiving the "paid" value from Mocked Taler response """
         talog("Unit test test_taler_redirect_processing")
         with self.assertRaises(ValidationError):
-            self.env['payment.transaction']._handle_notification_data(
-                'taler', self.notification_data
+            self.env['payment.transaction']._search_by_reference(
+                'taler',
+                self.notification_data
             )
 
         transaction = self._create_transaction('redirect')
-        self.notification_data['reference'] = transaction.reference
-        data = {'reference': transaction.reference,
-                                 'merchantOrderId': '98765432100123456789',
-                                 'paymentStatus': 'paid'
+        data = {
+            'reference': transaction.reference,
+            'merchantOrderId': '98765432100123456789',
+            'paymentStatus': 'paid',
+            'amount': {
+                'amount': transaction.amount,
+                'currency_code': transaction.currency_id.name,
+                'precision_digits': 2
+            }
         }
-        self.env['payment.transaction']._handle_notification_data('taler', data)
+        # self.env['payment.transaction']._handle_notification_data('taler', data)
+        transaction._process('taler', data)
         self.assertEqual(transaction.state, 'done')
         self.assertEqual(transaction.provider_reference, self.notification_data['merchantOrderId'])
 
@@ -217,55 +224,77 @@ class TestTaler(TestTalerCommon, PaymentHttpCommon):
         currency = transaction.getCurrency()
         self.assertEqual(currency, transaction.currency_id.name)
 
-    def test_refunds_flow(self):
+    def test_refund_flow(self):
         """ Tests that the refund flow creates a new refund transaction of the same amount """
-        talog("Unit test test_refunds_flow")
+        talog("Unit test test_refund_flow_2")
 
-        # First creates a valid transaction, in a similar way to the test test_taler_redirect_processing
-        with self.assertRaises(ValidationError):
-            self.env['payment.transaction']._handle_notification_data(
-                'taler', self.notification_data
-            )
+        transaction = self._create_transaction(flow='redirect')
+        transaction.taler_order_id = "mock.order-id-refund"
+        transaction._set_done()
 
-        transaction = self._create_transaction('redirect')
-        self.notification_data['reference'] = transaction.reference
-        data = {'reference': transaction.reference,
-                                 'merchantOrderId': '98765432100123456789',
-                                 'paymentStatus': 'paid'
-        }
-        self.env['payment.transaction']._handle_notification_data('taler', data)
-        self.assertEqual(transaction.state, 'done')
-        self.assertEqual(transaction.provider_reference, self.notification_data['merchantOrderId'])
-
-        # Once the valid transaction is created, test the refund process from that transaction
         mock_response_token = Mock()
         mock_response_token.status_code = 200
         mock_response_token.json.return_value = {
-            "access_token": "secret-token:mocked_access_token",
-            "token": "secret-token:mocked_secret_token",
+            "token": "secret-token: mocked_refund_token",
             "scope": "write",
             "refreshable": False,
-            "expiration": {"t_s": 1234567890},
+            "expiration": {"t_s": 1234567890}
         }
 
         mock_response_refund = Mock()
         mock_response_refund.status_code = 200
         mock_response_refund.json.return_value = {
-            "taler_refund_uri": "taler://mock_refund_uri/",
-            "h_contract": "5T1SMOCK_H_CONTRACT"
+            "taler_refund_uri": "taler://mock_refund_uri/"
         }
 
-        with patch('requests.request', side_effect=[mock_response_token, mock_response_refund]) as mock_get:
-            refund_txn = transaction._send_refund_request(transaction.amount)
+        # refund_tx = transaction._create_refund_transaction(amount_to_refund=transaction.amount)
+        refund_tx = self.env['payment.transaction'].create({
+            'provider_id': transaction.provider_id.id,
+            'payment_method_id': transaction.payment_method_id.id,
+            'amount': -transaction.amount,
+            'currency_id': transaction.currency_id.id,
+            'partner_id': transaction.partner_id.id,
+            'operation': 'refund',
+            'source_transaction_id': transaction.id,
+            'reference': 'R-' + transaction.reference,
+            'taler_order_id' : transaction.taler_order_id
+        })
 
-        # Checks that the original transaction has empty refund fields and the set reference
-        # And that the refund transaction has filled refund fields and its reference is the same as transaction with an added "R-" at the beginning
+        with patch('requests.request', side_effect=[mock_response_token, mock_response_refund]):
+            refund_tx._send_refund_request(amount_to_refund=-transaction.amount)
+
+
         self.assertEqual(transaction.taler_refund_uri, "")
         self.assertEqual(transaction.taler_refund_qr, "")
         self.assertEqual(transaction.reference, "Test Transaction")
-        self.assertEqual(refund_txn.taler_refund_uri, "taler://mock_refund_uri/")
-        self.assertEqual(refund_txn.taler_refund_qr, "iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAAB20lEQVR4nO2aQY7jIBBFXw1IWWKpD5CjkKvNzeyj9A1g2RLRnwWQsbKZ2TixY1ggsJ/krwoURVVM/Lstv/4DgkEN6kBUttZu2YxlAjPz9Kf+XbpOQTlJkiBIdsseKQFRUh3tWv3Rqba8AQgFlmuhbojbW3WdiMpmxO+HxV/wxVNT/mkuKB6yL+/VdQaq2r4Hmq7YahoE5PfoOgt1rwFNfRCTqwcui5mZTe/T9emUb8sbgAxaJoegsL507VX9sSmk5CQlpz4FSWX9dt6r+mNT1c6aVyOn2v0N8oftt6SiJLvliyD8mN1CwexanqjX6/poygNOFue713L9MWJC7djNlz7aq/pjUx7yV6H+AN8elikhuHsIifZ2r+qPTdGO2dByN7V7+Pua6Rn+fhOqWVeSiJKAHvHMOI2zdkOKlsLESXNQ7Yg15OwbYth+E6o7mdByyMTUw8vWRny/FbXyOT2gLw9//9gLe1V/bIrVGo+pX7CUnPp02H5L6qludXmctTByaZtTrW7V67XU3OZE3Qt7V/8RVCjV2G21B4ll1MpfRun31POYMd1Ncyi70PWJVM8h17tVqbWT5mmAEd9vSHng3jJm5C+xTA6Wa/ECsFq53av6Y1M2/hM4qBNSfwAPWj1wpfTvqgAAAABJRU5ErkJggg==")
-        self.assertEqual(refund_txn.reference, "R-" + transaction.reference)
+        self.assertEqual(refund_tx.state, 'done')
+        self.assertEqual(refund_tx.taler_refund_uri, "taler://mock_refund_uri/")
+        self.assertTrue(refund_tx.taler_refund_qr, "Refund QR code should not be empty")
+        self.assertEqual(refund_tx.taler_refund_uri, "taler://mock_refund_uri/")
+        self.assertEqual(refund_tx.taler_refund_qr, "iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAAB20lEQVR4nO2aQY7jIBBFXw1IWWKpD5CjkKvNzeyj9A1g2RLRnwWQsbKZ2TixY1ggsJ/krwoURVVM/Lstv/4DgkEN6kBUttZu2YxlAjPz9Kf+XbpOQTlJkiBIdsseKQFRUh3tWv3Rqba8AQgFlmuhbojbW3WdiMpmxO+HxV/wxVNT/mkuKB6yL+/VdQaq2r4Hmq7YahoE5PfoOgt1rwFNfRCTqwcui5mZTe/T9emUb8sbgAxaJoegsL507VX9sSmk5CQlpz4FSWX9dt6r+mNT1c6aVyOn2v0N8oftt6SiJLvliyD8mN1CwexanqjX6/poygNOFue713L9MWJC7djNlz7aq/pjUx7yV6H+AN8elikhuHsIifZ2r+qPTdGO2dByN7V7+Pua6Rn+fhOqWVeSiJKAHvHMOI2zdkOKlsLESXNQ7Yg15OwbYth+E6o7mdByyMTUw8vWRny/FbXyOT2gLw9//9gLe1V/bIrVGo+pX7CUnPp02H5L6qludXmctTByaZtTrW7V67XU3OZE3Qt7V/8RVCjV2G21B4ll1MpfRun31POYMd1Ncyi70PWJVM8h17tVqbWT5mmAEd9vSHng3jJm5C+xTA6Wa/ECsFq53av6Y1M2/hM4qBNSfwAPWj1wpfTvqgAAAABJRU5ErkJggg==")
+        self.assertEqual(refund_tx.reference, "R-" + transaction.reference)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

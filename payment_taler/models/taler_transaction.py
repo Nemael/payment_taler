@@ -8,6 +8,7 @@ from odoo.addons.payment_taler.utils.utils import talog, tawarn, tadebug, taerro
 from odoo.addons.payment_taler.models.taler_api_methods import requestGetToken, postPlaceOrderWithFulfillmentUrl, getOrderTalerUri, requestGetOrderFromId, getOrderIdStatus, checkOrderIsPaid, requestRefundForOrder
 from odoo.addons.payment_taler.controllers.taler_controller import TalerController
 from odoo.tools import _
+from odoo.tools.float_utils import float_compare
 
 class TalerTransaction(models.Model):
     _inherit = 'payment.transaction'
@@ -37,8 +38,8 @@ class TalerTransaction(models.Model):
             return "KUDOS"
         return self.currency_id.name
 
-    def _process_notification_data(self, data):
-        super()._process_notification_data(data)
+    def _process(self, provider_code, data):
+        super()._process(provider_code, data)
         if self.provider_code != 'taler':
             tadebug("Getting different provider code than taler: ", self.provider_code, ". This is not necessarily an error")
             return
@@ -58,6 +59,12 @@ class TalerTransaction(models.Model):
             tawarn("Setting this transaction as cancelled, with error")
             self._set_canceled()
             self._set_error("Taler: Received data with invalid payment status: " + payment_status)
+
+    def _extract_amount_data(self, payment_data):
+        # Any payment provider made for Odoo 19 and further must implement this method.
+        # The return value should be the name of the field containing amount, currency and precision digits
+        # Otherwise they can return "None", in which case the amount validation will be skipped
+        return payment_data['amount']
 
 
     def _get_specific_rendering_values(self, values):
@@ -88,11 +95,10 @@ class TalerTransaction(models.Model):
     def _get_orderid_status(self):
         return getOrderIdStatus(self)
 
-    def _get_tx_from_notification_data(self, provider_code, notification_data):
+    def _search_by_reference(self, provider_code, notification_data):
         """Override of payment to find the transaction based on taler data."""
-        transaction = super()._get_tx_from_notification_data(provider_code, notification_data)
-        if provider_code != 'taler' or len(transaction) == 1:
-            return transaction
+        if provider_code != 'taler':
+            return super()._search_by_reference(provider_code, notification_data)
 
         reference = notification_data.get('reference')
         if not reference:
@@ -109,28 +115,59 @@ class TalerTransaction(models.Model):
 
     def _send_refund_request(self, amount_to_refund=None):
         """ Override of the refund request process to integrate the Taler refund flow """
-        # The refund_txn object is returned from super(), but it actually has the same fields as those implemented
-        # in this TalerTransaction class, so that includes the taler_refund_uri and taler_refund_qr fields
-        refund_txn = super()._send_refund_request(amount_to_refund=amount_to_refund)
+        # There is a big difference in the refund flow between Odoo 18 and Odoo 19.
+        # In Odoo 18, you used to call the refund method on the original transction object
+        # In Odoo 19, you have to call the refund method on the refund transaction itself
+        # So the refund flow had to be redone to update the addone from Odoo 18 to Odoo 19
 
         if self.provider_code != 'taler':
-            return refund_txn
+            return self
 
-        amount = amount_to_refund or self.amount
+        # Grabs the taler_order_id and the amount of the original/source transaction of this refund transaction, to compare with potentially existing refunds
+        original_transaction = self.source_transaction_id
+        original_transaction_amount = original_transaction.amount
+        original_transaction_taler_order_id = original_transaction.taler_order_id
+
+        # To make a refund, if the self.amount is not set, use the amount_to_refund parameter, and if it is not set as well, use the original_transaction_amount, to treat the refund as if it was a full refund.
+        amount = self.amount or amount_to_refund or original_transaction_amount
+        # The refund amount is negative in Odoo 19, so we take the absolute of the value, to send it to the Taler merchant
+        amount = abs(amount)
         currency = self.getCurrency()
 
-        if (self._current_total_refunded_amount() + abs(amount)) > self.amount:
+        # Need to use float_compare to avoid floating point errors when comparing float amounts of money
+        # Returns 0 if equal, -1 if value1 < value2, 1 if value1 > value2
+        # precision_rounding=original_transaction.currency_id.rounding = 0.01 for most currencies. This is the precision used for the float comparison
+        if (float_compare(
+            original_transaction._current_total_refunded_amount() + abs(amount),
+            original_transaction_amount,
+            precision_rounding=original_transaction.currency_id.rounding,
+            ) == 1):
             raise ValidationError(
                 _("Refund amount exceeds original payment.")
             )
+
+        # The refund_txn object is returned from super(), but it actually has the same fields as those implemented
+        # in this TalerTransaction class, so that includes the taler_refund_uri and taler_refund_qr fields
+        # refund_txn = super()._send_refund_request(amount_to_refund=amount_to_refund)
+        super()._send_refund_request()
 
         reason = "Refunding the product for " + str(amount) + str(currency)
         response = ""
         self.getToken()
 
+        # Taler refunds work in a slightly different way to other payment providers
+        # When doing multiple refunds, the refund amount sent via request to Taler will represent the total amount to be refunded.
+        # So multiple refund request will not be incremented
+        # Example: Sending a request for refund for 4 euros, and then sending a request for refund for 9 euros will provide a refund of 9 euros total, and not a refund of 4 + 9 = 13 euros.
+        # Odoo's refund system does increment the refunds
+        # So, to send the refunds to Taler, we have to add the requested refund amount to all the already refunds for a transaction, to make it a total that will correspond to the incremented amount.
+        # See this page for more information, section "Giving refunds": https://gitlab.com/taler/docs/-/blob/master/taler-merchant-api-tutorial.rst
+        taler_refund_amount = abs(self.amount) + abs(original_transaction._current_total_refunded_amount())
+        taler_refund_amount = round(taler_refund_amount, 2)
+
         try:
             tadebug("Sending refund request to the Taler merchant")
-            taler_refund_uri = requestRefundForOrder(self, amount, currency, reason)
+            taler_refund_uri = requestRefundForOrder(self, original_transaction_taler_order_id, taler_refund_amount, currency, reason)
         except Exception as e:
             taerror("Error in refund response from Taler merchant. Response received from Taler merchant: ")
             taerror(response)
@@ -138,15 +175,15 @@ class TalerTransaction(models.Model):
 
         taler_refund_qr = generate_qr(taler_refund_uri)
 
-        refund_txn.taler_refund_uri = taler_refund_uri
-        refund_txn.taler_refund_qr = taler_refund_qr
+        self.taler_refund_uri = taler_refund_uri
+        self.taler_refund_qr = taler_refund_qr
 
         # The reference and taler_refund_uri would have these value only if we were unit testing, and in unit testing we don't want to test the email sending
-        if self.reference != "Test Transaction" and refund_txn.taler_refund_uri != "taler://mock_refund_uri/":
-            self._send_refund_email(refund_txn)
+        if self.reference != "Test Transaction" and self.taler_refund_uri != "taler://mock_refund_uri/":
+            self._send_refund_email(self)
 
-        refund_txn._set_done()
-        return refund_txn
+        self._set_done()
+        return self
 
     def _send_refund_email(self, refund_txn):
         """ Send an email to the customer containing the refund QR Code """
@@ -160,6 +197,10 @@ class TalerTransaction(models.Model):
 
     def _current_total_refunded_amount(self):
         # Searches for all the completed refunds for this transaction and sum their total value
+        if self.id == False:
+            tadebug("There was an issue, the transaction getting a refund has no ID assigned to it. If you are in unit testing, you can ignore this warning.")
+            return 0
+
         total_amount_refunded = 0
         existing_refunds = self.env['payment.transaction'].search([
             ('source_transaction_id', '=', self.id),
