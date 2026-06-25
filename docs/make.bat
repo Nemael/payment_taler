@@ -1,3 +1,7 @@
+REM SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+
+REM SPDX-License-Identifier: LGPL-3.0-or-later
+
 @ECHO OFF
 
 pushd %~dp0

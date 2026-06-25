@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
+#
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
