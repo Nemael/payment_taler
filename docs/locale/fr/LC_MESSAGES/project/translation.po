@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 09:46-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: ../../project/translation.rst:13
 msgid ""
 "This module and its documentation is currently available in English and "
-"French"
+"French."
 msgstr ""
 
 #: ../../project/translation.rst:15
@@ -44,8 +44,8 @@ msgstr ""
 
 #: ../../project/translation.rst:16
 msgid ""
-"This documentation is also available in French (ADD LINK TO FRENCH "
-"DOCUMENTATION FILE HERE)"
+"This documentation is also available in French: https://taler-odoo-"
+"payment-system.readthedocs.io/fr/."
 msgstr ""
 
 #: ../../project/translation.rst:17
@@ -54,4 +54,16 @@ msgid ""
 "is welcome, please see :ref:`here <how-to-add-a-translation>` for a guide"
 " on how to add a translation."
 msgstr ""
+
+#~ msgid ""
+#~ "This module and its documentation is "
+#~ "currently available in English and "
+#~ "French"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This documentation is also available in"
+#~ " French (ADD LINK TO FRENCH "
+#~ "DOCUMENTATION FILE HERE)"
+#~ msgstr ""
 

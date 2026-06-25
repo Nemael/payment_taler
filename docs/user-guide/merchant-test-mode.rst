@@ -18,10 +18,10 @@ Test the add-on using the merchant test mode
    Do not use this mode in production or with published items for sale.
 
 .. note::
-  - You can decide to keep the payment provider ``Unpublished`` when using Test Mode, or to ``Publish`` it by clicking the button at the top of the page. If a payment provider is unpublished only an administrator users will be able to see and use the payment provider. It is advised to keep the payment provider unpublished when using the Test Mode.*
+    You can decide to keep the payment provider ``Unpublished`` when using Test Mode, or to ``Publish`` it by clicking the button at the top of the page. If a payment provider is unpublished only an administrator users will be able to see and use the payment provider. It is advised to keep the payment provider unpublished when using the Test Mode.
 
 .. note::
-  In the Odoo UI, the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to ``Kudos`` right before sending the order to the Taler merchant.*
+    In the Odoo UI, the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to ``Kudos`` right before sending the order to the Taler merchant.
 
 - Here is an example of the flow for this feature:
 

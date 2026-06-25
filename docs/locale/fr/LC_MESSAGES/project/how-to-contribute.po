@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 09:46-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,37 +39,37 @@ msgid "To make a contribution:"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:17
-msgid "Fork this repository (https://codeberg.org/Nemael/tops/)"
+msgid "Fork this repository (https://codeberg.org/Nemael/tops/),"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:18
-msgid "Clone the fork on your local machine"
+msgid "Clone the fork on your local machine,"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:19
-msgid "Create a new branch"
+msgid "Create a new branch,"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:20
-msgid "Make your changes in the code"
+msgid "Make your changes in the code,"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:21
-msgid "Commit your changes"
+msgid "Commit your changes,"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:22
-msgid "Push to your fork"
+msgid "Push to your fork,"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:23
 msgid ""
 "Open a pull request on the original TOPS repository "
-"(https://codeberg.org/Nemael/tops/)"
+"(https://codeberg.org/Nemael/tops/)."
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:26
-msgid "Some features that need further development:"
+msgid "Some features that may need further work:"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:28
@@ -80,55 +80,35 @@ msgid ""
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:31
-msgid "Implement partial refunds for customers."
-msgstr ""
-
-#: ../../project/how-to-contribute.rst:32
-msgid "Update the add-on for Odoo 19."
-msgstr ""
-
-#: ../../project/how-to-contribute.rst:33
 msgid ""
 "Maintain the add-on up to date for future Odoo releases (Odoo 20 is just "
 "around the corner)."
 msgstr ""
 
-#: ../../project/how-to-contribute.rst:35
-msgid "Improve the README file."
-msgstr ""
-
 #: ../../project/how-to-contribute.rst:37
-msgid "Split it in multiple different file, for an easier navigation."
+msgid "How to add a translation to the Odoo module"
 msgstr ""
 
 #: ../../project/how-to-contribute.rst:39
-msgid "Translate the documentation + README in French"
-msgstr ""
-
-#: ../../project/how-to-contribute.rst:44
-msgid "How to add a translation"
-msgstr ""
-
-#: ../../project/how-to-contribute.rst:46
 msgid ""
 "If you would like to add a translation to the module, the process is "
 "rather simple:"
 msgstr ""
 
-#: ../../project/how-to-contribute.rst:49
+#: ../../project/how-to-contribute.rst:42
 msgid ""
 "The file ``i18n/payment_taler.pot`` `available here "
 "<https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/payment_taler.pot>`__"
 " is the base translation file, with all the strings of text stored in it."
 msgstr ""
 
-#: ../../project/how-to-contribute.rst:53
+#: ../../project/how-to-contribute.rst:46
 msgid ""
 "Copy this file’s content in a new file ``{New language}.po``, such as "
-"``fr.po``"
+"``fr.po``."
 msgstr ""
 
-#: ../../project/how-to-contribute.rst:55
+#: ../../project/how-to-contribute.rst:48
 msgid ""
 "In this new file, translate all the strings of text that you would like "
 "to translate. You can use ``fr.po`` `available here "
@@ -136,18 +116,208 @@ msgid ""
 " as a guide on how to format the translation."
 msgstr ""
 
-#: ../../project/how-to-contribute.rst:59
+#: ../../project/how-to-contribute.rst:52
 msgid ""
 "Once complete, you can re-make your Odoo test database, and change your "
 "user’s language to the added translation’s language. The translation you "
 "made should appear on Odoo."
 msgstr ""
 
-#: ../../project/how-to-contribute.rst:62
+#: ../../project/how-to-contribute.rst:55
 msgid ""
 "If you are encountering any issues, please open a thread in this forum "
 "category https://ich.taler.net/c/integrations/odoo/29 (You can ping me as"
 " well, @Nemael). Please specify that you are doing a new translation and "
 "for which language."
 msgstr ""
+
+#: ../../project/how-to-contribute.rst:61
+msgid "How to update and build the documentation"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:63
+msgid ""
+"The documentation is made in ``.rst`` format, and built using Sphinx. You"
+" can follow the Sphinx guides or other ``.rst`` guides to improve the "
+"documentation."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:64
+msgid ""
+"To add information to the documentation, you need to edit the files in "
+"``docs/``."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:66
+msgid ""
+"There are three directories corresponding to each documentation section "
+"(``user-guide``, ``project``, ``ui-explanation``)."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:68
+msgid ""
+"After making your changes, you need to rebuild the documentation, to "
+"obtain the updated html files."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:70
+msgid "You need to build the documentation for a specific language:"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:72
+msgid ""
+"``sphinx-build -D language=en -b html . _build/html/en`` will build in "
+"English."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:73
+msgid ""
+"``sphinx-build -D language=fr -b html . _build/html/fr`` will build in "
+"French."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:74
+msgid ""
+"If the above do not work for any reason, you can use ``make html`` to "
+"build a barebone version of the documentation."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:76
+msgid ""
+"When the documentation is built, you can find the resulting files in "
+"``docs/_build/html/{2-letters target language}``."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:78
+msgid ""
+"You can open the root index.html in your browser to view the "
+"documentation."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:81
+msgid "How to update the translation of the documentation"
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:83
+msgid ""
+"The translation of the documentation is based on ``.pot`` files, which "
+"are extracted from the existing ``.rst`` files, converted into a "
+"language's ``.po`` files, translated and then compiled."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:84
+msgid ""
+"This is a standard process, you can find online guides on how to work "
+"with ``.po`` files."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:86
+msgid ""
+"After editing the ``.rst`` files, you have extract the ``.pot`` files for"
+" them to contain the changes you made: ``sphinx-build -b gettext . "
+"_build/gettext``."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:88
+msgid ""
+"Once you have the new ``.pot`` files, you have to re-make the language-"
+"specific ``.po`` files."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:89
+msgid "One ``.pot`` file will be created for each ``.rst`` file."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:91
+msgid "``sphinx-intl update -p _build/gettext -l {2-letters target language}``."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:92
+msgid "Example: ``sphinx-intl update -p _build/gettext -l fr``."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:94
+msgid ""
+"Once you have the ``.po`` files, you can translate line-per-line the "
+"content of each ``mgsid`` in the ``.po`` files."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:95
+msgid ""
+"When this is complete, you can build the documentation for the chosen "
+"language."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:97
+msgid ""
+"``sphinx-build -D language={2-letters target language} -b html . "
+"_build/html/{2-letters target language}``."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:98
+msgid "Example: ``sphinx-build -D language=fr -b html . _build/html/fr``."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:100
+msgid ""
+"The resulting files can be found in directory "
+"``docs/_build/html/{2-letters target language}``."
+msgstr ""
+
+#: ../../project/how-to-contribute.rst:101
+msgid ""
+"To update the documentation on ReadTheDocs, push the documentation "
+"changes on the main branch of the repository (branch ``19.0``)."
+msgstr ""
+
+#~ msgid "Fork this repository (https://codeberg.org/Nemael/tops/)"
+#~ msgstr ""
+
+#~ msgid "Clone the fork on your local machine"
+#~ msgstr ""
+
+#~ msgid "Create a new branch"
+#~ msgstr ""
+
+#~ msgid "Make your changes in the code"
+#~ msgstr ""
+
+#~ msgid "Commit your changes"
+#~ msgstr ""
+
+#~ msgid "Push to your fork"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Open a pull request on the "
+#~ "original TOPS repository "
+#~ "(https://codeberg.org/Nemael/tops/)"
+#~ msgstr ""
+
+#~ msgid "Some features that need further development:"
+#~ msgstr ""
+
+#~ msgid "Implement partial refunds for customers."
+#~ msgstr ""
+
+#~ msgid "Update the add-on for Odoo 19."
+#~ msgstr ""
+
+#~ msgid "Improve the README file."
+#~ msgstr ""
+
+#~ msgid "Split it in multiple different file, for an easier navigation."
+#~ msgstr ""
+
+#~ msgid "Translate the documentation + README in French"
+#~ msgstr ""
+
+#~ msgid "How to add a translation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Copy this file’s content in a new"
+#~ " file ``{New language}.po``, such as "
+#~ "``fr.po``"
+#~ msgstr ""
 

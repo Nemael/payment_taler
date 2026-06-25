@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 10:16-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../index.rst:17
+#: ../../index.rst:19
 msgid "Contents:"
 msgstr ""
 
@@ -33,8 +33,8 @@ msgid ""
 "TOPS is an add-on for Odoo. It allows users to pay with Taler, similar to"
 " other existing payment integrations in Odoo. The module integrates into "
 "and increase functionality of other existing Odoo modules (eCommerce, "
-"invoices, ticket sales, online payment, etc.). It also implements refunds"
-" to customers that used Taler to pay."
+"invoices, ticket sales, online payment, etc.) It also implements refunds "
+"to customers that used Taler to pay."
 msgstr ""
 
 #: ../../index.rst:9
@@ -47,15 +47,19 @@ msgstr ""
 #: ../../index.rst:11
 msgid ""
 "It is available on the Odoo Apps store "
-"(https://apps.odoo.com/apps/modules/18.0/payment_taler) , as well as on "
-"the OCA community shop (Link pending)"
-msgstr ""
-
-#: ../../index.rst:13
-msgid "The technical name for this add-on is payment_taler."
+"(https://apps.odoo.com/apps/modules/18.0/payment_taler). The technical "
+"name for this add-on is ``payment_taler``."
 msgstr ""
 
 #: ../../index.rst:15
+msgid ""
+"Cette documentation est également disponible `en Français ici <https"
+"://taler-odoo-payment-system.readthedocs.io/fr/>`_. / This documentation "
+"is also available `in French here <https://taler-odoo-payment-"
+"system.readthedocs.io/fr/>`_."
+msgstr ""
+
+#: ../../index.rst:17
 msgid "This documentation is organized in the following sections:"
 msgstr ""
 
@@ -63,5 +67,29 @@ msgstr ""
 #~ "Blah blah description of the project "
 #~ "TODO Documentation is organized in the"
 #~ " following sections:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TOPS is an add-on for Odoo. "
+#~ "It allows users to pay with Taler,"
+#~ " similar to other existing payment "
+#~ "integrations in Odoo. The module "
+#~ "integrates into and increase functionality "
+#~ "of other existing Odoo modules "
+#~ "(eCommerce, invoices, ticket sales, online "
+#~ "payment, etc.). It also implements "
+#~ "refunds to customers that used Taler "
+#~ "to pay."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is available on the Odoo Apps"
+#~ " store "
+#~ "(https://apps.odoo.com/apps/modules/18.0/payment_taler) , "
+#~ "as well as on the OCA community"
+#~ " shop (Link pending)"
+#~ msgstr ""
+
+#~ msgid "The technical name for this add-on is payment_taler."
 #~ msgstr ""
 

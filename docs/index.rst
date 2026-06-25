@@ -4,13 +4,15 @@
 Welcome to Taler-Odoo Payment System's documentation!
 =====================================================
 
-TOPS is an add-on for Odoo. It allows users to pay with Taler, similar to other existing payment integrations in Odoo. The module integrates into and increase functionality of other existing Odoo modules (eCommerce, invoices, ticket sales, online payment, etc.). It also implements refunds to customers that used Taler to pay.
+TOPS is an add-on for Odoo. It allows users to pay with Taler, similar to other existing payment integrations in Odoo. The module integrates into and increase functionality of other existing Odoo modules (eCommerce, invoices, ticket sales, online payment, etc.) It also implements refunds to customers that used Taler to pay.
 
 Installing this module enables merchants to accept payments from customers using their Taler Wallet, giving them the option to choose a payment system that respects their privacy.
 
-It is available on the Odoo Apps store (https://apps.odoo.com/apps/modules/18.0/payment_taler) , as well as on the OCA community shop (Link pending)
+It is available on the Odoo Apps store (https://apps.odoo.com/apps/modules/18.0/payment_taler). The technical name for this add-on is ``payment_taler``.
 
-The technical name for this add-on is payment_taler.
+.. note::
+
+  Cette documentation est également disponible `en Français ici <https://taler-odoo-payment-system.readthedocs.io/fr/>`_. / This documentation is also available `in French here <https://taler-odoo-payment-system.readthedocs.io/fr/>`_.
 
 This documentation is organized in the following sections:
 

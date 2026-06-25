@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 10:59-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgid "``Website -> Configuration -> eCommerce -> Payment Providers``."
 msgstr ""
 
 #: ../../user-guide/configuration.rst:22
-msgid "``Invoicing -> Configuration -> Online Payments -> Payment Provider``\\ s."
+msgid "``Invoicing -> Configuration -> Online Payments -> Payment Providers``."
 msgstr ""
 
 #: ../../user-guide/configuration.rst:24
@@ -146,4 +146,9 @@ msgstr ""
 #: ../../user-guide/configuration.rst:-1
 msgid ".. image:: ../images/EN/Taler_provider_setting_complete.png"
 msgstr ".. image:: ../images/FR/Taler_provider_setting_complete.png"
+
+#~ msgid ""
+#~ "``Invoicing -> Configuration -> Online "
+#~ "Payments -> Payment Provider``\\ s."
+#~ msgstr ""
 

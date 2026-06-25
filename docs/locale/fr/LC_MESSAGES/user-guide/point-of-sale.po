@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 10:59-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,9 +167,7 @@ msgstr ""
 #: ../../user-guide/point-of-sale.rst:77
 msgid ""
 "Upon payment completion, the customer will be redirected to Odoo, with a "
-"confirmation of payment (first picture), and the order on the point of "
-"sale’s side will show a successful payment, and produce the receipt "
-"(second picture)."
+"confirmation of payment."
 msgstr ""
 
 #: ../../user-guide/point-of-sale.rst:-1
@@ -180,6 +178,12 @@ msgstr ""
 msgid ".. image:: ../images/EN/Taler_pos_payment_complete.png"
 msgstr ".. image:: ../images/FR/Taler_pos_payment_complete.png"
 
+#: ../../user-guide/point-of-sale.rst:85
+msgid ""
+"The point of sale's side will show a successful payment, and produce a "
+"receipt."
+msgstr ""
+
 #: ../../user-guide/point-of-sale.rst:-1
 msgid "Taler pos receipt"
 msgstr ""
@@ -187,4 +191,14 @@ msgstr ""
 #: ../../user-guide/point-of-sale.rst:-1
 msgid ".. image:: ../images/EN/Taler_pos_receipt.png"
 msgstr ".. image:: ../images/FR/Taler_pos_receipt.png"
+
+#~ msgid ""
+#~ "Upon payment completion, the customer "
+#~ "will be redirected to Odoo, with a"
+#~ " confirmation of payment (first picture),"
+#~ " and the order on the point of"
+#~ " sale’s side will show a successful"
+#~ " payment, and produce the receipt "
+#~ "(second picture)."
+#~ msgstr ""
 

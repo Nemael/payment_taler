@@ -19,7 +19,7 @@ Configuration of the Taler payment provider
     ways:
 
     - ``Website -> Configuration -> eCommerce -> Payment Providers``.
-    - ``Invoicing -> Configuration -> Online Payments -> Payment Provider``\ s.
+    - ``Invoicing -> Configuration -> Online Payments -> Payment Providers``.
 
   - Either way you land here, this is the list of your currently
     available payment providers.

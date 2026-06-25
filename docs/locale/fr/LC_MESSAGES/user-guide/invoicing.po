@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 10:59-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgid ""
 "it."
 msgstr ""
 
-#: ../../user-guide/invoicing.rst:16 ../../user-guide/invoicing.rst:59
+#: ../../user-guide/invoicing.rst:16 ../../user-guide/invoicing.rst:60
 msgid "Go to the Invoicing app and create a new invoice."
 msgstr ""
 
@@ -118,16 +118,20 @@ msgstr ""
 #: ../../user-guide/invoicing.rst:56
 msgid ""
 "This process is unrelated to the invoices created with Taler in the "
-"previous step Any invoice can be paid online using Taler"
+"previous step"
 msgstr ""
 
-#: ../../user-guide/invoicing.rst:60
+#: ../../user-guide/invoicing.rst:58
+msgid "Any invoice can be paid online using Taler."
+msgstr ""
+
+#: ../../user-guide/invoicing.rst:61
 msgid ""
 "Once created, you can press ``Preview`` to see the page that the customer"
 " will see."
 msgstr ""
 
-#: ../../user-guide/invoicing.rst:62
+#: ../../user-guide/invoicing.rst:63
 msgid ""
 "On this page, the user will be able to click ``Pay Now``, and choose "
 "Taler as a payment option."
@@ -141,14 +145,14 @@ msgstr ""
 msgid ".. image:: ../images/EN/Taler_invoices_online_payment.png"
 msgstr ".. image:: ../images/FR/Taler_invoices_online_payment.png"
 
-#: ../../user-guide/invoicing.rst:70
+#: ../../user-guide/invoicing.rst:71
 msgid ""
 "Once they click ``Pay``, they will be redirected to the Taler order page,"
 " where they can pay with a Taler wallet on their phone or web browser (in"
 " the same way as for an eCommerce payment)."
 msgstr ""
 
-#: ../../user-guide/invoicing.rst:73
+#: ../../user-guide/invoicing.rst:74
 msgid ""
 "When the payment is complete, the customer will be sent back to the "
 "invoice page, with a notice saying that the payment is successful."
@@ -161,4 +165,11 @@ msgstr ""
 #: ../../user-guide/invoicing.rst:-1
 msgid ".. image:: ../images/EN/Taler_invoices_paid_online.png"
 msgstr ".. image:: ../images/FR/Taler_invoices_paid_online.png"
+
+#~ msgid ""
+#~ "This process is unrelated to the "
+#~ "invoices created with Taler in the "
+#~ "previous step Any invoice can be "
+#~ "paid online using Taler"
+#~ msgstr ""
 

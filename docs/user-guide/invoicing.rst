@@ -54,7 +54,8 @@ Pay an invoice online using Taler
 
 .. note::
    This process is unrelated to the invoices created with Taler in the previous step
-   Any invoice can be paid online using Taler
+
+   Any invoice can be paid online using Taler.
 
 - Go to the Invoicing app and create a new invoice.
 - Once created, you can press ``Preview`` to see the page that the

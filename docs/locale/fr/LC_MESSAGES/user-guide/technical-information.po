@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 09:46-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid ""
 "Such as ``./odoo-bin shell --addons-"
 "path=./addons,{custom_addons_path}/tops -u payment_taler -d "
-"odoo18_tops_0.1.1.1``"
+"odoo18_tops_0.1.1.1``."
 msgstr ""
 
 #: ../../user-guide/technical-information.rst:19
@@ -102,12 +102,14 @@ msgstr ""
 #: ../../user-guide/technical-information.rst:45
 msgid ""
 "``./odoo-bin --addons-path=./addons,{custom_addons_path}/tops --test-"
-"enable -d test_db_2 -i payment_taler --stop-after-init --test-tags "
-"taler``"
+"enable -d test_db_2 -i payment_taler -u payment_taler --stop-after-init "
+"--test-tags taler``"
 msgstr ""
 
 #: ../../user-guide/technical-information.rst:47
-msgid "The db name after -d is arbitrary and can be replaced by any other names."
+msgid ""
+"The db name (after -d) is arbitrary and can be replaced by any other "
+"names."
 msgstr ""
 
 #: ../../user-guide/technical-information.rst:50
@@ -191,4 +193,23 @@ msgstr ""
 #: ../../user-guide/technical-information.rst:75
 msgid "``views`` contains the views used for the models."
 msgstr ""
+
+#~ msgid ""
+#~ "Such as ``./odoo-bin shell --addons-"
+#~ "path=./addons,{custom_addons_path}/tops -u payment_taler"
+#~ " -d odoo18_tops_0.1.1.1``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``./odoo-bin --addons-"
+#~ "path=./addons,{custom_addons_path}/tops --test-enable "
+#~ "-d test_db_2 -i payment_taler --stop-"
+#~ "after-init --test-tags taler``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The db name after -d is arbitrary"
+#~ " and can be replaced by any "
+#~ "other names."
+#~ msgstr ""
 

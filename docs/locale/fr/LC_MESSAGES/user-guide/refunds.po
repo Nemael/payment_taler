@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 10:59-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,8 +38,12 @@ msgstr ""
 
 #: ../../user-guide/refunds.rst:15
 msgid ""
-"In the ``invoicing`` add-on, navigate to ``Customers -> Customer "
-"Payments`` on the top bar."
+"For Odoo 18, in the ``invoicing`` add-on, navigate to ``Customers -> "
+"Customer Payments`` on the top bar."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:16
+msgid "For Odoo 19, the location is ``Customers -> Payments``."
 msgstr ""
 
 #: ../../user-guide/refunds.rst:18
@@ -78,29 +82,53 @@ msgstr ".. image:: ../images/FR/Taler_refund_payment.png"
 
 #: ../../user-guide/refunds.rst:35
 msgid ""
+"You can set the amount you'd like to refund. The refund amount cannot be "
+"higher than the transaction amount."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:37
+msgid ""
+"You can make multiple partial refunds (for example, a 30 euros "
+"transaction can be refunded by 5 euros, and then by 10 euros later)."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:38
+msgid ""
+"In case of partial refunds, the total refunded amount across multiple "
+"refunds of one transaction cannot exceed the transaction amount."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:39
+msgid ""
+"The refunded customer will receive one refund email per partial refund, "
+"with each containing a different QR Code to be scanned into their wallet."
+msgstr ""
+
+#: ../../user-guide/refunds.rst:41
+msgid ""
 "Confirming the refund will create a new transaction, that you can view in"
 " the list of transactions, with the name ``R-{Odoo reference number}``."
 msgstr ""
 
-#: ../../user-guide/refunds.rst:39
+#: ../../user-guide/refunds.rst:45
 msgid ""
 "An email containing the refund QR Code will also be sent to the "
 "customer’s email address."
 msgstr ""
 
-#: ../../user-guide/refunds.rst:42
+#: ../../user-guide/refunds.rst:48
 msgid ""
 "You can view this email in the list of sent emails, found in ``Settings "
-"app -> Technical -> Emails``"
+"app -> Technical -> Emails``."
 msgstr ""
 
-#: ../../user-guide/refunds.rst:45
+#: ../../user-guide/refunds.rst:51
 msgid ""
 "You may need to activate Odoo’s ``Developer`` mode (found in the "
 "settings) to access the ``Technical`` tab."
 msgstr ""
 
-#: ../../user-guide/refunds.rst:48
+#: ../../user-guide/refunds.rst:54
 msgid ""
 "To receive the refund, the customer will have to scan the QR Code with "
 "their Taler wallet."
@@ -114,19 +142,31 @@ msgstr ""
 msgid ".. image:: ../images/EN/Taler_refund_email.png"
 msgstr ".. image:: ../images/FR/Taler_refund_email.png"
 
-#: ../../user-guide/refunds.rst:57
+#: ../../user-guide/refunds.rst:63
 msgid "You need a functional email sender for this feature to work properly."
 msgstr ""
 
-#: ../../user-guide/refunds.rst:58
+#: ../../user-guide/refunds.rst:64
 msgid ""
 "Without an email sender, the email will be generated and can be read, but"
 " it will not be sent."
 msgstr ""
 
-#: ../../user-guide/refunds.rst:59
+#: ../../user-guide/refunds.rst:65
 msgid ""
 "You can only do full refunds using Taler. Partial refunds are not "
 "implemented."
 msgstr ""
+
+#~ msgid ""
+#~ "In the ``invoicing`` add-on, navigate"
+#~ " to ``Customers -> Customer Payments`` "
+#~ "on the top bar."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can view this email in the "
+#~ "list of sent emails, found in "
+#~ "``Settings app -> Technical -> Emails``"
+#~ msgstr ""
 

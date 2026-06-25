@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-20 09:46-0500\n"
+"POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,72 +31,73 @@ msgid "Install or update the add-on on an already-existing Odoo installation"
 msgstr ""
 
 #: ../../user-guide/installation.rst:13
-msgid "There are multiple options to install this add-on"
+#, fuzzy
+msgid "There are multiple options to install this add-on:"
 msgstr "Il existe plusieurs options pour installer cet add-on"
 
 #: ../../user-guide/installation.rst:15
-msgid "Install from the Odoo Apps store"
+msgid "Install from the Odoo Apps store:"
 msgstr ""
 
 #: ../../user-guide/installation.rst:17
 msgid ""
 "Navigate to `the module’s apps.odoo.com page "
-"<https://apps.odoo.com/apps/modules/18.0/payment_taler>`__"
+"<https://apps.odoo.com/apps/modules/18.0/payment_taler>`__."
 msgstr ""
 
 #: ../../user-guide/installation.rst:19
-msgid "Click on ``Deploy on Odoo.sh``"
+msgid "Click on ``Deploy on Odoo.sh``."
 msgstr ""
 
 #: ../../user-guide/installation.rst:20
-msgid "The add-on should be now installed on your Odoo.sh instance"
+msgid "The add-on should be now installed on your Odoo.sh instance."
 msgstr ""
 
 #: ../../user-guide/installation.rst:22
-msgid "Manually add the code yourself in your Odoo install (Multiple options)"
+msgid "Manually add the code yourself in your Odoo install (Multiple options):"
 msgstr ""
 
 #: ../../user-guide/installation.rst:25
-msgid "First, download the add-on code with either of these 3 methods"
+msgid "First, download the add-on code with either of these 3 methods:"
 msgstr ""
 
 #: ../../user-guide/installation.rst:27
 msgid ""
 "Download the latest version from the releases "
-"(https://codeberg.org/Nemael/tops/releases)"
+"(https://codeberg.org/Nemael/tops/releases)."
 msgstr ""
 
 #: ../../user-guide/installation.rst:30
-msgid "Downloading the latest release provides the most stable and tested code"
+msgid "Downloading the latest release provides the most stable and tested code."
 msgstr ""
 
 #: ../../user-guide/installation.rst:33
 msgid ""
 "Download the add-on from `the apps.odoo.com page "
-"<https://apps.odoo.com/apps/modules/18.0/payment_taler>`__"
+"<https://apps.odoo.com/apps/modules/18.0/payment_taler>`__."
 msgstr ""
 
 #: ../../user-guide/installation.rst:35
-msgid "Clone this repository (git clone https://codeberg.org/Nemael/tops.git)"
+msgid "Clone this repository ``git clone https://codeberg.org/Nemael/tops.git``."
 msgstr ""
 
 #: ../../user-guide/installation.rst:38
-msgid "Preferably clone it in ``{your Odoo install}/custom_addons``"
+msgid "Preferably clone it in ``{your Odoo install}/custom_addons``."
 msgstr ""
 
 #: ../../user-guide/installation.rst:40
-msgid "Ensure that the ``tops`` directory is in ``custom_addons``"
+msgid "Ensure that the ``tops`` directory is in ``custom_addons``."
 msgstr ""
 
 #: ../../user-guide/installation.rst:41
 msgid ""
 "Cloning the repository provides the most up-to-date code, and you can "
 "simply use ``git pull`` to obtain the latest updates. However, the code "
-"obtained this way might be unstable"
+"obtained this way might be unstable."
 msgstr ""
 
 #: ../../user-guide/installation.rst:46
-msgid "Then move the files to your Odoo folder"
+msgid "Then move the files to your Odoo folder."
 msgstr ""
 
 #: ../../user-guide/installation.rst:48
@@ -106,126 +107,241 @@ msgstr ""
 #: ../../user-guide/installation.rst:49
 msgid ""
 "Ensure that the ``tops`` or ``payment_taler`` directory is in "
-"``custom_addons``"
+"``custom_addons``."
 msgstr ""
 
-#: ../../user-guide/installation.rst:53
+#: ../../user-guide/installation.rst:54
 msgid ""
-"Note: the add-on code can be stored anywhere, but it’s easier store it "
-"within the Odoo folder"
+"The add-on code can be stored anywhere, but it’s easier store it within "
+"the Odoo folder."
 msgstr ""
 
-#: ../../user-guide/installation.rst:55
+#: ../../user-guide/installation.rst:56
 msgid ""
 "In the command line you used to start Odoo, specify the path to this add-"
-"on by adding the argument ``--addons-path=./addons,./custom_addons/tops``"
+"on by adding the argument ``--addons-"
+"path=./addons,./custom_addons/tops``."
 msgstr ""
 
-#: ../../user-guide/installation.rst:59
+#: ../../user-guide/installation.rst:60
 msgid ""
 "Such as: ``./odoo-bin --addons-path=./addons,./custom_addons/tops -u tops"
-" -d odoo18_tops_0.1.1.1``"
+" -d odoo18_tops_0.1.1.1``."
 msgstr ""
 
-#: ../../user-guide/installation.rst:62
-msgid "In Odoo, go to the ``Apps`` section in the app switcher (top-left button)"
-msgstr ""
-
-#: ../../user-guide/installation.rst:64
-msgid "Click ``Update Apps List`` on the top bar"
+#: ../../user-guide/installation.rst:63
+msgid "In Odoo, go to the ``Apps`` section in the app switcher (top-left button)."
 msgstr ""
 
 #: ../../user-guide/installation.rst:65
-msgid "Search for the add-on ``Taler-Odoo Payment System``"
+msgid "Click ``Update Apps List`` on the top bar."
 msgstr ""
 
 #: ../../user-guide/installation.rst:66
-msgid ""
-"Click on the add-on, and press ``Activate`` or ``Install`` to complete "
-"this step"
+msgid "Search for the add-on ``Taler-Odoo Payment System``."
 msgstr ""
 
-#: ../../user-guide/installation.rst:71
+#: ../../user-guide/installation.rst:67
+msgid ""
+"Click on the add-on, and press ``Activate`` or ``Install`` to complete "
+"this step."
+msgstr ""
+
+#: ../../user-guide/installation.rst:72
 msgid ""
 "To update the add-on, first update the code using the same way that you "
 "first downloaded it, then restart the server and finally click "
-"``Upgrade`` on the add-on page"
+"``Upgrade`` on the add-on page."
 msgstr ""
 
-#: ../../user-guide/installation.rst:77
+#: ../../user-guide/installation.rst:78
 msgid "Uninstall the add-on"
 msgstr ""
 
-#: ../../user-guide/installation.rst:79
+#: ../../user-guide/installation.rst:80
 msgid "To uninstall the add-on, you have to go to the ``Apps`` app on Odoo."
 msgstr ""
 
-#: ../../user-guide/installation.rst:80
+#: ../../user-guide/installation.rst:81
 msgid "Search for, and go to the ``Taler-Odoo Payment System`` add-on."
 msgstr ""
 
-#: ../../user-guide/installation.rst:81
+#: ../../user-guide/installation.rst:82
 msgid "Click ``Uninstall``, the add-on should be uninstalled."
 msgstr ""
 
-#: ../../user-guide/installation.rst:84
+#: ../../user-guide/installation.rst:85
 msgid ""
 "If you have made any transactions using Taler with this add-on, you will "
 "not be able to uninstall it."
 msgstr ""
 
-#: ../../user-guide/installation.rst:86
+#: ../../user-guide/installation.rst:87
 msgid "You can reinstall the add-on at a later time."
 msgstr ""
 
-#: ../../user-guide/installation.rst:87
+#: ../../user-guide/installation.rst:88
 msgid ""
 "If you added a payment method record for the point of sale app (:ref:`see"
 " the related section for more information <point-of-sale-payment-"
 "configuration>`), complete the following steps as well:"
 msgstr ""
 
-#: ../../user-guide/installation.rst:89
+#: ../../user-guide/installation.rst:90
 msgid ""
 "Go to the ``Point of Sale`` app, and navigate to ``Configuration/Payment "
 "Methods``."
 msgstr ""
 
-#: ../../user-guide/installation.rst:91
+#: ../../user-guide/installation.rst:92
 msgid ""
 "Click on the ``Taler`` record you created when setting up the point of "
 "sale payment system, it should be highlighted in red because the payment "
 "provider is not available anymore."
 msgstr ""
 
-#: ../../user-guide/installation.rst:94
+#: ../../user-guide/installation.rst:95
 msgid ""
 "Click on the gear at the top, and then either ``Archive`` (better for "
 "data conservation) or ``Delete`` (more risky because you might lose track"
-" of some payments)"
-msgstr ""
-
-#: ../../user-guide/installation.rst:97
-msgid "On the top bar, go to ``Configuration -> Point of Sales``."
+" of some payments)."
 msgstr ""
 
 #: ../../user-guide/installation.rst:98
-msgid "Select a point of sale that you made Taler payments available for."
+msgid "On the top bar, go to ``Configuration -> Point of Sales``."
 msgstr ""
 
 #: ../../user-guide/installation.rst:99
+msgid "Select a point of sale that you made Taler payments available for."
+msgstr ""
+
+#: ../../user-guide/installation.rst:100
 msgid ""
 "Click on ``More settings: Configurations > Settings``, which will lead "
 "you to the point of sale’s settings page."
 msgstr ""
 
-#: ../../user-guide/installation.rst:101
+#: ../../user-guide/installation.rst:102
 msgid "In Payment -> Payment Methods, remove the Taler payment method."
 msgstr ""
 
-#: ../../user-guide/installation.rst:103
+#: ../../user-guide/installation.rst:104
 msgid ""
 "Do this step for every point of sale you made Taler payments available "
 "for."
 msgstr ""
+
+#~ msgid "Install from the Odoo Apps store"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Navigate to `the module’s apps.odoo.com "
+#~ "page <https://apps.odoo.com/apps/modules/18.0/payment_taler>`__"
+#~ msgstr ""
+
+#~ msgid "Click on ``Deploy on Odoo.sh``"
+#~ msgstr ""
+
+#~ msgid "The add-on should be now installed on your Odoo.sh instance"
+#~ msgstr ""
+
+#~ msgid "Manually add the code yourself in your Odoo install (Multiple options)"
+#~ msgstr ""
+
+#~ msgid "First, download the add-on code with either of these 3 methods"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Download the latest version from the "
+#~ "releases (https://codeberg.org/Nemael/tops/releases)"
+#~ msgstr ""
+
+#~ msgid "Downloading the latest release provides the most stable and tested code"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Download the add-on from `the "
+#~ "apps.odoo.com page "
+#~ "<https://apps.odoo.com/apps/modules/18.0/payment_taler>`__"
+#~ msgstr ""
+
+#~ msgid "Clone this repository (git clone https://codeberg.org/Nemael/tops.git)"
+#~ msgstr ""
+
+#~ msgid "Preferably clone it in ``{your Odoo install}/custom_addons``"
+#~ msgstr ""
+
+#~ msgid "Ensure that the ``tops`` directory is in ``custom_addons``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Cloning the repository provides the most"
+#~ " up-to-date code, and you can"
+#~ " simply use ``git pull`` to obtain"
+#~ " the latest updates. However, the "
+#~ "code obtained this way might be "
+#~ "unstable"
+#~ msgstr ""
+
+#~ msgid "Then move the files to your Odoo folder"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Ensure that the ``tops`` or "
+#~ "``payment_taler`` directory is in "
+#~ "``custom_addons``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: the add-on code can be "
+#~ "stored anywhere, but it’s easier store"
+#~ " it within the Odoo folder"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the command line you used to"
+#~ " start Odoo, specify the path to "
+#~ "this add-on by adding the argument"
+#~ " ``--addons-path=./addons,./custom_addons/tops``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Such as: ``./odoo-bin --addons-"
+#~ "path=./addons,./custom_addons/tops -u tops -d "
+#~ "odoo18_tops_0.1.1.1``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In Odoo, go to the ``Apps`` "
+#~ "section in the app switcher (top-"
+#~ "left button)"
+#~ msgstr ""
+
+#~ msgid "Click ``Update Apps List`` on the top bar"
+#~ msgstr ""
+
+#~ msgid "Search for the add-on ``Taler-Odoo Payment System``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click on the add-on, and press "
+#~ "``Activate`` or ``Install`` to complete "
+#~ "this step"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To update the add-on, first update"
+#~ " the code using the same way "
+#~ "that you first downloaded it, then "
+#~ "restart the server and finally click "
+#~ "``Upgrade`` on the add-on page"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click on the gear at the top, "
+#~ "and then either ``Archive`` (better for"
+#~ " data conservation) or ``Delete`` (more "
+#~ "risky because you might lose track "
+#~ "of some payments)"
+#~ msgstr ""
 

@@ -4,10 +4,6 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 
-_This page is also available in French [here](https://codeberg.org/Nemael/tops/src/branch/18.0/README_FR.md)._
-
-_Cette page est également disponible en Français [here](https://codeberg.org/Nemael/tops/src/branch/18.0/README_FR.md)._
-
 ---
 
 # TOPS: Taler-Odoo Payment System
@@ -24,11 +20,11 @@ The module is also available on the Odoo Apps store (https://apps.odoo.com/apps/
 
 ## Documentation
 
-A complete documentation for this module is available here. (ADD LINK TO DOCUMENTATION HERE)
+A complete documentation for this module is available here: https://taler-odoo-payment-system.readthedocs.io/en/
 
-A French version of the documentation is also available here. (ADD LINK TO THE DOCUMENTATION HERE)
+A French version of the documentation is also available here. https://taler-odoo-payment-system.readthedocs.io/en/
 
-Contributions and translations are welcome! A detailed explanation on how to contribute is available here. (ADD LINK TO DOCUMENTATION PAGE ABOUT MAKING CONTRIBUTIONS HERE)
+Contributions and translations are welcome! A detailed explanation on how to contribute or translate is available here: https://taler-odoo-payment-system.readthedocs.io/en/latest/project/how-to-contribute.html
 
 ---
 

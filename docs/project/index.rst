@@ -4,7 +4,7 @@
 Project
 =======
 
-This section contains various information regarding the project itself, and how to contribute
+This section contains various information regarding the project itself, and how to contribute.
 
 
 .. toctree::

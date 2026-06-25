@@ -14,7 +14,7 @@ Change settings using CLI
   ``shell`` to your original command line to start Odoo.
 
   - Such as
-    ``./odoo-bin shell --addons-path=./addons,{custom_addons_path}/tops -u payment_taler -d odoo18_tops_0.1.1.1``
+    ``./odoo-bin shell --addons-path=./addons,{custom_addons_path}/tops -u payment_taler -d odoo18_tops_0.1.1.1``.
 
 - Run these commands to edit the settings. You can use ``get_params`` to
   print the current value, and ``set_params`` to set a new value:

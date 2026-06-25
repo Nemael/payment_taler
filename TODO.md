@@ -4,50 +4,16 @@ SPDX-FileCopyrightText: 2025 Mael Panouillot <panouillot.mael@gmail.com>
 SPDX-License-Identifier: LGPL-3.0-or-later
 -->
 
-- Remove this TODO when I finish the work on this MoU
+- Remove this TODO when I finish the work on the MoU
 
-- Translate the README + documentation in French
-  - Redo the tutorial pictures in French as well
-
-- Add instructions in the documentation on how to build the docs
-  - Explain how to add to the docs, edit the docs, and build the docs
-  - Use this command to build the documentation: sphinx-build -M html sourcedir outputdir
-    - Or `make html`
-
-- Add instructions in the documentation on how to update the docs and the translation:
-  - Rebuild the .pot files: sphinx-build -b gettext . _build/gettext
-  - Remake the language-specific .po files: sphinx-intl update -p _build/gettext -l fr
-  - And to rebuild the docs:
-    - sphinx-build -D language=en -b html . _build/html/en
-    - sphinx-build -D language=fr -b html . _build/html/fr
-
-
-
-- In the documentation, add a section "How to update translation after a change in documentation"
-  - That explains how to re-generate the .po files, and tells you what you should translate again
-  - This is the same thing that I will have to do when I update documentation after I add the partial refund feature, and I update my addon for Odoo 19.
-
-- Add link to french documentation in section "Project/Translation Status/Translation & available languages"
-
-- Remove what steps were completed from "Project/How to contribute/How to contribute"
-
-- Edit the "this page is also available in French here" from the documentation, to say "this documentation is also available in French here"
-
-- Add the link to the new documentation in the README file. (when it is uploaded to readthedocs)
-
-- Add the first draft of documentation to ReadTheDocs
-  - And update the links for french/en text in the readme and the documentation
-
-- Add the link to the new documentation page about making contributions in the README file.
+- Translate the documentation in French
 
 - Check if I can fix why the repository is non-compliant with REUSE (See licensing section at end of README)
 
-- Make French version of the pictures for UI-Explanation documentation
-
-- When the documentation is uploaded to ReadTheDocs, add the links that are needed in the README.md
-
-- Make a new release when the MoU is finished and I did my current final commit
+- Make a new release when the MoU is finished and I did my current final commit, and I am ready to request completion of MoU
 
 - See why woodpecker does not do the pipeline checks
 
-- Make the github mirror
+- When the release is made on Codeberg, make sure that the Odoo apps store version is updated as well, using the mirrored github repository
+
+- Retester le flow d'invoice creation, et voir pk j'ai une error dans les logs, et pas dans le message d'erreur.

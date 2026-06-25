@@ -37,7 +37,7 @@ The ``Check URL validity`` button is showing an error
   - For a more permanent change, you can edit the ``const.py`` file at
     the root of this add-on, and comment/uncomment the currencies that
     you want to set as Taler configuration.
-  - ``const.py`` is loaded at server start,
+  - ``const.py`` is loaded at server start.
 
 .. note::
    Because KUDOS is an imaginary currency, you will not find it in Odoo's currency list.
