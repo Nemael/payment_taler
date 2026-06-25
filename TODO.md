@@ -12,8 +12,4 @@ SPDX-License-Identifier: LGPL-3.0-or-later
 
 - Make a new release when the MoU is finished and I did my current final commit, and I am ready to request completion of MoU
 
-- See why woodpecker does not do the pipeline checks
-
 - When the release is made on Codeberg, make sure that the Odoo apps store version is updated as well, using the mirrored github repository
-
-- Retester le flow d'invoice creation, et voir pk j'ai une error dans les logs, et pas dans le message d'erreur.

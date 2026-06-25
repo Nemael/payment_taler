@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-25 16:18-0500\n"
+"POT-Creation-Date: 2026-06-25 17:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,36 +97,36 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_provider_details.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_provider_details.png"
 
-#: ../../ui-explanation/index.rst:51
+#: ../../ui-explanation/index.rst:55
 msgid "On this page, you can see the current status for the payment provider."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:53
+#: ../../ui-explanation/index.rst:57
 msgid ""
 "The payment provider can be ``Disabled``, ``Enabled``, or in ``Test "
 "Mode``. **(1)** (See documentation for more information)."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:54
+#: ../../ui-explanation/index.rst:58
 msgid ""
 "The payment provider can be ``Unpublished`` or ``Published``. **(2)** "
 "(See documentation for more information)."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:56
+#: ../../ui-explanation/index.rst:60
 msgid ""
 "You can see three tabs: ``Credentials``, ``Configuration``, ``Messages``."
 " For this setup, only the tab ``Credentials`` will be used **(3)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:59
+#: ../../ui-explanation/index.rst:63
 msgid ""
 "In the credentials tab, you will have to setup the Taler merchant URL and"
 " the corresponding password for the Taler instance you would like to use "
 "**(4)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:62
+#: ../../ui-explanation/index.rst:66
 msgid ""
 "After setting up the URL, you can press ``Check URL validity``, this will"
 " connect to the entered URL, and see if the accepted currencies is "
@@ -146,14 +146,14 @@ msgstr ""
 ".. image:: "
 "../images/FR/UI_Tutorial/Tutorial_provider_details_currencies.png"
 
-#: ../../ui-explanation/index.rst:72
+#: ../../ui-explanation/index.rst:80
 msgid ""
 "In the payment provider’s ``Configuration`` tab **(1)**, you can find the"
 " list of currencies that the payment provider will be able to use "
 "**(2)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:76
+#: ../../ui-explanation/index.rst:84
 msgid "Online payments using Taler"
 msgstr ""
 
@@ -165,24 +165,24 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_customer_payment.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_customer_payment.png"
 
-#: ../../ui-explanation/index.rst:83
+#: ../../ui-explanation/index.rst:91
 msgid ""
 "When a customer is ready to pay online for their cart, they will be able "
 "to choose which payment method to use. If the currencies are correctly "
 "set-up, Taler should be one of the options provided **(1)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:87
+#: ../../ui-explanation/index.rst:95
 msgid "You might see symbols next to the payment method **(2)**:"
 msgstr ""
 
-#: ../../ui-explanation/index.rst:89
+#: ../../ui-explanation/index.rst:97
 msgid ""
 "A striked-through eye means that this payment method can only be seen by "
 "an admin (generally used when testing a new payment provider)."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:90
+#: ../../ui-explanation/index.rst:98
 msgid ""
 "A yellow warning sign means that the payment provider is in test mode. "
 "Avoid using the test mode in production."
@@ -196,21 +196,22 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_customer_list_of_payments.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_customer_list_of_payments.png"
 
-#: ../../ui-explanation/index.rst:97
+#: ../../ui-explanation/index.rst:109
 msgid ""
 "When the payment is complete, on the admin-side, you can navigate to "
-"``Invoicing -> Customers -> Payments`` to see the list of payments."
+"``Invoicing -> Customers -> Payments`` to see the list of payments, and "
+"the most recent payment completed **(1)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:101
+#: ../../ui-explanation/index.rst:113
 msgid "Trigger a refund for an online payment"
 msgstr ""
 
-#: ../../ui-explanation/index.rst:108
+#: ../../ui-explanation/index.rst:120
 msgid ""
 "Find the payment you would like to refund in the payment list, in "
-"``Invoicing -> Customers -> Payments``, anc click on the payment you’d "
-"like to refund."
+"``Invoicing -> Customers -> Payments``, and click on the payment you’d "
+"like to refund **(1)**."
 msgstr ""
 
 #: ../../ui-explanation/index.rst:-1
@@ -221,13 +222,13 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_button.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_refund_button.png"
 
-#: ../../ui-explanation/index.rst:117
+#: ../../ui-explanation/index.rst:133
 msgid ""
 "Click on the ``Refund`` button and confirm the amount you’d like to "
 "refund **(1)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:120
+#: ../../ui-explanation/index.rst:136
 msgid ""
 "This action will create a refund QR Code, and send it via email to the "
 "customer."
@@ -241,14 +242,14 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_email_list.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_refund_email_list.png"
 
-#: ../../ui-explanation/index.rst:128
+#: ../../ui-explanation/index.rst:148
 msgid ""
 "To see the email, navigate to ``Settings -> Technical -> Emails``. This "
 "will display a list of emails, find and click on the one you want to "
-"check."
+"check **(1)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:130
+#: ../../ui-explanation/index.rst:150
 msgid ""
 "You may need to activate Odoo’s ``Developer`` mode to access this tab (it"
 " is found in the settings)."
@@ -262,7 +263,7 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_email.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_refund_email.png"
 
-#: ../../ui-explanation/index.rst:137
+#: ../../ui-explanation/index.rst:161
 msgid ""
 "On the email page, you can see the email address it has been sent from "
 "**(1)** and to **(2)**. You can also see the refund QR Code that has been"
@@ -270,11 +271,11 @@ msgid ""
 "case the customer cannot use the QR Code **(4)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:143
+#: ../../ui-explanation/index.rst:167
 msgid "Create an invoice that includes a Taler QR Code"
 msgstr ""
 
-#: ../../ui-explanation/index.rst:145
+#: ../../ui-explanation/index.rst:169
 msgid ""
 "To make an invoice that displays a Taler QR Code as a payment option, you"
 " need to create an invoice, and specify Taler as the payment method."
@@ -288,13 +289,13 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_creation.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_invoice_creation.png"
 
-#: ../../ui-explanation/index.rst:153
+#: ../../ui-explanation/index.rst:177
 msgid ""
-"This is a new invoice with some data filled in, namely the customer "
+"This is a new invoice with some data filled in, namely the customer data "
 "**(1)** and the invoiced product **(2)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:156
+#: ../../ui-explanation/index.rst:180
 msgid ""
 "In the ``Other Info`` tab, you need to set the field ``Payment Method`` "
 "to the value ``Taler``. This indicates that you intend for the customer "
@@ -302,7 +303,7 @@ msgid ""
 "online payment options can still be used to pay for the invoice)."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:161
+#: ../../ui-explanation/index.rst:185
 msgid ""
 "Once filled, you can ``Confirm`` the invoice and then see the ``Preview``"
 " of the invoice by clicking the corresponding buttons on the top of the "
@@ -317,7 +318,7 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_preview.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_invoice_preview.png"
 
-#: ../../ui-explanation/index.rst:170
+#: ../../ui-explanation/index.rst:198
 msgid ""
 "You can see the ``Taler`` section at the bottom of the invoice **(1)**. "
 "It wouldn’t appear if the ``Payment Method`` of the invoice was not set "
@@ -326,7 +327,7 @@ msgid ""
 "customer cannot use the QR Code **(3)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:176
+#: ../../ui-explanation/index.rst:204
 msgid ""
 "On the top-left of the invoice, you can also see a ``Pay Now`` button. "
 "This button allows the customer to pay via Online Payment, and clicking "
@@ -341,28 +342,28 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_online_payment.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_invoice_online_payment.png"
 
-#: ../../ui-explanation/index.rst:185
+#: ../../ui-explanation/index.rst:217
 msgid "In this menu, the customer can choose to pay online with Taler **(1)**."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:187
+#: ../../ui-explanation/index.rst:219
 msgid ""
 "Selecting this option will start the Online Payment flow that this add-on"
 " implements, as opposed to the invoice payment flow that would have been "
 "used if the customer paid using the invoice’s QR Code."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:192
+#: ../../ui-explanation/index.rst:224
 msgid "Point of sale payment setup"
 msgstr ""
 
-#: ../../ui-explanation/index.rst:194
+#: ../../ui-explanation/index.rst:226
 msgid ""
 "To setup Taler payment for the Point of Sale, you have to setup a new "
 "payment method in the POS app."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:197
+#: ../../ui-explanation/index.rst:229
 msgid ""
 "Go to ``Point-of-Sale -> Configuration -> Payment Methods`` and click "
 "``New``."
@@ -376,7 +377,7 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_setup.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_setup.png"
 
-#: ../../ui-explanation/index.rst:205
+#: ../../ui-explanation/index.rst:237
 msgid ""
 "On this new Point of Sale payment method, set the name (Taler) **(1)**, "
 "tick the ``Online Payment`` option **(2)**, and select Taler as an "
@@ -384,13 +385,13 @@ msgid ""
 "``Enabled``, or it will not appear in the list of available providers."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:212
+#: ../../ui-explanation/index.rst:244
 msgid ""
 "This Taler payment method is specific to the point of sale, and is "
 "different from the payment methods created by default by this add-on."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:216
+#: ../../ui-explanation/index.rst:248
 msgid ""
 "Once this is done, you need to add this new payment provider to each "
 "point of sale that you would like to use it in. To do that, go to "
@@ -406,7 +407,7 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_pos.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_pos.png"
 
-#: ../../ui-explanation/index.rst:226
+#: ../../ui-explanation/index.rst:262
 msgid ""
 "On this page, click on ``More settings: Configurations > Settings`` "
 "**(1)** to be sent to the settings page for this point of sale."
@@ -420,23 +421,23 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_settings.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_settings.png"
 
-#: ../../ui-explanation/index.rst:234
+#: ../../ui-explanation/index.rst:274
 msgid ""
 "On the settings page, add to the setting ``Payment Methods`` **(1)**, add"
 " the new ``Taler`` payment method you created earlier."
 msgstr ""
 
-#: ../../ui-explanation/index.rst:237
+#: ../../ui-explanation/index.rst:277
 msgid ""
 "After this you’re good to go for customers to pay on Point of Sales using"
 " Taler!"
 msgstr ""
 
-#: ../../ui-explanation/index.rst:241
+#: ../../ui-explanation/index.rst:281
 msgid "Point of Sale payments using Taler"
 msgstr ""
 
-#: ../../ui-explanation/index.rst:243
+#: ../../ui-explanation/index.rst:283
 msgid ""
 "Paying at a point of sale using Taler is straightforward and uses Taler’s"
 " online payment flow."
@@ -450,7 +451,7 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_payment.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_payment.png"
 
-#: ../../ui-explanation/index.rst:250
+#: ../../ui-explanation/index.rst:290
 msgid ""
 "When a customer’s cart is finalized, press ``Payment`` and select "
 "``Taler`` **(1)** as a payment method, and validate."
@@ -464,7 +465,7 @@ msgstr ""
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_qr_code.png"
 msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_qr_code.png"
 
-#: ../../ui-explanation/index.rst:258
+#: ../../ui-explanation/index.rst:302
 msgid ""
 "The customer will be presented with a QR Code **(1)**, that they can scan"
 " to complete a payment via Taler."
@@ -708,5 +709,36 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ".. image:: ../images/UI_Tutorial/Tutorial_pos_qr_code.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When the payment is complete, on "
+#~ "the admin-side, you can navigate "
+#~ "to ``Invoicing -> Customers -> "
+#~ "Payments`` to see the list of "
+#~ "payments."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Find the payment you would like to"
+#~ " refund in the payment list, in "
+#~ "``Invoicing -> Customers -> Payments``, "
+#~ "anc click on the payment you’d "
+#~ "like to refund."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To see the email, navigate to "
+#~ "``Settings -> Technical -> Emails``. "
+#~ "This will display a list of "
+#~ "emails, find and click on the one"
+#~ " you want to check."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is a new invoice with some"
+#~ " data filled in, namely the customer"
+#~ " **(1)** and the invoiced product "
+#~ "**(2)**."
 #~ msgstr ""
 
