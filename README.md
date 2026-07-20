@@ -35,7 +35,7 @@ Contributions and translations are welcome! A detailed explanation on how to con
 - The [Odoo Community Association (OCA)](https://github.com/OCA) and their many Open-Source addons, which helped me find my way around which Odoo flows to work on.
 - [petites singularites](https://ps.lesoiseaux.io/taler/) for the support, and the administration of the [ICH Forum](https://ich.taler.net/), where I could post questions and updates about my progress, and get support from the community.
 - The [Kashier](https://github.com/Kashier-payments/Kashier-Odoo-Payment-Add-on) and [Sadad](https://github.com/Adnanghanchi/Odoo-Payment-Provider) payment providers integrations in Odoo, which provided payment integration examples that helped me steer my work in the right direction.
-- Codeberg user @jans for their QA and their help to standardize my code. 
+- [Nitrokey](https://www.nitrokey.com/) for their QA and their help to standardize my code. 
 
 ---
 
