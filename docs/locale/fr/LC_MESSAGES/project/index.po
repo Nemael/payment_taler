@@ -2,10 +2,8 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -18,13 +16,13 @@ msgstr ""
 
 #: ../../project/index.rst:5
 msgid "Project"
-msgstr ""
+msgstr "Projet"
 
 #: ../../project/index.rst:7
 msgid ""
 "This section contains various information regarding the project itself, "
 "and how to contribute."
-msgstr ""
+msgstr "Cette section contient divers renseignements relatifs au projet lui-même et à la manière de contribuer."
 
 #~ msgid ""
 #~ "This section contains various information "

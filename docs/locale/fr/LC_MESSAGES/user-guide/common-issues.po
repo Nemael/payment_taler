@@ -2,10 +2,8 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -18,80 +16,80 @@ msgstr ""
 
 #: ../../user-guide/common-issues.rst:5
 msgid "Common issues"
-msgstr ""
+msgstr "Problèmes techniques courants"
 
 #: ../../user-guide/common-issues.rst:8
 msgid "On this page:"
-msgstr ""
+msgstr "Sur cette page :"
 
 #: ../../user-guide/common-issues.rst:11
 msgid "Tech support"
-msgstr ""
+msgstr "Soutien technique"
 
 #: ../../user-guide/common-issues.rst:13
 msgid ""
 "If you are encountering any issues with the add-on, please don’t hesitate"
 " to either:"
-msgstr ""
+msgstr "En cas de problème lors de l'utilisation de l'extension, n'hésitez pas à soit :"
 
 #: ../../user-guide/common-issues.rst:16
 msgid ""
 "Open a thread in this forum category "
 "https://ich.taler.net/c/integrations/odoo/29 (You can ping me as well, "
 "@Nemael). Please explain your issue in detail."
-msgstr ""
+msgstr "ouvrir un fil dans la catégorie de forum https://ich.taler.net/c/integrations/odoo/29 (vous pouvez m'identifier, @Nemael). Veuillez exliquer votre probleme en détails."
 
 #: ../../user-guide/common-issues.rst:17
 msgid ""
 "Open an issue on the Codeberg repository "
 "https://codeberg.org/Nemael/tops/issue. Please explain in details the "
 "issue you are encountering."
-msgstr ""
+msgstr "ouvrir un ticket dans le de déôt Codeberg https://codeberg.org/Nemael/tops/issue. Veuillez exliquer en détails les problèmes que vous rencontrez."
 
 #: ../../user-guide/common-issues.rst:22
 msgid "The ``Check URL validity`` button is showing an error"
-msgstr ""
+msgstr "Le bouton ``Vérifier la validité de l'URL`` affiche une erreur"
 
 #: ../../user-guide/common-issues.rst:24
 msgid ""
 "This button checks that the chosen Taler merchant is valid and supports "
 "the same currencies that you are using. If your Taler provider accepts a "
 "currency not supported by the Taler merchant, an error will be raised."
-msgstr ""
+msgstr "Ce bouton permet de vérifier que le marchand Taler sélectionné est valide et accepte les mêmes devises que vous. Si la devise de votre fournisseur Taler n'est pas supportée par le marchand Taler, une erreur sera affichée."
 
 #: ../../user-guide/common-issues.rst:29
 msgid ""
 "The error message will show any discrepancies, and the accepted "
 "currencies on both sides."
-msgstr ""
+msgstr "Le message d'erreur détaillera le problème de comatibilité et afficera les devises utilisées par les deux parties."
 
 #: ../../user-guide/common-issues.rst:32
 msgid ""
 "To change the currencies you’d like to support with Taler, go to the "
 "``Configuration`` tab in the payment provider, and navigate to "
 "``Availability -> Currencies``."
-msgstr ""
+msgstr "Pour changer vos devises que vous acceptez dans Taler, rendez-vous dans l'onglet ``Configuration`` dans votre fournisseur de paiement, et dans ``Disponibilité -> Devises``."
 
 #: ../../user-guide/common-issues.rst:36
 msgid "This change will be overwritten when you restart the Odoo server."
-msgstr ""
+msgstr "Ce changement sera annulé au redémarrage au redémarrage du serveur Odoo."
 
 #: ../../user-guide/common-issues.rst:37
 msgid ""
 "For a more permanent change, you can edit the ``const.py`` file at the "
 "root of this add-on, and comment/uncomment the currencies that you want "
 "to set as Taler configuration."
-msgstr ""
+msgstr "Pour effectuer de changement de manière permanente, modifiez le fichier ``const.py`` dans la racine de cette extension et commentez/décommentez la devise souhaitée."
 
 #: ../../user-guide/common-issues.rst:40
 msgid "``const.py`` is loaded at server start."
-msgstr ""
+msgstr "``const.py`` est chargé au démarrage du serveur."
 
 #: ../../user-guide/common-issues.rst:43
 msgid ""
 "Because KUDOS is an imaginary currency, you will not find it in Odoo's "
 "currency list."
-msgstr ""
+msgstr "Le KUDO est une devise imaginaire, donc il n'est pas repris dns la liste de devises Odoo."
 
 #~ msgid "``const.py`` is loaded at server start,"
 #~ msgstr ""

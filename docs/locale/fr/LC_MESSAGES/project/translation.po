@@ -2,10 +2,8 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -18,40 +16,40 @@ msgstr ""
 
 #: ../../project/translation.rst:5
 msgid "Translation Status"
-msgstr ""
+msgstr "État de la traduction"
 
 #: ../../project/translation.rst:8
 msgid "On this page:"
-msgstr ""
+msgstr "Sur cette page :"
 
 #: ../../project/translation.rst:11
 msgid "Translation & Available languages"
-msgstr ""
+msgstr "Traduction et langes disponibles"
 
 #: ../../project/translation.rst:13
 msgid ""
 "This module and its documentation is currently available in English and "
 "French."
-msgstr ""
+msgstr "Ce module et sa documentation sont actuellement disponibles en anglais et en français."
 
 #: ../../project/translation.rst:15
 msgid ""
 "Invoices and emails sent to customer for refund are also translated, and "
 "will be sent in the language set on the customer’s profile."
-msgstr ""
+msgstr "Les factures et emails envoyés à la clientère pour les remboursement sont également traduits et seront evoyés dans la langue sélectionnés dans les paramètres client."
 
 #: ../../project/translation.rst:16
 msgid ""
 "This documentation is also available in French: https://taler-odoo-"
 "payment-system.readthedocs.io/fr/."
-msgstr ""
+msgstr "Cette documentation est également disponible en français : https://taler-odoo-payment-system.readthedocs.io/fr/."
 
 #: ../../project/translation.rst:17
 msgid ""
 "Translation of the software or the documentation in any other languages "
 "is welcome, please see :ref:`here <how-to-add-a-translation>` for a guide"
 " on how to add a translation."
-msgstr ""
+msgstr "De futures traductions du logiciel dans de nouvelles langues sont les bienvenues, veuillez vous référer à :ref:`cette page <how-to-add-a-translation>` pour consulter le guide d'ajout de nouvelles langues."
 
 #~ msgid ""
 #~ "This module and its documentation is "

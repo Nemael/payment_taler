@@ -2,10 +2,8 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-20 09:46-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -18,17 +16,17 @@ msgstr ""
 
 #: ../../user-guide/index.rst:5
 msgid "User Guide and flow walkthrough"
-msgstr ""
+msgstr "Guide d'utilisation"
 
 #: ../../user-guide/index.rst:7
 msgid ""
 "This section contains an explanation of how to install, configure, and "
 "operate the Taler-Odoo Payment System."
-msgstr ""
+msgstr "Ce chapitre contient des explications détaillées sur la manière d'installer, de configurer et d'utiliser le système de paiment Taler-Odoo."
 
 #: ../../user-guide/index.rst:9
 msgid ""
 "This section is intended for Odoo administrators that want to provide "
 "Taler payments to their customers."
-msgstr ""
+msgstr "Il est destiné aux audministratrices et administrateurs Odoo qui souhaitent offrir la possibilités à leurs clientèle d'effectuer des paiments Taler."
 

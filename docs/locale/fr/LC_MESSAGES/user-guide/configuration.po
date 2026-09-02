@@ -2,10 +2,8 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -22,11 +20,11 @@ msgstr ""
 
 #: ../../user-guide/configuration.rst:8
 msgid "On this page:"
-msgstr ""
+msgstr "Sur cette page :"
 
 #: ../../user-guide/configuration.rst:14
 msgid "Configuration of the Taler payment provider"
-msgstr ""
+msgstr "Configuration du mode de paiement Taler"
 
 #: ../../user-guide/configuration.rst:16
 msgid "Once the add-on is installed from the Apps:"
@@ -34,41 +32,41 @@ msgstr "Une fois que l'add-on est installé depuis le menu Apps:"
 
 #: ../../user-guide/configuration.rst:18
 msgid "Go to the payment providers menu. It can be accessed in multiple ways:"
-msgstr ""
+msgstr "rendez-vous dans le menu de fournisseurs de paiement. Il est accessible de plusieurs manières :"
 
 #: ../../user-guide/configuration.rst:21
 msgid "``Website -> Configuration -> eCommerce -> Payment Providers``."
-msgstr ""
+msgstr "``Site eb -> Configuration -> eCommerce -> Fournisseurs de paiement``."
 
 #: ../../user-guide/configuration.rst:22
 msgid "``Invoicing -> Configuration -> Online Payments -> Payment Providers``."
-msgstr ""
+msgstr "``acturation -> Configuration -> Paiements en ligne -> Fournisseurs de paiement``."
 
 #: ../../user-guide/configuration.rst:24
 msgid ""
 "Either way you land here, this is the list of your currently available "
 "payment providers."
-msgstr ""
+msgstr "Quel que soit la manière dont vous y accédez, voici la liste des founrnisseurs de paiement actuellement disponible."
 
 #: ../../user-guide/configuration.rst:26
 msgid ""
 "A new ``Taler`` payment provider will be in this list, set as disabled "
 "for now."
-msgstr ""
+msgstr "Un nouveau fournisseur de paiement ``Taler`` y figurera, désactivé dans un premier temps."
 
 #: ../../user-guide/configuration.rst:28
 msgid "Click on the Taler payment provider."
-msgstr ""
+msgstr "Cliquez sur le fournisseur de paiement Taler."
 
 #: ../../user-guide/configuration.rst:29
 msgid "In the ``Credentials`` tab, set the Taler merchant URL."
-msgstr ""
+msgstr "Insérez l'URL vendeur Taler dans l'onglet ``Identifiants``."
 
 #: ../../user-guide/configuration.rst:31
 msgid ""
 "By default, the demobank’s credentials are used. You can access the "
 "demobank `here <https://backend.demo.taler.net/instances/sandbox/>`__"
-msgstr ""
+msgstr "Par défaut, les identifiants de la démobanque sont utilisés. Accédez `ici <https://backend.demo.taler.net/instances/sandbox/>`__ à la démobanque"
 
 #: ../../user-guide/configuration.rst:34
 msgid ""
@@ -76,38 +74,38 @@ msgid ""
 " check if the entered URL is reaching a valid Taler merchant, and that "
 "this merchant’s accepted currencies are compatible with you Taler "
 "available currencies."
-msgstr ""
+msgstr "Après avoir coniguré l'URL, vous pouvez cliquer sur le bouton ``Vérifier la validité de l'URL`` pour vous assurer qu'il se connecte à un vendeur Taleur valide et que les devises que celui-ci accepte soient compatibles avec vos paramètres Taler."
 
 #: ../../user-guide/configuration.rst:39
 msgid "You can find the accepted currencies in the ``Configuration`` tab."
-msgstr ""
+msgstr "Pour voir les devises configurées dans Taler, rendez-vous dans l'onglet ``Configuration``."
 
 #: ../../user-guide/configuration.rst:42
 msgid ""
 "Then set the Taler Merchant Password. It will be used for API calls to "
 "the merchant."
-msgstr ""
+msgstr "Configurez ensuite le mot de passe vendeur Taler. Il sera utilisé pour les échanges API avec le vendeur."
 
 #: ../../user-guide/configuration.rst:44
 msgid ""
 "You may want change the Taler fulfillment message as well. It will be "
 "shown on created Taler transactions"
-msgstr ""
+msgstr "Vous pouvez également changer le message de confirmation Taler. Celui-ci sera affiché dans les transactions Taler."
 
 #: ../../user-guide/configuration.rst:47
 msgid "This change is only for the Taler order, there will be no change in Odoo."
-msgstr ""
+msgstr "Ce changement ne s'appliquera que dans les commandes Taler, et pas dans Odoo."
 
 #: ../../user-guide/configuration.rst:49
 msgid ""
 "If you’d like to change the Odoo fulfillment messages shown to the "
 "customers after a payment using Taler, you can do so in the ``Messages`` "
 "tab."
-msgstr ""
+msgstr "Pour changer le message de confirmation Odoo pour la clientèle qui paye avec Taler, rendez-vous dans l'onglet ``Messages``."
 
 #: ../../user-guide/configuration.rst:53
 msgid "The default values are connecting to the sandbox Taler merchant:"
-msgstr ""
+msgstr "Les valeurs défaut sont reliées au vendeur Taler bac à sable :"
 
 #: ../../user-guide/configuration.rst:55
 msgid "URL: https://backend.demo.taler.net/instances/sandbox"
@@ -115,35 +113,35 @@ msgstr ""
 
 #: ../../user-guide/configuration.rst:56
 msgid "Password: sandbox"
-msgstr ""
+msgstr "Mot de passe: sandbox"
 
 #: ../../user-guide/configuration.rst:58
 msgid ""
 "It is advised, but completely optional, to create a Taler-specific "
 "Journal (this can be set in the Configuration tab)."
-msgstr ""
+msgstr "Il est recommendé, mais non nécessaire, de crééer un Jounal spécifique à Taler (cela peut-être paramétré dans l'onglet Configuration)."
 
 #: ../../user-guide/configuration.rst:61
 msgid "This will help during the Accounting process."
-msgstr ""
+msgstr "Cela facilitera le prcessus de Comptabilité."
 
 #: ../../user-guide/configuration.rst:63
 msgid "Click the ``Enabled`` radio button."
-msgstr ""
+msgstr "Cliquez le bouton d'option ``Activé``."
 
 #: ../../user-guide/configuration.rst:65
 msgid ""
 "The initial setup is now complete and Taler payment will be available in "
 "all eCommerce, online payments and Invoicing apps."
-msgstr ""
+msgstr "Le paramétrage initial est maintenant terminé et les paiements Taler seront disponibles pour eCommerce, pour les paiements en ligne et pour les apps de facturation."
 
 #: ../../user-guide/configuration.rst:-1
 msgid "Taler providers settings"
-msgstr ""
+msgstr "Paramètres de fournisseurs Taler"
 
 #: ../../user-guide/configuration.rst:-1
 msgid ".. image:: ../images/EN/Taler_provider_setting_complete.png"
-msgstr ".. image:: ../images/FR/Taler_provider_setting_complete.png"
+msgstr ""
 
 #~ msgid ""
 #~ "``Invoicing -> Configuration -> Online "
