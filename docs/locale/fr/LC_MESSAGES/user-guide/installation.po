@@ -217,7 +217,7 @@ msgid ""
 msgstr "Cliquez sur ``Plus de paramètres : Configurations > Paramètres``, pour atteindre les paramètres du point de vente."
 
 #: ../../user-guide/installation.rst:102
-msgid "In Payment -> Payment Methods, remove the Taler payment method."
+msgid "In ``Payment -> Payment Methods``, remove the Taler payment method."
 msgstr "Dans ``Paiement -> Mode de Paiement``, retirez le mode de paiment Taler."
 
 #: ../../user-guide/installation.rst:104

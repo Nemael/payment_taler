@@ -235,8 +235,8 @@ msgstr "Exemple : ``sphinx-intl update -p _build/gettext -l fr``."
 #: ../../project/how-to-contribute.rst:94
 msgid ""
 "Once you have the ``.po`` files, you can translate line-per-line the "
-"content of each ``mgsid`` in the ``.po`` files."
-msgstr "Les fichiers ``.po`` en votre possession, vous pouvez traduire ligne par ligne le contenu de chaque ``mgsid`` dans le fichiers ``.po``."
+"content of each ``msgid`` in the ``.po`` files."
+msgstr "Les fichiers ``.po`` en votre possession, vous pouvez traduire ligne par ligne le contenu de chaque ``msgid`` dans le fichiers ``.po``."
 
 #: ../../project/how-to-contribute.rst:95
 msgid ""

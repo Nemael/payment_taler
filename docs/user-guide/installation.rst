@@ -99,7 +99,7 @@ Uninstall the add-on
   - Select a point of sale that you made Taler payments available for.
   - Click on ``More settings: Configurations > Settings``, which will
     lead you to the point of sale’s settings page.
-  - In Payment -> Payment Methods, remove the Taler payment method.
+  - In ``Payment -> Payment Methods``, remove the Taler payment method.
 
     - Do this step for every point of sale you made Taler payments
       available for.
