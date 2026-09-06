@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Payments &#8212; Taler-Odoo Payment System v1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=5cb08e4e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Invoicing" href="invoicing.html" />
+    <link rel="prev" title="Configuration" href="configuration.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="invoicing.html" title="Invoicing"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Taler-Odoo Payment System v1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide and flow walkthrough</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Payments</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="payments">
+<h1>Payments<a class="headerlink" href="#payments" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#complete-an-ecommerce-payment-using-taler" id="id1">Complete an eCommerce payment using Taler</a></p></li>
+<li><p><a class="reference internal" href="#purchase-an-event-ticket-online-using-taler" id="id2">Purchase an Event ticket online using Taler</a></p></li>
+</ul>
+</nav>
+<section id="complete-an-ecommerce-payment-using-taler">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Complete an eCommerce payment using Taler</a><a class="headerlink" href="#complete-an-ecommerce-payment-using-taler" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Once you have completed the Taler initial setup, customers can pay on
+your website.</p></li>
+<li><p>To do so, they will open the shop and add any items to their cart.</p></li>
+<li><p>During the checkout, they can now select the <code class="docutils literal notranslate"><span class="pre">Taler</span></code> payment
+provider.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_ecommerce_checkout.png"><img alt="Taler eCommerce checkout" class="align-center" src="../_images/Taler_ecommerce_checkout.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>After clicking <code class="docutils literal notranslate"><span class="pre">Pay</span> <span class="pre">now</span></code>, a new Taler order will be created on the
+merchant side, and the customer will be redirected to the Taler order,
+from which they can pay with any Taler wallet on their phone or web
+browser.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_ecommerce_wallet.png"><img alt="Taler eCommerce wallet" class="align-center" src="../_images/Taler_ecommerce_wallet.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Upon completion of the payment using their wallet, the customer will be
+redirected back to your Odoo website, which will show a successful
+payment confirmation.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_ecommerce_payment_processed.png"><img alt="Taler eCommerce payment processor" class="align-center" src="../_images/Taler_ecommerce_payment_processed.png" style="width: 100%;" /></a>
+</section>
+<section id="purchase-an-event-ticket-online-using-taler">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Purchase an Event ticket online using Taler</a><a class="headerlink" href="#purchase-an-event-ticket-online-using-taler" title="Link to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To have a fully working ticketing system, you might need to install the python module pycairo:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">libcairo2-dev</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">rlPyCairo</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<ul class="simple">
+<li><p>To make event tickets available for customers to pay using Taler:</p>
+<ul>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">Events</span></code> add-on on your Odoo instance.</p></li>
+<li><p>Go to the settings app, and navigate to the <code class="docutils literal notranslate"><span class="pre">Events</span></code> settings.</p></li>
+<li><p>Tick the <code class="docutils literal notranslate"><span class="pre">Online</span> <span class="pre">Ticketing</span></code> setting and save the changes.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_ticketing_settings.png"><img alt="Taler ticketing settings" class="align-center" src="../_images/Taler_ticketing_settings.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Tickets will now be available to buy using online payments providers,
+including the Taler payment provider.</p></li>
+<li><p>Customers can navigate the <code class="docutils literal notranslate"><span class="pre">Events</span></code> tab on your website, and choose
+a ticket to any event they’re interested in.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_ticketing_events_list.png"><img alt="Taler ticketing event list" class="align-center" src="../_images/Taler_ticketing_events_list.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Upon clicking an event, they will be asked to provide some identifying
+information, and then will be lead to a payment page.</p></li>
+<li><p>On this payment page, the customer can select Taler as a payment
+provider.</p></li>
+<li><p>They will be redirected to a Taler order page, where they can pay
+using their Taler wallet on the app or web browser.</p></li>
+<li><p>Once the payment is completed, the customer will land back on the odoo
+page, with their payment successfully processed, and a .pdf of the
+event tickets available.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_ticketing_event_payment_confirmation.png"><img alt="Taler ticketing event payment confirmation" class="align-center" src="../_images/Taler_ticketing_event_payment_confirmation.png" style="width: 100%;" /></a>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Payments</a><ul>
+<li><a class="reference internal" href="#complete-an-ecommerce-payment-using-taler">Complete an eCommerce payment using Taler</a></li>
+<li><a class="reference internal" href="#purchase-an-event-ticket-online-using-taler">Purchase an Event ticket online using Taler</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="configuration.html"
+                          title="previous chapter">Configuration</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="invoicing.html"
+                          title="next chapter">Invoicing</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user-guide/payments.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="invoicing.html" title="Invoicing"
+             >next</a></li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Taler-Odoo Payment System v1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide and flow walkthrough</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Payments</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

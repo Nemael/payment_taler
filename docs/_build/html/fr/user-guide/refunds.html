@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Remboursements &#8212; Documentation Taler-Odoo Payment System v1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=d43c624c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Mode test vendeur" href="merchant-test-mode.html" />
+    <link rel="prev" title="Point de Vente" href="point-of-sale.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="merchant-test-mode.html" title="Mode test vendeur"
+             accesskey="N">suivant</a></li>
+        <li class="right" >
+          <a href="point-of-sale.html" title="Point de Vente"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Guide d’utilisation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Remboursements</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="refunds">
+<h1>Remboursements<a class="headerlink" href="#refunds" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">Sur cette page :</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#refund-an-online-payment-made-using-taler" id="id1">Remboursements et paiements en ligne effectués dans Taler</a></p></li>
+</ul>
+</nav>
+<section id="refund-an-online-payment-made-using-taler">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Remboursements et paiements en ligne effectués dans Taler</a><a class="headerlink" href="#refund-an-online-payment-made-using-taler" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Pour rembourser un paiement effectué dans Taler, trouvez d’abord le paiement en question.</p></li>
+<li><p>Pour Odoo 18, dans l’extension <code class="docutils literal notranslate"><span class="pre">Facturation</span></code>, rendez-vous dans <code class="docutils literal notranslate"><span class="pre">Clients</span> <span class="pre">-&gt;</span> <span class="pre">Paiements</span></code> dans la barre en haut de la page.</p></li>
+<li><p>Pour Odoo 19, vous y accéderez via <code class="docutils literal notranslate"><span class="pre">Clients-&gt;</span> <span class="pre">Paiements</span></code>.</p>
+<ul>
+<li><p>La liste des paiement effectués se trouve sur cette page.</p></li>
+<li><p>Dans l’exemple suivant, nous voulons rembourser le paiement <code class="docutils literal notranslate"><span class="pre">PBNK1/2026/00029</span></code>.</p></li>
+<li><p>Il est également possible, mais plus technique, d’activer le mode développeur dans les paramètres, de se rendre dans <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">Transactions</span></code> dans la barre en haut de la page, de sélectionner une transaction et de sélectionner le paiement dans le champ <code class="docutils literal notranslate"><span class="pre">paiement</span></code> sur la page de la transaction.</p></li>
+</ul>
+</li>
+<li><p>Cliquez sur le paiement que vous souhaitez rembourser.</p></li>
+<li><p>Sur la page du paiement, cliquez sur le bouton d’action <code class="docutils literal notranslate"><span class="pre">Remboursement</span></code>, en haut à gauche, et confirmez le remboursement.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_refund_payment.png"><img alt="Page de paiement Taler" class="align-center" src="../_images/Taler_refund_payment.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Vous pouvez déterminer le montant que vous souhaitez rembourser. Celui-ci ne peut être supérieur au montant de la transaction initiale.</p>
+<ul>
+<li><p>Vous pouvez effectuer des remboursements partiels de montant différents (par exemple, une transaction de 30 euros peut-être remboursée de 5 puis de 10 euros).</p></li>
+<li><p>Dans le cas de remboursements partiels, le montant total remboursé ne peut dépasser celui du paiement initial.</p></li>
+<li><p>La cliente ou le client recevra un email par remboursement partiel, chacun contenant un code QR à scanner à l’aide de son porte-monnaie.</p></li>
+</ul>
+</li>
+<li><p>La confirmation du remboursement déclenchera la création d’une nouvelle transaction qui apparaitra dans la liste des transactions sous le nom <code class="docutils literal notranslate"><span class="pre">R-{Odoo</span> <span class="pre">numéro</span> <span class="pre">de</span> <span class="pre">référence}</span></code>.</p>
+<ul>
+<li><p>Un email contenant le code QR de remboursement sera également envoyé à l’adresse email client.</p>
+<ul>
+<li><p>Vous le trouverez dans la liste des emails envoyés, dans <code class="docutils literal notranslate"><span class="pre">Paramètres</span> <span class="pre">-&gt;</span> <span class="pre">Technique</span> <span class="pre">-&gt;</span> <span class="pre">Emails</span></code>.</p>
+<ul>
+<li><p>Il se peut que vous deviez activer le mode <code class="docutils literal notranslate"><span class="pre">Développeur</span></code> d’Odoo pour accéder à l’onglet <code class="docutils literal notranslate"><span class="pre">Technique</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Pour recevoir le remboursement, le côté client devra scanner le code QR à l’aide du porte-monnaie Taler.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_refund_email.png"><img alt="Email de remboursement Taler destiné au côté client" class="align-center" src="../_images/Taler_refund_email.png" style="width: 100%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Il vous faut une adresse email d’envoi valide pour que cette fonctionnalité soit utilisable.</p></li>
+<li><p>Sinon, l’email sera généré et pourra être lu mais ne serra pas envoyé.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Remboursements</a><ul>
+<li><a class="reference internal" href="#refund-an-online-payment-made-using-taler">Remboursements et paiements en ligne effectués dans Taler</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="point-of-sale.html"
+                          title="Chapitre précédent">Point de Vente</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="merchant-test-mode.html"
+                          title="Chapitre suivant">Mode test vendeur</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user-guide/refunds.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="merchant-test-mode.html" title="Mode test vendeur"
+             >suivant</a></li>
+        <li class="right" >
+          <a href="point-of-sale.html" title="Point de Vente"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Guide d’utilisation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Remboursements</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

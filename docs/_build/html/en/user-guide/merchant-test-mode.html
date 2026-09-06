@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Merchant Test Mode &#8212; Taler-Odoo Payment System v1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=5cb08e4e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Technical Information" href="technical-information.html" />
+    <link rel="prev" title="Refunds" href="refunds.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="technical-information.html" title="Technical Information"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="refunds.html" title="Refunds"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Taler-Odoo Payment System v1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide and flow walkthrough</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Merchant Test Mode</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="merchant-test-mode">
+<h1>Merchant Test Mode<a class="headerlink" href="#merchant-test-mode" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#test-the-add-on-using-the-merchant-test-mode" id="id1">Test the add-on using the merchant test mode</a></p></li>
+</ul>
+</nav>
+<section id="test-the-add-on-using-the-merchant-test-mode">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Test the add-on using the merchant test mode</a><a class="headerlink" href="#test-the-add-on-using-the-merchant-test-mode" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The merchant test mode allows you to test the installation of the
+module, and confirm that the selected merchant are working properly.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not use this mode in production or with published items for sale.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can decide to keep the payment provider <code class="docutils literal notranslate"><span class="pre">Unpublished</span></code> when using Test Mode, or to <code class="docutils literal notranslate"><span class="pre">Publish</span></code> it by clicking the button at the top of the page. If a payment provider is unpublished only an administrator users will be able to see and use the payment provider. It is advised to keep the payment provider unpublished when using the Test Mode.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the Odoo UI, the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to <code class="docutils literal notranslate"><span class="pre">Kudos</span></code> right before sending the order to the Taler merchant.</p>
+</div>
+<ul class="simple">
+<li><p>Here is an example of the flow for this feature:</p>
+<ul>
+<li><p>On the payment provider’s page, check the <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">Mode</span></code> radio
+button.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_test_mode_radio_button.png"><img alt="Taler test mode radio button selected" class="align-center" src="../_images/Taler_test_mode_radio_button.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Start the process for any online payment, I will show the process for
+an eCommerce payment.</p>
+<ul>
+<li><p>Navigate to the shop page.</p></li>
+<li><p>Select any product that you’d like to buy as a test, go to your cart
+and start the checkout process.</p></li>
+<li><p>Once you confirm your order, the Taler payment method will appear,
+with some icons.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_test_mode_payment_method_with_icons.png"><img alt="Taler test mode payment method with two icons, striked-through eye and yellow warning sign" class="align-center" src="../_images/Taler_test_mode_payment_method_with_icons.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Explanation of the icons:</p>
+<ul>
+<li><p>The red striked-through eye means <code class="docutils literal notranslate"><span class="pre">Unpublished</span></code>. It is there to
+let you know that this payment method is not visible to visitors,
+only users that have administrator access rights to the shop will be
+able to see the test mode Taler payment provider.</p></li>
+<li><p>The yellow warning sign means <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">mode</span></code>. It is there to warn you
+that the test mode is activated for this payment method.</p></li>
+</ul>
+</li>
+<li><p>Pay the order. A corresponding order will be created on the Taler
+merchant, with a currency change.</p>
+<ul>
+<li><p>The currency originally used will be swapped with <code class="docutils literal notranslate"><span class="pre">Kudos</span></code>.</p>
+<ul>
+<li><p>Kudos is an imaginary currency created for Taler. It can be used
+for free to test transactions with your Taler wallet.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>A Taler order will be created, you can open it and pay with your
+wallet. (Notice that the currency is replaced with Kudos.)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_test_mode_taler_order_payment.png"><img alt="Taler test mode payment on Taler, showing kudos currency" class="align-center" src="../_images/Taler_test_mode_taler_order_payment.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Once the order is paid using the imaginary currency, you will be sent
+back to the completed Odoo order.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_test_mode_taler_payment_completed.png"><img alt="Taler test mode payment shown as completed on Odoo website" class="align-center" src="../_images/Taler_test_mode_taler_payment_completed.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>When this step is done, the test is complete. You have confirmed that the add-on works, and the Taler merchant endpoint can receive your orders for compatible currencies.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Merchant Test Mode</a><ul>
+<li><a class="reference internal" href="#test-the-add-on-using-the-merchant-test-mode">Test the add-on using the merchant test mode</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="refunds.html"
+                          title="previous chapter">Refunds</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="technical-information.html"
+                          title="next chapter">Technical Information</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user-guide/merchant-test-mode.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="technical-information.html" title="Technical Information"
+             >next</a></li>
+        <li class="right" >
+          <a href="refunds.html" title="Refunds"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Taler-Odoo Payment System v1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide and flow walkthrough</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Merchant Test Mode</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

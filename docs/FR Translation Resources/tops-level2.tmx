@@ -1,0 +1,3585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.6.0_10_unknown" segtype="sentence" srclang="en"/>
+  <body>
+<!-- Default translations -->
+    <tu>
+      <tuv xml:lang="en">
+        <seg>(However, despite this setting, other online payment options can still be used to pay for the invoice).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132852Z" creationid="Rad Computer" creationdate="20260728T013241Z">
+        <seg>(Il aura toutefois la possibilité de choisir un autre mode de paiement pour régler cette facture.)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>(Notice that the currency is replaced with Kudos.)</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T102811Z" creationid="fancyplank" creationdate="20260813T102811Z">
+        <seg>(Voyez comment la devise a été remplacée par des kudos.)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>(See user-guide for more information.)</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131111Z" creationid="Rad Computer" creationdate="20260722T040927Z">
+        <seg>(Consultez le guide d'utilisation pour plus d'information.)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>**(1)** (See documentation for more information).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260722T035907Z" creationid="Rad Computer" creationdate="20260722T035907Z">
+        <seg>**(1)** (Consultez la documentation pour plus d'information.)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>**(2)** (See documentation for more information).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131014Z" creationid="Rad Computer" creationdate="20260722T040429Z">
+        <seg>**(2)** (Consultez la documentation pour plus d'information.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>A Taler order will be created, you can open it and pay with your wallet.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135448Z" creationid="fancyplank" creationdate="20260813T102746Z">
+        <seg>Une commande Taler sera créée et vous pourrez y accéder et la payer avec votre porte-monnaie.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>A corresponding order will be created on the Taler merchant, with a currency change.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T102508Z" creationid="fancyplank" creationdate="20260813T102508Z">
+        <seg>Une commande correspondante, devise changée, sera créée dans le vendeur Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>A new ``Taler`` payment provider will be in this list, set as disabled for now.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T130929Z" creationid="fancyplank" creationdate="20260825T130929Z">
+        <seg>Un nouveau fournisseur de paiement ``Taler`` y figurera, désactivé dans un premier temps.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>A striked-through eye means that this payment method can only be seen by an admin (generally used when testing a new payment provider).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132107Z" creationid="Rad Computer" creationdate="20260727T234857Z">
+        <seg>un œil barré signifie que ce mode de paiement n'est accessible que par une personne disposant de droits d'administration (ce mode est généralement employé pour tester un nouveau fournisseur de paiement).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>A yellow warning sign means that the payment provider is in test mode.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132133Z" creationid="Rad Computer" creationdate="20260727T234922Z">
+        <seg>un signe attention jaune signifie que ce fournisseur de paiement est en mode test.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Activating or clicking on the payment provider will lead you to the payment provider’s page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130809Z" creationid="Rad Computer" creationdate="20260722T035526Z">
+        <seg>L'activer ou cliquer dessus vous redirigera vers la page du fournisseur de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Activating the module is the same as installing it on your Odoo instance.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260721T174258Z" creationid="Rad Computer" creationdate="20260721T174258Z">
+        <seg>Activer le module revient à l'installer dans votre instance d'Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Add Taler to the point of sale:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103515Z" creationid="fancyplank" creationdate="20260814T150745Z">
+        <seg>Ajouter Taler au point de vente :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Add any items to the order and click ``Payment`` at the bottom of the page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T104457Z" creationid="fancyplank" creationdate="20260814T153032Z">
+        <seg>Ajoutez un article dans le panier et cliquez sur ``Paiement`` en bas de la page.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Add more translations to help make the add-on more accessible (see :ref:`here &lt;how-to-add-a-translation&gt;` for a guide on how to add a translation).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T142146Z" creationid="Rad Computer" creationdate="20260731T003904Z">
+        <seg>Traduction dans de nouvelles langues pour rendre l'extension plus accessible (voir :ref:`ici &lt;how-to-add-a-translation&gt;` pour le guide d'ajout de traduction).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Add the ``Events`` add-on on your Odoo instance.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101702Z" creationid="fancyplank" creationdate="20260814T122730Z">
+        <seg>aoutez l'extension ``Événements`` à votre instance Odoo,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>After clicking ``Pay now``, a new Taler order will be created on the merchant side, and the customer will be redirected to the Taler order, from which they can pay with any Taler wallet on their phone or web browser.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101516Z" creationid="fancyplank" creationdate="20260814T120256Z">
+        <seg>Après avoir cliqué sur ``Payer maintenant``, une nouvelle commande Taler sera ouverte sur le site vendeur, et la clientèle sera redirigée vers celle-ci, où elle pourra payer à l'aide d'un porte-monnaie Taler depuis son téléphone portable ou son navigateur Web.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>After editing the ``.rst`` files, you have extract the ``.pot`` files for them to contain the changes you made: ``sphinx-build -b gettext .</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T015302Z" creationid="Rad Computer" creationdate="20260731T015302Z">
+        <seg>Après avoir modifé les fichiers ``.rst``, vous devez extraire les fichiers ``.pot`` pour qu'ils contiennent vos changements : ``sphinx-build -b gettext .</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>After making your changes, you need to rebuild the documentation, to obtain the updated html files.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T142829Z" creationid="Rad Computer" creationdate="20260731T012632Z">
+        <seg>Après avoir apporté vos changements, vous devrez recompiler la documentation pour obtenir les fichiers ``.html`` mis à jour.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>After setting the URL, you can click the ``Check URL validity`` button to check if the entered URL is reaching a valid Taler merchant, and that this merchant’s accepted currencies are compatible with you Taler available currencies.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T095614Z" creationid="fancyplank" creationdate="20260825T135311Z">
+        <seg>Après avoir coniguré l'URL, vous pouvez cliquer sur le bouton ``Vérifier la validité de l'URL`` pour vous assurer qu'il se connecte à un vendeur Taler valide et que les devises que celui-ci accepte soient compatibles avec vos paramètres Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>After setting up the URL, you can press ``Check URL validity``, this will connect to the entered URL, and see if the accepted currencies is compatible with Odoo’s currencies **(5)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131121Z" creationid="Rad Computer" creationdate="20260722T040918Z">
+        <seg>Après avoir paramétré l'URL, cliquez sur ``Vérifier la validité de l'URL``. Cela vous connectera à celui-ci et vous permettra de vérifier si les devises sélectionnées sont compatibles avec les devises Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>After this you’re good to go for customers to pay on Point of Sales using Taler!</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133736Z" creationid="Rad Computer" creationdate="20260728T024410Z">
+        <seg>Les clientes et clients pourront désormais payer avec Taler sur Point de vente !</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Allowing Taler payment on the point-of-sale app requires a few more steps than regular online payments.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103156Z" creationid="fancyplank" creationdate="20260814T150005Z">
+        <seg>La configuration des paiments Taler sur l'appli Point de Vente comprends quelques étapes de plus que les paiments en ligne classiques.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Alternatively, you can access this page by going to Settings through the app switcher (top-left button), then going to ``Point of Sale`` section, and selecting the point of sale that you would like to modify.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103724Z" creationid="fancyplank" creationdate="20260814T151826Z">
+        <seg>Vous pouvez également accéder à cette page en vous rendant dans Paramètres dans le menu de navigation de l'application (bouton en haut a gauche), puis dans la section ``Point de Vente``. Là, vous pouvez modifier le point de vente souhaité.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>An email containing the refund QR Code will also be sent to the customer’s email address.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T144927Z" creationid="fancyplank" creationdate="20260901T144927Z">
+        <seg>Un email contenant le code QR de remboursement sera également envoyé à l'adresse email client.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Any invoice can be paid online using Taler.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T104304Z" creationid="fancyplank" creationdate="20260825T104304Z">
+        <seg>Toute facture peut être payée à l'aide de Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>As with other payment providers, Odoo users will have limited access to the Taler payment provider settings.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T064424Z" creationid="fancyplank" creationdate="20260821T064424Z">
+        <seg>Comme pour tout autre fournisseur de paiement, les utilisatrices et utilisateurs d'Odoo n'auront qu'un accès limité aux paramètres de Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Avoid using the test mode in production.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132137Z" creationid="Rad Computer" creationdate="20260727T235333Z">
+        <seg>Évitez d'employer le mode test en production.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Because KUDOS is an imaginary currency, you will not find it in Odoo's currency list.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141858Z" creationid="fancyplank" creationdate="20260821T074229Z">
+        <seg>Le KUDO étant une devise imaginaire, il n'est pas repris dans la liste des devises Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>By default, the demobank’s credentials are used.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T134830Z" creationid="fancyplank" creationdate="20260825T134830Z">
+        <seg>Par défaut, les identifiants de la démobanque sont utilisés.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Change settings using CLI</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T063249Z" creationid="fancyplank" creationdate="20260821T063023Z">
+        <seg>Changer les paramètres à l'aide du terminal de commande</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Check the ``Online Payment`` checkbox.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T150555Z" creationid="fancyplank" creationdate="20260814T150555Z">
+        <seg>Cochez la case ``Paiement en ligne``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click ``Uninstall``, the add-on should be uninstalled.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T202928Z" creationid="fancyplank" creationdate="20260809T202928Z">
+        <seg>Cliquez sur ``Désinstaller``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click ``Update Apps List`` on the top bar.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T025148Z" creationid="Rad Computer" creationdate="20260731T024836Z">
+        <seg>Cliquez sur ``Mettre à jour la liste des Apps`` dans la barre en haut de la page.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click ``Validate``, it will show a QR Code.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T153239Z" creationid="fancyplank" creationdate="20260814T153239Z">
+        <seg>Cliquez sur ``Valider``, cela générera un code QR.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on ``Deploy on Odoo.sh``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T031057Z" creationid="Rad Computer" creationdate="20260728T031008Z">
+        <seg>cliquez sur ``Deploy on Odoo.sh``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on ``More settings: Configurations &gt; Settings``, which will lead you to the point of sale’s settings page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T151559Z" creationid="fancyplank" creationdate="20260809T211831Z">
+        <seg>Cliquez sur ``Plus de paramètres : Configurations &gt; Paramètres``, pour atteindre les paramètres du point de vente.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on ``Pay``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T160025Z" creationid="fancyplank" creationdate="20260821T160025Z">
+        <seg>cliquez sur ``Payer``,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on the Taler payment provider.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T131000Z" creationid="fancyplank" creationdate="20260825T131000Z">
+        <seg>Cliquez sur le fournisseur de paiement Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on the ``Refund`` button and confirm the amount you’d like to refund **(1)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132318Z" creationid="Rad Computer" creationdate="20260728T000322Z">
+        <seg>Cliquez sur le bouton ``Rembourser`` **(1)** et confirmez le montant du remboursement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on the ``Taler`` record you created when setting up the point of sale payment system, it should be highlighted in red because the payment provider is not available anymore.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T094216Z" creationid="fancyplank" creationdate="20260809T205747Z">
+        <seg>Cliquez sur le mode ``Taler`` créé au moment de la configuration de votre système de paiement Point de Vente. Il devrait à présent être surligné en rouge car le sytème de paiement n'est plus dispponible.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on the add-on, and press ``Activate`` or ``Install`` to complete this step.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T025308Z" creationid="Rad Computer" creationdate="20260731T025135Z">
+        <seg>Enfin, cliquez sur l'extension et sur ``Activer`` ou ``Installer``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on the gear at the top, and then either ``Archive`` (better for data conservation) or ``Delete`` (more risky because you might lose track of some payments).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T094556Z" creationid="fancyplank" creationdate="20260809T210039Z">
+        <seg>Cliquez sur l'cône en forme d'engrenage en haut de l'écran, puis sur ``Archiver`` (recommandé pour la préservation des données) ou sur ``Supprimer`` (attention, vous pourriez perdre certains renseignements de transactions passées).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click on the payment that you would like to start the refund process for.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T143102Z" creationid="fancyplank" creationdate="20260825T143102Z">
+        <seg>Cliquez sur le paiement que vous souhaitez rembourser.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Click the ``Enabled`` radio button.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T141714Z" creationid="fancyplank" creationdate="20260825T141714Z">
+        <seg>Cliquez le bouton d'option ``Activé``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Clone the fork on your local machine,</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T031610Z" creationid="Rad Computer" creationdate="20260728T031601Z">
+        <seg>clonez la fourche localement sur votre ordinateur,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Clone this repository ``git clone https://codeberg.org/Nemael/tops.git``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T023431Z" creationid="Rad Computer" creationdate="20260731T023431Z">
+        <seg>clôner ce dépôt ``git clone https://codeberg.org/Nemael/tops.git``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Cloning the repository provides the most up-to-date code, and you can simply use ``git pull`` to obtain the latest updates.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T023702Z" creationid="Rad Computer" creationdate="20260731T023702Z">
+        <seg>Clôner le répertoire donne accès à la dernière version du code et vous pouvez utiliser ``git pull`` pour obtenir les dernières mises à jour.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Commit your changes,</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T031715Z" creationid="Rad Computer" creationdate="20260728T031715Z">
+        <seg>validez vos changements,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Common issues</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T074354Z" creationid="fancyplank" creationdate="20260821T072134Z">
+        <seg>Problèmes techniques courants</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Complete an eCommerce payment using Taler</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T115429Z" creationid="fancyplank" creationdate="20260814T115429Z">
+        <seg>Effectuer un paiement eCommerce a l'aide de Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Configuration of the Taler payment provider</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T111907Z" creationid="fancyplank" creationdate="20260825T111907Z">
+        <seg>Configuration du mode de paiement Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Configure Taler payment for point of sale</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T145829Z" creationid="fancyplank" creationdate="20260814T124521Z">
+        <seg>Configurer Taler pour Point de Vente</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Confirm the data shown in the opened window, it is recommended to add the Taler OrderID shown on the invoice, to the ``Memo`` field, to keep track of the payment more easily.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T160901Z" creationid="fancyplank" creationdate="20260821T160901Z">
+        <seg>confirmez les données affichées dans la boite de dialogue qui s'est ouverte. Nous vous recommandons d'ajouter le numéro de commande Taler indiqué sur la facture dans le champ ``Mémo`` pour faciliter le suivi et la comptabilité.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Confirming the refund will create a new transaction, that you can view in the list of transactions, with the name ``R-{Odoo reference number}``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T111009Z" creationid="fancyplank" creationdate="20260901T144845Z">
+        <seg>La confirmation du remboursement déclenchera la création d'une nouvelle transaction qui apparaitra dans la liste des transactions sous le nom ``R-{Odoo numéro de référence}``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Contents:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T215936Z" creationid="fancyplank" creationdate="20260809T215936Z">
+        <seg>Contenu :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Contributions to the Taler payment integration are always welcome!</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T142048Z" creationid="Rad Computer" creationdate="20260728T030256Z">
+        <seg>Toutes les contributions à l'intégration de paiements Taler sont les bienvenues !</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Copy this file’s content in a new file ``{New language}.po``, such as ``fr.po``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T004232Z" creationid="Rad Computer" creationdate="20260731T004232Z">
+        <seg>Copiez-le dans un fichier ``{langue}.po``, par exemple ``fr.po``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Create a new Payment Method.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T150350Z" creationid="fancyplank" creationdate="20260814T150350Z">
+        <seg>Créez un nouveau mode de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Create a new branch,</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T031628Z" creationid="Rad Computer" creationdate="20260728T031628Z">
+        <seg>créez une nouvelle branche,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Create an invoice that can be paid using Taler</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T071851Z" creationid="fancyplank" creationdate="20260821T071851Z">
+        <seg>Créer une facture qui accepte les paiement effectués avec Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Create an invoice that includes a Taler QR Code</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T012211Z" creationid="Rad Computer" creationdate="20260728T012211Z">
+        <seg>Créer une facture qui contient un code QR Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Create the Point of Sale payment method:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103328Z" creationid="fancyplank" creationdate="20260814T150142Z">
+        <seg>Créer le mode de paiement Point de Vente :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Customers can navigate the ``Events`` tab on your website, and choose a ticket to any event they’re interested in.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101839Z" creationid="fancyplank" creationdate="20260814T123228Z">
+        <seg>La clientèle pourra alors se rendre dans l'onglet ``Événements`` de votre site Web et acheter les tickets de son choix.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Do not use this mode in production or with published items for sale.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T095850Z" creationid="fancyplank" creationdate="20260813T095850Z">
+        <seg>N'utilisez pas ce mode en prduction ou ave des objets publiés pour la vente.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Do this step for every point of sale you made Taler payments available for.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T212505Z" creationid="fancyplank" creationdate="20260809T212505Z">
+        <seg>Répétez cette étape pour chaque point de vente pour lequel vous avez mis en place l'option de paiment Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Download the add-on from `the apps.odoo.com page &lt;https://apps.odoo.com/apps/modules/18.0/payment_taler&gt;`__.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T023348Z" creationid="Rad Computer" creationdate="20260731T023348Z">
+        <seg>télécharger l'extension depuis `la page apps.odoo.com &lt;https://apps.odoo.com/apps/modules/18.0/payment_taler&gt;`__. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Download the latest version from the releases (https://codeberg.org/Nemael/tops/releases).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T023158Z" creationid="Rad Computer" creationdate="20260731T023143Z">
+        <seg>télécharger la dernière version depuis https://codeberg.org/Nemael/tops/releases. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Downloading the latest release provides the most stable and tested code.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T092112Z" creationid="Rad Computer" creationdate="20260731T023149Z">
+        <seg>Cette méthode garantit le code le plus stable et le mieux testé. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>During the checkout, they can now select the ``Taler`` payment provider.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101157Z" creationid="fancyplank" creationdate="20260814T115901Z">
+        <seg>Au moment de payer, elle aura la possibilité de sélectioner le founisseur de paiement ``Taler``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Editing rights to the payment provider settings</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T140054Z" creationid="fancyplank" creationdate="20260821T064240Z">
+        <seg>Droits d'accès et de modification des paramètres du fournisseur de paiement</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Either way you land here, this is the list of your currently available payment providers.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T095528Z" creationid="fancyplank" creationdate="20260825T130814Z">
+        <seg>Quelle que soit la manière dont vous y accédez, cette page comprend la liste des fournisseurs de paiement actuellement disponibles.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Ensure that the ``tops`` directory is in ``custom_addons``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T023541Z" creationid="Rad Computer" creationdate="20260731T023531Z">
+        <seg>Assurez-vous que le répertoire ``tops`` se trouve dans ``custom_addons``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Ensure that the ``tops`` or ``payment_taler`` directory is in ``custom_addons``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T092323Z" creationid="Rad Computer" creationdate="20260731T024150Z">
+        <seg>Assurez-vous que le répertoire ``tops`` ou ``payment_taler`` se trouve dans ``custom_addons``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Example: ``sphinx-build -D language=fr -b html .</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T021942Z" creationid="Rad Computer" creationdate="20260731T021942Z">
+        <seg>Exemple : ``sphinx-build -D language=fr -b html .</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Example: ``sphinx-intl update -p _build/gettext -l fr``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T021602Z" creationid="Rad Computer" creationdate="20260731T021602Z">
+        <seg>Exemple : ``sphinx-intl update -p _build/gettext -l fr``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Explanation of the icons:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T101744Z" creationid="fancyplank" creationdate="20260813T101744Z">
+        <seg>Icônes :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Extract the zip file to ``{your Odoo install}/custom_addons``</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T092606Z" creationid="Rad Computer" creationdate="20260731T023832Z">
+        <seg>Extrayez le contenu du fichier zip dans ``{votre instance Odoo}/custom_addons``</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Fill any data relevant to the invoice that you are creating.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102415Z" creationid="fancyplank" creationdate="20260821T153335Z">
+        <seg>Remplissez les champs nécessaires pour cette facture.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Find the payment you would like to refund in the payment list, in ``Invoicing -&gt; Customers -&gt; Payments``, and click on the payment you’d like to refund **(1)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132307Z" creationid="Rad Computer" creationdate="20260728T000249Z">
+        <seg>Dans ``Facturation -&gt; Clients -&gt; Paiements``, cliquez sur le paiement à rembourser **(1)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>First, download the add-on code with either of these 3 methods:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T023016Z" creationid="Rad Computer" creationdate="20260731T023016Z">
+        <seg>Tout d'abord, téléchargez le code de l'extension en suivant l'une de ces trois méthodes :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Folder structure</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T070247Z" creationid="fancyplank" creationdate="20260821T070247Z">
+        <seg>Structures de fichiers</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>For Odoo 18, in the ``invoicing`` add-on, navigate to ``Customers -&gt; Customer Payments`` on the top bar.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T110124Z" creationid="fancyplank" creationdate="20260825T142448Z">
+        <seg>Pour Odoo 18, dans l'extension ``Facturation``, rendez-vous dans ``Clients -&gt; Paiements`` dans la barre en haut de la page.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>For Odoo 19, the location is ``Customers -&gt; Payments``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T142519Z" creationid="fancyplank" creationdate="20260825T142519Z">
+        <seg>Pour Odoo 19, vous y accéderez via ``Clients-&gt; Paiements``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>For a more permanent change, you can edit the ``const.py`` file at the root of this add-on, and comment/uncomment the currencies that you want to set as Taler configuration.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T074057Z" creationid="fancyplank" creationdate="20260821T074057Z">
+        <seg>Pour effectuer de changement de manière permanente, modifiez le fichier ``const.py`` dans la racine de cette extension et commentez/décommentez la devise souhaitée.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>For a more technical option, activate the developper mode in the settings, navigate to ``Configuration -&gt; Payment Transactions`` on the top bar, selecte a transaction, and click on the payment in the ``payment`` field on the transaction’s page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T151603Z" creationid="fancyplank" creationdate="20260825T143044Z">
+        <seg>Il est également possible, mais plus technique, d'activer le mode développeur dans les paramètres, de se rendre dans ``Configuration -&gt; Transactions`` dans la barre en haut de la page, de sélectionner une transaction et de sélectionner le paiement dans le champ ``paiement`` sur la page de la transaction.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>For this setup, only the tab ``Credentials`` will be used **(3)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131036Z" creationid="Rad Computer" creationdate="20260722T040636Z">
+        <seg>Seul l'onglet ``Identifiants`` est utile pour ce réglage.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Fork this repository (https://codeberg.org/Nemael/tops/),</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T033622Z" creationid="Rad Computer" creationdate="20260728T031542Z">
+        <seg>créez une fourche de ce dépôt (https://codeberg.org/Nemael/tops/),</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Go to ``Point-of-Sale -&gt; Configuration -&gt; Payment Methods`` and click ``New``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133413Z" creationid="Rad Computer" creationdate="20260728T021115Z">
+        <seg>Dans ``Point-de-vente -&gt; Configuration -&gt; Modes de paiement`` et cliquez sur ``Nouveau``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Go to the Invoicing app and create a new invoice.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T153249Z" creationid="fancyplank" creationdate="20260821T153249Z">
+        <seg>Allez dans l'app Facturation et générez une nouvelle facture.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Go to the ``Point of Sale`` app, and navigate to ``Configuration/Payment Methods``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T094027Z" creationid="fancyplank" creationdate="20260809T204843Z">
+        <seg>Rendez-vous dans  l'appli ``Point de Vente``, dans ``Configuration/Modes de paiment``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Go to the payment providers menu.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T125717Z" creationid="fancyplank" creationdate="20260825T125717Z">
+        <seg>rendez-vous dans le menu de fournisseurs de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Go to the settings app, and navigate to the ``Events`` settings.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T122832Z" creationid="fancyplank" creationdate="20260814T122832Z">
+        <seg>rendez-vous dans les paramètres ``Événements``,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Have previously :ref:`setup Taler as a payment provider &lt;payment-provider-configuration&gt;`.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T150051Z" creationid="fancyplank" creationdate="20260814T150051Z">
+        <seg>Avoir :ref:`installé Taler comme fournisseur de paiment&lt;payment-provider-configuration&gt;`.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Here is an example of the flow for this feature:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T100952Z" creationid="fancyplank" creationdate="20260813T100952Z">
+        <seg>Voici un exemple du processus de cette fonctionnailté :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>How to Contribute</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T030153Z" creationid="Rad Computer" creationdate="20260728T030153Z">
+        <seg>Comment contribuer</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>How to add a translation to the Odoo module</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T004033Z" creationid="Rad Computer" creationdate="20260731T004033Z">
+        <seg>Ajouter une traduction</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>How to contribute</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T030201Z" creationid="Rad Computer" creationdate="20260728T030201Z">
+        <seg>Comment contribuer</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>How to update and build the documentation</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T011653Z" creationid="Rad Computer" creationdate="20260731T010254Z">
+        <seg>Compiler et mettre à jour la documentation</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>How to update the translation of the documentation</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T014102Z" creationid="Rad Computer" creationdate="20260731T014102Z">
+        <seg>Mettre à jour la traduction de la documentation</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>However, the code obtained this way might be unstable.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T023730Z" creationid="Rad Computer" creationdate="20260731T023730Z">
+        <seg>Cependant, le code obtenu de cette manière pourrait être moins stable.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If a customer pays for the invoice using the QR Code present in the PDF, you will have to do a manual payment reconciliation.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102612Z" creationid="fancyplank" creationdate="20260821T155546Z">
+        <seg>Si un paiement client est effectué à l'aide du code QR dans la facture PDF, vous devrez effectuer une réconcilliation de paiment manuelle.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If a payment provider is unpublished only an administrator users will be able to see and use the payment provider.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T134645Z" creationid="fancyplank" creationdate="20260813T100402Z">
+        <seg>Si un fournisseur de paiement est non publié, seules les personnes ayant des droits d'admnistration pourront le voir et l'utiliser.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If the above do not work for any reason, you can use ``make html`` to build a barebone version of the documentation.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T013349Z" creationid="Rad Computer" creationdate="20260731T013349Z">
+        <seg>Si le processus décrit ci-dessus ne fonctionne pas, vous pouvez recourir à la commande ``make html`` pour compiler une version brute de la documentation.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If the currencies are correctly set-up, Taler should be one of the options provided **(1)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260727T234638Z" creationid="Rad Computer" creationdate="20260727T234638Z">
+        <seg>Si les devises sont paramétrées correctement, Taler devrait être une des options proposées.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If you added a payment method record for the point of sale app (:ref:`see the related section for more information &lt;point-of-sale-payment-configuration&gt;`), complete the following steps as well:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T121640Z" creationid="fancyplank" creationdate="20260809T204743Z">
+        <seg>Si vous avez  créé un mode de paiement spécifique à l'appli Point de Vente (:ref:`voir la section correspondante pour davange de renseignements &lt;point-of-sale-payment-configuration&gt;`), effectuez également les étapes suivantes :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If you are encountering any issues with the add-on, please don’t hesitate to either:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141157Z" creationid="fancyplank" creationdate="20260821T072226Z">
+        <seg>En cas de problème lors de l'utilisation de l'extension, n'hésitez pas à, soit :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If you are encountering any issues, please open a thread in this forum category https://ich.taler.net/c/integrations/odoo/29 (You can ping me as well, @Nemael).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T010139Z" creationid="Rad Computer" creationdate="20260731T010139Z">
+        <seg>En cas de problème, veuillez lancer un fil de discussion dans cette catégorie de forum https://ich.taler.net/c/integrations/odoo/29 (Vous pouvez m'identifier : @Nemael).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If you have made any transactions using Taler with this add-on, you will not be able to uninstall it.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T093912Z" creationid="fancyplank" creationdate="20260809T203247Z">
+        <seg>Si vous avez effectué des transactions avec Taler avec cette extension, vous  ne pourrez pas la désinstaller.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If you would like to add a translation to the module, the process is rather simple:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T014205Z" creationid="Rad Computer" creationdate="20260731T004050Z">
+        <seg>Le processus d'ajout de traduction dans une nouvelle langue est relativement simple :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If your Taler provider accepts a currency not supported by the Taler merchant, an error will be raised.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T073050Z" creationid="fancyplank" creationdate="20260821T073010Z">
+        <seg>Si la devise de votre fournisseur Taler n'est pas supportée par le marchand Taler, une erreur sera affichée.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>If you’d like to change the Odoo fulfillment messages shown to the customers after a payment using Taler, you can do so in the ``Messages`` tab.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T140743Z" creationid="fancyplank" creationdate="20260825T140743Z">
+        <seg>Pour changer le message de confirmation Odoo pour la clientèle qui paye avec Taler, rendez-vous dans l'onglet ``Messages``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Important step: In the ``Other Info`` tab, set the Payment Method to ``Taler`` (see below).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102428Z" creationid="fancyplank" creationdate="20260821T153541Z">
+        <seg>Étape importante : dans l'onglet ``Autres informations``, réglez le mode de paiement sur ``Taler`` (voir ci-dessous).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In Odoo, go to the ``Apps`` section in the app switcher (top-left button).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T151835Z" creationid="Rad Computer" creationdate="20260731T024832Z">
+        <seg>Dans Odoo, rendez-vous dans la section ``Apps`` dans le menu de navigation de l'application (bouton en haut à gauche de la page).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In Payment -&gt; Payment Methods, remove the Taler payment method.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T094621Z" creationid="fancyplank" creationdate="20260809T212029Z">
+        <seg>Dans ``Paiement -&gt; Mode de Paiement``, retirez le mode de paiment Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In ``Payment -&gt; Payment Methods``, add the payment method you just created (generally ``Taler``).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103744Z" creationid="fancyplank" creationdate="20260814T152233Z">
+        <seg>Dans ``Paiement-&gt; Modes de paiment``, ajoutez le mode de paiement que vous venez de créer.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In case of partial refunds, the total refunded amount across multiple refunds of one transaction cannot exceed the transaction amount.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T110811Z" creationid="fancyplank" creationdate="20260901T143136Z">
+        <seg>Dans le cas de remboursements partiels, le montant total remboursé ne peut dépasser celui du paiement initial.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In the Odoo UI, the payment information will be shown with actual values (amount, currency, etc), but the currency will automatically be swapped to ``Kudos`` right before sending the order to the Taler merchant.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T100829Z" creationid="fancyplank" creationdate="20260813T100829Z">
+        <seg>Dans l'interface Odoo, les données des paiement seront affichées avec leurs valeurs montant, devise, etc.) mais la devise sera automatiquement remplacée par des ``Kudos`` juste avant l'envoi de la commande au vendeur Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In the ``Credentials`` tab, set the Taler merchant URL.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T134637Z" creationid="fancyplank" creationdate="20260825T131800Z">
+        <seg>Insérez l'URL vendeur Taler dans l'onglet ``Identifiants``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In the ``Other Info`` tab, you need to set the field ``Payment Method`` to the value ``Taler``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132800Z" creationid="Rad Computer" creationdate="20260728T012839Z">
+        <seg>Dans l'onglet ``Autres Informations``, sélectionnez ``Taler`` dans le menu déroulant ``Mode de paiement``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In the command line you used to start Odoo, specify the path to this add-on by adding the argument ``--addons-path=./addons,./custom_addons/tops``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T024649Z" creationid="Rad Computer" creationdate="20260731T024649Z">
+        <seg>Dans la ligne de commande utilisée pour démarrer Odoo, spécifiez le chemin vers l'extension en ajoutant l'argument ``--addons-path=./addons,./custom_addons/tops``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In the credentials tab, you will have to setup the Taler merchant URL and the corresponding password for the Taler instance you would like to use **(4)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131658Z" creationid="Rad Computer" creationdate="20260722T040756Z">
+        <seg>Dans celui-ci, vous devrez paramétrer l'URL vendeur Taler ainsi que le mot de passe correspondant pour l'instance Taler que vous souhaitez utiliser.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In the payment provider’s ``Configuration`` tab **(1)**, you can find the list of currencies that the payment provider will be able to use **(2)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131733Z" creationid="Rad Computer" creationdate="20260722T041456Z">
+        <seg>Dans l'onglet ``Configuration`` **(1)** du fournisseur de paiment, vous trouverez la liste des devises compatibles avec celui-ci **2**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In the results logs, you should expect to see ``odoo.tests.result: 0 failed, 0 error(s) of x tests when loading database``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T070051Z" creationid="fancyplank" creationdate="20260821T070051Z">
+        <seg>Vous devriez voir ``odoo.tests.result: 0 failed, 0 error(s) of x tests when loading database`` dans les résultats de commande.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In this example, we want to refund the payment ``PBNK1/2026/00029``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T142622Z" creationid="fancyplank" creationdate="20260825T142622Z">
+        <seg>Dans l'exemple suivant, nous voulons rembourser le paiement ``PBNK1/2026/00029``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In this list you can find the Taler payment provider **(1)** (disabled by default), and activate it **(2)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130753Z" creationid="Rad Computer" creationdate="20260722T035237Z">
+        <seg>Dans cette liste, vous trouverez le fournisseur de paiement Taler **(1)** (désactivé par défaut) que vous pourrez activer **(2)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In this menu, the customer can choose to pay online with Taler **(1)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133255Z" creationid="Rad Computer" creationdate="20260728T014650Z">
+        <seg>Dans ce menu, la cliente ou le client peut choisir de payer en ligne avec Taler **(1)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In this new file, translate all the strings of text that you would like to translate.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T005253Z" creationid="Rad Computer" creationdate="20260731T004251Z">
+        <seg>Dans ce nouveau fichier, traduisez les lignes de texte souhaitées.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In this section, you can see the Taler QR Code that can be used to pay **(2)**, as well as the URI that can be used in case the customer cannot use the QR Code **(3)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133206Z" creationid="Rad Computer" creationdate="20260728T014242Z">
+        <seg>Dans cette section, vous pouvez voir le code QR Taler qui devra être utilisé **(2)** ainsi que l'URI à utiliser s'il ne fonctionne pas **(3)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Install from the Odoo Apps store:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T091642Z" creationid="Rad Computer" creationdate="20260728T030839Z">
+        <seg>l'installer depuis l'App store Odoo :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Install or update the add-on on an already-existing Odoo installation</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260805T221106Z" creationid="Rad Computer" creationdate="20260728T030717Z">
+        <seg>Installer ou mettre à jour l'extension sur une installation Odoo préexistante</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Install the ``Point of sale`` Odoo app.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103340Z" creationid="fancyplank" creationdate="20260814T150123Z">
+        <seg>Avoir installé l'appli Odoo ``Point de Vente``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Installation of the add-on</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260721T172221Z" creationid="Rad Computer" creationdate="20260721T172221Z">
+        <seg>Installation de l'extension</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Installing this module enables merchants to accept payments from customers using their Taler Wallet, giving them the option to choose a payment system that respects their privacy.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T091254Z" creationid="fancyplank" creationdate="20260809T215618Z">
+        <seg>Ce module permet au côté vendeur de recevoir des paiements effectués à partir de porte-monnaie Taleur, et au côté client de choisir une méthode de paiement qui respecte leur vie privée.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Invoices and emails sent to customer for refund are also translated, and will be sent in the language set on the customer’s profile.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130330Z" creationid="Rad Computer" creationdate="20260731T025800Z">
+        <seg>Les factures et emails envoyés à la clientèle pour les remboursement sont également traduits et seront envoyés dans la langue sélectionnée dans les paramètres client.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Invoicing</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T071739Z" creationid="fancyplank" creationdate="20260821T071739Z">
+        <seg>Facturation</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It allows users to pay with Taler, similar to other existing payment integrations in Odoo.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T213620Z" creationid="fancyplank" creationdate="20260809T213620Z">
+        <seg>Elle vous permet de payer à l'aide de Taler, à la manière d'autres intégration de paiment dans Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It can be accessed in multiple ways:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T130607Z" creationid="fancyplank" creationdate="20260825T130607Z">
+        <seg>Il est accessible de plusieurs manières :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It can be used for free to test transactions with your Taler wallet.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T102709Z" creationid="fancyplank" creationdate="20260813T102650Z">
+        <seg>Elle peut être utilisée pour tester des transactions gratuitement à l'aide de votre porte-monnaie Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It is advised to keep the payment provider unpublished when using the Test Mode.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T100608Z" creationid="fancyplank" creationdate="20260813T100608Z">
+        <seg>Nous vous conseillons de maintenir le fournisseur de paiment en mode non publié tant que vous utilisez le the mode test.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It is advised, but completely optional, to create a Taler-specific Journal (this can be set in the Configuration tab).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T100233Z" creationid="fancyplank" creationdate="20260825T141629Z">
+        <seg>Il est recommandé, mais non nécessaire, de créer un Jounal spécifique à Taler (cela peut-être paramétré dans l'onglet ``Configuration``).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It is available on the Odoo Apps store (https://apps.odoo.com/apps/modules/18.0/payment_taler).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T215649Z" creationid="fancyplank" creationdate="20260809T215649Z">
+        <seg>Il est disponible sur l'App store Odoo (https://apps.odoo.com/apps/modules/18.0/payment_taler).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It is possible to create an invoice that includes a Taler QR Code to pay it.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102407Z" creationid="fancyplank" creationdate="20260821T153138Z">
+        <seg>Générer une facture incluant un code QR Taler pour la régler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It is there to let you know that this payment method is not visible to visitors, only users that have administrator access rights to the shop will be able to see the test mode Taler payment provider.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135226Z" creationid="fancyplank" creationdate="20260813T101932Z">
+        <seg>Elle vous averti que cette méthode de paiement n'est pas visible par les utilisatrices et utilisateurs du site, seules les personnes disposant des droits d'administration pourront voir le mode test du fournisseur de paiement Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It is there to warn you that the test mode is activated for this payment method.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135327Z" creationid="fancyplank" creationdate="20260813T102022Z">
+        <seg>Il vous indique que le mode test est activé pour ce mode de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It will be shown on created Taler transactions</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T140602Z" creationid="fancyplank" creationdate="20260825T140602Z">
+        <seg>Celui-ci sera affiché dans les transactions Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It will be used for API calls to the merchant.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T140307Z" creationid="fancyplank" creationdate="20260825T140307Z">
+        <seg>Il sera utilisé pour les échanges API avec le vendeur.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It wouldn’t appear if the ``Payment Method`` of the invoice was not set to ``Taler``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133144Z" creationid="Rad Computer" creationdate="20260728T014134Z">
+        <seg>Elle n'apparaîtra pas si le ``Mode de paiement`` n'a pas été réglé sur ``Taler``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Kudos is an imaginary currency created for Taler.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T102612Z" creationid="fancyplank" creationdate="20260813T102612Z">
+        <seg>Le kudo est une monnaie imaginaire créée pour Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Maintain the add-on up to date for future Odoo releases (Odoo 20 is just around the corner).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T004022Z" creationid="Rad Computer" creationdate="20260731T004022Z">
+        <seg>Garder l'extension à jour pour les versions futures d'Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Make sure that the point of sale register is closed for this step.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103556Z" creationid="fancyplank" creationdate="20260814T151138Z">
+        <seg>Pour cette étape, assurez-vous que le registre du point de vente soit fermé.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Make your changes in the code,</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T031646Z" creationid="Rad Computer" creationdate="20260728T031646Z">
+        <seg>effectuez vos changement dans le code de cette nouvelle branche,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Manually add the code yourself in your Odoo install (Multiple options):</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T031158Z" creationid="Rad Computer" creationdate="20260728T031158Z">
+        <seg>ajouter le code manuellement dans votre installation Odoo (plusieurs options) :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Merchant Test Mode</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T212544Z" creationid="fancyplank" creationdate="20260809T212544Z">
+        <seg>Mode test vendeur</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Name it ``Taler`` (You can call it something else, but ``Taler`` is easier to keep track of).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103443Z" creationid="fancyplank" creationdate="20260814T150524Z">
+        <seg>Nommez-le ``Taler`` (ou autre, mais ce nom rendra le suivi plus intuitif).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Navigate to `the module’s apps.odoo.com page &lt;https://apps.odoo.com/apps/modules/18.0/payment_taler&gt;`__.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T091856Z" creationid="Rad Computer" creationdate="20260728T031003Z">
+        <seg>rendez-vous sur `la page du module &lt;https://apps.odoo.com/apps/modules/18.0/payment_taler&gt;`__ </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Navigate to the shop page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T101434Z" creationid="fancyplank" creationdate="20260813T101434Z">
+        <seg>Rendez-vous sur la page de la boutique.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the email page, you can see the email address it has been sent from **(1)** and to **(2)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T010016Z" creationid="Rad Computer" creationdate="20260728T010016Z">
+        <seg>Sur la page de la liste des emails, vous pouvez voir l'adresse d'envoi de l'email **(1)** et son destinataire **(2)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the payment page, click ``Refund`` in the action button section (top-left) and confirm the refund.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T110451Z" creationid="fancyplank" creationdate="20260825T145132Z">
+        <seg>Sur la page du paiement, cliquez sur le bouton d'action ``Remboursement``, en haut à gauche, et confirmez le remboursement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the payment provider’s page, check the ``Test Mode`` radio button.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T101137Z" creationid="fancyplank" creationdate="20260813T101137Z">
+        <seg>Sur la page du fournisseur de paiement, cochez l'option ``Mode test``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the settings page, add to the setting ``Payment Methods`` **(1)**, add the new ``Taler`` payment method you created earlier.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133716Z" creationid="Rad Computer" creationdate="20260728T024337Z">
+        <seg>Dans ces paramètres, dans ``Modes de paiement``, ajoutez le nouveau mode de paiement ``Taler`` que vous avez créé plus tôt.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the top bar, go to ``Configuration -&gt; Point of Sales``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T210122Z" creationid="fancyplank" creationdate="20260809T210049Z">
+        <seg>Sur la barre en haut de l'écran, cliquez sur ``Configuration -&gt; Point de Vente``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the top bar, press ``Configuration -&gt; Payment Methods``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T150331Z" creationid="fancyplank" creationdate="20260814T150331Z">
+        <seg>Dans la barre en haut de la page, rendez-vous dans ``Configuration -&gt; Modes de paiement``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the top bar, press ``Configuration -&gt; Point of Sales``, you will be redirected to the point of sale list.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T151510Z" creationid="fancyplank" creationdate="20260814T151510Z">
+        <seg>Dans la barre en haut de la page, rendez-vous dans ``Configuration -&gt; Point de Vente``, pour accéder à la liste des points de vente.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the top-left of the invoice, you can also see a ``Pay Now`` button.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133210Z" creationid="Rad Computer" creationdate="20260728T014327Z">
+        <seg>Un bouton ``Payer maintenant`` se trouve dans le coin supérieur gauche de la facture.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On this new Point of Sale payment method, set the name (Taler) **(1)**, tick the ``Online Payment`` option **(2)**, and select Taler as an ``Allowed Provider`` **(3)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133520Z" creationid="Rad Computer" creationdate="20260728T023234Z">
+        <seg>Dans le nouveau mode de paiement du point de vente, inscrivez le nom (Taler) **(1)**, cochez la case ``paiement en ligne`` **(2)**, et sélectionnez Taler comme ``Fournisseur autorisé`` **(3)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On this page, click on ``More settings: Configurations &gt; Settings`` **(1)** to be sent to the settings page for this point of sale.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133640Z" creationid="Rad Computer" creationdate="20260728T024156Z">
+        <seg>Sur cette page, cliquez sur ``Plus de paramètres : Configuration &gt; Paramètres`` **(1)** pour vous rendre dans les paramètres de ce point de vente.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On this page, the user will be able to click ``Pay Now``, and choose Taler as a payment option.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T105732Z" creationid="fancyplank" creationdate="20260825T105732Z">
+        <seg>Un bouton ``Payer maintenant`` leur y permettra de la régler et leur donnera l'option d'effectuer le paiment à l'aide de Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On this page, you can see the current status for the payment provider.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130820Z" creationid="Rad Computer" creationdate="20260722T035732Z">
+        <seg>Sur cette page, vous pouvez consulter le statut actuel du fournisseur de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On this page:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260721T170749Z" creationid="Rad Computer" creationdate="20260721T170749Z">
+        <seg>Sur cette page :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On this payment page, the customer can select Taler as a payment provider.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101948Z" creationid="fancyplank" creationdate="20260814T123757Z">
+        <seg>Celle-ci offrira l'option d'utiliser Taler comme fournisseur de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once complete, you can re-make your Odoo test database, and change your user’s language to the added translation’s language.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T005639Z" creationid="Rad Computer" creationdate="20260731T005639Z">
+        <seg>Une fois le texte traduit, vous pouvez recréer votre base de donnée test Odoo et sélectionner la nouvelle langue dans les paramètres comme langue d'affichage.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once created, you can press ``Preview`` to see the page that the customer will see.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102853Z" creationid="fancyplank" creationdate="20260825T105622Z">
+        <seg>Après la création de la facture, vous pouvez cliquer sur ``Aperçu`` pour voir la page qui sera envoyée à la cliente ou au client.,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once filled, you can ``Confirm`` the invoice and then see the ``Preview`` of the invoice by clicking the corresponding buttons on the top of the page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133104Z" creationid="Rad Computer" creationdate="20260728T013428Z">
+        <seg>Une fois la facture remplie, vous pouvez la ``Confirmer`` et en afficher l' ``Aperçu`` en cliquant sur les boutons correspondants en haut de la page.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once the add-on is installed from the Apps:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T095124Z">
+        <seg>Une fois que l'add-on est installé depuis le menu Apps :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once the module is activated, you can find the payments providers in ``Website -&gt; Configuration -&gt; Online Payments -&gt; Payment Providers``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130749Z" creationid="Rad Computer" creationdate="20260721T184002Z">
+        <seg>Après avoir activé le module, vous pouvez accéder à la liste des fournisseurs de paiment dans ``Site Web -&gt; Configuration -&gt; Paiments en ligne -&gt; Fournisseurs de paiment``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once the order is paid using the imaginary currency, you will be sent back to the completed Odoo order.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T103345Z" creationid="fancyplank" creationdate="20260813T103345Z">
+        <seg>Une fois la commande payée à l'aide de la devise imaginaire, le site vous redirigera vers la commande Odoo clôturée.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once the payment is completed, the customer will land back on the odoo page, with their payment successfully processed, and a .pdf of the event tickets available.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102202Z" creationid="fancyplank" creationdate="20260814T124400Z">
+        <seg>Le paiement effectué, le site redirigera vers la page Odoo où un fichier pdf du ticket sera disponible.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once they click ``Pay``, they will be redirected to the Taler order page, where they can pay with a Taler wallet on their phone or web browser (in the same way as for an eCommerce payment).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102926Z" creationid="fancyplank" creationdate="20260825T110107Z">
+        <seg>Après avoir cliqué sur ``Payer``, la personne effectuant le paiment sera redirigée vers la page de commande Taler, où elle pourra utiliser son porte-monnaie Taler depuis son téléphone ou son navigateur (comme pour un paiement eCommerce).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once this is done, you need to add this new payment provider to each point of sale that you would like to use it in.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T023643Z" creationid="Rad Computer" creationdate="20260728T023643Z">
+        <seg>Ensuite, vous devez activer ce nouveau fournisseur de paiment à chaque point de vente où vous désirez pouvoir l'utiliser.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once you confirm your order, the Taler payment method will appear, with some icons.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T134756Z" creationid="fancyplank" creationdate="20260813T101649Z">
+        <seg>Un fois que vous avez confirmé votre commande, le mode de paiement Taler apparaitra à côté de deux icônes.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once you have completed the Taler initial setup, customers can pay on your website.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101040Z" creationid="fancyplank" creationdate="20260814T115602Z">
+        <seg>Une fois Taler installé, votre clientèle pourra effectuer des paiments sur votre site Web.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once you have the ``.po`` files, you can translate line-per-line the content of each ``mgsid`` in the ``.po`` files.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T021859Z" creationid="Rad Computer" creationdate="20260731T021829Z">
+        <seg>Les fichiers ``.po`` en votre possession, vous pouvez traduire ligne par ligne le contenu de chaque ``mgsid`` dans le fichiers ``.po``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Once you have the new ``.pot`` files, you have to re-make the language-specific ``.po`` files.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T143509Z" creationid="Rad Computer" creationdate="20260731T021517Z">
+        <seg>Vous devrez ensuite recréer les fichiers ``.po`` spécifiques à la langue.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>One ``.pot`` file will be created for each ``.rst`` file.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T021542Z" creationid="Rad Computer" creationdate="20260731T021542Z">
+        <seg>Un fichier ``.pot`` sera créé pour chaque fichier ``.rst``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Online payments using Taler</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260722T041509Z" creationid="Rad Computer" creationdate="20260722T041509Z">
+        <seg>Payer en ligne avec Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Only user that belong in the ``base.group_system`` user group will be able to access and modify the Taler payment provider settings.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T064629Z" creationid="fancyplank" creationdate="20260821T064629Z">
+        <seg>Seuls celles et ceux inclus dans le groupe ``base.group_system`` pourront accéder aux paramètres et les modifier.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Open a pull request on the original TOPS repository (https://codeberg.org/Nemael/tops/).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T142135Z" creationid="Rad Computer" creationdate="20260731T003609Z">
+        <seg>ouvrez une demande de tirage dans le dépôt TOPS original (https://codeberg.org/Nemael/tops/).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Open a register on one of the Points of Sale for which you have activated the Taler payment method.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T104446Z" creationid="fancyplank" creationdate="20260814T152933Z">
+        <seg>Ouvrez une caisse dans un point de vente.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Open a thread in this forum category https://ich.taler.net/c/integrations/odoo/29 (You can ping me as well, @Nemael).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141211Z" creationid="fancyplank" creationdate="20260821T072322Z">
+        <seg>ouvrir un fil de discussion dans la catégorie de forum https://ich.taler.net/c/integrations/odoo/29 (vous pouvez m'identifier, @Nemael).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Open an issue on the Codeberg repository https://codeberg.org/Nemael/tops/issue.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141241Z" creationid="fancyplank" creationdate="20260821T072411Z">
+        <seg>ouvrir un ticket dans le de dépôt Codeberg https://codeberg.org/Nemael/tops/issue.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Otherwise, the QR Code will not be generated.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T153605Z" creationid="fancyplank" creationdate="20260821T153605Z">
+        <seg>C'est indispensable pour générer le code QR.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Partial refunds are not implemented.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T151403Z" creationid="fancyplank" creationdate="20260901T151403Z">
+        <seg>Les remboursements partiels ne sont pas encore implémentés.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Password: sandbox</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T095951Z" creationid="Rad Computer" creationdate="20260625T234802Z">
+        <seg>Mot de passe : sandbox</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Pay an invoice online using Taler</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T161003Z" creationid="fancyplank" creationdate="20260821T161003Z">
+        <seg>Payer une facture à l'aide de Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Pay the order.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135359Z" creationid="fancyplank" creationdate="20260813T102056Z">
+        <seg>Effectuez la commande.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Pay using Taler at a Point of Sale</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T152722Z" creationid="fancyplank" creationdate="20260814T152710Z">
+        <seg>Effectuer un paiement a l'aide de Taler à un point de vente</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Paying at a point of sale using Taler is straightforward and uses Taler’s online payment flow.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T140114Z" creationid="Rad Computer" creationdate="20260728T025653Z">
+        <seg>L'utilisation de Taler à un point de vente est simple. Au lieu de recourir à un échange Taler direct, la transaction passe par le processus de paiement en ligne propre à Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler add-on install</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260721T184025Z" creationid="Rad Computer" creationdate="20260721T184025Z">
+        <seg>Installation de l'extension payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler customer payment page</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260722T041539Z" creationid="Rad Computer" creationdate="20260722T041539Z">
+        <seg>Page de paiment client payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler invoice creation</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T012316Z" creationid="Rad Computer" creationdate="20260728T012316Z">
+        <seg>Création de facture payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler invoice online payment</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T014604Z" creationid="Rad Computer" creationdate="20260728T014604Z">
+        <seg>Paiement en ligne payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler invoice preview</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133113Z" creationid="Rad Computer" creationdate="20260728T013439Z">
+        <seg>Aperçu de facture payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler list of payments</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132144Z" creationid="Rad Computer" creationdate="20260727T235345Z">
+        <seg>Liste de paiements payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler list of refund emails</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T000627Z" creationid="Rad Computer" creationdate="20260728T000616Z">
+        <seg>Emails de remboursement payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler payment provider</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260721T184055Z" creationid="Rad Computer" creationdate="20260721T184055Z">
+        <seg>Fournisseur de paiment payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler payment provider currencies details</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260722T041111Z" creationid="Rad Computer" creationdate="20260722T041111Z">
+        <seg>Détails de devises du fournisseur de paiment payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler payment provider details</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130826Z" creationid="Rad Computer" creationdate="20260722T035703Z">
+        <seg>Détails du fournisseur de paiement payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler point of sale</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T023727Z" creationid="Rad Computer" creationdate="20260728T023727Z">
+        <seg>Point de vente payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler point of sale payment</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T025708Z" creationid="Rad Computer" creationdate="20260728T025708Z">
+        <seg>Paiement point de vente payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler point of sale qr code</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T140321Z" creationid="Rad Computer" creationdate="20260728T030035Z">
+        <seg>Code QR point de vente payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler point of sale settings</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T024206Z" creationid="Rad Computer" creationdate="20260728T024206Z">
+        <seg>Paramètres de point de vente payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler point of sale setup</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T021423Z" creationid="Rad Computer" creationdate="20260728T021423Z">
+        <seg>Mise en place d'un point de vente payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler refund button</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T000331Z" creationid="Rad Computer" creationdate="20260728T000305Z">
+        <seg>Bouton Rembourser payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payment_taler refund email</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T005653Z" creationid="Rad Computer" creationdate="20260728T005653Z">
+        <seg>Email de remboursement payment_taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Payments</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T220023Z" creationid="fancyplank" creationdate="20260809T220023Z">
+        <seg>Paiments</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Please explain in details the issue you are encountering.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141531Z" creationid="fancyplank" creationdate="20260821T072514Z">
+        <seg>Veuillez décrire les problèmes que vous rencontrez en détail.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Please explain your issue in detail.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141536Z" creationid="fancyplank" creationdate="20260821T072341Z">
+        <seg>Veuillez décrire votre probleme en détail.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Please specify that you are doing a new translation and for which language.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T010230Z" creationid="Rad Computer" creationdate="20260731T010230Z">
+        <seg>Veuillez préciser que vous travaillez sur une traduction et en quelle langue.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Point of Sale</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T124453Z" creationid="fancyplank" creationdate="20260814T124453Z">
+        <seg>Point de Vente</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Point of Sale payments using Taler</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133812Z" creationid="Rad Computer" creationdate="20260728T024420Z">
+        <seg>Paiement en Point de Vente avec Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Point of sale payment setup</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T015855Z" creationid="Rad Computer" creationdate="20260728T015829Z">
+        <seg>Mise en place du point de vente</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Preferably clone it in ``{your Odoo install}/custom_addons``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T023501Z" creationid="Rad Computer" creationdate="20260731T023501Z">
+        <seg>De préférence, clônez-le dans ``{votre instance Odoo}/custom_addons``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Preliminary steps:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T150015Z" creationid="fancyplank" creationdate="20260814T150015Z">
+        <seg>Étapes préiminaires :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Press ``Create Payment``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102628Z" creationid="fancyplank" creationdate="20260821T160943Z">
+        <seg>Appuyez sur ``Créer paiement``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Project</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T030500Z" creationid="Rad Computer" creationdate="20260728T030500Z">
+        <seg>Projet</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Purchase an Event ticket online using Taler</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T122845Z" creationid="fancyplank" creationdate="20260814T122156Z">
+        <seg>Acheter un ticket pour un événement en ligne à l'aide de Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Push to your fork,</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T033659Z" creationid="Rad Computer" creationdate="20260728T033659Z">
+        <seg>poussez vers votre fourche,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Refund an online payment made using Taler</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T141925Z" creationid="fancyplank" creationdate="20260825T141925Z">
+        <seg>Remboursements et paiements en ligne effectués dans Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Refunds</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T141901Z" creationid="fancyplank" creationdate="20260825T141901Z">
+        <seg>Remboursements</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Run these commands to edit the settings.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135939Z" creationid="fancyplank" creationdate="20260821T063540Z">
+        <seg>Les commandes suivantes permettent de modifier vos paramètres :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Run unit tests</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T064944Z" creationid="fancyplank" creationdate="20260821T064944Z">
+        <seg>Effecter des tests unitaires</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Scanning this QR Code will redirect to an Odoo page, where the customer will be able to pay with Taler.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T154204Z" creationid="fancyplank" creationdate="20260814T153351Z">
+        <seg>Celui-ci redirigera vers une page Odoo reprenant les modes de paiements disponibles, dont Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Search for the add-on ``Taler-Odoo Payment System``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T025129Z" creationid="Rad Computer" creationdate="20260731T025129Z">
+        <seg>Recherchez l'extension ``Taler-Odoo Payment System``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Search for, and go to the ``Taler-Odoo Payment System`` add-on.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T202842Z" creationid="fancyplank" creationdate="20260809T202842Z">
+        <seg>Cherchez et rendez-vous dans l'extension  ``Taler-Odoo Payment System``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Select ``Taler`` in the ``Allowed Providers`` field.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103458Z" creationid="fancyplank" creationdate="20260814T150704Z">
+        <seg>Séletionnez ``Taler`` dans le champs ``Fournisseurs autorisés``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Select a point of sale that you made Taler payments available for.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T152300Z" creationid="fancyplank" creationdate="20260809T210914Z">
+        <seg>Sélectionnez le point de vente pour lequel vous avez créé une option de paiement Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Select any product that you’d like to buy as a test, go to your cart and start the checkout process.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T101553Z" creationid="fancyplank" creationdate="20260813T101553Z">
+        <seg>Sélectionnez un produit dont vous voulez simuler l'achat, cliquez sur votre panier et entammez le processus de paiment.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Select the payment method ``Taler`` payment method.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T153059Z" creationid="fancyplank" creationdate="20260814T153059Z">
+        <seg>Sélectionnez le mode de paiement ``Taler``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Select the point of sale you’d like to add Taler payment to.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103604Z" creationid="fancyplank" creationdate="20260814T151543Z">
+        <seg>Sélectionnez celui pour lequel vous souhaitez ajouter le mode de paiement Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Selecting this option will start the Online Payment flow that this add-on implements, as opposed to the invoice payment flow that would have been used if the customer paid using the invoice’s QR Code.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133347Z" creationid="Rad Computer" creationdate="20260728T015257Z">
+        <seg>Cette option déclenche le processus de paiment en ligne de cette extension, et est distinct du processus de paiment par facture qui aurait été utilisé si la cliente le client avait payé à l'aide du code QR de la facture.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Some features that may need further work:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T003700Z" creationid="Rad Computer" creationdate="20260731T003700Z">
+        <seg>Certaines fonctionnalités pourraient bénéficier d'améliorations :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Start the process for any online payment, I will show the process for an eCommerce payment.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T134721Z" creationid="fancyplank" creationdate="20260813T101415Z">
+        <seg>Entamez le processus d'un paiement en ligne, l'explication suivant illustre un paiement eCommerce.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Such as ``./odoo-bin shell --addons-path=./addons,{custom_addons_path}/tops -u payment_taler -d odoo18_tops_0.1.1.1``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T063411Z" creationid="fancyplank" creationdate="20260821T063411Z">
+        <seg>``./odoo-bin shell --addons-path=./addons,{custom_addons_path}/tops -u payment_taler -d odoo18_tops_0.1.1.1``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Such as: ``./odoo-bin --addons-path=./addons,./custom_addons/tops -u tops -d odoo18_tops_0.1.1.1``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T024706Z" creationid="Rad Computer" creationdate="20260731T024706Z">
+        <seg>Exemple : ``./odoo-bin --addons-path=./addons,./custom_addons/tops -u tops -d odoo18_tops_0.1.1.1``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>TOPS is an add-on for Odoo.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T213111Z" creationid="fancyplank" creationdate="20260809T213111Z">
+        <seg>TOPS est une extension pour Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler eCommerce checkout</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T115931Z" creationid="fancyplank" creationdate="20260814T115931Z">
+        <seg>Paiement eCommerce Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler eCommerce payment processor</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T122050Z" creationid="fancyplank" creationdate="20260814T122050Z">
+        <seg>Fournisseur de paiement eCommerce Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler eCommerce wallet</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T120321Z" creationid="fancyplank" creationdate="20260814T120321Z">
+        <seg>Porte-monnaie eCommerce Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler invoices online payment</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T105859Z" creationid="fancyplank" creationdate="20260825T105859Z">
+        <seg>Paiement en ligne d'une facture Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler invoices paid online</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T110226Z" creationid="fancyplank" creationdate="20260825T110226Z">
+        <seg>Facture Taler réglée en ligne</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler invoices payment method</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T153639Z" creationid="fancyplank" creationdate="20260821T153639Z">
+        <seg>Mode de paiement des factures Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler invoices taler qr code</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T154742Z" creationid="fancyplank" creationdate="20260821T154742Z">
+        <seg>Code QR Taler de la facture Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler payment page</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T151123Z" creationid="fancyplank" creationdate="20260825T151123Z">
+        <seg>Page de paiement Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler payment provider setup</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130707Z" creationid="Rad Computer" creationdate="20260721T174423Z">
+        <seg>Installation du fournisseur de paiement</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler pos payment complete</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T104739Z" creationid="fancyplank" creationdate="20260814T154828Z">
+        <seg>Confirmation de paiement au point de vente Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler pos receipt</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T154942Z" creationid="fancyplank" creationdate="20260814T154942Z">
+        <seg>Reçu point de vente Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler pos taler payment</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T153214Z" creationid="fancyplank" creationdate="20260814T153214Z">
+        <seg>Paiement à un point de vente Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler providers settings</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T141848Z" creationid="fancyplank" creationdate="20260825T141848Z">
+        <seg>Paramètres de fournisseurs Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler refund email to customer</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T150426Z" creationid="fancyplank" creationdate="20260901T150426Z">
+        <seg>Email de remboursement Taler destiné au côté client</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler test mode payment method with two icons, striked-through eye and yellow warning sign</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T101729Z" creationid="fancyplank" creationdate="20260813T101729Z">
+        <seg>Mode test de la métode de paiement Taleur avec deux icônes : un oeil barré et un signe d'avertisement</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler test mode payment on Taler, showing kudos currency</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T103141Z" creationid="fancyplank" creationdate="20260813T103141Z">
+        <seg>Paiement Taleur en mode test en kudos</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler test mode payment shown as completed on Odoo website</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T103439Z" creationid="fancyplank" creationdate="20260813T103439Z">
+        <seg>Paiement Taler clôturé en mode test dans Odoo</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler test mode radio button selected</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T101201Z" creationid="fancyplank" creationdate="20260813T101201Z">
+        <seg>Option mode test Taleur sélectionnée</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler ticketing event list</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T123240Z" creationid="fancyplank" creationdate="20260814T123240Z">
+        <seg>Liste d'événments Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler ticketing event payment confirmation</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T124437Z" creationid="fancyplank" creationdate="20260814T124437Z">
+        <seg>Confimation de paiement dans la biletterie événementielle Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Taler ticketing settings</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T122947Z" creationid="fancyplank" creationdate="20260814T122947Z">
+        <seg>Options de biletterie Taler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Tech support</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T072144Z" creationid="fancyplank" creationdate="20260821T072144Z">
+        <seg>Soutien technique</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Technical Information</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T062748Z" creationid="fancyplank" creationdate="20260821T062748Z">
+        <seg>Renseignement techniques</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Test the add-on using the merchant test mode</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T095641Z" creationid="fancyplank" creationdate="20260813T095641Z">
+        <seg>Tester l'extension à l'aide du mode test vendeur</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The Taler payment provider must be ``Enabled``, or it will not appear in the list of available providers.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T023316Z" creationid="Rad Computer" creationdate="20260728T023316Z">
+        <seg>Le fournisseur Taler doit être ``Activé`` pour apparaître dans la liste des fournisseurs disponibles.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The ``Check URL validity`` button is showing an error</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T072754Z" creationid="fancyplank" creationdate="20260821T072754Z">
+        <seg>Le bouton ``Vérifier la validité de l'URL`` affiche une erreur</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The add-on code can be stored anywhere, but it’s easier store it within the Odoo folder.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T024229Z" creationid="Rad Computer" creationdate="20260731T024229Z">
+        <seg>Le code de l'extension peut être stocké n'importe où, mais le plus simple est de le conserver dans le dossier Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The add-on should be now installed on your Odoo.sh instance.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T092007Z" creationid="Rad Computer" creationdate="20260728T031119Z">
+        <seg>L'extension devrait maintenant être installée dans votre instance Odoo.sh.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The currency originally used will be swapped with ``Kudos``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135435Z" creationid="fancyplank" creationdate="20260813T102541Z">
+        <seg>La devise originale sera changée en ``kudos``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The customer will be presented with a QR Code **(1)**, that they can scan to complete a payment via Taler.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T140529Z" creationid="Rad Computer" creationdate="20260728T030138Z">
+        <seg>Cela génèrera un code QR **(1)** que la cliente ou le client pourra finalement scanner pour effectuer le paiment par le biais de Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The db name (after -d) is arbitrary and can be replaced by any other names.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T065156Z" creationid="fancyplank" creationdate="20260821T065156Z">
+        <seg>Le nom de la base de données (après -d) est arbitraire et peut être remplacé.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The default values are connecting to the sandbox Taler merchant:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T140927Z" creationid="fancyplank" creationdate="20260825T140927Z">
+        <seg>Les valeurs défaut sont reliées au vendeur Taler bac à sable :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The documentation is made in ``.rst`` format, and built using Sphinx.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T012928Z" creationid="Rad Computer" creationdate="20260731T011628Z">
+        <seg>La documentation est en format ``.rst`` et a été compilée à l'aide de Sphinx.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The error message will show any discrepancies, and the accepted currencies on both sides.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141659Z" creationid="fancyplank" creationdate="20260821T073236Z">
+        <seg>Le message d'erreur détaillera le problème de compatibilité et afficera les devises utilisées par les deux parties.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The file ``i18n/payment_taler.pot`` `available here &lt;https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/payment_taler.pot&gt;`__ is the base translation file, with all the strings of text stored in it.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T004352Z" creationid="Rad Computer" creationdate="20260731T004143Z">
+        <seg>Le fichier ``i18n/payment_taler.pot`` `disponible ici &lt;https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/payment_taler.pot&gt;`__ est le fichier de traduction de base comprenant toutes les lignes de texte.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The initial setup is now complete and Taler payment will be available in all eCommerce, online payments and Invoicing apps.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T141835Z" creationid="fancyplank" creationdate="20260825T141835Z">
+        <seg>Le paramétrage initial est maintenant terminé et les paiements Taler seront disponibles pour eCommerce, pour les paiements en ligne et pour les apps de facturation.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The invoice’s PDF will include a Taler payment QR Code, as well as some Taler order information.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T154622Z" creationid="fancyplank" creationdate="20260821T154622Z">
+        <seg>Le PDF de la facture incluera un code QR de paiement Taler ainsi que des renseignements Taler supplémentaires.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The merchant test mode allows you to test the installation of the module, and confirm that the selected merchant are working properly.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T095809Z" creationid="fancyplank" creationdate="20260813T095809Z">
+        <seg>Le mode test vendeur vous permet de tester l'installation du module et de vous assurer que le vendeur sélectionné fonctionne correctement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The module integrates into and increase functionality of other existing Odoo modules (eCommerce, invoices, ticket sales, online payment, etc.) It also implements refunds to customers that used Taler to pay.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T091039Z" creationid="fancyplank" creationdate="20260809T214125Z">
+        <seg>Ce module s'intègre dans Odoo et améliore les fonctionnalités de modules Odoo existants (eCommerce, factures, vente de tickets, paiement en ligne, etc.) Il implémente également le remboursement de paiments effectués l'aide de Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The payment provider can be ``Disabled``, ``Enabled``, or in ``Test Mode``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130950Z" creationid="Rad Computer" creationdate="20260722T035809Z">
+        <seg>Celui-ci peut être ``Désactivé``, ``Activé``, ou en ``Mode test``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The payment provider can be ``Unpublished`` or ``Published``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131009Z" creationid="Rad Computer" creationdate="20260722T040400Z">
+        <seg>Le fournisseur de paiment peut être ``Non publié`` ou ``Publié``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The point of sale's side will show a successful payment, and produce a receipt.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T155151Z" creationid="fancyplank" creationdate="20260814T154931Z">
+        <seg>Côté vendeur, le point de vente produira une notification de paiment et un reçu.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The red striked-through eye means ``Unpublished``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135130Z" creationid="fancyplank" creationdate="20260813T101804Z">
+        <seg>L'œil rouge barré signifie ``Non publié``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The refund amount cannot be higher than the transaction amount.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T142845Z" creationid="fancyplank" creationdate="20260901T142845Z">
+        <seg>Celui-ci ne peut être supérieur au montant de la transaction initiale.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The refunded customer will receive one refund email per partial refund, with each containing a different QR Code to be scanned into their wallet.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T110723Z" creationid="fancyplank" creationdate="20260901T143240Z">
+        <seg>La cliente ou le client recevra un email par remboursement partiel, chacun contenant un code QR à scanner à l'aide de son porte-monnaie.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The resulting files can be found in directory ``docs/_build/html/{2-letters target language}``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T022021Z" creationid="Rad Computer" creationdate="20260731T022021Z">
+        <seg>Les fichiers qui en résulteront se trouveront dans le répertoire ``docs/_build/html/{2-letters target language}``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The setup is now complete, and you can select this new payment provider when a customer pay for an order on the Point of sale that you added the payment method to.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T104149Z" creationid="fancyplank" creationdate="20260814T152641Z">
+        <seg>La mise en place est désormais terminée, et vous pourrez sélectionner le nouveau fournisseur de paiement lorsqu'une cliente ou un client effectuera un paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The technical name for this add-on is ``payment_taler``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T215721Z" creationid="fancyplank" creationdate="20260809T215721Z">
+        <seg>Le nom technique de cette extension est ``payment_taler``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The translation of the documentation is based on ``.pot`` files, which are extracted from the existing ``.rst`` files, converted into a language's ``.po`` files, translated and then compiled.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T014348Z" creationid="Rad Computer" creationdate="20260731T014348Z">
+        <seg>La traduction de la documentation est basée sur des fichiers ``.pot`` extraits des fichiers ``.rst`` existants convertis en fichiers ``.po`` d'une langue, traduits et compilés. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The translation you made should appear on Odoo.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T014121Z" creationid="Rad Computer" creationdate="20260731T005651Z">
+        <seg>Votre traduction devrait apparaître dans Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The yellow warning sign means ``Test mode``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135301Z" creationid="fancyplank" creationdate="20260813T101956Z">
+        <seg>Le signe d'avertissement jaune signife ``Mode test``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Then move the files to your Odoo folder.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T092146Z" creationid="Rad Computer" creationdate="20260731T023753Z">
+        <seg>Ensuite, déplacez les fichiers dans votre dossier Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Then set the Taler Merchant Password.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T140219Z" creationid="fancyplank" creationdate="20260825T135747Z">
+        <seg>Configurez ensuite le mot de passe vendeur Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>There are 4 models:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T070854Z" creationid="fancyplank" creationdate="20260821T070854Z">
+        <seg>Il y en a quatre :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>There are multiple options to install this add-on:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T030742Z" creationid="Rad Computer" creationdate="20260728T030742Z">
+        <seg>Il y a plusieurs manières d'installer cette extension :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>There are three directories corresponding to each documentation section (``user-guide``, ``project``, ``ui-explanation``).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T142749Z" creationid="Rad Computer" creationdate="20260731T012352Z">
+        <seg>Les trois répertoires correspondent aux trois chapitres de la présente documentation (``user-guide``, ``project``, ``ui-explanation``, respectivement "guide d'utilisation, projet et explication de l'interface").</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>They will be redirected to a Taler order page, where they can pay using their Taler wallet on the app or web browser.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102045Z" creationid="fancyplank" creationdate="20260814T124100Z">
+        <seg>Si celle-ci est sélectionnée, elle redirigera vers une page de commande Taler et il sera possiblede régler à l'aide du porte-monnaie électronique Taler sur l'application our sur le site Web.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This Taler payment method is specific to the point of sale, and is different from the payment methods created by default by this add-on.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133540Z" creationid="Rad Computer" creationdate="20260728T023549Z">
+        <seg>Ce mode de paiement Taler ne sera disponible que dans ce point de vente et est distinct des modes de paiement créés par défaut dans cette extension.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This action will create a refund QR Code, and send it via email to the customer.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132337Z" creationid="Rad Computer" creationdate="20260728T000559Z">
+        <seg>Cela créera un code QR de remboursement et l'enverra par email à la cliente ou au client.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This add-on uses a standard folder structure:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T070333Z" creationid="fancyplank" creationdate="20260821T070333Z">
+        <seg>La structure de fichiers de cette extension est standard :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This button allows the customer to pay via Online Payment, and clicking it will start the ``Online Payment`` flow **(4)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T014553Z" creationid="Rad Computer" creationdate="20260728T014553Z">
+        <seg>Celui-ci permet au client de la payer en ligne **(4)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This button checks that the chosen Taler merchant is valid and supports the same currencies that you are using.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T073021Z" creationid="fancyplank" creationdate="20260821T072840Z">
+        <seg>Ce bouton permet de vérifier que le marchand Taler sélectionné est valide et accepte les mêmes devises que vous.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This change is only for the Taler order, there will be no change in Odoo.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T140638Z" creationid="fancyplank" creationdate="20260825T140638Z">
+        <seg>Ce changement ne s'appliquera que dans les commandes Taler, et pas dans Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This change will be overwritten when you restart the Odoo server.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141750Z" creationid="fancyplank" creationdate="20260821T073741Z">
+        <seg>Ce changement sera annulé au redémarrage du serveur Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This document is an explanation of the UI elements that you will interact with when using the Taler-Odoo Payment System add-on.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T141705Z" creationid="Rad Computer" creationdate="20260721T172149Z">
+        <seg>Ce document explique les éléments de l'interface avec lesquels intéragir pour utiliser l'extension du système de paiement Taler-Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This documentation is also available in French: https://taler-odoo-payment-system.readthedocs.io/fr/.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T025908Z" creationid="Rad Computer" creationdate="20260731T025908Z">
+        <seg>Cette documentation est également disponible en français : https://taler-odoo-payment-system.readthedocs.io/fr/.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This documentation is organized in the following sections:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T215849Z" creationid="fancyplank" creationdate="20260809T215849Z">
+        <seg>La documentation est organisée selon les chapitres suivants :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This indicates that you intend for the customer to pay this invoice with Taler.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132819Z" creationid="Rad Computer" creationdate="20260728T013120Z">
+        <seg>Vous indiquez de ce fait au côté client de payer cette facture au moyen de Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This is a new invoice with some data filled in, namely the customer data **(1)** and the invoiced product **(2)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132752Z" creationid="Rad Computer" creationdate="20260728T012457Z">
+        <seg>Il s'agit d'une nouvelle facture qui contient les coordonnées de la cliente ou du client **(1)** ainsi que le produit facturé.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This is a standard process, you can find online guides on how to work with ``.po`` files.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T143502Z" creationid="Rad Computer" creationdate="20260731T014447Z">
+        <seg>Ce processus est standard et vous pouvez trouver des guides en ligne détaillant la manière de travailler avec des fichiers ``.po``. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This module and its documentation is currently available in English and French.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T025718Z" creationid="Rad Computer" creationdate="20260731T025718Z">
+        <seg>Ce module et sa documentation sont actuellement disponibles en anglais et en français.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This page will show you all the payments that have been completed.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T142603Z" creationid="fancyplank" creationdate="20260825T142603Z">
+        <seg>La liste des paiement effectués se trouve sur cette page.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This process is unrelated to the invoices created with Taler in the previous step</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T104218Z" creationid="fancyplank" creationdate="20260825T104218Z">
+        <seg>Ce processus n'est pas lié à la création de factures à l'aide de Taler dans l'étape précédente.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This section contains an explanation of how to install, configure, and operate the Taler-Odoo Payment System.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T091425Z" creationid="Rad Computer" creationdate="20260731T022350Z">
+        <seg>Ce chapitre contient les explications détaillées sur l'installation, la configuration et l'utilisation du système de paiment Taler-Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This section contains an explanation of the various UI elements used to interact with the Taler-Odoo Payment System</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T141650Z" creationid="Rad Computer" creationdate="20260721T170741Z">
+        <seg>Ce chapitre contient une explication détaillée des différents éléments qui composent l'interface d'utilisation du système de paiement Taler-Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This section contains various information regarding the project itself, and how to contribute.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T030538Z" creationid="Rad Computer" creationdate="20260728T030538Z">
+        <seg>Cette section contient divers renseignements relatifs au projet lui-même et à la manière de contribuer.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This section is intended for Odoo administrators that want to provide Taler payments to their customers.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T091437Z" creationid="Rad Computer" creationdate="20260731T022447Z">
+        <seg>Il est destiné aux administratrices et administrateurs Odoo qui souhaitent offrir la possibilités à leurs clientèle d'effectuer des paiments Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This will bring the customer to a Taler order page, and they will be able to pay using their Taler wallet or web browser.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T154510Z" creationid="fancyplank" creationdate="20260814T154409Z">
+        <seg>L'option Taler redirige vers une page de commande où payer à l'aide du porte-monnaie Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This will display a list of emails, find and click on the one you want to check **(1)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T005550Z" creationid="Rad Computer" creationdate="20260728T005550Z">
+        <seg>Dans la liste des emails affichée, cliquez sur celui que vous désirez examiner **(1)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This will help during the Accounting process.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T100303Z" creationid="fancyplank" creationdate="20260825T141652Z">
+        <seg>Cela facilitera le processus de Comptabilité.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Tick the ``Online Ticketing`` setting and save the changes.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T122935Z" creationid="fancyplank" creationdate="20260814T122935Z">
+        <seg>cochez l'option ``Billetterie en ligne`` et sauvegardez vos changements.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Tickets will now be available to buy using online payments providers, including the Taler payment provider.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101736Z" creationid="fancyplank" creationdate="20260814T123037Z">
+        <seg>Les tickets seront disponibles à la vente par le biais des fournisseurs de paiement, dont Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To add information to the documentation, you need to edit the files in ``docs/``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T012101Z" creationid="Rad Computer" creationdate="20260731T012101Z">
+        <seg>Pour ajouter des renseignements dans la documentation, vous devez modifier les documents dans ``docs/``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To change Odoo settings using CLI, run the Odoo CLI shell by adding ``shell`` to your original command line to start Odoo.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135925Z" creationid="fancyplank" creationdate="20260821T063218Z">
+        <seg>Pour changer les paramères à l'aide du terminal de commande, lancez le terminal Odoo en ajoutant ``shell``  dans votre commande comme suit :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To change the currencies you’d like to support with Taler, go to the ``Configuration`` tab in the payment provider, and navigate to ``Availability -&gt; Currencies``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T141724Z" creationid="fancyplank" creationdate="20260821T073635Z">
+        <seg>Pour changer les devises que vous acceptez dans Taler, rendez-vous dans l'onglet ``Configuration`` dans votre fournisseur de paiement, et dans ``Disponibilité -&gt; Devises``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To do so, they will open the shop and add any items to their cart.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101117Z" creationid="fancyplank" creationdate="20260814T115701Z">
+        <seg>Pour ce faire, elle ouvrira la boutique et ajoutera des articles à son panier.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To do that, go to ``Configuration -&gt; Point of Sales`` and click on the point of sale you would like to edit.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T023720Z" creationid="Rad Computer" creationdate="20260728T023720Z">
+        <seg>Pour ce faire, dans ``Configuration -&gt; Point de vente``, cliquez sur le point de vente que vous voulez modifier.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To do this, once you confirm that you received the payment, go to the Invoices’ app page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T160003Z" creationid="fancyplank" creationdate="20260821T160003Z">
+        <seg>Pour ce faire, une fois que vous avez reçu le paiement, rendez-vous sur la page de l'app Facturation,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To have a fully working ticketing system, you might need to install the python module pycairo:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T122252Z" creationid="fancyplank" creationdate="20260814T122252Z">
+        <seg>Pour mettre en place un système de billetterie fonctionnel, vous devrez peut-être instaler le module python pycairo :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To make a contribution:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T030301Z" creationid="Rad Computer" creationdate="20260728T030301Z">
+        <seg>Pour contribuer :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To make a refund to a payment made using Taler, you first have to find the payment you wish to refund.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T145403Z" creationid="fancyplank" creationdate="20260825T142133Z">
+        <seg>Pour rembourser un paiement effectué dans Taler, trouvez d'abord le paiement en question.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To make an invoice that displays a Taler QR Code as a payment option, you need to create an invoice, and specify Taler as the payment method.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132657Z" creationid="Rad Computer" creationdate="20260728T012231Z">
+        <seg>Pour créer une facture incluant un code QR Taler comme option de paiement, vous devez créer une facture et indiquer Taler comme mode de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To make event tickets available for customers to pay using Taler:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260814T122537Z" creationid="fancyplank" creationdate="20260814T122537Z">
+        <seg>Pour permettre à votre clientèle d'acheter des tickets événementiels à l'aide de Taler :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To receive the refund, the customer will have to scan the QR Code with their Taler wallet.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T150403Z" creationid="fancyplank" creationdate="20260901T150356Z">
+        <seg>Pour recevoir le remboursement, le côté client devra scanner le code QR à l'aide du porte-monnaie Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To run unit tests on a new db, use this command:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T065034Z" creationid="fancyplank" creationdate="20260821T065034Z">
+        <seg>Pour effecter des tests unitaires dans une nouvelle base de données, utilisez cette ligne de commande  :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To see the email, navigate to ``Settings -&gt; Technical -&gt; Emails``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T003523Z" creationid="Rad Computer" creationdate="20260728T003523Z">
+        <seg>Pour consulter ces emails, rendez-vous dans ``Paramètres -&gt; Technique -&gt; Emails``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To setup Taler payment for the Point of Sale, you have to setup a new payment method in the POS app.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T133353Z" creationid="Rad Computer" creationdate="20260728T015848Z">
+        <seg>Pour mettre le point de vente Taler en place, vous devez configurer un nouveau mode de paiement dans l'appli PDV. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To uninstall the add-on, you have to go to the ``Apps`` app on Odoo.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T093734Z" creationid="fancyplank" creationdate="20260809T202745Z">
+        <seg>Pour désinstaller l'extention, rendez-vous dans la section ``Apps`` dans Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To update the add-on, first update the code using the same way that you first downloaded it, then restart the server and finally click ``Upgrade`` on the add-on page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T025429Z" creationid="Rad Computer" creationdate="20260731T025429Z">
+        <seg>Pour mettre à jour l'extension, mettez d'abord à jour le code de la même manière que lorsque vous l'avez téléchargé, puis redémarrez le serveur et cliquez sur ``Mettre à jour`` sur la page de l'extension.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>To update the documentation on ReadTheDocs, push the documentation changes on the main branch of the repository (branch ``19.0``).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T143815Z" creationid="Rad Computer" creationdate="20260731T022131Z">
+        <seg>Pour mettre à jour la documentation sur ReadTheDocs, fusionnez les changements apportés à la branche principale du répertoire (branche ``19.0``).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Translation &amp; Available languages</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T025647Z" creationid="Rad Computer" creationdate="20260731T025647Z">
+        <seg>Traduction et langes disponibles</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Translation Status</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T025629Z" creationid="Rad Computer" creationdate="20260731T025629Z">
+        <seg>État de la traduction</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Translation of the software or the documentation in any other languages is welcome, please see :ref:`here &lt;how-to-add-a-translation&gt;` for a guide on how to add a translation.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T030023Z" creationid="Rad Computer" creationdate="20260731T030023Z">
+        <seg>De futures traductions du logiciel dans de nouvelles langues sont les bienvenues, veuillez vous référer à :ref:`cette page &lt;how-to-add-a-translation&gt;` pour consulter le guide d'ajout de nouvelles langues.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Trigger a refund for an online payment</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132220Z" creationid="Rad Computer" creationdate="20260727T235710Z">
+        <seg>Rembourser un paiement en ligne</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>UI Explanation</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260721T170454Z" creationid="Rad Computer" creationdate="20260721T170454Z">
+        <seg>Explication de l'interface</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Uninstall the add-on</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260805T221054Z" creationid="fancyplank" creationdate="20260805T221054Z">
+        <seg>Désinstaller l'extension</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Upon clicking an event, they will be asked to provide some identifying information, and then will be lead to a payment page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102127Z" creationid="fancyplank" creationdate="20260814T123649Z">
+        <seg>Après avoir cliqué sur un événement, la clientèle devra fournir des renseignements d'identification avant d'être redirigée vers une page de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Upon completion of the payment using their wallet, the customer will be redirected back to your Odoo website, which will show a successful payment confirmation.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T101616Z" creationid="fancyplank" creationdate="20260814T121226Z">
+        <seg>Après le paiment avec porte-monnaie, l'extension redirigera la clientèle vers le site d'Odoo, qui affichera un écran de confirmation.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Upon payment completion, the customer will be redirected to Odoo, with a confirmation of payment.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T104726Z" creationid="fancyplank" creationdate="20260814T154731Z">
+        <seg>Une fois le paiement effectué, la personne effectuant l'achat sera renvoyée vers une confirmation de paiment Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>User Guide and flow walkthrough</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T022305Z" creationid="Rad Computer" creationdate="20260731T022305Z">
+        <seg>Guide d'utilisation</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Welcome to Taler-Odoo Payment System's documentation!</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260809T215953Z">
+        <seg>Bienvenue sur la page de documentation de l'extension Taler-Odoo Payment System!</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When a customer is ready to pay online for their cart, they will be able to choose which payment method to use.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131829Z" creationid="Rad Computer" creationdate="20260727T234604Z">
+        <seg>Au moment de payer en ligne, la clientèle aura la possibilité de choisir le mode de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When a customer’s cart is finalized, press ``Payment`` and select ``Taler`` **(1)** as a payment method, and validate.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T140314Z" creationid="Rad Computer" creationdate="20260728T025940Z">
+        <seg>Quand une cliente ou un client s'apprête à payer, appuyez sur ``Paiement``, sélectionnez ``Taler`` **(1)** comme mode de paiement, puis validez. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When the documentation is built, you can find the resulting files in ``docs/_build/html/{2-letters target language}``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T013425Z" creationid="Rad Computer" creationdate="20260731T013425Z">
+        <seg>Une fois la documentation compilée, vous pouvez accéder aux fichiers ainsi créés dans ``docs/_build/html/{2-letters target language}``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When the payment is complete, on the admin-side, you can navigate to ``Invoicing -&gt; Customers -&gt; Payments`` to see the list of payments, and the most recent payment completed **(1)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132250Z" creationid="Rad Computer" creationdate="20260727T235649Z">
+        <seg>Une fois le paiement effectué, du côté administrateur, vous pourrez vous rendre sur ``Facturation -&gt; Clients -&gt; Paiements`` pour consulter la liste de paiements ainsi que le plus récent **(1)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When the payment is complete, the customer will be sent back to the invoice page, with a notice saying that the payment is successful.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T103010Z" creationid="fancyplank" creationdate="20260825T110209Z">
+        <seg>Une fois la transaction effectuée, la personne sera renvoyée sur la page de facturation où s'affichera une confirmation de paiement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When this is complete, you can build the documentation for the chosen language.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T021928Z" creationid="Rad Computer" creationdate="20260731T021846Z">
+        <seg>Vous pouvez ensuite compiler la documentation pour la nouvelle langue. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When this step is done, the test is complete.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260813T103504Z" creationid="fancyplank" creationdate="20260813T103504Z">
+        <seg>Après cette étape, le test est terminé.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When you are done, click ``Confirm`` at the top, you will be led to the invoice page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T153831Z" creationid="fancyplank" creationdate="20260821T153831Z">
+        <seg>Ensuite, cliquez sur ``Confirmer`` en haut de la page, cela vous redirigera vers la page de facturation.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When you have copied the files of the payment_taler module in your Odoo instance’s directory, and setup the addons-path parameter, you can search for the payment_taler module **(1)** in the Odoo apps, and activate it **(2)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T130700Z" creationid="Rad Computer" creationdate="20260721T174016Z">
+        <seg>Après avoir copié les fichiers du module payment_taler dans le répertoire de votre instance d'Odoo, et après avoir réglé les paramètres de chemin, vous pouvez rechercher le module payment_taler **(1)** dans l'appli Odoo et l'activer **(2)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Without an email sender, the email will be generated and can be read, but it will not be sent.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T151215Z" creationid="fancyplank" creationdate="20260901T151115Z">
+        <seg>Sinon, l'email sera généré et pourra être lu mais ne serra pas envoyé.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can access the demobank `here &lt;https://backend.demo.taler.net/instances/sandbox/&gt;`__</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T095604Z" creationid="fancyplank" creationdate="20260825T134913Z">
+        <seg>Accédez `ici &lt;https://backend.demo.taler.net/instances/sandbox/&gt;`__ à la démobanque.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can also see the refund QR Code that has been sent to the customer **(3)**, as well as the URI that can be used in case the customer cannot use the QR Code **(4)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T132615Z" creationid="Rad Computer" creationdate="20260728T011940Z">
+        <seg>Vous pouvez également afficher le code QR de remboursement envoyé à la cliente ou au client **(3)** ainsi que l'URI à utiliser s'il ne fonctionne pas **(4)**. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can decide to keep the payment provider ``Unpublished`` when using Test Mode, or to ``Publish`` it by clicking the button at the top of the page.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T134515Z" creationid="fancyplank" creationdate="20260813T100256Z">
+        <seg>En mode test, vous pouvez passer le fournisseur de paiement en ``Non publié``, ou en ``Publié`` en cliquant sur le bouton en haut de la page.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can find the accepted currencies in the ``Configuration`` tab.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T135718Z" creationid="fancyplank" creationdate="20260825T135718Z">
+        <seg>Pour voir les devises configurées dans Taler, rendez-vous dans l'onglet ``Configuration``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can follow the Sphinx guides or other ``.rst`` guides to improve the documentation.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T011956Z" creationid="Rad Computer" creationdate="20260731T011956Z">
+        <seg>Vous pouvez vous référer au guide Sphinx ou à d'autres guides ``.rst`` pour améliorer la documentation.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can make multiple partial refunds (for example, a 30 euros transaction can be refunded by 5 euros, and then by 10 euros later).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T110701Z" creationid="fancyplank" creationdate="20260901T143027Z">
+        <seg>Vous pouvez effectuer des remboursements partiels de montant différents (par exemple, une transaction de 30 euros peut-être remboursée de 5 puis de 10 euros).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can now click ``Preview`` to see the Invoice that will be sent to your customer.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T102539Z" creationid="fancyplank" creationdate="20260821T154513Z">
+        <seg>Vous pouvez à présent cliquer sur ``Aperçu`` pour parcourir la facture telle qu'elle sera envoyée.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can only do full refunds using Taler.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T111213Z" creationid="fancyplank" creationdate="20260901T151129Z">
+        <seg>Il n'est possible d'effectuer des remboursements qu'à l'aide de Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can open the root index.html in your browser to view the documentation.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T142930Z" creationid="Rad Computer" creationdate="20260731T013640Z">
+        <seg>Ouvrez la racine ``root.html`` dans votre navigateur pour consulter la documentation.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can reinstall the add-on at a later time.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T093827Z" creationid="fancyplank" creationdate="20260809T203401Z">
+        <seg>Vous pourrez la réinstaller ultérieurement.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can see the ``Taler`` section at the bottom of the invoice **(1)**.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260728T014043Z" creationid="Rad Computer" creationdate="20260728T014043Z">
+        <seg>La section ``Taler`` se trouve au bas de la facture **(1)**.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can see three tabs: ``Credentials``, ``Configuration``, ``Messages``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131029Z" creationid="Rad Computer" creationdate="20260722T040556Z">
+        <seg>Vous pouvez voir trois onglets : ``Identifiants``, ``Configuration`` et ``Messages``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can set the amount you'd like to refund.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T142703Z" creationid="fancyplank" creationdate="20260901T142703Z">
+        <seg>Vous pouvez déterminer le montant que vous souhaitez rembourser.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can use ``fr.po`` `available here &lt;https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/fr.po&gt;`__ as a guide on how to format the translation.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T005351Z" creationid="Rad Computer" creationdate="20260731T005351Z">
+        <seg>Vous pouvez utiliser le fichier ``fr.po`` `disponible ici &lt;https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/fr.po&gt;`__ comme guide de formattage pour la traduction.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can use ``get_params`` to print the current value, and ``set_params`` to set a new value:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T140008Z" creationid="fancyplank" creationdate="20260821T063748Z">
+        <seg>``get_params`` affiche la valeur actuelle des paramètres, et ``set_params``  vous permet de les modifier :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You can view this email in the list of sent emails, found in ``Settings app -&gt; Technical -&gt; Emails``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T150044Z" creationid="fancyplank" creationdate="20260901T150044Z">
+        <seg>Vous le trouverez dans la liste des emails envoyés, dans ``Paramètres -&gt; Technique -&gt; Emails``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You have confirmed that the add-on works, and the Taler merchant endpoint can receive your orders for compatible currencies.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T135801Z" creationid="fancyplank" creationdate="20260813T103629Z">
+        <seg>Vous aurez confirmé que l'extension fontionne et que le serveur vendeur Taleur est capable de recevoir vos commandes pour les devises compatibles.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You may need to activate Odoo’s ``Developer`` mode (found in the settings) to access the ``Technical`` tab.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T111016Z" creationid="fancyplank" creationdate="20260901T150145Z">
+        <seg>Il se peut que vous deviez activer le mode ``Développeur`` d'Odoo pour accéder à l'onglet ``Technique``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You may need to activate Odoo’s ``Developer`` mode to access this tab (it is found in the settings).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T150158Z" creationid="Rad Computer" creationdate="20260728T005645Z">
+        <seg>Il se pourrait que vous deviez activer le mode ``Dévelopeur`` d'Odoo pour accéder à cet onglet (ce mode est accessible dans les paramètres).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You may want change the Taler fulfillment message as well.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260825T140457Z" creationid="fancyplank" creationdate="20260825T140457Z">
+        <seg>Vous pouvez également changer le message de confirmation Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You might see symbols next to the payment method **(2)**:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T131836Z" creationid="Rad Computer" creationdate="20260727T234739Z">
+        <seg>Il se peut que vous voyiez certains symboles à côté du mode de paiement **(2)** :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You need a functional email sender for this feature to work properly.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260901T151213Z" creationid="fancyplank" creationdate="20260901T151037Z">
+        <seg>Il vous faut une adresse email d'envoi valide pour que cette fonctionnalité soit utilisable.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You need to build the documentation for a specific language:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T012742Z" creationid="Rad Computer" creationdate="20260731T012742Z">
+        <seg>Vous devez compiler la documentation pour une langue spécifique :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>You need to commit the changes to the database before closing the shell instance and restarting Odoo:</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T140038Z" creationid="fancyplank" creationdate="20260821T064132Z">
+        <seg>Vous devez confirmer les changements apportés avant de fermer le terminal et de redémarrer Odoo :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>_build/html/en`` will build in English.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T013031Z" creationid="Rad Computer" creationdate="20260731T013031Z">
+        <seg>_build/html/en`` compilera en anglais.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>_build/html/fr`` will build in French.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="Rad Computer" changedate="20260731T013050Z" creationid="Rad Computer" creationdate="20260731T013050Z">
+        <seg>_build/html/fr`` compilera en français.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``Invoicing -&gt; Configuration -&gt; Online Payments -&gt; Payment Providers``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T095302Z" creationid="fancyplank" creationdate="20260825T130712Z">
+        <seg>``Facturation -&gt; Configuration -&gt; Paiements en ligne -&gt; Fournisseurs de paiement``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``Website -&gt; Configuration -&gt; eCommerce -&gt; Payment Providers``.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260902T095151Z" creationid="fancyplank" creationdate="20260825T130645Z">
+        <seg>``Site Web -&gt; Configuration -&gt; eCommerce -&gt; Fournisseurs de paiement``.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``const.py`` is loaded at server start.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T074138Z" creationid="fancyplank" creationdate="20260821T074138Z">
+        <seg>``const.py`` est chargé au démarrage du serveur.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``controllers`` contains the controllers used by the add-on.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T070630Z" creationid="fancyplank" creationdate="20260821T070630Z">
+        <seg>``controllers`` contient les controlleurs de l'extension.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``data`` contains setup data that is processed when someone installs the add-on, as well as email templates.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T140209Z" creationid="fancyplank" creationdate="20260821T070738Z">
+        <seg>``data`` contient les données de mise en place qui sont traitées lors de l'installation ainsi que les modèles d'emails.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``i18n`` contains the data for localization and translation.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T070825Z" creationid="fancyplank" creationdate="20260821T070825Z">
+        <seg>``i18n`` contient les données nécessaires aux localisations et traductions.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``models`` contains the Odoo models.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T070843Z" creationid="fancyplank" creationdate="20260821T070843Z">
+        <seg>``models`` contient les modèles Odoo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``security`` contains the (unused) ``ir.moder.access.csv`` file to manage access rights.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T071333Z" creationid="fancyplank" creationdate="20260821T071333Z">
+        <seg>``security`` contient le fichier ``ir.moder.access.csv`` (inutilisé pour le moment) de gestion des droits d'accès.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``static`` contains logo data and other image assets for the add-on.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T071533Z" creationid="fancyplank" creationdate="20260821T071533Z">
+        <seg>``static`` contient le logo et d'autres images de l'extension.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``taler_api_method``, which contains the methods used to communicate to the Taler merchant API.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T071032Z" creationid="fancyplank" creationdate="20260821T071003Z">
+        <seg>``taler_api_method``, qui contient les méthodes utilisées pour communiquer avec à l'API vendeur Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``taler_invoicing``, which contains the methods used when creating invoices with Taler.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T140248Z" creationid="fancyplank" creationdate="20260821T071018Z">
+        <seg>``taler_invoicing``, qui contient les méthodes utilisées pour la création des factures Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``taler_provider``, which contains the methods used by the Taler payment provider.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T071122Z" creationid="fancyplank" creationdate="20260821T071122Z">
+        <seg>``taler_provider``, qui contient les méthodes utilisées par le fournisseur de paiement Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``taler_transaction``, which contains the methods used to complete a transaction with Taler.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T071141Z" creationid="fancyplank" creationdate="20260821T071141Z">
+        <seg>``taler_transaction``, qui contient les méthodes utilisées pour effectuer une transation avec Taler.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``tests`` contains unit tests for this project.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T140315Z" creationid="fancyplank" creationdate="20260821T071547Z">
+        <seg>``tests`` contient les tests unitaires de ce projet.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``utils`` contains utility methods (such as logging).</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260904T140533Z" creationid="fancyplank" creationdate="20260821T071618Z">
+        <seg>``utils`` contient les métodes utilitaires (telles que la journalisation).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>``views`` contains the views used for the models.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T071725Z" creationid="fancyplank" creationdate="20260821T071640Z">
+        <seg>``views`` contient les vues utilisées pour les modèles.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_ecommerce_checkout.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144652Z" creationid="fancyplank" creationdate="20260906T144652Z">
+        <seg>image:: ../images/FR/Taler_ecommerce_checkout.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_ecommerce_payment_processed.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144700Z" creationid="fancyplank" creationdate="20260906T144700Z">
+        <seg>image:: ../images/FR/Taler_ecommerce_payment_processed.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_ecommerce_wallet.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144656Z" creationid="fancyplank" creationdate="20260906T144656Z">
+        <seg>image:: ../images/FR/Taler_ecommerce_wallet.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_invoices_online_payment.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144747Z" creationid="fancyplank" creationdate="20260906T144747Z">
+        <seg>image:: ../images/FR/Taler_invoices_online_payment.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_invoices_paid_online.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144752Z" creationid="fancyplank" creationdate="20260906T144752Z">
+        <seg>image:: ../images/FR/Taler_invoices_paid_online.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_invoices_payment_method.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144736Z" creationid="fancyplank" creationdate="20260906T144736Z">
+        <seg>image:: ../images/FR/Taler_invoices_payment_method.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_invoices_taler_qr_code.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144743Z" creationid="fancyplank" creationdate="20260906T144743Z">
+        <seg>image:: ../images/FR/Taler_invoices_taler_qr_code.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_pos_payment_complete.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144726Z" creationid="fancyplank" creationdate="20260906T144726Z">
+        <seg>image:: ../images/FR/Taler_pos_payment_complete.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_pos_receipt.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144732Z" creationid="fancyplank" creationdate="20260906T144732Z">
+        <seg>image:: ../images/FR/Taler_pos_receipt.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_pos_taler_payment.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144721Z" creationid="fancyplank" creationdate="20260906T144721Z">
+        <seg>image:: ../images/FR/Taler_pos_taler_payment.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_provider_setting_complete.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144758Z" creationid="fancyplank" creationdate="20260906T144758Z">
+        <seg>image:: ../images/FR/Taler_provider_setting_complete.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_refund_email.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144808Z" creationid="fancyplank" creationdate="20260906T144808Z">
+        <seg>image:: ../images/FR/Taler_refund_email.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_refund_payment.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144803Z" creationid="fancyplank" creationdate="20260906T144803Z">
+        <seg>image:: ../images/FR/Taler_refund_payment.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_test_mode_payment_method_with_icons.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144637Z" creationid="fancyplank" creationdate="20260906T144637Z">
+        <seg>image:: ../images/FR/Taler_test_mode_payment_method_with_icons.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_test_mode_radio_button.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144631Z" creationid="fancyplank" creationdate="20260906T144631Z">
+        <seg>image:: ../images/FR/Taler_test_mode_radio_button.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_test_mode_taler_order_payment.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144641Z" creationid="fancyplank" creationdate="20260906T144641Z">
+        <seg>image:: ../images/FR/Taler_test_mode_taler_order_payment.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_test_mode_taler_payment_completed.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144647Z" creationid="fancyplank" creationdate="20260906T144647Z">
+        <seg>image:: ../images/FR/Taler_test_mode_taler_payment_completed.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_ticketing_event_payment_confirmation.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144716Z" creationid="fancyplank" creationdate="20260906T144716Z">
+        <seg>image:: ../images/FR/Taler_ticketing_event_payment_confirmation.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_ticketing_events_list.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144709Z" creationid="fancyplank" creationdate="20260906T144709Z">
+        <seg>image:: ../images/FR/Taler_ticketing_events_list.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/Taler_ticketing_settings.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144704Z" creationid="fancyplank" creationdate="20260906T144704Z">
+        <seg>image:: ../images/FR/Taler_ticketing_settings.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_customer_list_of_payments.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144516Z" creationid="fancyplank" creationdate="20260906T144516Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_customer_list_of_payments.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_customer_payment.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144509Z" creationid="fancyplank" creationdate="20260906T144509Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_customer_payment.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_install.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144436Z" creationid="fancyplank" creationdate="20260906T144436Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_install.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_invoice_creation.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144543Z" creationid="fancyplank" creationdate="20260906T144543Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_invoice_creation.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_invoice_online_payment.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144558Z" creationid="fancyplank" creationdate="20260906T144558Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_invoice_online_payment.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_invoice_preview.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144548Z" creationid="fancyplank" creationdate="20260906T144548Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_invoice_preview.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_pos_payment.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144618Z" creationid="fancyplank" creationdate="20260906T144618Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_pos_payment.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_pos_pos.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144608Z" creationid="fancyplank" creationdate="20260906T144608Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_pos_pos.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_pos_qr_code.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144625Z" creationid="fancyplank" creationdate="20260906T144625Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_pos_qr_code.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_pos_settings.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144614Z" creationid="fancyplank" creationdate="20260906T144614Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_pos_settings.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_pos_setup.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144602Z" creationid="fancyplank" creationdate="20260906T144602Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_pos_setup.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_provider.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144451Z" creationid="fancyplank" creationdate="20260906T144451Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_provider.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_provider_details.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144457Z" creationid="fancyplank" creationdate="20260906T144457Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_provider_details.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_provider_details_currencies.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144502Z" creationid="fancyplank" creationdate="20260906T144502Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_provider_details_currencies.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_refund_button.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144524Z" creationid="fancyplank" creationdate="20260906T144524Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_refund_button.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_refund_email.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144537Z" creationid="fancyplank" creationdate="20260906T144537Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_refund_email.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>image:: ../images/EN/UI_Tutorial/Tutorial_refund_email_list.png</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260906T144530Z" creationid="fancyplank" creationdate="20260906T144530Z">
+        <seg>image:: ../images/FR/UI_Tutorial/Tutorial_refund_email_list.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>x is the number of unit tests, currently 11.</seg>
+      </tuv>
+      <tuv xml:lang="fr" changeid="fancyplank" changedate="20260821T070115Z" creationid="fancyplank" creationdate="20260821T070115Z">
+        <seg>x est le nombre de tests unitaires, actuellement 11.</seg>
+      </tuv>
+    </tu>
+<!-- Alternative translations -->
+  </body>
+</tmx>

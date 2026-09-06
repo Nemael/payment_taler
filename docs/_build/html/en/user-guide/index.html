@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>User Guide and flow walkthrough &#8212; Taler-Odoo Payment System v1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=5cb08e4e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Welcome to Taler-Odoo Payment System’s documentation!" href="../index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="installation.html" title="Installation"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Taler-Odoo Payment System’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Taler-Odoo Payment System v1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">User Guide and flow walkthrough</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="user-guide-and-flow-walkthrough">
+<h1>User Guide and flow walkthrough<a class="headerlink" href="#user-guide-and-flow-walkthrough" title="Link to this heading">¶</a></h1>
+<p>This section contains an explanation of how to install, configure, and operate the Taler-Odoo Payment System.</p>
+<p>This section is intended for Odoo administrators that want to provide Taler payments to their customers.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-or-update-the-add-on-on-an-already-existing-odoo-installation">Install or update the add-on on an already-existing Odoo installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#uninstall-the-add-on">Uninstall the add-on</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#configuration-of-the-taler-payment-provider">Configuration of the Taler payment provider</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="payments.html">Payments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payments.html#complete-an-ecommerce-payment-using-taler">Complete an eCommerce payment using Taler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments.html#purchase-an-event-ticket-online-using-taler">Purchase an Event ticket online using Taler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="invoicing.html">Invoicing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="invoicing.html#create-an-invoice-that-can-be-paid-using-taler">Create an invoice that can be paid using Taler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="invoicing.html#pay-an-invoice-online-using-taler">Pay an invoice online using Taler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="point-of-sale.html">Point of Sale</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="point-of-sale.html#configure-taler-payment-for-point-of-sale">Configure Taler payment for point of sale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-of-sale.html#pay-using-taler-at-a-point-of-sale">Pay using Taler at a Point of Sale</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="refunds.html">Refunds</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="refunds.html#refund-an-online-payment-made-using-taler">Refund an online payment made using Taler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="merchant-test-mode.html">Merchant Test Mode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="merchant-test-mode.html#test-the-add-on-using-the-merchant-test-mode">Test the add-on using the merchant test mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technical-information.html">Technical Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="technical-information.html#change-settings-using-cli">Change settings using CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical-information.html#editing-rights-to-the-payment-provider-settings">Editing rights to the payment provider settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical-information.html#run-unit-tests">Run unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical-information.html#folder-structure">Folder structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common-issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="common-issues.html#tech-support">Tech support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-issues.html#the-check-url-validity-button-is-showing-an-error">The <code class="docutils literal notranslate"><span class="pre">Check</span> <span class="pre">URL</span> <span class="pre">validity</span></code> button is showing an error</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../index.html"
+                          title="previous chapter">Welcome to Taler-Odoo Payment System’s documentation!</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="installation.html"
+                          title="next chapter">Installation</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user-guide/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="installation.html" title="Installation"
+             >next</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Taler-Odoo Payment System’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Taler-Odoo Payment System v1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">User Guide and flow walkthrough</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

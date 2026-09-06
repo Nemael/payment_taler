@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Explication de l’interface &#8212; Documentation Taler-Odoo Payment System v1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=d43c624c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="État de la traduction" href="../project/translation.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../project/translation.html" title="État de la traduction"
+             accesskey="P">précédent</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Explication de l’interface</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="ui-explanation">
+<h1>Explication de l’interface<a class="headerlink" href="#ui-explanation" title="Link to this heading">¶</a></h1>
+<p>Ce chapitre contient une explication détaillée des différents éléments qui composent l’interface d’utilisation du système de paiement Taler-Odoo.</p>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">Sur cette page :</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#installation-of-the-add-on" id="id1">Installation de l’extension</a></p></li>
+<li><p><a class="reference internal" href="#taler-payment-provider-setup" id="id2">Installation du fournisseur de paiement</a></p></li>
+<li><p><a class="reference internal" href="#online-payments-using-taler" id="id3">Payer en ligne avec Taler</a></p></li>
+<li><p><a class="reference internal" href="#trigger-a-refund-for-an-online-payment" id="id4">Rembourser un paiement en ligne</a></p></li>
+<li><p><a class="reference internal" href="#create-an-invoice-that-includes-a-taler-qr-code" id="id5">Créer une facture qui contient un code QR Taler</a></p></li>
+<li><p><a class="reference internal" href="#point-of-sale-payment-setup" id="id6">Mise en place du point de vente</a></p></li>
+<li><p><a class="reference internal" href="#point-of-sale-payments-using-taler" id="id7">Paiement en Point de Vente avec Taler</a></p></li>
+</ul>
+</nav>
+<p>Ce document explique les éléments de l’interface avec lesquels intéragir pour utiliser l’extension du système de paiement Taler-Odoo.</p>
+<section id="installation-of-the-add-on">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Installation de l’extension</a><a class="headerlink" href="#installation-of-the-add-on" title="Link to this heading">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/Tutorial_install.png"><img alt="Installation de l'extension payment_taler" class="align-center" src="../_images/Tutorial_install.png" style="width: 100%;" /></a>
+<p>Après avoir copié les fichiers du module payment_taler dans le répertoire de votre instance d’Odoo, et après avoir réglé les paramètres de chemin, vous pouvez rechercher le module payment_taler <strong>(1)</strong> dans l’appli Odoo et l’activer <strong>(2)</strong>. Activer le module revient à l’installer dans votre instance d’Odoo.</p>
+</section>
+<section id="taler-payment-provider-setup">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Installation du fournisseur de paiement</a><a class="headerlink" href="#taler-payment-provider-setup" title="Link to this heading">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/Tutorial_provider.png"><img alt="Fournisseur de paiment payment_taler" class="align-center" src="../_images/Tutorial_provider.png" style="width: 100%;" /></a>
+<p>Après avoir activé le module, vous pouvez accéder à la liste des fournisseurs de paiment dans <code class="docutils literal notranslate"><span class="pre">Site</span> <span class="pre">Web</span> <span class="pre">-&gt;</span> <span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">Paiments</span> <span class="pre">en</span> <span class="pre">ligne</span> <span class="pre">-&gt;</span> <span class="pre">Fournisseurs</span> <span class="pre">de</span> <span class="pre">paiment</span></code>.</p>
+<p>Dans cette liste, vous trouverez le fournisseur de paiement Taler <strong>(1)</strong> (désactivé par défaut) que vous pourrez activer <strong>(2)</strong>.</p>
+<p>L’activer ou cliquer dessus vous redirigera vers la page du fournisseur de paiement.</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_provider_details.png"><img alt="Détails du fournisseur de paiement payment_taler" class="align-center" src="../_images/Tutorial_provider_details.png" style="width: 100%;" /></a>
+<p>Sur cette page, vous pouvez consulter le statut actuel du fournisseur de paiement.</p>
+<ul class="simple">
+<li><p>Celui-ci peut être <code class="docutils literal notranslate"><span class="pre">Désactivé</span></code>, <code class="docutils literal notranslate"><span class="pre">Activé</span></code>, ou en <code class="docutils literal notranslate"><span class="pre">Mode</span> <span class="pre">test</span></code>. <strong>(1)</strong> (Consultez la documentation pour plus d’information.)</p></li>
+<li><p>Le fournisseur de paiment peut être <code class="docutils literal notranslate"><span class="pre">Non</span> <span class="pre">publié</span></code> ou <code class="docutils literal notranslate"><span class="pre">Publié</span></code>. <strong>(2)</strong> (Consultez la documentation pour plus d’information.</p></li>
+</ul>
+<p>Vous pouvez voir trois onglets : <code class="docutils literal notranslate"><span class="pre">Identifiants</span></code>, <code class="docutils literal notranslate"><span class="pre">Configuration</span></code> et <code class="docutils literal notranslate"><span class="pre">Messages</span></code>. Seul l’onglet <code class="docutils literal notranslate"><span class="pre">Identifiants</span></code> est utile pour ce réglage.</p>
+<p>Dans celui-ci, vous devrez paramétrer l’URL vendeur Taler ainsi que le mot de passe correspondant pour l’instance Taler que vous souhaitez utiliser.</p>
+<p>Après avoir paramétré l’URL, cliquez sur <code class="docutils literal notranslate"><span class="pre">Vérifier</span> <span class="pre">la</span> <span class="pre">validité</span> <span class="pre">de</span> <span class="pre">l'URL</span></code>. Cela vous connectera à celui-ci et vous permettra de vérifier si les devises sélectionnées sont compatibles avec les devises Odoo. (Consultez le guide d’utilisation pour plus d’information.)</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_provider_details_currencies.png"><img alt="Détails de devises du fournisseur de paiment payment_taler" class="align-center" src="../_images/Tutorial_provider_details_currencies.png" style="width: 100%;" /></a>
+<p>Dans l’onglet <code class="docutils literal notranslate"><span class="pre">Configuration</span></code> <strong>(1)</strong> du fournisseur de paiment, vous trouverez la liste des devises compatibles avec celui-ci <strong>2</strong>.</p>
+</section>
+<section id="online-payments-using-taler">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Payer en ligne avec Taler</a><a class="headerlink" href="#online-payments-using-taler" title="Link to this heading">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/Tutorial_customer_payment.png"><img alt="Page de paiment client payment_taler" class="align-center" src="../_images/Tutorial_customer_payment.png" style="width: 100%;" /></a>
+<p>Au moment de payer en ligne, la clientèle aura la possibilité de choisir le mode de paiement. Si les devises sont paramétrées correctement, Taler devrait être une des options proposées.</p>
+<p>Il se peut que vous voyiez certains symboles à côté du mode de paiement <strong>(2)</strong> :</p>
+<ul class="simple">
+<li><p>un œil barré signifie que ce mode de paiement n’est accessible que par une personne disposant de droits d’administration (ce mode est généralement employé pour tester un nouveau fournisseur de paiement).</p></li>
+<li><p>un signe attention jaune signifie que ce fournisseur de paiement est en mode test. Évitez d’employer le mode test en production.</p></li>
+</ul>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_customer_list_of_payments.png"><img alt="Liste de paiements payment_taler" class="align-center" src="../_images/Tutorial_customer_list_of_payments.png" style="width: 100%;" /></a>
+<p>Une fois le paiement effectué, du côté administrateur, vous pourrez vous rendre sur <code class="docutils literal notranslate"><span class="pre">Facturation</span> <span class="pre">-&gt;</span> <span class="pre">Clients</span> <span class="pre">-&gt;</span> <span class="pre">Paiements</span></code> pour consulter la liste de paiements ainsi que le plus récent <strong>(1)</strong>.</p>
+</section>
+<section id="trigger-a-refund-for-an-online-payment">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Rembourser un paiement en ligne</a><a class="headerlink" href="#trigger-a-refund-for-an-online-payment" title="Link to this heading">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/Tutorial_customer_list_of_payments.png"><img alt="Liste de paiements payment_taler" class="align-center" src="../_images/Tutorial_customer_list_of_payments.png" style="width: 100%;" /></a>
+<p>Dans <code class="docutils literal notranslate"><span class="pre">Facturation</span> <span class="pre">-&gt;</span> <span class="pre">Clients</span> <span class="pre">-&gt;</span> <span class="pre">Paiements</span></code>, cliquez sur le paiement à rembourser <strong>(1)</strong>.</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_refund_button.png"><img alt="Bouton Rembourser payment_taler" class="align-center" src="../_images/Tutorial_refund_button.png" style="width: 100%;" /></a>
+<p>Cliquez sur le bouton <code class="docutils literal notranslate"><span class="pre">Rembourser</span></code> <strong>(1)</strong> et confirmez le montant du remboursement.</p>
+<p>Cela créera un code QR de remboursement et l’enverra par email à la cliente ou au client.</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_refund_email_list.png"><img alt="Emails de remboursement payment_taler" class="align-center" src="../_images/Tutorial_refund_email_list.png" style="width: 100%;" /></a>
+<p>Pour consulter ces emails, rendez-vous dans <code class="docutils literal notranslate"><span class="pre">Paramètres</span> <span class="pre">-&gt;</span> <span class="pre">Technique</span> <span class="pre">-&gt;</span> <span class="pre">Emails</span></code>. Dans la liste des emails affichée, cliquez sur celui que vous désirez examiner <strong>(1)</strong>.</p>
+<ul class="simple">
+<li><p>Il se pourrait que vous deviez activer le mode <code class="docutils literal notranslate"><span class="pre">Dévelopeur</span></code> d’Odoo pour accéder à cet onglet (ce mode est accessible dans les paramètres).</p></li>
+</ul>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_refund_email.png"><img alt="Email de remboursement payment_taler" class="align-center" src="../_images/Tutorial_refund_email.png" style="width: 100%;" /></a>
+<p>Sur la page de la liste des emails, vous pouvez voir l’adresse d’envoi de l’email <strong>(1)</strong> et son destinataire <strong>(2)</strong>. Vous pouvez également afficher le code QR de remboursement envoyé à la cliente ou au client <strong>(3)</strong> ainsi que l’URI à utiliser s’il ne fonctionne pas <strong>(4)</strong>.</p>
+</section>
+<section id="create-an-invoice-that-includes-a-taler-qr-code">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Créer une facture qui contient un code QR Taler</a><a class="headerlink" href="#create-an-invoice-that-includes-a-taler-qr-code" title="Link to this heading">¶</a></h2>
+<p>Pour créer une facture incluant un code QR Taler comme option de paiement, vous devez créer une facture et indiquer Taler comme mode de paiement.</p>
+<a class="reference internal image-reference" href="../_images/Tutorial_invoice_creation.png"><img alt="Création de facture payment_taler" class="align-center" src="../_images/Tutorial_invoice_creation.png" style="width: 100%;" /></a>
+<p>Il s’agit d’une nouvelle facture qui contient les coordonnées de la cliente ou du client <strong>(1)</strong> ainsi que le produit facturé.</p>
+<p>Dans l’onglet <code class="docutils literal notranslate"><span class="pre">Autres</span> <span class="pre">Informations</span></code>, sélectionnez <code class="docutils literal notranslate"><span class="pre">Taler</span></code> dans le menu déroulant <code class="docutils literal notranslate"><span class="pre">Mode</span> <span class="pre">de</span> <span class="pre">paiement</span></code>. Vous indiquez de ce fait au côté client de payer cette facture au moyen de Taler. (Il aura toutefois la possibilité de choisir un autre mode de paiement pour régler cette facture.)</p>
+<p>Une fois la facture remplie, vous pouvez la <code class="docutils literal notranslate"><span class="pre">Confirmer</span></code> et en afficher l” <code class="docutils literal notranslate"><span class="pre">Aperçu</span></code> en cliquant sur les boutons correspondants en haut de la page.</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_invoice_preview.png"><img alt="Aperçu de facture payment_taler" class="align-center" src="../_images/Tutorial_invoice_preview.png" style="width: 100%;" /></a>
+<p>La section <code class="docutils literal notranslate"><span class="pre">Taler</span></code> se trouve au bas de la facture <strong>(1)</strong>. Elle n’apparaîtra pas si le <code class="docutils literal notranslate"><span class="pre">Mode</span> <span class="pre">de</span> <span class="pre">paiement</span></code> n’a pas été réglé sur <code class="docutils literal notranslate"><span class="pre">Taler</span></code>. Dans cette section, vous pouvez voir le code QR Taler qui devra être utilisé <strong>(2)</strong> ainsi que l’URI à utiliser s’il ne fonctionne pas <strong>(3)</strong>.</p>
+<p>Un bouton <code class="docutils literal notranslate"><span class="pre">Payer</span> <span class="pre">maintenant</span></code> se trouve dans le coin supérieur gauche de la facture. Celui-ci permet au client de la payer en ligne <strong>(4)</strong>.</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_invoice_online_payment.png"><img alt="Paiement en ligne payment_taler" class="align-center" src="../_images/Tutorial_invoice_online_payment.png" style="width: 100%;" /></a>
+<p>Dans ce menu, la cliente ou le client peut choisir de payer en ligne avec Taler <strong>(1)</strong>.</p>
+<p>Cette option déclenche le processus de paiment en ligne de cette extension, et est distinct du processus de paiment par facture qui aurait été utilisé si la cliente le client avait payé à l’aide du code QR de la facture.</p>
+</section>
+<section id="point-of-sale-payment-setup">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Mise en place du point de vente</a><a class="headerlink" href="#point-of-sale-payment-setup" title="Link to this heading">¶</a></h2>
+<p>Pour mettre le point de vente Taler en place, vous devez configurer un nouveau mode de paiement dans l’appli PDV.</p>
+<p>Dans <code class="docutils literal notranslate"><span class="pre">Point-de-vente</span> <span class="pre">-&gt;</span> <span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">Modes</span> <span class="pre">de</span> <span class="pre">paiement</span></code> et cliquez sur <code class="docutils literal notranslate"><span class="pre">Nouveau</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/Tutorial_pos_setup.png"><img alt="Mise en place d'un point de vente payment_taler" class="align-center" src="../_images/Tutorial_pos_setup.png" style="width: 100%;" /></a>
+<p>Dans le nouveau mode de paiement du point de vente, inscrivez le nom (Taler) <strong>(1)</strong>, cochez la case <code class="docutils literal notranslate"><span class="pre">paiement</span> <span class="pre">en</span> <span class="pre">ligne</span></code> <strong>(2)</strong>, et sélectionnez Taler comme <code class="docutils literal notranslate"><span class="pre">Fournisseur</span> <span class="pre">autorisé</span></code> <strong>(3)</strong>. Le fournisseur Taler doit être <code class="docutils literal notranslate"><span class="pre">Activé</span></code> pour apparaître dans la liste des fournisseurs disponibles.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ce mode de paiement Taler ne sera disponible que dans ce point de vente et est distinct des modes de paiement créés par défaut dans cette extension.</p>
+</div>
+<p>Ensuite, vous devez activer ce nouveau fournisseur de paiment à chaque point de vente où vous désirez pouvoir l’utiliser. Pour ce faire, dans <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">Point</span> <span class="pre">de</span> <span class="pre">vente</span></code>, cliquez sur le point de vente que vous voulez modifier.</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_pos_pos.png"><img alt="Point de vente payment_taler" class="align-center" src="../_images/Tutorial_pos_pos.png" style="width: 100%;" /></a>
+<p>Sur cette page, cliquez sur <code class="docutils literal notranslate"><span class="pre">Plus</span> <span class="pre">de</span> <span class="pre">paramètres</span> <span class="pre">:</span> <span class="pre">Configuration</span> <span class="pre">&gt;</span> <span class="pre">Paramètres</span></code> <strong>(1)</strong> pour vous rendre dans les paramètres de ce point de vente.</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_pos_settings.png"><img alt="Paramètres de point de vente payment_taler" class="align-center" src="../_images/Tutorial_pos_settings.png" style="width: 100%;" /></a>
+<p>Dans ces paramètres, dans <code class="docutils literal notranslate"><span class="pre">Modes</span> <span class="pre">de</span> <span class="pre">paiement</span></code>, ajoutez le nouveau mode de paiement <code class="docutils literal notranslate"><span class="pre">Taler</span></code> que vous avez créé plus tôt.</p>
+<p>Les clientes et clients pourront désormais payer avec Taler sur Point de vente !</p>
+</section>
+<section id="point-of-sale-payments-using-taler">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Paiement en Point de Vente avec Taler</a><a class="headerlink" href="#point-of-sale-payments-using-taler" title="Link to this heading">¶</a></h2>
+<p>L’utilisation de Taler à un point de vente est simple. Au lieu de recourir à un échange Taler direct, la transaction passe par le processus de paiement en ligne propre à Taler.</p>
+<a class="reference internal image-reference" href="../_images/Tutorial_pos_payment.png"><img alt="Paiement point de vente payment_taler" class="align-center" src="../_images/Tutorial_pos_payment.png" style="width: 100%;" /></a>
+<p>Quand une cliente ou un client s’apprête à payer, appuyez sur <code class="docutils literal notranslate"><span class="pre">Paiement</span></code>, sélectionnez <code class="docutils literal notranslate"><span class="pre">Taler</span></code> <strong>(1)</strong> comme mode de paiement, puis validez.</p>
+<hr style="border:0; border-top:1px solid #ccc; margin:1.5em 0;"><a class="reference internal image-reference" href="../_images/Tutorial_pos_qr_code.png"><img alt="Code QR point de vente payment_taler" class="align-center" src="../_images/Tutorial_pos_qr_code.png" style="width: 100%;" /></a>
+<p>Cela génèrera un code QR <strong>(1)</strong> que la cliente ou le client pourra finalement scanner pour effectuer le paiment par le biais de Taler.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Explication de l’interface</a><ul>
+<li><a class="reference internal" href="#installation-of-the-add-on">Installation de l’extension</a></li>
+<li><a class="reference internal" href="#taler-payment-provider-setup">Installation du fournisseur de paiement</a></li>
+<li><a class="reference internal" href="#online-payments-using-taler">Payer en ligne avec Taler</a></li>
+<li><a class="reference internal" href="#trigger-a-refund-for-an-online-payment">Rembourser un paiement en ligne</a></li>
+<li><a class="reference internal" href="#create-an-invoice-that-includes-a-taler-qr-code">Créer une facture qui contient un code QR Taler</a></li>
+<li><a class="reference internal" href="#point-of-sale-payment-setup">Mise en place du point de vente</a></li>
+<li><a class="reference internal" href="#point-of-sale-payments-using-taler">Paiement en Point de Vente avec Taler</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="../project/translation.html"
+                          title="Chapitre précédent">État de la traduction</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/ui-explanation/index.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../project/translation.html" title="État de la traduction"
+             >précédent</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Explication de l’interface</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

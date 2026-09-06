@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Comment contribuer &#8212; Documentation Taler-Odoo Payment System v1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=d43c624c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="État de la traduction" href="translation.html" />
+    <link rel="prev" title="Projet" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="translation.html" title="État de la traduction"
+             accesskey="N">suivant</a></li>
+        <li class="right" >
+          <a href="index.html" title="Projet"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Projet</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Comment contribuer</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-to-contribute">
+<h1>Comment contribuer<a class="headerlink" href="#how-to-contribute" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">Sur cette page :</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id2">Comment contribuer</a></p></li>
+<li><p><a class="reference internal" href="#how-to-add-a-translation-to-the-odoo-module" id="id3">Ajouter une traduction</a></p></li>
+<li><p><a class="reference internal" href="#how-to-update-and-build-the-documentation" id="id4">Compiler et mettre à jour la documentation</a></p></li>
+<li><p><a class="reference internal" href="#how-to-update-the-translation-of-the-documentation" id="id5">Mettre à jour la traduction de la documentation</a></p></li>
+</ul>
+</nav>
+<section id="id1">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Comment contribuer</a><a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>Toutes les contributions à l’intégration de paiements Taler sont les bienvenues !</p>
+<ul class="simple">
+<li><p>Pour contribuer :</p>
+<ul>
+<li><p>créez une fourche de ce dépôt (<a class="reference external" href="https://codeberg.org/Nemael/tops/">https://codeberg.org/Nemael/tops/</a>),</p></li>
+<li><p>clonez la fourche localement sur votre ordinateur,</p></li>
+<li><p>créez une nouvelle branche,</p></li>
+<li><p>effectuez vos changement dans le code de cette nouvelle branche,</p></li>
+<li><p>validez vos changements,</p></li>
+<li><p>poussez vers votre fourche,</p></li>
+<li><p>ouvrez une demande de tirage dans le dépôt TOPS original (<a class="reference external" href="https://codeberg.org/Nemael/tops/">https://codeberg.org/Nemael/tops/</a>).</p></li>
+</ul>
+</li>
+<li><p>Certaines fonctionnalités pourraient bénéficier d’améliorations :</p>
+<ul>
+<li><p>Traduction dans de nouvelles langues pour rendre l’extension plus accessible (voir <a class="reference internal" href="#how-to-add-a-translation"><span class="std std-ref">ici</span></a> pour le guide d’ajout de traduction).</p></li>
+<li><p>Garder l’extension à jour pour les versions futures d’Odoo.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="how-to-add-a-translation-to-the-odoo-module">
+<span id="how-to-add-a-translation"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">Ajouter une traduction</a><a class="headerlink" href="#how-to-add-a-translation-to-the-odoo-module" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Le processus d’ajout de traduction dans une nouvelle langue est relativement simple :</p>
+<ul>
+<li><p>Le fichier <code class="docutils literal notranslate"><span class="pre">i18n/payment_taler.pot</span></code> <a class="reference external" href="https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/payment_taler.pot">disponible ici</a> est le fichier de traduction de base comprenant toutes les lignes de texte.</p></li>
+<li><p>Copiez-le dans un fichier <code class="docutils literal notranslate"><span class="pre">{langue}.po</span></code>, par exemple <code class="docutils literal notranslate"><span class="pre">fr.po</span></code>.</p></li>
+<li><p>Dans ce nouveau fichier, traduisez les lignes de texte souhaitées. Vous pouvez utiliser le fichier <code class="docutils literal notranslate"><span class="pre">fr.po</span></code> <a class="reference external" href="https://codeberg.org/Nemael/tops/src/branch/18.0/payment_taler/i18n/fr.po">disponible ici</a> comme guide de formattage pour la traduction.</p></li>
+<li><p>Une fois le texte traduit, vous pouvez recréer votre base de donnée test Odoo et sélectionner la nouvelle langue dans les paramètres comme langue d’affichage. Votre traduction devrait apparaître dans Odoo.</p></li>
+<li><p>En cas de problème, veuillez lancer un fil de discussion dans cette catégorie de forum <a class="reference external" href="https://ich.taler.net/c/integrations/odoo/29">https://ich.taler.net/c/integrations/odoo/29</a> (Vous pouvez m’identifier : &#64;Nemael). Veuillez préciser que vous travaillez sur une traduction et en quelle langue.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="how-to-update-and-build-the-documentation">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Compiler et mettre à jour la documentation</a><a class="headerlink" href="#how-to-update-and-build-the-documentation" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>La documentation est en format <code class="docutils literal notranslate"><span class="pre">.rst</span></code> et a été compilée à l’aide de Sphinx. Vous pouvez vous référer au guide Sphinx ou à d’autres guides <code class="docutils literal notranslate"><span class="pre">.rst</span></code> pour améliorer la documentation.</p></li>
+<li><p>Pour ajouter des renseignements dans la documentation, vous devez modifier les documents dans <code class="docutils literal notranslate"><span class="pre">docs/</span></code>.</p>
+<ul>
+<li><p>Les trois répertoires correspondent aux trois chapitres de la présente documentation (<code class="docutils literal notranslate"><span class="pre">user-guide</span></code>, <code class="docutils literal notranslate"><span class="pre">project</span></code>, <code class="docutils literal notranslate"><span class="pre">ui-explanation</span></code>, respectivement « guide d’utilisation, projet et explication de l’interface »).</p></li>
+</ul>
+</li>
+<li><p>Après avoir apporté vos changements, vous devrez recompiler la documentation pour obtenir les fichiers <code class="docutils literal notranslate"><span class="pre">.html</span></code> mis à jour.</p>
+<ul>
+<li><p>Vous devez compiler la documentation pour une langue spécifique :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">-D</span> <span class="pre">language=en</span> <span class="pre">-b</span> <span class="pre">html</span> <span class="pre">.</span> <span class="pre">_build/html/en</span></code> compilera en anglais.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">-D</span> <span class="pre">language=fr</span> <span class="pre">-b</span> <span class="pre">html</span> <span class="pre">.</span> <span class="pre">_build/html/fr</span></code> compilera en français.</p></li>
+<li><p>Si le processus décrit ci-dessus ne fonctionne pas, vous pouvez recourir à la commande <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> pour compiler une version brute de la documentation.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Une fois la documentation compilée, vous pouvez accéder aux fichiers ainsi créés dans <code class="docutils literal notranslate"><span class="pre">docs/_build/html/{2-letters</span> <span class="pre">target</span> <span class="pre">language}</span></code>.</p>
+<ul>
+<li><p>Ouvrez la racine <code class="docutils literal notranslate"><span class="pre">root.html</span></code> dans votre navigateur pour consulter la documentation.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="how-to-update-the-translation-of-the-documentation">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Mettre à jour la traduction de la documentation</a><a class="headerlink" href="#how-to-update-the-translation-of-the-documentation" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>La traduction de la documentation est basée sur des fichiers <code class="docutils literal notranslate"><span class="pre">.pot</span></code> extraits des fichiers <code class="docutils literal notranslate"><span class="pre">.rst</span></code> existants convertis en fichiers <code class="docutils literal notranslate"><span class="pre">.po</span></code> d’une langue, traduits et compilés.</p></li>
+<li><p>Ce processus est standard et vous pouvez trouver des guides en ligne détaillant la manière de travailler avec des fichiers <code class="docutils literal notranslate"><span class="pre">.po</span></code>.</p>
+<ul>
+<li><p>Après avoir modifé les fichiers <code class="docutils literal notranslate"><span class="pre">.rst</span></code>, vous devez extraire les fichiers <code class="docutils literal notranslate"><span class="pre">.pot</span></code> pour qu’ils contiennent vos changements : <code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">-b</span> <span class="pre">gettext</span> <span class="pre">.</span> <span class="pre">_build/gettext</span></code>.</p></li>
+<li><p>Vous devrez ensuite recréer les fichiers <code class="docutils literal notranslate"><span class="pre">.po</span></code> spécifiques à la langue.</p></li>
+<li><p>Un fichier <code class="docutils literal notranslate"><span class="pre">.pot</span></code> sera créé pour chaque fichier <code class="docutils literal notranslate"><span class="pre">.rst</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-intl</span> <span class="pre">update</span> <span class="pre">-p</span> <span class="pre">_build/gettext</span> <span class="pre">-l</span> <span class="pre">{2-letters</span> <span class="pre">target</span> <span class="pre">language}</span></code>.</p></li>
+<li><p>Exemple : <code class="docutils literal notranslate"><span class="pre">sphinx-intl</span> <span class="pre">update</span> <span class="pre">-p</span> <span class="pre">_build/gettext</span> <span class="pre">-l</span> <span class="pre">fr</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Once you have the <code class="docutils literal notranslate"><span class="pre">.po</span></code> files, you can translate line-per-line the content of each <code class="docutils literal notranslate"><span class="pre">msgid</span></code> in the <code class="docutils literal notranslate"><span class="pre">.po</span></code> files.</p></li>
+<li><p>Vous pouvez ensuite compiler la documentation pour la nouvelle langue.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">-D</span> <span class="pre">language={2-letters</span> <span class="pre">target</span> <span class="pre">language}</span> <span class="pre">-b</span> <span class="pre">html</span> <span class="pre">.</span> <span class="pre">_build/html/{2-letters</span> <span class="pre">target</span> <span class="pre">language}</span></code>.</p></li>
+<li><p>Exemple : <code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">-D</span> <span class="pre">language=fr</span> <span class="pre">-b</span> <span class="pre">html</span> <span class="pre">.</span> <span class="pre">_build/html/fr</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Les fichiers qui en résulteront se trouveront dans le répertoire <code class="docutils literal notranslate"><span class="pre">docs/_build/html/{2-letters</span> <span class="pre">target</span> <span class="pre">language}</span></code>.</p></li>
+<li><p>Pour mettre à jour la documentation sur ReadTheDocs, fusionnez les changements apportés à la branche principale du répertoire (branche <code class="docutils literal notranslate"><span class="pre">19.0</span></code>).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Comment contribuer</a><ul>
+<li><a class="reference internal" href="#id1">Comment contribuer</a></li>
+<li><a class="reference internal" href="#how-to-add-a-translation-to-the-odoo-module">Ajouter une traduction</a></li>
+<li><a class="reference internal" href="#how-to-update-and-build-the-documentation">Compiler et mettre à jour la documentation</a></li>
+<li><a class="reference internal" href="#how-to-update-the-translation-of-the-documentation">Mettre à jour la traduction de la documentation</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="index.html"
+                          title="Chapitre précédent">Projet</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="translation.html"
+                          title="Chapitre suivant">État de la traduction</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/project/how-to-contribute.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="translation.html" title="État de la traduction"
+             >suivant</a></li>
+        <li class="right" >
+          <a href="index.html" title="Projet"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Projet</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Comment contribuer</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
