@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Point de Vente &#8212; Documentation Taler-Odoo Payment System v1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=d43c624c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Remboursements" href="refunds.html" />
+    <link rel="prev" title="Facturation" href="invoicing.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="refunds.html" title="Remboursements"
+             accesskey="N">suivant</a></li>
+        <li class="right" >
+          <a href="invoicing.html" title="Facturation"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Guide d’utilisation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Point de Vente</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="point-of-sale">
+<h1>Point de Vente<a class="headerlink" href="#point-of-sale" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">Sur cette page :</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#configure-taler-payment-for-point-of-sale" id="id1">Configurer Taler pour Point de Vente</a></p></li>
+<li><p><a class="reference internal" href="#pay-using-taler-at-a-point-of-sale" id="id2">Effectuer un paiement a l’aide de Taler à un point de vente</a></p></li>
+</ul>
+</nav>
+<section id="configure-taler-payment-for-point-of-sale">
+<span id="point-of-sale-payment-configuration"></span><h2><a class="toc-backref" href="#id1" role="doc-backlink">Configurer Taler pour Point de Vente</a><a class="headerlink" href="#configure-taler-payment-for-point-of-sale" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>La configuration des paiments Taler sur l’appli Point de Vente comprends quelques étapes de plus que les paiments en ligne classiques.</p></li>
+<li><p>Étapes préiminaires :</p>
+<ul>
+<li><p>Avoir <a class="reference internal" href="configuration.html#payment-provider-configuration"><span class="std std-ref">installé Taler comme fournisseur de paiment</span></a>.</p></li>
+<li><p>Avoir installé l’appli Odoo <code class="docutils literal notranslate"><span class="pre">Point</span> <span class="pre">de</span> <span class="pre">Vente</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Créer le mode de paiement Point de Vente :</p>
+<ul>
+<li><p>Dans la barre en haut de la page, rendez-vous dans <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">Modes</span> <span class="pre">de</span> <span class="pre">paiement</span></code>.</p></li>
+<li><p>Créez un nouveau mode de paiement.</p>
+<ul>
+<li><p>Nommez-le <code class="docutils literal notranslate"><span class="pre">Taler</span></code> (ou autre, mais ce nom rendra le suivi plus intuitif).</p></li>
+<li><p>Cochez la case <code class="docutils literal notranslate"><span class="pre">Paiement</span> <span class="pre">en</span> <span class="pre">ligne</span></code>.</p></li>
+<li><p>Séletionnez <code class="docutils literal notranslate"><span class="pre">Taler</span></code> dans le champs <code class="docutils literal notranslate"><span class="pre">Fournisseurs</span> <span class="pre">autorisés</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Ajouter Taler au point de vente :</p>
+<ul>
+<li><p>Pour cette étape, assurez-vous que le registre du point de vente soit fermé.</p></li>
+<li><p>Dans la barre en haut de la page, rendez-vous dans <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">Point</span> <span class="pre">de</span> <span class="pre">Vente</span></code>, pour accéder à la liste des points de vente.</p></li>
+<li><p>Sélectionnez celui pour lequel vous souhaitez ajouter le mode de paiement Taler.</p></li>
+<li><p>Cliquez sur <code class="docutils literal notranslate"><span class="pre">Plus</span> <span class="pre">de</span> <span class="pre">paramètres</span> <span class="pre">:</span> <span class="pre">Configurations</span> <span class="pre">&gt;</span> <span class="pre">Paramètres</span></code>, pour atteindre les paramètres du point de vente.</p>
+<ul>
+<li><p>Vous pouvez également accéder à cette page en vous rendant dans Paramètres dans le menu de navigation de l’application (bouton en haut a gauche), puis dans la section <code class="docutils literal notranslate"><span class="pre">Point</span> <span class="pre">de</span> <span class="pre">Vente</span></code>. Là, vous pouvez modifier le point de vente souhaité.</p></li>
+</ul>
+</li>
+<li><p>Dans <code class="docutils literal notranslate"><span class="pre">Paiement-&gt;</span> <span class="pre">Modes</span> <span class="pre">de</span> <span class="pre">paiment</span></code>, ajoutez le mode de paiement que vous venez de créer.</p></li>
+</ul>
+</li>
+<li><p>La mise en place est désormais terminée, et vous pourrez sélectionner le nouveau fournisseur de paiement lorsqu’une cliente ou un client effectuera un paiement.</p></li>
+</ul>
+</section>
+<section id="pay-using-taler-at-a-point-of-sale">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Effectuer un paiement a l’aide de Taler à un point de vente</a><a class="headerlink" href="#pay-using-taler-at-a-point-of-sale" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Ouvrez une caisse dans un point de vente.</p></li>
+<li><p>Ajoutez un article dans le panier et cliquez sur <code class="docutils literal notranslate"><span class="pre">Paiement</span></code> en bas de la page.</p></li>
+<li><p>Sélectionnez le mode de paiement <code class="docutils literal notranslate"><span class="pre">Taler</span></code>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_pos_taler_payment.png"><img alt="Paiement à un point de vente Taler" class="align-center" src="../_images/Taler_pos_taler_payment.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Cliquez sur <code class="docutils literal notranslate"><span class="pre">Valider</span></code>, cela générera un code QR.</p></li>
+<li><p>Celui-ci redirigera vers une page Odoo reprenant les modes de paiements disponibles, dont Taler.</p></li>
+<li><p>L’option Taler redirige vers une page de commande où payer à l’aide du porte-monnaie Taler.</p></li>
+<li><p>Une fois le paiement effectué, la personne effectuant l’achat sera renvoyée vers une confirmation de paiment Odoo.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_pos_payment_complete.png"><img alt="Confirmation de paiement au point de vente Taler" class="align-center" src="../_images/Taler_pos_payment_complete.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Côté vendeur, le point de vente produira une notification de paiment et un reçu.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_pos_receipt.png"><img alt="Reçu point de vente Taler" class="align-center" src="../_images/Taler_pos_receipt.png" style="width: 100%;" /></a>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Point de Vente</a><ul>
+<li><a class="reference internal" href="#configure-taler-payment-for-point-of-sale">Configurer Taler pour Point de Vente</a></li>
+<li><a class="reference internal" href="#pay-using-taler-at-a-point-of-sale">Effectuer un paiement a l’aide de Taler à un point de vente</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="invoicing.html"
+                          title="Chapitre précédent">Facturation</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="refunds.html"
+                          title="Chapitre suivant">Remboursements</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user-guide/point-of-sale.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="refunds.html" title="Remboursements"
+             >suivant</a></li>
+        <li class="right" >
+          <a href="invoicing.html" title="Facturation"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Guide d’utilisation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Point de Vente</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

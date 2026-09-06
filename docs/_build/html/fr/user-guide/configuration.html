@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Configuration &#8212; Documentation Taler-Odoo Payment System v1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=d43c624c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Paiments" href="payments.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="payments.html" title="Paiments"
+             accesskey="N">suivant</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Guide d’utilisation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Configuration</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">Sur cette page :</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#configuration-of-the-taler-payment-provider" id="id1">Configuration du mode de paiement Taler</a></p></li>
+</ul>
+</nav>
+<section id="configuration-of-the-taler-payment-provider">
+<span id="payment-provider-configuration"></span><h2><a class="toc-backref" href="#id1" role="doc-backlink">Configuration du mode de paiement Taler</a><a class="headerlink" href="#configuration-of-the-taler-payment-provider" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Une fois que l’add-on est installé depuis le menu Apps :</p>
+<ul>
+<li><p>rendez-vous dans le menu de fournisseurs de paiement. Il est accessible de plusieurs manières :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Site</span> <span class="pre">Web</span> <span class="pre">-&gt;</span> <span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">eCommerce</span> <span class="pre">-&gt;</span> <span class="pre">Fournisseurs</span> <span class="pre">de</span> <span class="pre">paiement</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Facturation</span> <span class="pre">-&gt;</span> <span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">Paiements</span> <span class="pre">en</span> <span class="pre">ligne</span> <span class="pre">-&gt;</span> <span class="pre">Fournisseurs</span> <span class="pre">de</span> <span class="pre">paiement</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Quelle que soit la manière dont vous y accédez, cette page comprend la liste des fournisseurs de paiement actuellement disponibles.</p></li>
+<li><p>Un nouveau fournisseur de paiement <code class="docutils literal notranslate"><span class="pre">Taler</span></code> y figurera, désactivé dans un premier temps.</p></li>
+<li><p>Cliquez sur le fournisseur de paiement Taler.</p></li>
+<li><p>Insérez l’URL vendeur Taler dans l’onglet <code class="docutils literal notranslate"><span class="pre">Identifiants</span></code>.</p>
+<ul>
+<li><p>Par défaut, les identifiants de la démobanque sont utilisés. Accédez <a class="reference external" href="https://backend.demo.taler.net/instances/sandbox/">ici</a> à la démobanque.</p></li>
+<li><p>Après avoir coniguré l’URL, vous pouvez cliquer sur le bouton <code class="docutils literal notranslate"><span class="pre">Vérifier</span> <span class="pre">la</span> <span class="pre">validité</span> <span class="pre">de</span> <span class="pre">l'URL</span></code> pour vous assurer qu’il se connecte à un vendeur Taler valide et que les devises que celui-ci accepte soient compatibles avec vos paramètres Taler.</p>
+<ul>
+<li><p>Pour voir les devises configurées dans Taler, rendez-vous dans l’onglet <code class="docutils literal notranslate"><span class="pre">Configuration</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Configurez ensuite le mot de passe vendeur Taler. Il sera utilisé pour les échanges API avec le vendeur.</p></li>
+<li><p>Vous pouvez également changer le message de confirmation Taler. Celui-ci sera affiché dans les transactions Taler.</p>
+<ul>
+<li><p>Ce changement ne s’appliquera que dans les commandes Taler, et pas dans Odoo.</p></li>
+<li><p>Pour changer le message de confirmation Odoo pour la clientèle qui paye avec Taler, rendez-vous dans l’onglet <code class="docutils literal notranslate"><span class="pre">Messages</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Les valeurs défaut sont reliées au vendeur Taler bac à sable :</p>
+<ul>
+<li><p>URL: <a class="reference external" href="https://backend.demo.taler.net/instances/sandbox">https://backend.demo.taler.net/instances/sandbox</a></p></li>
+<li><p>Mot de passe : sandbox</p></li>
+</ul>
+</li>
+<li><p>Il est recommandé, mais non nécessaire, de créer un Jounal spécifique à Taler (cela peut-être paramétré dans l’onglet <code class="docutils literal notranslate"><span class="pre">Configuration</span></code>).</p>
+<ul>
+<li><p>Cela facilitera le processus de Comptabilité.</p></li>
+</ul>
+</li>
+<li><p>Cliquez le bouton d’option <code class="docutils literal notranslate"><span class="pre">Activé</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Le paramétrage initial est maintenant terminé et les paiements Taler seront disponibles pour eCommerce, pour les paiements en ligne et pour les apps de facturation.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_provider_setting_complete.png"><img alt="Paramètres de fournisseurs Taler" class="align-center" src="../_images/Taler_provider_setting_complete.png" style="width: 100%;" /></a>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Configuration</a><ul>
+<li><a class="reference internal" href="#configuration-of-the-taler-payment-provider">Configuration du mode de paiement Taler</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="installation.html"
+                          title="Chapitre précédent">Installation</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="payments.html"
+                          title="Chapitre suivant">Paiments</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user-guide/configuration.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="payments.html" title="Paiments"
+             >suivant</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Guide d’utilisation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Configuration</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

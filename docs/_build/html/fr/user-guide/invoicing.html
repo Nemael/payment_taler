@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Facturation &#8212; Documentation Taler-Odoo Payment System v1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_outline.css?v=6f5f85df" />
+    
+    <script src="../_static/documentation_options.js?v=d43c624c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Point de Vente" href="point-of-sale.html" />
+    <link rel="prev" title="Paiments" href="payments.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="point-of-sale.html" title="Point de Vente"
+             accesskey="N">suivant</a></li>
+        <li class="right" >
+          <a href="payments.html" title="Paiments"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Guide d’utilisation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Facturation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="invoicing">
+<h1>Facturation<a class="headerlink" href="#invoicing" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">Sur cette page :</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#create-an-invoice-that-can-be-paid-using-taler" id="id1">Créer une facture qui accepte les paiement effectués avec Taler</a></p></li>
+<li><p><a class="reference internal" href="#pay-an-invoice-online-using-taler" id="id2">Payer une facture à l’aide de Taler</a></p></li>
+</ul>
+</nav>
+<section id="create-an-invoice-that-can-be-paid-using-taler">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Créer une facture qui accepte les paiement effectués avec Taler</a><a class="headerlink" href="#create-an-invoice-that-can-be-paid-using-taler" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Générer une facture incluant un code QR Taler pour la régler</p>
+<ul>
+<li><p>Allez dans l’app Facturation et générez une nouvelle facture.</p></li>
+<li><p>Remplissez les champs nécessaires pour cette facture.</p></li>
+<li><p>Étape importante : dans l’onglet <code class="docutils literal notranslate"><span class="pre">Autres</span> <span class="pre">informations</span></code>, réglez le mode de paiement sur <code class="docutils literal notranslate"><span class="pre">Taler</span></code> (voir ci-dessous). C’est indispensable pour générer le code QR.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_invoices_payment_method.png"><img alt="Mode de paiement des factures Taler" class="align-center" src="../_images/Taler_invoices_payment_method.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Ensuite, cliquez sur <code class="docutils literal notranslate"><span class="pre">Confirmer</span></code> en haut de la page, cela vous redirigera vers la page de facturation.</p>
+<ul>
+<li><p>Vous pouvez à présent cliquer sur <code class="docutils literal notranslate"><span class="pre">Aperçu</span></code> pour parcourir la facture telle qu’elle sera envoyée.</p></li>
+<li><p>Le PDF de la facture incluera un code QR de paiement Taler ainsi que des renseignements Taler supplémentaires.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_invoices_taler_qr_code.png"><img alt="Code QR Taler de la facture Taler" class="align-center" src="../_images/Taler_invoices_taler_qr_code.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Si un paiement client est effectué à l’aide du code QR dans la facture PDF, vous devrez effectuer une réconcilliation de paiment manuelle.</p>
+<ul>
+<li><p>Pour ce faire, une fois que vous avez reçu le paiement, rendez-vous sur la page de l’app Facturation,</p></li>
+<li><p>cliquez sur <code class="docutils literal notranslate"><span class="pre">Payer</span></code>,</p></li>
+<li><p>confirmez les données affichées dans la boite de dialogue qui s’est ouverte. Nous vous recommandons d’ajouter le numéro de commande Taler indiqué sur la facture dans le champ <code class="docutils literal notranslate"><span class="pre">Mémo</span></code> pour faciliter le suivi et la comptabilité.</p></li>
+<li><p>Appuyez sur <code class="docutils literal notranslate"><span class="pre">Créer</span> <span class="pre">paiement</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="pay-an-invoice-online-using-taler">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Payer une facture à l’aide de Taler</a><a class="headerlink" href="#pay-an-invoice-online-using-taler" title="Link to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ce processus n’est pas lié à la création de factures à l’aide de Taler dans l’étape précédente.</p>
+<p>Toute facture peut être payée à l’aide de Taler.</p>
+</div>
+<ul class="simple">
+<li><p>Allez dans l’app Facturation et générez une nouvelle facture.</p></li>
+<li><p>Après la création de la facture, vous pouvez cliquer sur <code class="docutils literal notranslate"><span class="pre">Aperçu</span></code> pour voir la page qui sera envoyée à la cliente ou au client.,</p></li>
+<li><p>Un bouton <code class="docutils literal notranslate"><span class="pre">Payer</span> <span class="pre">maintenant</span></code> leur y permettra de la régler et leur donnera l’option d’effectuer le paiment à l’aide de Taler.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_invoices_online_payment.png"><img alt="Paiement en ligne d'une facture Taler" class="align-center" src="../_images/Taler_invoices_online_payment.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p>Après avoir cliqué sur <code class="docutils literal notranslate"><span class="pre">Payer</span></code>, la personne effectuant le paiment sera redirigée vers la page de commande Taler, où elle pourra utiliser son porte-monnaie Taler depuis son téléphone ou son navigateur (comme pour un paiement eCommerce).</p></li>
+<li><p>Une fois la transaction effectuée, la personne sera renvoyée sur la page de facturation où s’affichera une confirmation de paiement.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Taler_invoices_paid_online.png"><img alt="Facture Taler réglée en ligne" class="align-center" src="../_images/Taler_invoices_paid_online.png" style="width: 100%;" /></a>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Facturation</a><ul>
+<li><a class="reference internal" href="#create-an-invoice-that-can-be-paid-using-taler">Créer une facture qui accepte les paiement effectués avec Taler</a></li>
+<li><a class="reference internal" href="#pay-an-invoice-online-using-taler">Payer une facture à l’aide de Taler</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="payments.html"
+                          title="Chapitre précédent">Paiments</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="point-of-sale.html"
+                          title="Chapitre suivant">Point de Vente</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user-guide/invoicing.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="point-of-sale.html" title="Point de Vente"
+             >suivant</a></li>
+        <li class="right" >
+          <a href="payments.html" title="Paiments"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Taler-Odoo Payment System v1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Guide d’utilisation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Facturation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Nemael.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
