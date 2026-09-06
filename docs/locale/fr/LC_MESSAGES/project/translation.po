@@ -36,7 +36,7 @@ msgstr "Ce module et sa documentation sont actuellement disponibles en anglais e
 msgid ""
 "Invoices and emails sent to customer for refund are also translated, and "
 "will be sent in the language set on the customer’s profile."
-msgstr "Les factures et emails envoyés à la clientère pour les remboursement sont également traduits et seront evoyés dans la langue sélectionnés dans les paramètres client."
+msgstr "Les factures et emails envoyés à la clientèle pour les remboursement sont également traduits et seront envoyés dans la langue sélectionnée dans les paramètres client."
 
 #: ../../project/translation.rst:16
 msgid ""

@@ -29,14 +29,14 @@ msgid ""
 "and increase functionality of other existing Odoo modules (eCommerce, "
 "invoices, ticket sales, online payment, etc.) It also implements refunds "
 "to customers that used Taler to pay."
-msgstr "TOPS est une extension pour Odoo. Elle vous permet de payer à l'aide de Taler, à la manière d'autres intégration de paiment dans Odoo. Ce module s'intègre dans Odoo et améliore les fonctionnalités de modules Odoo existants (eCommerce, factures, vente de tickets, paiement en ligne, etc.) Il implémente également le rembourement aux clients qui ont payé à l'aide de Taler."
+msgstr "TOPS est une extension pour Odoo. Elle vous permet de payer à l'aide de Taler, à la manière d'autres intégration de paiment dans Odoo. Ce module s'intègre dans Odoo et améliore les fonctionnalités de modules Odoo existants (eCommerce, factures, vente de tickets, paiement en ligne, etc.) Il implémente également le remboursement de paiments effectués l'aide de Taler."
 
 #: ../../index.rst:9
 msgid ""
 "Installing this module enables merchants to accept payments from "
 "customers using their Taler Wallet, giving them the option to choose a "
 "payment system that respects their privacy."
-msgstr "Ce module permet aux vendeurs de recevoir des paiements effectués à partir de porte-monnaie Taleur, et aux clients de choisir une méthode de paiement qui respecte leur vie privée."
+msgstr "Ce module permet au côté vendeur de recevoir des paiements effectués à partir de porte-monnaie Taleur, et au côté client de choisir une méthode de paiement qui respecte leur vie privée."
 
 #: ../../index.rst:11
 msgid ""

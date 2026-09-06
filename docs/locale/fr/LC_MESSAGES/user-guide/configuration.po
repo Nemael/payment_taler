@@ -28,7 +28,7 @@ msgstr "Configuration du mode de paiement Taler"
 
 #: ../../user-guide/configuration.rst:16
 msgid "Once the add-on is installed from the Apps:"
-msgstr "Une fois que l'add-on est installé depuis le menu Apps:"
+msgstr "Une fois que l'add-on est installé depuis le menu Apps :"
 
 #: ../../user-guide/configuration.rst:18
 msgid "Go to the payment providers menu. It can be accessed in multiple ways:"
@@ -36,17 +36,17 @@ msgstr "rendez-vous dans le menu de fournisseurs de paiement. Il est accessible 
 
 #: ../../user-guide/configuration.rst:21
 msgid "``Website -> Configuration -> eCommerce -> Payment Providers``."
-msgstr "``Site eb -> Configuration -> eCommerce -> Fournisseurs de paiement``."
+msgstr "``Site Web -> Configuration -> eCommerce -> Fournisseurs de paiement``."
 
 #: ../../user-guide/configuration.rst:22
 msgid "``Invoicing -> Configuration -> Online Payments -> Payment Providers``."
-msgstr "``acturation -> Configuration -> Paiements en ligne -> Fournisseurs de paiement``."
+msgstr "``Facturation -> Configuration -> Paiements en ligne -> Fournisseurs de paiement``."
 
 #: ../../user-guide/configuration.rst:24
 msgid ""
 "Either way you land here, this is the list of your currently available "
 "payment providers."
-msgstr "Quel que soit la manière dont vous y accédez, voici la liste des founrnisseurs de paiement actuellement disponible."
+msgstr "Quelle que soit la manière dont vous y accédez, cette page comprend la liste des fournisseurs de paiement actuellement disponibles."
 
 #: ../../user-guide/configuration.rst:26
 msgid ""
@@ -66,7 +66,7 @@ msgstr "Insérez l'URL vendeur Taler dans l'onglet ``Identifiants``."
 msgid ""
 "By default, the demobank’s credentials are used. You can access the "
 "demobank `here <https://backend.demo.taler.net/instances/sandbox/>`__"
-msgstr "Par défaut, les identifiants de la démobanque sont utilisés. Accédez `ici <https://backend.demo.taler.net/instances/sandbox/>`__ à la démobanque"
+msgstr "Par défaut, les identifiants de la démobanque sont utilisés. Accédez `ici <https://backend.demo.taler.net/instances/sandbox/>`__ à la démobanque."
 
 #: ../../user-guide/configuration.rst:34
 msgid ""
@@ -74,7 +74,7 @@ msgid ""
 " check if the entered URL is reaching a valid Taler merchant, and that "
 "this merchant’s accepted currencies are compatible with you Taler "
 "available currencies."
-msgstr "Après avoir coniguré l'URL, vous pouvez cliquer sur le bouton ``Vérifier la validité de l'URL`` pour vous assurer qu'il se connecte à un vendeur Taleur valide et que les devises que celui-ci accepte soient compatibles avec vos paramètres Taler."
+msgstr "Après avoir coniguré l'URL, vous pouvez cliquer sur le bouton ``Vérifier la validité de l'URL`` pour vous assurer qu'il se connecte à un vendeur Taler valide et que les devises que celui-ci accepte soient compatibles avec vos paramètres Taler."
 
 #: ../../user-guide/configuration.rst:39
 msgid "You can find the accepted currencies in the ``Configuration`` tab."
@@ -113,17 +113,17 @@ msgstr ""
 
 #: ../../user-guide/configuration.rst:56
 msgid "Password: sandbox"
-msgstr "Mot de passe: sandbox"
+msgstr "Mot de passe : sandbox"
 
 #: ../../user-guide/configuration.rst:58
 msgid ""
 "It is advised, but completely optional, to create a Taler-specific "
 "Journal (this can be set in the Configuration tab)."
-msgstr "Il est recommendé, mais non nécessaire, de crééer un Jounal spécifique à Taler (cela peut-être paramétré dans l'onglet Configuration)."
+msgstr "Il est recommandé, mais non nécessaire, de créer un Jounal spécifique à Taler (cela peut-être paramétré dans l'onglet ``Configuration``)."
 
 #: ../../user-guide/configuration.rst:61
 msgid "This will help during the Accounting process."
-msgstr "Cela facilitera le prcessus de Comptabilité."
+msgstr "Cela facilitera le processus de Comptabilité."
 
 #: ../../user-guide/configuration.rst:63
 msgid "Click the ``Enabled`` radio button."

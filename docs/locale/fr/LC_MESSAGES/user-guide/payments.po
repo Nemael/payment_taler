@@ -30,15 +30,15 @@ msgstr "Effectuer un paiement eCommerce a l'aide de Taler"
 msgid ""
 "Once you have completed the Taler initial setup, customers can pay on "
 "your website."
-msgstr "Une fois Taler installé, la clientèle pourra effectuer des paiments sur votre site Web."
+msgstr "Une fois Taler installé, votre clientèle pourra effectuer des paiments sur votre site Web."
 
 #: ../../user-guide/payments.rst:15
 msgid "To do so, they will open the shop and add any items to their cart."
-msgstr "Pour ce faire, ils ouvriront la boutique et ajouteront des artiles à leur panier."
+msgstr "Pour ce faire, elle ouvrira la boutique et ajoutera des articles à son panier."
 
 #: ../../user-guide/payments.rst:16
 msgid "During the checkout, they can now select the ``Taler`` payment provider."
-msgstr "Au moment de payer, ils auont la possibilité de sélectioner le founisseur de aiment ``Taler``."
+msgstr "Au moment de payer, elle aura la possibilité de sélectioner le founisseur de paiement ``Taler``."
 
 #: ../../user-guide/payments.rst:-1
 msgid "Taler eCommerce checkout"
@@ -54,7 +54,7 @@ msgid ""
 "merchant side, and the customer will be redirected to the Taler order, "
 "from which they can pay with any Taler wallet on their phone or web "
 "browser."
-msgstr "Arprès avoir cliqué sur ``Payer maintenant``, une nouvelle commande Taler sera ouverte sur le site vendeur, et la cliente ou le client sera redirigé vers celle-ci, où il lui sera possible de payer à l'aide d'un porte-monnaire Taler depuis leur téléphone portable ou navigateur Web."
+msgstr "Après avoir cliqué sur ``Payer maintenant``, une nouvelle commande Taler sera ouverte sur le site vendeur, et la clientèle sera redirigée vers celle-ci, où elle pourra payer à l'aide d'un porte-monnaie Taler depuis son téléphone portable ou son navigateur Web."
 
 #: ../../user-guide/payments.rst:-1
 msgid "Taler eCommerce wallet"
@@ -69,7 +69,7 @@ msgid ""
 "Upon completion of the payment using their wallet, the customer will be "
 "redirected back to your Odoo website, which will show a successful "
 "payment confirmation."
-msgstr "Arès le paiment avec porte-monnaie, l'extension redirigera vers le site d'Odoo, qui affichera un écran de confirmation."
+msgstr "Après le paiment avec porte-monnaie, l'extension redirigera la clientèle vers le site d'Odoo, qui affichera un écran de confirmation."
 
 #: ../../user-guide/payments.rst:-1
 msgid "Taler eCommerce payment processor"
@@ -103,7 +103,7 @@ msgstr "Pour permettre à votre clientèle d'acheter des tickets événementiels
 
 #: ../../user-guide/payments.rst:57
 msgid "Add the ``Events`` add-on on your Odoo instance."
-msgstr "aoutez l'extension ``Événements``à votre instance Odoo,"
+msgstr "aoutez l'extension ``Événements`` à votre instance Odoo,"
 
 #: ../../user-guide/payments.rst:58
 msgid "Go to the settings app, and navigate to the ``Events`` settings."
@@ -125,13 +125,13 @@ msgstr ""
 msgid ""
 "Tickets will now be available to buy using online payments providers, "
 "including the Taler payment provider."
-msgstr "Les tickets seront disponibles 'a la vente par le biais des foournisseurs de paiement, dont Taler."
+msgstr "Les tickets seront disponibles à la vente par le biais des fournisseurs de paiement, dont Taler."
 
 #: ../../user-guide/payments.rst:68
 msgid ""
 "Customers can navigate the ``Events`` tab on your website, and choose a "
 "ticket to any event they’re interested in."
-msgstr "La clientèle pourront alors se rendre dans l'onglet ``Événements`` de votre site Web et acheter les tickets de leur choix."
+msgstr "La clientèle pourra alors se rendre dans l'onglet ``Événements`` de votre site Web et acheter les tickets de son choix."
 
 #: ../../user-guide/payments.rst:-1
 msgid "Taler ticketing event list"
@@ -145,24 +145,24 @@ msgstr ""
 msgid ""
 "Upon clicking an event, they will be asked to provide some identifying "
 "information, and then will be lead to a payment page."
-msgstr "Après avoir cliqué sur un événements, la cliente ou le client devra fournir des renseignements d'identication avant d'être redirigé(e) vers une page de paiement."
+msgstr "Après avoir cliqué sur un événement, la clientèle devra fournir des renseignements d'identification avant d'être redirigée vers une page de paiement."
 
 #: ../../user-guide/payments.rst:78
 msgid "On this payment page, the customer can select Taler as a payment provider."
-msgstr "Celle-ci offrira l'option d'utiliser Taleur comme fournisseur de paiement."
+msgstr "Celle-ci offrira l'option d'utiliser Taler comme fournisseur de paiement."
 
 #: ../../user-guide/payments.rst:80
 msgid ""
 "They will be redirected to a Taler order page, where they can pay using "
 "their Taler wallet on the app or web browser."
-msgstr "Si elle est sélectionnée, elle redirigera vers une apge de ommande Taler et il sera possiblede régler à l'aide du porte-monnaie électronique Taler sur l'appliation our sur le site Web."
+msgstr "Si celle-ci est sélectionnée, elle redirigera vers une page de commande Taler et il sera possiblede régler à l'aide du porte-monnaie électronique Taler sur l'application our sur le site Web."
 
 #: ../../user-guide/payments.rst:82
 msgid ""
 "Once the payment is completed, the customer will land back on the odoo "
 "page, with their payment successfully processed, and a .pdf of the event "
 "tickets available."
-msgstr "Le paiement effetué, le site redirigera vers la page Odoo où un fier pdf du tiket sera disponible."
+msgstr "Le paiement effectué, le site redirigera vers la page Odoo où un fichier pdf du ticket sera disponible."
 
 #: ../../user-guide/payments.rst:-1
 msgid "Taler ticketing event payment confirmation"

@@ -36,7 +36,7 @@ msgstr "Pour rembourser un paiement effectué dans Taler, trouvez d'abord le pai
 msgid ""
 "For Odoo 18, in the ``invoicing`` add-on, navigate to ``Customers -> "
 "Customer Payments`` on the top bar."
-msgstr "Pour Odoo 18, dans l'extension ``facturation``, rendez-vous dans ``Clients -> Paiements`` dans la barre en haut de la page."
+msgstr "Pour Odoo 18, dans l'extension ``Facturation``, rendez-vous dans ``Clients -> Paiements`` dans la barre en haut de la page."
 
 #: ../../user-guide/refunds.rst:16
 msgid "For Odoo 19, the location is ``Customers -> Payments``."
@@ -66,7 +66,7 @@ msgstr "Cliquez sur le paiement que vous souhaitez rembourser."
 msgid ""
 "On the payment page, click ``Refund`` in the action button section (top-"
 "left) and confirm the refund."
-msgstr "Sur la page du paiement, cliquez sur ``Remboursement` in the action button section (top-left) and confirm the refund."
+msgstr "Sur la page du paiement, cliquez sur le bouton d'action ``Remboursement``, en haut à gauche, et confirmez le remboursement."
 
 #: ../../user-guide/refunds.rst:-1
 msgid "Taler payment page"
@@ -86,25 +86,25 @@ msgstr "Vous pouvez déterminer le montant que vous souhaitez rembourser. Celui-
 msgid ""
 "You can make multiple partial refunds (for example, a 30 euros "
 "transaction can be refunded by 5 euros, and then by 10 euros later)."
-msgstr "Vous pouvez effectuer plusieurs remboursements partiels (par exemple, une transaction de 30 euros peut-être remboursée en tranches de 5 euros dans un premier temps, puis en tranches de 10 euros)."
+msgstr "Vous pouvez effectuer des remboursements partiels de montant différents (par exemple, une transaction de 30 euros peut-être remboursée de 5 puis de 10 euros)."
 
 #: ../../user-guide/refunds.rst:38
 msgid ""
 "In case of partial refunds, the total refunded amount across multiple "
 "refunds of one transaction cannot exceed the transaction amount."
-msgstr "Dans le cas de remboursements partiels, le montant total remboursé ne peut dépasser celui de la transaction initiale."
+msgstr "Dans le cas de remboursements partiels, le montant total remboursé ne peut dépasser celui du paiement initial."
 
 #: ../../user-guide/refunds.rst:39
 msgid ""
 "The refunded customer will receive one refund email per partial refund, "
 "with each containing a different QR Code to be scanned into their wallet."
-msgstr "La cliente ou le client recevra un email par remboursement partiel, chacun contenant un code QR a scanner à l'aide de son porte-monnaie."
+msgstr "La cliente ou le client recevra un email par remboursement partiel, chacun contenant un code QR à scanner à l'aide de son porte-monnaie."
 
 #: ../../user-guide/refunds.rst:41
 msgid ""
 "Confirming the refund will create a new transaction, that you can view in"
 " the list of transactions, with the name ``R-{Odoo reference number}``."
-msgstr "La confirmation du remboursement déclemchera la création d'une nouvelle transaction qui apparaitra dans la liste des transactions sous le nom``R-{Odoo numéro de référence}``."
+msgstr "La confirmation du remboursement déclenchera la création d'une nouvelle transaction qui apparaitra dans la liste des transactions sous le nom ``R-{Odoo numéro de référence}``."
 
 #: ../../user-guide/refunds.rst:45
 msgid ""
@@ -122,7 +122,7 @@ msgstr "Vous le trouverez dans la liste des emails envoyés, dans ``Paramètres 
 msgid ""
 "You may need to activate Odoo’s ``Developer`` mode (found in the "
 "settings) to access the ``Technical`` tab."
-msgstr "Il se peut que vous deviez activer le mode ``Développeur`` d'Odoo pour accder à l'onglet ``Technique``."
+msgstr "Il se peut que vous deviez activer le mode ``Développeur`` d'Odoo pour accéder à l'onglet ``Technique``."
 
 #: ../../user-guide/refunds.rst:54
 msgid ""
@@ -152,7 +152,7 @@ msgstr "Sinon, l'email sera généré et pourra être lu mais ne serra pas envoy
 msgid ""
 "You can only do full refunds using Taler. Partial refunds are not "
 "implemented."
-msgstr "Il n'est possible d'effectuer des remboursements qu'à l'aide de Tale. Les remboursements partiels ne sont pas encore implémentés."
+msgstr "Il n'est possible d'effectuer des remboursements qu'à l'aide de Taler. Les remboursements partiels ne sont pas encore implémentés."
 
 #~ msgid ""
 #~ "In the ``invoicing`` add-on, navigate"

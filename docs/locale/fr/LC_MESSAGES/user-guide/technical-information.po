@@ -30,7 +30,7 @@ msgstr "Changer les paramètres à l'aide du terminal de commande"
 msgid ""
 "To change Odoo settings using CLI, run the Odoo CLI shell by adding "
 "``shell`` to your original command line to start Odoo."
-msgstr "Pour changer les paramères à l'aidre du terminal de commande, lancer le terminal Odoo en ajoutant ``shell``  dans votre commande comme suit :"
+msgstr "Pour changer les paramères à l'aide du terminal de commande, lancez le terminal Odoo en ajoutant ``shell``  dans votre commande comme suit :"
 
 #: ../../user-guide/technical-information.rst:16
 msgid ""
@@ -43,7 +43,7 @@ msgstr "``./odoo-bin shell --addons-path=./addons,{custom_addons_path}/tops -u p
 msgid ""
 "Run these commands to edit the settings. You can use ``get_params`` to "
 "print the current value, and ``set_params`` to set a new value:"
-msgstr "Les commandes suivantes permettent de modiier vos paramètres : ``get_params`` affichera la valeur actuelle des paramètres, et ``set_params``  vous permet de les modifier :"
+msgstr "Les commandes suivantes permettent de modifier vos paramètres : ``get_params`` affiche la valeur actuelle des paramètres, et ``set_params``  vous permet de les modifier :"
 
 #: ../../user-guide/technical-information.rst:22
 msgid ""
@@ -61,7 +61,7 @@ msgstr ""
 msgid ""
 "You need to commit the changes to the database before closing the shell "
 "instance and restarting Odoo:"
-msgstr "Vous devez confirmer les changements aportés avant de fermer le terminal et de redémarrer Odoo :"
+msgstr "Vous devez confirmer les changements apportés avant de fermer le terminal et de redémarrer Odoo :"
 
 #: ../../user-guide/technical-information.rst:29
 msgid "``env.cr.commit()``"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../user-guide/technical-information.rst:34
 msgid "Editing rights to the payment provider settings"
-msgstr "Droits d'accès et de modification aux paramètres du fournisseur de paiement"
+msgstr "Droits d'accès et de modification des paramètres du fournisseur de paiement"
 
 #: ../../user-guide/technical-information.rst:36
 msgid ""
@@ -134,7 +134,7 @@ msgstr "``controllers`` contient les controlleurs de l'extension."
 msgid ""
 "``data`` contains setup data that is processed when someone installs the "
 "add-on, as well as email templates."
-msgstr "``data`` contient les données de mise en place qui sont traitées lors de l'installation, ainsi que les modèles d'emails."
+msgstr "``data`` contient les données de mise en place qui sont traitées lors de l'installation ainsi que les modèles d'emails."
 
 #: ../../user-guide/technical-information.rst:63
 msgid "``i18n`` contains the data for localization and translation."
@@ -154,7 +154,7 @@ msgstr "``taler_api_method``, qui contient les méthodes utilisées pour communi
 msgid ""
 "``taler_invoicing``, which contains the methods used when creating "
 "invoices with Taler."
-msgstr "``taler_invoicing``, qui contient les méthodes utilisées pour au moment de la création des factures Taler."
+msgstr "``taler_invoicing``, qui contient les méthodes utilisées pour la création des factures Taler."
 
 #: ../../user-guide/technical-information.rst:68
 msgid ""
@@ -180,11 +180,11 @@ msgstr "``static`` contient le logo et d'autres images de l'extension."
 
 #: ../../user-guide/technical-information.rst:73
 msgid "``tests`` contains unit tests for this project."
-msgstr "``tests`` contient les tests unitaires de ce rojet."
+msgstr "``tests`` contient les tests unitaires de ce projet."
 
 #: ../../user-guide/technical-information.rst:74
 msgid "``utils`` contains utility methods (such as logging)."
-msgstr "``utils`` contient les métodes utilitaires (telles que la connexion)."
+msgstr "``utils`` contient les métodes utilitaires (telles que la journalisation)."
 
 #: ../../user-guide/technical-information.rst:75
 msgid "``views`` contains the views used for the models."

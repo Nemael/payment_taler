@@ -22,11 +22,11 @@ msgstr "Guide d'utilisation"
 msgid ""
 "This section contains an explanation of how to install, configure, and "
 "operate the Taler-Odoo Payment System."
-msgstr "Ce chapitre contient des explications détaillées sur la manière d'installer, de configurer et d'utiliser le système de paiment Taler-Odoo."
+msgstr "Ce chapitre contient les explications détaillées sur l'installation, la configuration et l'utilisation du système de paiment Taler-Odoo."
 
 #: ../../user-guide/index.rst:9
 msgid ""
 "This section is intended for Odoo administrators that want to provide "
 "Taler payments to their customers."
-msgstr "Il est destiné aux audministratrices et administrateurs Odoo qui souhaitent offrir la possibilités à leurs clientèle d'effectuer des paiments Taler."
+msgstr "Il est destiné aux administratrices et administrateurs Odoo qui souhaitent offrir la possibilités à leurs clientèle d'effectuer des paiments Taler."
 

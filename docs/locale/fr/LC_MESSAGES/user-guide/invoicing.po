@@ -30,7 +30,7 @@ msgstr "Créer une facture qui accepte les paiement effectués avec Taler"
 msgid ""
 "It is possible to create an invoice that includes a Taler QR Code to pay "
 "it."
-msgstr "Générer une facture inluant un code QR Taler pour la régler"
+msgstr "Générer une facture incluant un code QR Taler pour la régler"
 
 #: ../../user-guide/invoicing.rst:16 ../../user-guide/invoicing.rst:60
 msgid "Go to the Invoicing app and create a new invoice."
@@ -38,13 +38,13 @@ msgstr "Allez dans l'app Facturation et générez une nouvelle facture."
 
 #: ../../user-guide/invoicing.rst:17
 msgid "Fill any data relevant to the invoice that you are creating."
-msgstr "Remlissez les champs dont les renseignements sont nécessaires pour cette facture."
+msgstr "Remplissez les champs nécessaires pour cette facture."
 
 #: ../../user-guide/invoicing.rst:18
 msgid ""
 "Important step: In the ``Other Info`` tab, set the Payment Method to "
 "``Taler`` (see below). Otherwise, the QR Code will not be generated."
-msgstr "Étape importante : dans l'onglet ``Autres inormations``, réglez le mode de paiement sur ``Taler`` (voir ci-dessous). C'est indispensable pour générer le code QR."
+msgstr "Étape importante : dans l'onglet ``Autres informations``, réglez le mode de paiement sur ``Taler`` (voir ci-dessous). C'est indispensable pour générer le code QR."
 
 #: ../../user-guide/invoicing.rst:-1
 msgid "Taler invoices payment method"
@@ -64,7 +64,7 @@ msgstr "Ensuite, cliquez sur ``Confirmer`` en haut de la page, cela vous redirig
 msgid ""
 "You can now click ``Preview`` to see the Invoice that will be sent to "
 "your customer."
-msgstr "Vous pouvez a présent cliquer sur ``Apperçu`` pour parcourir la facure telle qu'elle sera envoyée."
+msgstr "Vous pouvez à présent cliquer sur ``Aperçu`` pour parcourir la facture telle qu'elle sera envoyée."
 
 #: ../../user-guide/invoicing.rst:31
 msgid ""
@@ -84,7 +84,7 @@ msgstr ""
 msgid ""
 "If a customer pays for the invoice using the QR Code present in the PDF, "
 "you will have to do a manual payment reconciliation."
-msgstr "Si un paiement client est effectué à l'aide du code QR dans la facture PDF, vous devrez efectuer une réconcilliation de paiment manuelle."
+msgstr "Si un paiement client est effectué à l'aide du code QR dans la facture PDF, vous devrez effectuer une réconcilliation de paiment manuelle."
 
 #: ../../user-guide/invoicing.rst:42
 msgid ""
@@ -105,7 +105,7 @@ msgstr "confirmez les données affichées dans la boite de dialogue qui s'est ou
 
 #: ../../user-guide/invoicing.rst:48
 msgid "Press ``Create Payment``."
-msgstr "Appuez sur ``Créer paiement``."
+msgstr "Appuyez sur ``Créer paiement``."
 
 #: ../../user-guide/invoicing.rst:53
 msgid "Pay an invoice online using Taler"
@@ -125,7 +125,7 @@ msgstr "Toute facture peut être payée à l'aide de Taler."
 msgid ""
 "Once created, you can press ``Preview`` to see the page that the customer"
 " will see."
-msgstr "Après la création de la facture, vous pouvez cliquer sur ``Apperçu`` pour voir la page qui sera envoyée à la cliente ou au client."
+msgstr "Après la création de la facture, vous pouvez cliquer sur ``Aperçu`` pour voir la page qui sera envoyée à la cliente ou au client.,"
 
 #: ../../user-guide/invoicing.rst:63
 msgid ""
@@ -146,13 +146,13 @@ msgid ""
 "Once they click ``Pay``, they will be redirected to the Taler order page,"
 " where they can pay with a Taler wallet on their phone or web browser (in"
 " the same way as for an eCommerce payment)."
-msgstr "Après avoir cliqué sur ``Payer`` la personne efectuant le paiment sera redirigée vers la page de commande Taler, où elle pourra utiliser son porte-monnaie Taler depuis son téléphone ou son navigateur (comme pour un paiement eCommerce)."
+msgstr "Après avoir cliqué sur ``Payer``, la personne effectuant le paiment sera redirigée vers la page de commande Taler, où elle pourra utiliser son porte-monnaie Taler depuis son téléphone ou son navigateur (comme pour un paiement eCommerce)."
 
 #: ../../user-guide/invoicing.rst:74
 msgid ""
 "When the payment is complete, the customer will be sent back to the "
 "invoice page, with a notice saying that the payment is successful."
-msgstr "Une fois la transaction effectuée, la personne sera renvoyée sur la page de la facture où s'affichera une confirmation de paiement."
+msgstr "Une fois la transaction effectuée, la personne sera renvoyée sur la page de facturation où s'affichera une confirmation de paiement."
 
 #: ../../user-guide/invoicing.rst:-1
 msgid "Taler invoices paid online"

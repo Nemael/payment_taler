@@ -43,7 +43,7 @@ msgid ""
 "page. If a payment provider is unpublished only an administrator users "
 "will be able to see and use the payment provider. It is advised to keep "
 "the payment provider unpublished when using the Test Mode."
-msgstr "En mode test, vous pouvez passer le fournisseur de paiement en ``Non publié``, ou en ``Publié`` ien cliquant sur le bouton en haut de la page. Si un fournisseur de paiement est non pubilé, seules les personnes ayant des droits d'admnistration pourront le voir et l'utiliser. Nous vous conseillons de maintenir le fournisseur de paiment en mode non publié tant que vous utilisez le the mode test."
+msgstr "En mode test, vous pouvez passer le fournisseur de paiement en ``Non publié``, ou en ``Publié`` en cliquant sur le bouton en haut de la page. Si un fournisseur de paiement est non publié, seules les personnes ayant des droits d'admnistration pourront le voir et l'utiliser. Nous vous conseillons de maintenir le fournisseur de paiment en mode non publié tant que vous utilisez le the mode test."
 
 #: ../../user-guide/merchant-test-mode.rst:24
 msgid ""
@@ -72,7 +72,7 @@ msgstr ""
 msgid ""
 "Start the process for any online payment, I will show the process for an "
 "eCommerce payment."
-msgstr "Entamer le processus d'un paiement en ligne, l'explication suivant illustre un paiement eommerce."
+msgstr "Entamez le processus d'un paiement en ligne, l'explication suivant illustre un paiement eCommerce."
 
 #: ../../user-guide/merchant-test-mode.rst:39
 msgid "Navigate to the shop page."
@@ -88,7 +88,7 @@ msgstr "Sélectionnez un produit dont vous voulez simuler l'achat, cliquez sur v
 msgid ""
 "Once you confirm your order, the Taler payment method will appear, with "
 "some icons."
-msgstr "Un fois que vous avez onfirmé votre commande, la métode de ppaiement Taler apparaitra avec deux icônes."
+msgstr "Un fois que vous avez confirmé votre commande, le mode de paiement Taler apparaitra à côté de deux icônes."
 
 #: ../../user-guide/merchant-test-mode.rst:-1
 msgid ""
@@ -110,23 +110,23 @@ msgid ""
 " know that this payment method is not visible to visitors, only users "
 "that have administrator access rights to the shop will be able to see the"
 " test mode Taler payment provider."
-msgstr "L'oeil rouge barré signifique ``Non publié``. Elle vous averti ue cette métode de piement n'est pas visible par les utilisatrices et utilisateurs du site, seules les personnes disposant des droits d'administration pourront voir le mode test du fournisseur de paiement Taler."
+msgstr "L'œil rouge barré signifie ``Non publié``. Elle vous averti que cette méthode de paiement n'est pas visible par les utilisatrices et utilisateurs du site, seules les personnes disposant des droits d'administration pourront voir le mode test du fournisseur de paiement Taler."
 
 #: ../../user-guide/merchant-test-mode.rst:56
 msgid ""
 "The yellow warning sign means ``Test mode``. It is there to warn you that"
 " the test mode is activated for this payment method."
-msgstr "Le signe d'aertissement jaune signife ``Mode test``. Il vous indiqu que le mode test est activé pour cette métode de paiement."
+msgstr "Le signe d'avertissement jaune signife ``Mode test``. Il vous indique que le mode test est activé pour ce mode de paiement."
 
 #: ../../user-guide/merchant-test-mode.rst:59
 msgid ""
 "Pay the order. A corresponding order will be created on the Taler "
 "merchant, with a currency change."
-msgstr "Effectuer la commande. Une commande correspondante, devise changée, sera créée dans le vendeur Taler."
+msgstr "Effectuez la commande. Une commande correspondante, devise changée, sera créée dans le vendeur Taler."
 
 #: ../../user-guide/merchant-test-mode.rst:62
 msgid "The currency originally used will be swapped with ``Kudos``."
-msgstr "La deviseoriginalle sera changée en ``kudos``."
+msgstr "La devise originale sera changée en ``kudos``."
 
 #: ../../user-guide/merchant-test-mode.rst:64
 msgid ""
@@ -138,7 +138,7 @@ msgstr "Le kudo est une monnaie imaginaire créée pour Taler. Elle peut être u
 msgid ""
 "A Taler order will be created, you can open it and pay with your wallet. "
 "(Notice that the currency is replaced with Kudos.)"
-msgstr "Une commande Taler sera créée et vous pourrez y acéder et al payer avec votre porte-monnaie. (Voyez comment la devise a été remplacée par des kudos.)"
+msgstr "Une commande Taler sera créée et vous pourrez y accéder et la payer avec votre porte-monnaie. (Voyez comment la devise a été remplacée par des kudos.)"
 
 #: ../../user-guide/merchant-test-mode.rst:-1
 msgid "Taler test mode payment on Taler, showing kudos currency"
@@ -167,7 +167,7 @@ msgid ""
 "When this step is done, the test is complete. You have confirmed that the"
 " add-on works, and the Taler merchant endpoint can receive your orders "
 "for compatible currencies."
-msgstr "Après cette étape, le test est terminé. Vous aurez conirmé que l'extension fontionne et que le serveur vendeur Taleur est capable de recevoir vos commandes pour les devises compatibles."
+msgstr "Après cette étape, le test est terminé. Vous aurez confirmé que l'extension fontionne et que le serveur vendeur Taleur est capable de recevoir vos commandes pour les devises compatibles."
 
 #~ msgid ""
 #~ "You can decide to keep the payment"
