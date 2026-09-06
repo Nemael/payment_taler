@@ -52,7 +52,7 @@ msgstr "Mode de paiement des factures Taler"
 
 #: ../../user-guide/invoicing.rst:-1
 msgid ".. image:: ../images/EN/Taler_invoices_payment_method.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_invoices_payment_method.png"
 
 #: ../../user-guide/invoicing.rst:26
 msgid ""
@@ -78,7 +78,7 @@ msgstr "Code QR Taler de la facture Taler"
 
 #: ../../user-guide/invoicing.rst:-1
 msgid ".. image:: ../images/EN/Taler_invoices_taler_qr_code.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_invoices_taler_qr_code.png"
 
 #: ../../user-guide/invoicing.rst:39
 msgid ""
@@ -139,7 +139,7 @@ msgstr "Paiement en ligne d'une facture Taler"
 
 #: ../../user-guide/invoicing.rst:-1
 msgid ".. image:: ../images/EN/Taler_invoices_online_payment.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_invoices_online_payment.png"
 
 #: ../../user-guide/invoicing.rst:71
 msgid ""
@@ -160,7 +160,7 @@ msgstr "Facture Taler réglée en ligne"
 
 #: ../../user-guide/invoicing.rst:-1
 msgid ".. image:: ../images/EN/Taler_invoices_paid_online.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_invoices_paid_online.png"
 
 #~ msgid ""
 #~ "This process is unrelated to the "

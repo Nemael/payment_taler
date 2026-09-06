@@ -141,7 +141,7 @@ msgstr "Paramètres de fournisseurs Taler"
 
 #: ../../user-guide/configuration.rst:-1
 msgid ".. image:: ../images/EN/Taler_provider_setting_complete.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_provider_setting_complete.png"
 
 #~ msgid ""
 #~ "``Invoicing -> Configuration -> Online "

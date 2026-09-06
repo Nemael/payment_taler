@@ -74,7 +74,7 @@ msgstr "Page de paiement Taler"
 
 #: ../../user-guide/refunds.rst:-1
 msgid ".. image:: ../images/EN/Taler_refund_payment.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_refund_payment.png"
 
 #: ../../user-guide/refunds.rst:35
 msgid ""
@@ -136,7 +136,7 @@ msgstr "Email de remboursement Taler destiné au côté client"
 
 #: ../../user-guide/refunds.rst:-1
 msgid ".. image:: ../images/EN/Taler_refund_email.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_refund_email.png"
 
 #: ../../user-guide/refunds.rst:63
 msgid "You need a functional email sender for this feature to work properly."

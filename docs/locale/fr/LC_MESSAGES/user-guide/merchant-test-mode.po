@@ -66,7 +66,7 @@ msgstr "Option mode test Taleur sélectionnée"
 
 #: ../../user-guide/merchant-test-mode.rst:-1
 msgid ".. image:: ../images/EN/Taler_test_mode_radio_button.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_test_mode_radio_button.png"
 
 #: ../../user-guide/merchant-test-mode.rst:36
 msgid ""
@@ -98,7 +98,7 @@ msgstr "Mode test de la métode de paiement Taleur avec deux icônes : un oeil b
 
 #: ../../user-guide/merchant-test-mode.rst:-1
 msgid ".. image:: ../images/EN/Taler_test_mode_payment_method_with_icons.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_test_mode_payment_method_with_icons.png"
 
 #: ../../user-guide/merchant-test-mode.rst:50
 msgid "Explanation of the icons:"
@@ -146,7 +146,7 @@ msgstr "Paiement Taleur en mode test en kudos"
 
 #: ../../user-guide/merchant-test-mode.rst:-1
 msgid ".. image:: ../images/EN/Taler_test_mode_taler_order_payment.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_test_mode_taler_order_payment.png"
 
 #: ../../user-guide/merchant-test-mode.rst:75
 msgid ""
@@ -160,7 +160,7 @@ msgstr "Paiement Taler clôturé en mode test dans Odoo"
 
 #: ../../user-guide/merchant-test-mode.rst:-1
 msgid ".. image:: ../images/EN/Taler_test_mode_taler_payment_completed.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/Taler_test_mode_taler_payment_completed.png"
 
 #: ../../user-guide/merchant-test-mode.rst:83
 msgid ""

@@ -44,7 +44,7 @@ msgstr "Installation de l'extension payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_install.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_install.png"
 
 #: ../../ui-explanation/index.rst:23
 msgid ""
@@ -65,7 +65,7 @@ msgstr "Fournisseur de paiment payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_provider.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_provider.png"
 
 #: ../../ui-explanation/index.rst:37
 msgid ""
@@ -91,7 +91,7 @@ msgstr "Détails du fournisseur de paiement payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_provider_details.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_provider_details.png"
 
 #: ../../ui-explanation/index.rst:55
 msgid "On this page, you can see the current status for the payment provider."
@@ -138,7 +138,7 @@ msgstr "Détails de devises du fournisseur de paiment payment_taler"
 msgid ""
 ".. image:: "
 "../images/EN/UI_Tutorial/Tutorial_provider_details_currencies.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_provider_details_currencies.png"
 
 #: ../../ui-explanation/index.rst:80
 msgid ""
@@ -157,7 +157,7 @@ msgstr "Page de paiment client payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_customer_payment.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_customer_payment.png"
 
 #: ../../ui-explanation/index.rst:91
 msgid ""
@@ -188,7 +188,7 @@ msgstr "Liste de paiements payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_customer_list_of_payments.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_customer_list_of_payments.png"
 
 #: ../../ui-explanation/index.rst:109
 msgid ""
@@ -214,7 +214,7 @@ msgstr "Bouton Rembourser payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_button.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_refund_button.png"
 
 #: ../../ui-explanation/index.rst:133
 msgid ""
@@ -234,7 +234,7 @@ msgstr "Emails de remboursement payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_email_list.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_refund_email_list.png"
 
 #: ../../ui-explanation/index.rst:148
 msgid ""
@@ -255,7 +255,7 @@ msgstr "Email de remboursement payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_email.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_refund_email.png"
 
 #: ../../ui-explanation/index.rst:161
 msgid ""
@@ -281,7 +281,7 @@ msgstr "Création de facture payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_creation.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_invoice_creation.png"
 
 #: ../../ui-explanation/index.rst:177
 msgid ""
@@ -310,7 +310,7 @@ msgstr "Aperçu de facture payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_preview.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_invoice_preview.png"
 
 #: ../../ui-explanation/index.rst:198
 msgid ""
@@ -334,7 +334,7 @@ msgstr "Paiement en ligne payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_online_payment.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_invoice_online_payment.png"
 
 #: ../../ui-explanation/index.rst:217
 msgid "In this menu, the customer can choose to pay online with Taler **(1)**."
@@ -369,7 +369,7 @@ msgstr "Mise en place d'un point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_setup.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_setup.png"
 
 #: ../../ui-explanation/index.rst:237
 msgid ""
@@ -399,7 +399,7 @@ msgstr "Point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_pos.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_pos.png"
 
 #: ../../ui-explanation/index.rst:262
 msgid ""
@@ -413,7 +413,7 @@ msgstr "Paramètres de point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_settings.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_settings.png"
 
 #: ../../ui-explanation/index.rst:274
 msgid ""
@@ -443,7 +443,7 @@ msgstr "Paiement point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_payment.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_payment.png"
 
 #: ../../ui-explanation/index.rst:290
 msgid ""
@@ -457,7 +457,7 @@ msgstr "Code QR point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_qr_code.png"
-msgstr ""
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_qr_code.png"
 
 #: ../../ui-explanation/index.rst:302
 msgid ""
