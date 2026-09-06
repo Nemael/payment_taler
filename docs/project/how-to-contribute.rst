@@ -91,7 +91,7 @@ How to update the translation of the documentation
     - ``sphinx-intl update -p _build/gettext -l {2-letters target language}``.
     - Example: ``sphinx-intl update -p _build/gettext -l fr``.
 
-  - Once you have the ``.po`` files, you can translate line-per-line the content of each ``mgsid`` in the ``.po`` files.
+  - Once you have the ``.po`` files, you can translate line-per-line the content of each ``msgid`` in the ``.po`` files.
   - When this is complete, you can build the documentation for the chosen language.
 
     - ``sphinx-build -D language={2-letters target language} -b html . _build/html/{2-letters target language}``.

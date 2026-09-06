@@ -62,4 +62,3 @@ Refund an online payment made using Taler
 .. note::
    - You need a functional email sender for this feature to work properly.
    - Without an email sender, the email will be generated and can be read, but it will not be sent.
-   - You can only do full refunds using Taler. Partial refunds are not implemented.

@@ -2,14 +2,12 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: M. Dailliet\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,129 +16,129 @@ msgstr ""
 
 #: ../../user-guide/point-of-sale.rst:5
 msgid "Point of Sale"
-msgstr ""
+msgstr "Point de Vente"
 
 #: ../../user-guide/point-of-sale.rst:9
 msgid "On this page:"
-msgstr ""
+msgstr "Sur cette page :"
 
 #: ../../user-guide/point-of-sale.rst:15
 msgid "Configure Taler payment for point of sale"
-msgstr ""
+msgstr "Configurer Taler pour Point de Vente"
 
 #: ../../user-guide/point-of-sale.rst:17
 msgid ""
 "Allowing Taler payment on the point-of-sale app requires a few more steps"
 " than regular online payments."
-msgstr ""
+msgstr "La configuration des paiments Taler sur l'appli Point de Vente comprends quelques étapes de plus que les paiments en ligne classiques."
 
 #: ../../user-guide/point-of-sale.rst:18
 msgid "Preliminary steps:"
-msgstr ""
+msgstr "Étapes préiminaires :"
 
 #: ../../user-guide/point-of-sale.rst:20
 msgid ""
 "Have previously :ref:`setup Taler as a payment provider <payment-"
 "provider-configuration>`."
-msgstr ""
+msgstr "Avoir :ref:`installé Taler comme fournisseur de paiment<payment-provider-configuration>`."
 
 #: ../../user-guide/point-of-sale.rst:23
 msgid "Install the ``Point of sale`` Odoo app."
-msgstr ""
+msgstr "Avoir installé l'appli Odoo ``Point de Vente``."
 
 #: ../../user-guide/point-of-sale.rst:25
 msgid "Create the Point of Sale payment method:"
-msgstr ""
+msgstr "Créer le mode de paiement Point de Vente :"
 
 #: ../../user-guide/point-of-sale.rst:27
 msgid "On the top bar, press ``Configuration -> Payment Methods``."
-msgstr ""
+msgstr "Dans la barre en haut de la page, rendez-vous dans ``Configuration -> Modes de paiement``."
 
 #: ../../user-guide/point-of-sale.rst:28
 msgid "Create a new Payment Method."
-msgstr ""
+msgstr "Créez un nouveau mode de paiement."
 
 #: ../../user-guide/point-of-sale.rst:30
 msgid ""
 "Name it ``Taler`` (You can call it something else, but ``Taler`` is "
 "easier to keep track of)."
-msgstr ""
+msgstr "Nommez-le ``Taler`` (ou autre, mais ce nom rendra le suivi plus intuitif)."
 
 #: ../../user-guide/point-of-sale.rst:32
 msgid "Check the ``Online Payment`` checkbox."
-msgstr ""
+msgstr "Cochez la case ``Paiement en ligne``."
 
 #: ../../user-guide/point-of-sale.rst:33
 msgid "Select ``Taler`` in the ``Allowed Providers`` field."
-msgstr ""
+msgstr "Séletionnez ``Taler`` dans le champs ``Fournisseurs autorisés``."
 
 #: ../../user-guide/point-of-sale.rst:35
 msgid "Add Taler to the point of sale:"
-msgstr ""
+msgstr "Ajouter Taler au point de vente :"
 
 #: ../../user-guide/point-of-sale.rst:37
 msgid "Make sure that the point of sale register is closed for this step."
-msgstr ""
+msgstr "Pour cette étape, assurez-vous que le registre du point de vente soit fermé."
 
 #: ../../user-guide/point-of-sale.rst:38
 msgid ""
 "On the top bar, press ``Configuration -> Point of Sales``, you will be "
 "redirected to the point of sale list."
-msgstr ""
+msgstr "Dans la barre en haut de la page, rendez-vous dans ``Configuration -> Point de Vente``, pour accéder à la liste des points de vente."
 
 #: ../../user-guide/point-of-sale.rst:40
 msgid "Select the point of sale you’d like to add Taler payment to."
-msgstr ""
+msgstr "Sélectionnez celui pour lequel vous souhaitez ajouter le mode de paiement Taler."
 
 #: ../../user-guide/point-of-sale.rst:41
 msgid ""
 "Click on ``More settings: Configurations > Settings``, which will lead "
 "you to the point of sale’s settings page."
-msgstr ""
+msgstr "Cliquez sur ``Plus de paramètres : Configurations > Paramètres``, pour atteindre les paramètres du point de vente."
 
 #: ../../user-guide/point-of-sale.rst:44
 msgid ""
 "Alternatively, you can access this page by going to Settings through the "
 "app switcher (top-left button), then going to ``Point of Sale`` section, "
 "and selecting the point of sale that you would like to modify."
-msgstr ""
+msgstr "Vous pouvez également accéder à cette page en vous rendant dans Paramètres dans le menu de navigation de l'application (bouton en haut a gauche), puis dans la section ``Point de Vente``. Là, vous pouvez modifier le point de vente souhaité."
 
 #: ../../user-guide/point-of-sale.rst:49
 msgid ""
 "In ``Payment -> Payment Methods``, add the payment method you just "
 "created (generally ``Taler``)."
-msgstr ""
+msgstr "Dans ``Paiement-> Modes de paiment``, ajoutez le mode de paiement que vous venez de créer."
 
 #: ../../user-guide/point-of-sale.rst:52
 msgid ""
 "The setup is now complete, and you can select this new payment provider "
 "when a customer pay for an order on the Point of sale that you added the "
 "payment method to."
-msgstr ""
+msgstr "La mise en place est désormais terminée, et vous pourrez sélectionner le nouveau fournisseur de paiement lorsqu'une cliente ou un client effectuera un paiement."
 
 #: ../../user-guide/point-of-sale.rst:59
 msgid "Pay using Taler at a Point of Sale"
-msgstr ""
+msgstr "Effectuer un paiement a l'aide de Taler à un point de vente"
 
 #: ../../user-guide/point-of-sale.rst:61
 msgid ""
 "Open a register on one of the Points of Sale for which you have activated"
 " the Taler payment method."
-msgstr ""
+msgstr "Ouvrez une caisse dans un point de vente."
 
 #: ../../user-guide/point-of-sale.rst:63
 msgid ""
 "Add any items to the order and click ``Payment`` at the bottom of the "
 "page."
-msgstr ""
+msgstr "Ajoutez un article dans le panier et cliquez sur ``Paiement`` en bas de la page."
 
 #: ../../user-guide/point-of-sale.rst:65
 msgid "Select the payment method ``Taler`` payment method."
-msgstr ""
+msgstr "Sélectionnez le mode de paiement ``Taler``."
 
 #: ../../user-guide/point-of-sale.rst:-1
 msgid "Taler pos taler payment"
-msgstr ""
+msgstr "Paiement à un point de vente Taler"
 
 #: ../../user-guide/point-of-sale.rst:-1
 msgid ".. image:: ../images/EN/Taler_pos_taler_payment.png"
@@ -148,29 +146,29 @@ msgstr ".. image:: ../images/FR/Taler_pos_taler_payment.png"
 
 #: ../../user-guide/point-of-sale.rst:72
 msgid "Click ``Validate``, it will show a QR Code."
-msgstr ""
+msgstr "Cliquez sur ``Valider``, cela générera un code QR."
 
 #: ../../user-guide/point-of-sale.rst:73
 msgid ""
 "Scanning this QR Code will redirect to an Odoo page, where the customer "
 "will be able to pay with Taler."
-msgstr ""
+msgstr "Celui-ci redirigera vers une page Odoo reprenant les modes de paiements disponibles, dont Taler."
 
 #: ../../user-guide/point-of-sale.rst:75
 msgid ""
 "This will bring the customer to a Taler order page, and they will be able"
 " to pay using their Taler wallet or web browser."
-msgstr ""
+msgstr "L'option Taler redirige vers une page de commande où payer à l'aide du porte-monnaie Taler."
 
 #: ../../user-guide/point-of-sale.rst:77
 msgid ""
 "Upon payment completion, the customer will be redirected to Odoo, with a "
 "confirmation of payment."
-msgstr ""
+msgstr "Une fois le paiement effectué, la personne effectuant l'achat sera renvoyée vers une confirmation de paiment Odoo."
 
 #: ../../user-guide/point-of-sale.rst:-1
 msgid "Taler pos payment complete"
-msgstr ""
+msgstr "Confirmation de paiement au point de vente Taler"
 
 #: ../../user-guide/point-of-sale.rst:-1
 msgid ".. image:: ../images/EN/Taler_pos_payment_complete.png"
@@ -180,11 +178,11 @@ msgstr ".. image:: ../images/FR/Taler_pos_payment_complete.png"
 msgid ""
 "The point of sale's side will show a successful payment, and produce a "
 "receipt."
-msgstr ""
+msgstr "Côté vendeur, le point de vente produira une notification de paiment et un reçu."
 
 #: ../../user-guide/point-of-sale.rst:-1
 msgid "Taler pos receipt"
-msgstr ""
+msgstr "Reçu point de vente Taler"
 
 #: ../../user-guide/point-of-sale.rst:-1
 msgid ".. image:: ../images/EN/Taler_pos_receipt.png"

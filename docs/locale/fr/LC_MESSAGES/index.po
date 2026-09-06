@@ -2,14 +2,12 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: M. Dailliet\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,13 +16,11 @@ msgstr ""
 
 #: ../../index.rst:19
 msgid "Contents:"
-msgstr ""
+msgstr "Contenu :"
 
 #: ../../index.rst:5
 msgid "Welcome to Taler-Odoo Payment System's documentation!"
-msgstr ""
-"Bienvenue sur la page de documentation de l'add-on Taler-Odoo Payment "
-"System!"
+msgstr "Bienvenue sur la page de documentation de l'extension Taler-Odoo Payment System!"
 
 #: ../../index.rst:7
 msgid ""
@@ -33,21 +29,21 @@ msgid ""
 "and increase functionality of other existing Odoo modules (eCommerce, "
 "invoices, ticket sales, online payment, etc.) It also implements refunds "
 "to customers that used Taler to pay."
-msgstr ""
+msgstr "TOPS est une extension pour Odoo. Elle vous permet de payer à l'aide de Taler, à la manière d'autres intégration de paiment dans Odoo. Ce module s'intègre dans Odoo et améliore les fonctionnalités de modules Odoo existants (eCommerce, factures, vente de tickets, paiement en ligne, etc.) Il implémente également le remboursement de paiments effectués l'aide de Taler."
 
 #: ../../index.rst:9
 msgid ""
 "Installing this module enables merchants to accept payments from "
 "customers using their Taler Wallet, giving them the option to choose a "
 "payment system that respects their privacy."
-msgstr ""
+msgstr "Ce module permet au côté vendeur de recevoir des paiements effectués à partir de porte-monnaie Taleur, et au côté client de choisir une méthode de paiement qui respecte leur vie privée."
 
 #: ../../index.rst:11
 msgid ""
 "It is available on the Odoo Apps store "
 "(https://apps.odoo.com/apps/modules/18.0/payment_taler). The technical "
 "name for this add-on is ``payment_taler``."
-msgstr ""
+msgstr "Il est disponible sur l'App store Odoo (https://apps.odoo.com/apps/modules/18.0/payment_taler). Le nom technique de cette extension est ``payment_taler``."
 
 #: ../../index.rst:15
 msgid ""
@@ -59,7 +55,7 @@ msgstr ""
 
 #: ../../index.rst:17
 msgid "This documentation is organized in the following sections:"
-msgstr ""
+msgstr "La documentation est organisée selon les chapitres suivants :"
 
 #~ msgid ""
 #~ "Blah blah description of the project "

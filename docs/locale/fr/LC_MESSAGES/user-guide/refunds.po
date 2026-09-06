@@ -2,14 +2,12 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: M. Dailliet\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,39 +16,39 @@ msgstr ""
 
 #: ../../user-guide/refunds.rst:5
 msgid "Refunds"
-msgstr ""
+msgstr "Remboursements"
 
 #: ../../user-guide/refunds.rst:8
 msgid "On this page:"
-msgstr ""
+msgstr "Sur cette page :"
 
 #: ../../user-guide/refunds.rst:11
 msgid "Refund an online payment made using Taler"
-msgstr ""
+msgstr "Remboursements et paiements en ligne effectués dans Taler"
 
 #: ../../user-guide/refunds.rst:13
 msgid ""
 "To make a refund to a payment made using Taler, you first have to find "
 "the payment you wish to refund."
-msgstr ""
+msgstr "Pour rembourser un paiement effectué dans Taler, trouvez d'abord le paiement en question."
 
 #: ../../user-guide/refunds.rst:15
 msgid ""
 "For Odoo 18, in the ``invoicing`` add-on, navigate to ``Customers -> "
 "Customer Payments`` on the top bar."
-msgstr ""
+msgstr "Pour Odoo 18, dans l'extension ``Facturation``, rendez-vous dans ``Clients -> Paiements`` dans la barre en haut de la page."
 
 #: ../../user-guide/refunds.rst:16
 msgid "For Odoo 19, the location is ``Customers -> Payments``."
-msgstr ""
+msgstr "Pour Odoo 19, vous y accéderez via ``Clients-> Paiements``."
 
 #: ../../user-guide/refunds.rst:18
 msgid "This page will show you all the payments that have been completed."
-msgstr ""
+msgstr "La liste des paiement effectués se trouve sur cette page."
 
 #: ../../user-guide/refunds.rst:19
 msgid "In this example, we want to refund the payment ``PBNK1/2026/00029``."
-msgstr ""
+msgstr "Dans l'exemple suivant, nous voulons rembourser le paiement ``PBNK1/2026/00029``."
 
 #: ../../user-guide/refunds.rst:20
 msgid ""
@@ -58,21 +56,21 @@ msgid ""
 "settings, navigate to ``Configuration -> Payment Transactions`` on the "
 "top bar, selecte a transaction, and click on the payment in the "
 "``payment`` field on the transaction’s page."
-msgstr ""
+msgstr "Il est également possible, mais plus technique, d'activer le mode développeur dans les paramètres, de se rendre dans ``Configuration -> Transactions`` dans la barre en haut de la page, de sélectionner une transaction et de sélectionner le paiement dans le champ ``paiement`` sur la page de la transaction."
 
 #: ../../user-guide/refunds.rst:25
 msgid "Click on the payment that you would like to start the refund process for."
-msgstr ""
+msgstr "Cliquez sur le paiement que vous souhaitez rembourser."
 
 #: ../../user-guide/refunds.rst:27
 msgid ""
 "On the payment page, click ``Refund`` in the action button section (top-"
 "left) and confirm the refund."
-msgstr ""
+msgstr "Sur la page du paiement, cliquez sur le bouton d'action ``Remboursement``, en haut à gauche, et confirmez le remboursement."
 
 #: ../../user-guide/refunds.rst:-1
 msgid "Taler payment page"
-msgstr ""
+msgstr "Page de paiement Taler"
 
 #: ../../user-guide/refunds.rst:-1
 msgid ".. image:: ../images/EN/Taler_refund_payment.png"
@@ -82,59 +80,59 @@ msgstr ".. image:: ../images/FR/Taler_refund_payment.png"
 msgid ""
 "You can set the amount you'd like to refund. The refund amount cannot be "
 "higher than the transaction amount."
-msgstr ""
+msgstr "Vous pouvez déterminer le montant que vous souhaitez rembourser. Celui-ci ne peut être supérieur au montant de la transaction initiale."
 
 #: ../../user-guide/refunds.rst:37
 msgid ""
 "You can make multiple partial refunds (for example, a 30 euros "
 "transaction can be refunded by 5 euros, and then by 10 euros later)."
-msgstr ""
+msgstr "Vous pouvez effectuer des remboursements partiels de montant différents (par exemple, une transaction de 30 euros peut-être remboursée de 5 puis de 10 euros)."
 
 #: ../../user-guide/refunds.rst:38
 msgid ""
 "In case of partial refunds, the total refunded amount across multiple "
 "refunds of one transaction cannot exceed the transaction amount."
-msgstr ""
+msgstr "Dans le cas de remboursements partiels, le montant total remboursé ne peut dépasser celui du paiement initial."
 
 #: ../../user-guide/refunds.rst:39
 msgid ""
 "The refunded customer will receive one refund email per partial refund, "
 "with each containing a different QR Code to be scanned into their wallet."
-msgstr ""
+msgstr "La cliente ou le client recevra un email par remboursement partiel, chacun contenant un code QR à scanner à l'aide de son porte-monnaie."
 
 #: ../../user-guide/refunds.rst:41
 msgid ""
 "Confirming the refund will create a new transaction, that you can view in"
 " the list of transactions, with the name ``R-{Odoo reference number}``."
-msgstr ""
+msgstr "La confirmation du remboursement déclenchera la création d'une nouvelle transaction qui apparaitra dans la liste des transactions sous le nom ``R-{Odoo numéro de référence}``."
 
 #: ../../user-guide/refunds.rst:45
 msgid ""
 "An email containing the refund QR Code will also be sent to the "
 "customer’s email address."
-msgstr ""
+msgstr "Un email contenant le code QR de remboursement sera également envoyé à l'adresse email client."
 
 #: ../../user-guide/refunds.rst:48
 msgid ""
 "You can view this email in the list of sent emails, found in ``Settings "
 "app -> Technical -> Emails``."
-msgstr ""
+msgstr "Vous le trouverez dans la liste des emails envoyés, dans ``Paramètres -> Technique -> Emails``."
 
 #: ../../user-guide/refunds.rst:51
 msgid ""
 "You may need to activate Odoo’s ``Developer`` mode (found in the "
 "settings) to access the ``Technical`` tab."
-msgstr ""
+msgstr "Il se peut que vous deviez activer le mode ``Développeur`` d'Odoo pour accéder à l'onglet ``Technique``."
 
 #: ../../user-guide/refunds.rst:54
 msgid ""
 "To receive the refund, the customer will have to scan the QR Code with "
 "their Taler wallet."
-msgstr ""
+msgstr "Pour recevoir le remboursement, le côté client devra scanner le code QR à l'aide du porte-monnaie Taler."
 
 #: ../../user-guide/refunds.rst:-1
 msgid "Taler refund email to customer"
-msgstr ""
+msgstr "Email de remboursement Taler destiné au côté client"
 
 #: ../../user-guide/refunds.rst:-1
 msgid ".. image:: ../images/EN/Taler_refund_email.png"
@@ -142,19 +140,19 @@ msgstr ".. image:: ../images/FR/Taler_refund_email.png"
 
 #: ../../user-guide/refunds.rst:63
 msgid "You need a functional email sender for this feature to work properly."
-msgstr ""
+msgstr "Il vous faut une adresse email d'envoi valide pour que cette fonctionnalité soit utilisable."
 
 #: ../../user-guide/refunds.rst:64
 msgid ""
 "Without an email sender, the email will be generated and can be read, but"
 " it will not be sent."
-msgstr ""
+msgstr "Sinon, l'email sera généré et pourra être lu mais ne serra pas envoyé."
 
 #: ../../user-guide/refunds.rst:65
 msgid ""
 "You can only do full refunds using Taler. Partial refunds are not "
 "implemented."
-msgstr ""
+msgstr "Il n'est possible d'effectuer des remboursements qu'à l'aide de Taler. Les remboursements partiels ne sont pas encore implémentés."
 
 #~ msgid ""
 #~ "In the ``invoicing`` add-on, navigate"

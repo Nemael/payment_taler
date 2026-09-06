@@ -2,14 +2,12 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 17:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: M. Dailliet\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,31 +16,31 @@ msgstr ""
 
 #: ../../ui-explanation/index.rst:5
 msgid "UI Explanation"
-msgstr ""
+msgstr "Explication de l'interface"
 
 #: ../../ui-explanation/index.rst:7
 msgid ""
 "This section contains an explanation of the various UI elements used to "
 "interact with the Taler-Odoo Payment System"
-msgstr ""
+msgstr "Ce chapitre contient une explication détaillée des différents éléments qui composent l'interface d'utilisation du système de paiement Taler-Odoo."
 
 #: ../../ui-explanation/index.rst:10
 msgid "On this page:"
-msgstr ""
+msgstr "Sur cette page :"
 
 #: ../../ui-explanation/index.rst:12
 msgid ""
 "This document is an explanation of the UI elements that you will interact"
 " with when using the Taler-Odoo Payment System add-on."
-msgstr ""
+msgstr "Ce document explique les éléments de l'interface avec lesquels intéragir pour utiliser l'extension du système de paiement Taler-Odoo."
 
 #: ../../ui-explanation/index.rst:16
 msgid "Installation of the add-on"
-msgstr ""
+msgstr "Installation de l'extension"
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler add-on install"
-msgstr ""
+msgstr "Installation de l'extension payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_install.png"
@@ -55,15 +53,15 @@ msgid ""
 " for the payment_taler module **(1)** in the Odoo apps, and activate it "
 "**(2)**. Activating the module is the same as installing it on your Odoo "
 "instance."
-msgstr ""
+msgstr "Après avoir copié les fichiers du module payment_taler dans le répertoire de votre instance d'Odoo, et après avoir réglé les paramètres de chemin, vous pouvez rechercher le module payment_taler **(1)** dans l'appli Odoo et l'activer **(2)**. Activer le module revient à l'installer dans votre instance d'Odoo."
 
 #: ../../ui-explanation/index.rst:30
 msgid "Taler payment provider setup"
-msgstr ""
+msgstr "Installation du fournisseur de paiement"
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler payment provider"
-msgstr ""
+msgstr "Fournisseur de paiment payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_provider.png"
@@ -73,23 +71,23 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_provider.png"
 msgid ""
 "Once the module is activated, you can find the payments providers in "
 "``Website -> Configuration -> Online Payments -> Payment Providers``."
-msgstr ""
+msgstr "Après avoir activé le module, vous pouvez accéder à la liste des fournisseurs de paiment dans ``Site Web -> Configuration -> Paiments en ligne -> Fournisseurs de paiment``."
 
 #: ../../ui-explanation/index.rst:40
 msgid ""
 "In this list you can find the Taler payment provider **(1)** (disabled by"
 " default), and activate it **(2)**."
-msgstr ""
+msgstr "Dans cette liste, vous trouverez le fournisseur de paiement Taler **(1)** (désactivé par défaut) que vous pourrez activer **(2)**."
 
 #: ../../ui-explanation/index.rst:43
 msgid ""
 "Activating or clicking on the payment provider will lead you to the "
 "payment provider’s page."
-msgstr ""
+msgstr "L'activer ou cliquer dessus vous redirigera vers la page du fournisseur de paiement."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler payment provider details"
-msgstr ""
+msgstr "Détails du fournisseur de paiement payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_provider_details.png"
@@ -97,32 +95,32 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_provider_details.png"
 
 #: ../../ui-explanation/index.rst:55
 msgid "On this page, you can see the current status for the payment provider."
-msgstr ""
+msgstr "Sur cette page, vous pouvez consulter le statut actuel du fournisseur de paiement."
 
 #: ../../ui-explanation/index.rst:57
 msgid ""
 "The payment provider can be ``Disabled``, ``Enabled``, or in ``Test "
 "Mode``. **(1)** (See documentation for more information)."
-msgstr ""
+msgstr "Celui-ci peut être ``Désactivé``, ``Activé``, ou en ``Mode test``. **(1)** (Consultez la documentation pour plus d'information.)"
 
 #: ../../ui-explanation/index.rst:58
 msgid ""
 "The payment provider can be ``Unpublished`` or ``Published``. **(2)** "
 "(See documentation for more information)."
-msgstr ""
+msgstr "Le fournisseur de paiment peut être ``Non publié`` ou ``Publié``. **(2)** (Consultez la documentation pour plus d'information."
 
 #: ../../ui-explanation/index.rst:60
 msgid ""
 "You can see three tabs: ``Credentials``, ``Configuration``, ``Messages``."
 " For this setup, only the tab ``Credentials`` will be used **(3)**."
-msgstr ""
+msgstr "Vous pouvez voir trois onglets : ``Identifiants``, ``Configuration`` et ``Messages``. Seul l'onglet ``Identifiants`` est utile pour ce réglage."
 
 #: ../../ui-explanation/index.rst:63
 msgid ""
 "In the credentials tab, you will have to setup the Taler merchant URL and"
 " the corresponding password for the Taler instance you would like to use "
 "**(4)**."
-msgstr ""
+msgstr "Dans celui-ci, vous devrez paramétrer l'URL vendeur Taler ainsi que le mot de passe correspondant pour l'instance Taler que vous souhaitez utiliser."
 
 #: ../../ui-explanation/index.rst:66
 msgid ""
@@ -130,34 +128,32 @@ msgid ""
 " connect to the entered URL, and see if the accepted currencies is "
 "compatible with Odoo’s currencies **(5)**. (See user-guide for more "
 "information.)"
-msgstr ""
+msgstr "Après avoir paramétré l'URL, cliquez sur ``Vérifier la validité de l'URL``. Cela vous connectera à celui-ci et vous permettra de vérifier si les devises sélectionnées sont compatibles avec les devises Odoo. (Consultez le guide d'utilisation pour plus d'information.)"
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler payment provider currencies details"
-msgstr ""
+msgstr "Détails de devises du fournisseur de paiment payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ""
 ".. image:: "
 "../images/EN/UI_Tutorial/Tutorial_provider_details_currencies.png"
-msgstr ""
-".. image:: "
-"../images/FR/UI_Tutorial/Tutorial_provider_details_currencies.png"
+msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_provider_details_currencies.png"
 
 #: ../../ui-explanation/index.rst:80
 msgid ""
 "In the payment provider’s ``Configuration`` tab **(1)**, you can find the"
 " list of currencies that the payment provider will be able to use "
 "**(2)**."
-msgstr ""
+msgstr "Dans l'onglet ``Configuration`` **(1)** du fournisseur de paiment, vous trouverez la liste des devises compatibles avec celui-ci **2**."
 
 #: ../../ui-explanation/index.rst:84
 msgid "Online payments using Taler"
-msgstr ""
+msgstr "Payer en ligne avec Taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler customer payment page"
-msgstr ""
+msgstr "Page de paiment client payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_customer_payment.png"
@@ -168,27 +164,27 @@ msgid ""
 "When a customer is ready to pay online for their cart, they will be able "
 "to choose which payment method to use. If the currencies are correctly "
 "set-up, Taler should be one of the options provided **(1)**."
-msgstr ""
+msgstr "Au moment de payer en ligne, la clientèle aura la possibilité de choisir le mode de paiement. Si les devises sont paramétrées correctement, Taler devrait être une des options proposées."
 
 #: ../../ui-explanation/index.rst:95
 msgid "You might see symbols next to the payment method **(2)**:"
-msgstr ""
+msgstr "Il se peut que vous voyiez certains symboles à côté du mode de paiement **(2)** :"
 
 #: ../../ui-explanation/index.rst:97
 msgid ""
 "A striked-through eye means that this payment method can only be seen by "
 "an admin (generally used when testing a new payment provider)."
-msgstr ""
+msgstr "un œil barré signifie que ce mode de paiement n'est accessible que par une personne disposant de droits d'administration (ce mode est généralement employé pour tester un nouveau fournisseur de paiement)."
 
 #: ../../ui-explanation/index.rst:98
 msgid ""
 "A yellow warning sign means that the payment provider is in test mode. "
 "Avoid using the test mode in production."
-msgstr ""
+msgstr "un signe attention jaune signifie que ce fournisseur de paiement est en mode test. Évitez d'employer le mode test en production."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler list of payments"
-msgstr ""
+msgstr "Liste de paiements payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_customer_list_of_payments.png"
@@ -199,22 +195,22 @@ msgid ""
 "When the payment is complete, on the admin-side, you can navigate to "
 "``Invoicing -> Customers -> Payments`` to see the list of payments, and "
 "the most recent payment completed **(1)**."
-msgstr ""
+msgstr "Une fois le paiement effectué, du côté administrateur, vous pourrez vous rendre sur ``Facturation -> Clients -> Paiements`` pour consulter la liste de paiements ainsi que le plus récent **(1)**."
 
 #: ../../ui-explanation/index.rst:113
 msgid "Trigger a refund for an online payment"
-msgstr ""
+msgstr "Rembourser un paiement en ligne"
 
 #: ../../ui-explanation/index.rst:120
 msgid ""
 "Find the payment you would like to refund in the payment list, in "
 "``Invoicing -> Customers -> Payments``, and click on the payment you’d "
 "like to refund **(1)**."
-msgstr ""
+msgstr "Dans ``Facturation -> Clients -> Paiements``, cliquez sur le paiement à rembourser **(1)**."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler refund button"
-msgstr ""
+msgstr "Bouton Rembourser payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_button.png"
@@ -224,17 +220,17 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_refund_button.png"
 msgid ""
 "Click on the ``Refund`` button and confirm the amount you’d like to "
 "refund **(1)**."
-msgstr ""
+msgstr "Cliquez sur le bouton ``Rembourser`` **(1)** et confirmez le montant du remboursement."
 
 #: ../../ui-explanation/index.rst:136
 msgid ""
 "This action will create a refund QR Code, and send it via email to the "
 "customer."
-msgstr ""
+msgstr "Cela créera un code QR de remboursement et l'enverra par email à la cliente ou au client."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler list of refund emails"
-msgstr ""
+msgstr "Emails de remboursement payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_email_list.png"
@@ -245,17 +241,17 @@ msgid ""
 "To see the email, navigate to ``Settings -> Technical -> Emails``. This "
 "will display a list of emails, find and click on the one you want to "
 "check **(1)**."
-msgstr ""
+msgstr "Pour consulter ces emails, rendez-vous dans ``Paramètres -> Technique -> Emails``. Dans la liste des emails affichée, cliquez sur celui que vous désirez examiner **(1)**."
 
 #: ../../ui-explanation/index.rst:150
 msgid ""
 "You may need to activate Odoo’s ``Developer`` mode to access this tab (it"
 " is found in the settings)."
-msgstr ""
+msgstr "Il se pourrait que vous deviez activer le mode ``Dévelopeur`` d'Odoo pour accéder à cet onglet (ce mode est accessible dans les paramètres)."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler refund email"
-msgstr ""
+msgstr "Email de remboursement payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_refund_email.png"
@@ -267,21 +263,21 @@ msgid ""
 "**(1)** and to **(2)**. You can also see the refund QR Code that has been"
 " sent to the customer **(3)**, as well as the URI that can be used in "
 "case the customer cannot use the QR Code **(4)**."
-msgstr ""
+msgstr "Sur la page de la liste des emails, vous pouvez voir l'adresse d'envoi de l'email **(1)** et son destinataire **(2)**. Vous pouvez également afficher le code QR de remboursement envoyé à la cliente ou au client **(3)** ainsi que l'URI à utiliser s'il ne fonctionne pas **(4)**. "
 
 #: ../../ui-explanation/index.rst:167
 msgid "Create an invoice that includes a Taler QR Code"
-msgstr ""
+msgstr "Créer une facture qui contient un code QR Taler"
 
 #: ../../ui-explanation/index.rst:169
 msgid ""
 "To make an invoice that displays a Taler QR Code as a payment option, you"
 " need to create an invoice, and specify Taler as the payment method."
-msgstr ""
+msgstr "Pour créer une facture incluant un code QR Taler comme option de paiement, vous devez créer une facture et indiquer Taler comme mode de paiement."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler invoice creation"
-msgstr ""
+msgstr "Création de facture payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_creation.png"
@@ -291,7 +287,7 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_invoice_creation.png"
 msgid ""
 "This is a new invoice with some data filled in, namely the customer data "
 "**(1)** and the invoiced product **(2)**."
-msgstr ""
+msgstr "Il s'agit d'une nouvelle facture qui contient les coordonnées de la cliente ou du client **(1)** ainsi que le produit facturé."
 
 #: ../../ui-explanation/index.rst:180
 msgid ""
@@ -299,18 +295,18 @@ msgid ""
 "to the value ``Taler``. This indicates that you intend for the customer "
 "to pay this invoice with Taler. (However, despite this setting, other "
 "online payment options can still be used to pay for the invoice)."
-msgstr ""
+msgstr "Dans l'onglet ``Autres Informations``, sélectionnez ``Taler`` dans le menu déroulant ``Mode de paiement``. Vous indiquez de ce fait au côté client de payer cette facture au moyen de Taler. (Il aura toutefois la possibilité de choisir un autre mode de paiement pour régler cette facture.)"
 
 #: ../../ui-explanation/index.rst:185
 msgid ""
 "Once filled, you can ``Confirm`` the invoice and then see the ``Preview``"
 " of the invoice by clicking the corresponding buttons on the top of the "
 "page."
-msgstr ""
+msgstr "Une fois la facture remplie, vous pouvez la ``Confirmer`` et en afficher l' ``Aperçu`` en cliquant sur les boutons correspondants en haut de la page."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler invoice preview"
-msgstr ""
+msgstr "Aperçu de facture payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_preview.png"
@@ -323,18 +319,18 @@ msgid ""
 "to ``Taler``. In this section, you can see the Taler QR Code that can be "
 "used to pay **(2)**, as well as the URI that can be used in case the "
 "customer cannot use the QR Code **(3)**."
-msgstr ""
+msgstr "La section ``Taler`` se trouve au bas de la facture **(1)**. Elle n'apparaîtra pas si le ``Mode de paiement`` n'a pas été réglé sur ``Taler``. Dans cette section, vous pouvez voir le code QR Taler qui devra être utilisé **(2)** ainsi que l'URI à utiliser s'il ne fonctionne pas **(3)**."
 
 #: ../../ui-explanation/index.rst:204
 msgid ""
 "On the top-left of the invoice, you can also see a ``Pay Now`` button. "
 "This button allows the customer to pay via Online Payment, and clicking "
 "it will start the ``Online Payment`` flow **(4)**."
-msgstr ""
+msgstr "Un bouton ``Payer maintenant`` se trouve dans le coin supérieur gauche de la facture. Celui-ci permet au client de la payer en ligne **(4)**."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler invoice online payment"
-msgstr ""
+msgstr "Paiement en ligne payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_invoice_online_payment.png"
@@ -342,34 +338,34 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_invoice_online_payment.png"
 
 #: ../../ui-explanation/index.rst:217
 msgid "In this menu, the customer can choose to pay online with Taler **(1)**."
-msgstr ""
+msgstr "Dans ce menu, la cliente ou le client peut choisir de payer en ligne avec Taler **(1)**."
 
 #: ../../ui-explanation/index.rst:219
 msgid ""
 "Selecting this option will start the Online Payment flow that this add-on"
 " implements, as opposed to the invoice payment flow that would have been "
 "used if the customer paid using the invoice’s QR Code."
-msgstr ""
+msgstr "Cette option déclenche le processus de paiment en ligne de cette extension, et est distinct du processus de paiment par facture qui aurait été utilisé si la cliente le client avait payé à l'aide du code QR de la facture."
 
 #: ../../ui-explanation/index.rst:224
 msgid "Point of sale payment setup"
-msgstr ""
+msgstr "Mise en place du point de vente"
 
 #: ../../ui-explanation/index.rst:226
 msgid ""
 "To setup Taler payment for the Point of Sale, you have to setup a new "
 "payment method in the POS app."
-msgstr ""
+msgstr "Pour mettre le point de vente Taler en place, vous devez configurer un nouveau mode de paiement dans l'appli PDV. "
 
 #: ../../ui-explanation/index.rst:229
 msgid ""
 "Go to ``Point-of-Sale -> Configuration -> Payment Methods`` and click "
 "``New``."
-msgstr ""
+msgstr "Dans ``Point-de-vente -> Configuration -> Modes de paiement`` et cliquez sur ``Nouveau``."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler point of sale setup"
-msgstr ""
+msgstr "Mise en place d'un point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_setup.png"
@@ -381,13 +377,13 @@ msgid ""
 "tick the ``Online Payment`` option **(2)**, and select Taler as an "
 "``Allowed Provider`` **(3)**. The Taler payment provider must be "
 "``Enabled``, or it will not appear in the list of available providers."
-msgstr ""
+msgstr "Dans le nouveau mode de paiement du point de vente, inscrivez le nom (Taler) **(1)**, cochez la case ``paiement en ligne`` **(2)**, et sélectionnez Taler comme ``Fournisseur autorisé`` **(3)**. Le fournisseur Taler doit être ``Activé`` pour apparaître dans la liste des fournisseurs disponibles."
 
 #: ../../ui-explanation/index.rst:244
 msgid ""
 "This Taler payment method is specific to the point of sale, and is "
 "different from the payment methods created by default by this add-on."
-msgstr ""
+msgstr "Ce mode de paiement Taler ne sera disponible que dans ce point de vente et est distinct des modes de paiement créés par défaut dans cette extension."
 
 #: ../../ui-explanation/index.rst:248
 msgid ""
@@ -395,11 +391,11 @@ msgid ""
 "point of sale that you would like to use it in. To do that, go to "
 "``Configuration -> Point of Sales`` and click on the point of sale you "
 "would like to edit."
-msgstr ""
+msgstr "Ensuite, vous devez activer ce nouveau fournisseur de paiment à chaque point de vente où vous désirez pouvoir l'utiliser. Pour ce faire, dans ``Configuration -> Point de vente``, cliquez sur le point de vente que vous voulez modifier."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler point of sale"
-msgstr ""
+msgstr "Point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_pos.png"
@@ -409,11 +405,11 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_pos.png"
 msgid ""
 "On this page, click on ``More settings: Configurations > Settings`` "
 "**(1)** to be sent to the settings page for this point of sale."
-msgstr ""
+msgstr "Sur cette page, cliquez sur ``Plus de paramètres : Configuration > Paramètres`` **(1)** pour vous rendre dans les paramètres de ce point de vente."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler point of sale settings"
-msgstr ""
+msgstr "Paramètres de point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_settings.png"
@@ -423,27 +419,27 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_settings.png"
 msgid ""
 "On the settings page, add to the setting ``Payment Methods`` **(1)**, add"
 " the new ``Taler`` payment method you created earlier."
-msgstr ""
+msgstr "Dans ces paramètres, dans ``Modes de paiement``, ajoutez le nouveau mode de paiement ``Taler`` que vous avez créé plus tôt."
 
 #: ../../ui-explanation/index.rst:277
 msgid ""
 "After this you’re good to go for customers to pay on Point of Sales using"
 " Taler!"
-msgstr ""
+msgstr "Les clientes et clients pourront désormais payer avec Taler sur Point de vente !"
 
 #: ../../ui-explanation/index.rst:281
 msgid "Point of Sale payments using Taler"
-msgstr ""
+msgstr "Paiement en Point de Vente avec Taler"
 
 #: ../../ui-explanation/index.rst:283
 msgid ""
 "Paying at a point of sale using Taler is straightforward and uses Taler’s"
 " online payment flow."
-msgstr ""
+msgstr "L'utilisation de Taler à un point de vente est simple. Au lieu de recourir à un échange Taler direct, la transaction passe par le processus de paiement en ligne propre à Taler."
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler point of sale payment"
-msgstr ""
+msgstr "Paiement point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_payment.png"
@@ -453,11 +449,11 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_payment.png"
 msgid ""
 "When a customer’s cart is finalized, press ``Payment`` and select "
 "``Taler`` **(1)** as a payment method, and validate."
-msgstr ""
+msgstr "Quand une cliente ou un client s'apprête à payer, appuyez sur ``Paiement``, sélectionnez ``Taler`` **(1)** comme mode de paiement, puis validez. "
 
 #: ../../ui-explanation/index.rst:-1
 msgid "Payment_taler point of sale qr code"
-msgstr ""
+msgstr "Code QR point de vente payment_taler"
 
 #: ../../ui-explanation/index.rst:-1
 msgid ".. image:: ../images/EN/UI_Tutorial/Tutorial_pos_qr_code.png"
@@ -467,7 +463,7 @@ msgstr ".. image:: ../images/FR/UI_Tutorial/Tutorial_pos_qr_code.png"
 msgid ""
 "The customer will be presented with a QR Code **(1)**, that they can scan"
 " to complete a payment via Taler."
-msgstr ""
+msgstr "Cela génèrera un code QR **(1)** que la cliente ou le client pourra finalement scanner pour effectuer le paiment par le biais de Taler."
 
 #~ msgid ".. image:: ../images/UI_Tutorial/Tutorial_install.png"
 #~ msgstr ""

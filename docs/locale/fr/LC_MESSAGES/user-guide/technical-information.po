@@ -2,14 +2,12 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 #
-#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: Taler-Odoo Payment System \n"
+msgstr "Project-Id-Version: Taler-Odoo Payment System \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-25 16:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: M. Dailliet\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,34 +16,34 @@ msgstr ""
 
 #: ../../user-guide/technical-information.rst:5
 msgid "Technical Information"
-msgstr ""
+msgstr "Renseignement techniques"
 
 #: ../../user-guide/technical-information.rst:8
 msgid "On this page:"
-msgstr ""
+msgstr "Sur cette page :"
 
 #: ../../user-guide/technical-information.rst:11
 msgid "Change settings using CLI"
-msgstr ""
+msgstr "Changer les paramètres à l'aide du terminal de commande"
 
 #: ../../user-guide/technical-information.rst:13
 msgid ""
 "To change Odoo settings using CLI, run the Odoo CLI shell by adding "
 "``shell`` to your original command line to start Odoo."
-msgstr ""
+msgstr "Pour changer les paramères à l'aide du terminal de commande, lancez le terminal Odoo en ajoutant ``shell``  dans votre commande comme suit :"
 
 #: ../../user-guide/technical-information.rst:16
 msgid ""
 "Such as ``./odoo-bin shell --addons-"
 "path=./addons,{custom_addons_path}/tops -u payment_taler -d "
 "odoo18_tops_0.1.1.1``."
-msgstr ""
+msgstr "``./odoo-bin shell --addons-path=./addons,{custom_addons_path}/tops -u payment_taler -d odoo18_tops_0.1.1.1``."
 
 #: ../../user-guide/technical-information.rst:19
 msgid ""
 "Run these commands to edit the settings. You can use ``get_params`` to "
 "print the current value, and ``set_params`` to set a new value:"
-msgstr ""
+msgstr "Les commandes suivantes permettent de modifier vos paramètres : ``get_params`` affiche la valeur actuelle des paramètres, et ``set_params``  vous permet de les modifier :"
 
 #: ../../user-guide/technical-information.rst:22
 msgid ""
@@ -63,7 +61,7 @@ msgstr ""
 msgid ""
 "You need to commit the changes to the database before closing the shell "
 "instance and restarting Odoo:"
-msgstr ""
+msgstr "Vous devez confirmer les changements apportés avant de fermer le terminal et de redémarrer Odoo :"
 
 #: ../../user-guide/technical-information.rst:29
 msgid "``env.cr.commit()``"
@@ -75,27 +73,27 @@ msgstr ""
 
 #: ../../user-guide/technical-information.rst:34
 msgid "Editing rights to the payment provider settings"
-msgstr ""
+msgstr "Droits d'accès et de modification des paramètres du fournisseur de paiement"
 
 #: ../../user-guide/technical-information.rst:36
 msgid ""
 "As with other payment providers, Odoo users will have limited access to "
 "the Taler payment provider settings."
-msgstr ""
+msgstr "Comme pour tout autre fournisseur de paiement, les utilisatrices et utilisateurs d'Odoo n'auront qu'un accès limité aux paramètres de Taler."
 
 #: ../../user-guide/technical-information.rst:37
 msgid ""
 "Only user that belong in the ``base.group_system`` user group will be "
 "able to access and modify the Taler payment provider settings."
-msgstr ""
+msgstr "Seuls celles et ceux inclus dans le groupe ``base.group_system`` pourront accéder aux paramètres et les modifier."
 
 #: ../../user-guide/technical-information.rst:41
 msgid "Run unit tests"
-msgstr ""
+msgstr "Effecter des tests unitaires"
 
 #: ../../user-guide/technical-information.rst:43
 msgid "To run unit tests on a new db, use this command:"
-msgstr ""
+msgstr "Pour effecter des tests unitaires dans une nouvelle base de données, utilisez cette ligne de commande  :"
 
 #: ../../user-guide/technical-information.rst:45
 msgid ""
@@ -108,89 +106,89 @@ msgstr ""
 msgid ""
 "The db name (after -d) is arbitrary and can be replaced by any other "
 "names."
-msgstr ""
+msgstr "Le nom de la base de données (après -d) est arbitraire et peut être remplacé."
 
 #: ../../user-guide/technical-information.rst:50
 msgid ""
 "In the results logs, you should expect to see ``odoo.tests.result: 0 "
 "failed, 0 error(s) of x tests when loading database``."
-msgstr ""
+msgstr "Vous devriez voir ``odoo.tests.result: 0 failed, 0 error(s) of x tests when loading database`` dans les résultats de commande."
 
 #: ../../user-guide/technical-information.rst:53
 msgid "x is the number of unit tests, currently 11."
-msgstr ""
+msgstr "x est le nombre de tests unitaires, actuellement 11."
 
 #: ../../user-guide/technical-information.rst:57
 msgid "Folder structure"
-msgstr ""
+msgstr "Structures de fichiers"
 
 #: ../../user-guide/technical-information.rst:59
 msgid "This add-on uses a standard folder structure:"
-msgstr ""
+msgstr "La structure de fichiers de cette extension est standard :"
 
 #: ../../user-guide/technical-information.rst:61
 msgid "``controllers`` contains the controllers used by the add-on."
-msgstr ""
+msgstr "``controllers`` contient les controlleurs de l'extension."
 
 #: ../../user-guide/technical-information.rst:62
 msgid ""
 "``data`` contains setup data that is processed when someone installs the "
 "add-on, as well as email templates."
-msgstr ""
+msgstr "``data`` contient les données de mise en place qui sont traitées lors de l'installation ainsi que les modèles d'emails."
 
 #: ../../user-guide/technical-information.rst:63
 msgid "``i18n`` contains the data for localization and translation."
-msgstr ""
+msgstr "``i18n`` contient les données nécessaires aux localisations et traductions."
 
 #: ../../user-guide/technical-information.rst:64
 msgid "``models`` contains the Odoo models. There are 4 models:"
-msgstr ""
+msgstr "``models`` contient les modèles Odoo. Il y en a quatre :"
 
 #: ../../user-guide/technical-information.rst:66
 msgid ""
 "``taler_api_method``, which contains the methods used to communicate to "
 "the Taler merchant API."
-msgstr ""
+msgstr "``taler_api_method``, qui contient les méthodes utilisées pour communiquer avec à l'API vendeur Taler."
 
 #: ../../user-guide/technical-information.rst:67
 msgid ""
 "``taler_invoicing``, which contains the methods used when creating "
 "invoices with Taler."
-msgstr ""
+msgstr "``taler_invoicing``, qui contient les méthodes utilisées pour la création des factures Taler."
 
 #: ../../user-guide/technical-information.rst:68
 msgid ""
 "``taler_provider``, which contains the methods used by the Taler payment "
 "provider."
-msgstr ""
+msgstr "``taler_provider``, qui contient les méthodes utilisées par le fournisseur de paiement Taler."
 
 #: ../../user-guide/technical-information.rst:69
 msgid ""
 "``taler_transaction``, which contains the methods used to complete a "
 "transaction with Taler."
-msgstr ""
+msgstr "``taler_transaction``, qui contient les méthodes utilisées pour effectuer une transation avec Taler."
 
 #: ../../user-guide/technical-information.rst:71
 msgid ""
 "``security`` contains the (unused) ``ir.moder.access.csv`` file to manage"
 " access rights."
-msgstr ""
+msgstr "``security`` contient le fichier ``ir.moder.access.csv`` (inutilisé pour le moment) de gestion des droits d'accès."
 
 #: ../../user-guide/technical-information.rst:72
 msgid "``static`` contains logo data and other image assets for the add-on."
-msgstr ""
+msgstr "``static`` contient le logo et d'autres images de l'extension."
 
 #: ../../user-guide/technical-information.rst:73
 msgid "``tests`` contains unit tests for this project."
-msgstr ""
+msgstr "``tests`` contient les tests unitaires de ce projet."
 
 #: ../../user-guide/technical-information.rst:74
 msgid "``utils`` contains utility methods (such as logging)."
-msgstr ""
+msgstr "``utils`` contient les métodes utilitaires (telles que la journalisation)."
 
 #: ../../user-guide/technical-information.rst:75
 msgid "``views`` contains the views used for the models."
-msgstr ""
+msgstr "``views`` contient les vues utilisées pour les modèles."
 
 #~ msgid ""
 #~ "Such as ``./odoo-bin shell --addons-"
